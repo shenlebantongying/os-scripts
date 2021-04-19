@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<opml version="1.0">
+ <head>
+  <text/>
+ </head>
+ <body>
+  <outline isOpen="false" text="ProgrammingLanguages" id="1266776882">
+   <outline isOpen="false" text="C++" id="3378551246">
+    <outline htmlUrl="https://www.cppstories.com/" fetchInterval="30" xmlUrl="https://www.cppstories.com/index.xml" description="Recent content on C++ Stories" useCustomFetchInterval="false" text="C++ Stories" archiveMode="globalDefault" comment="" maxArticleAge="60" version="RSS" title="C++ Stories" type="rss" id="3721346001" maxArticleNumber="1000" copyright="" loadLinkedWebsite="true"/>
+    <outline htmlUrl="http://isocpp.org/blog" fetchInterval="30" xmlUrl="https://isocpp.org/blog/rss" description="" useCustomFetchInterval="false" text="Standard C++" archiveMode="globalDefault" comment="" maxArticleAge="60" version="RSS" title="Standard C++" type="rss" id="1281431531" maxArticleNumber="1000" copyright="Copyright 2021" faviconUrl="file:///home/slbtty/.cache/favicons/isocpp.org.png"/>
+   </outline>
+   <outline isOpen="false" text="Lisp" id="1004813464">
+    <outline htmlUrl="http://funcall.blogspot.com/" fetchInterval="30" xmlUrl="http://funcall.blogspot.com/feeds/posts/default?alt=rss" description="Unorthodox opinions on computer science and programming." useCustomFetchInterval="false" text="Abstract Heresies" archiveMode="globalDefault" comment="" maxArticleAge="60" version="RSS" title="Abstract Heresies" type="rss" id="3302586409" maxArticleNumber="1000" copyright="" loadLinkedWebsite="true" faviconUrl="file:///home/slbtty/.cache/favicons/funcall.blogspot.com.png"/>
+   </outline>
+  </outline>
+  <outline isOpen="false" text="KDE" id="1711264285">
+   <outline htmlUrl="https://dot.kde.org/frontpage" fetchInterval="0" xmlUrl="https://dot.kde.org/rss.xml" description="" useCustomFetchInterval="false" text="KDE Dot News" archiveMode="globalDefault" comment="" maxArticleAge="0" version="RSS" title="KDE Dot News" type="rss" id="3598989953" maxArticleNumber="0" copyright=""/>
+   <outline copyright="" fetchInterval="0" text="Planet KDE" title="Planet KDE" logoWidth="0" type="rss" id="3663566963" logoHeight="0" logoUrl="https://planet.kde.org/img/planet.png" faviconUrl="file:///home/slbtty/.cache/favicons/planet.kde.org.png" faviconWidth="0" archiveMode="globalDefault" comment="" maxArticleAge="0" maxArticleNumber="0" useCustomFetchInterval="false" version="RSS" htmlUrl="https://planet.kde.org/" xmlUrl="https://planet.kde.org/global/atom.xml" faviconHeight="0" description=""/>
+  </outline>
+ </body>
+</opml>
+
