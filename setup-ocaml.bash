@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-#sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
+sh <(curl -sL https://raw.githubusercontent.com/ocaml/opam/master/shell/install.sh)
 
-#opam init
-#eval $(opam env)
+opam init
+eval $(opam env)
 
 #TODO:detect possible .profile
 
