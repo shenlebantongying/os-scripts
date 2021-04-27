@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-cd ~
+cd ~ || exit
 mkdir -p src
-cd ./src/
+cd ./src/ || exit
 
 if [[ -d ./ChezScheme ]];
 then
-    cd ./ChezScheme
+    cd ./ChezScheme || exit
     git pull
 else
     git clone --depth=1 git@github.com:cisco/ChezScheme.git
-    cd ./ChezScheme
+    cd ./ChezScheme || exit
 fi
 
 ./configure
