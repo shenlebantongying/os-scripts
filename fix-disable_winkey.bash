@@ -1,4 +1,4 @@
- #!/usr/bin/env bash
+#!/usr/bin/env bash
 
  # disable windows, win, Super_L, Hyper, Mac, Start key
 
