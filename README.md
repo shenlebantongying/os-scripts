@@ -1,4 +1,4 @@
-A set of scripts to bootstrap a useful linux for myself.
+A set of scripts to bootstrap a useful system for myself.
 
 + a -> misc scripts (use a to order them on top)
 + setup -> install software or/and tweak some config
