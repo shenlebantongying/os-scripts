@@ -27,5 +27,5 @@ _color_echo "34" "$1";
 
 # [Main] =======================================================================
 
-cd "$SCRIPTPATH"
+cd "$SCRIPTPATH" || red-msg "Cannot cd to script path";exit 0;
 green-msg "$SCRIPTPATH"

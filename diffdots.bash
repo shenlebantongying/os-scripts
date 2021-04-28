@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-SCRIPT=`realpath $0`
-SCRIPTPATH=`dirname $SCRIPT`
+SCRIPT=$(realpath $0)
+SCRIPTPATH=$(dirname $SCRIPT)
 
-while read x; do
+while read -r x; do
   # ${x#"~/"}" is to remove prefix
   # ${parameter#word}
   # ${parameter/pattern/string} replace pattern with string
