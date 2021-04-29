@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # [Definations] ================================================================
 
 # Avoid sourcing multiple times
@@ -27,5 +29,5 @@ _color_echo "34" "$1";
 
 # [Main] =======================================================================
 
-cd "$SCRIPTPATH" || red-msg "Cannot cd to script path";exit 0;
+cd "$SCRIPTPATH" || red-msg "Cannot cd to script path";
 green-msg "$SCRIPTPATH"
