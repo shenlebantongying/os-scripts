@@ -41,4 +41,4 @@ def scan_outline(e):
 f=tempfile.NamedTemporaryFile(suffix='.html',mode="w",delete=False)
 f.write(html(scan_outline(r)))
 f.close()
-os.system("xdg-open " + f.name)
+os.system("nohup xdg-open " + f.name + " >/dev/null 2>&1 ")
