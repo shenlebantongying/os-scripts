@@ -11,7 +11,11 @@ ark \
 bash-completion \
 shellcheck \
 qt5-tools \
-akregator"
+akregator \
+fuse
+hunspell
+hunspell-en_us
+"
 
 sudo pacman -S --needed "${needed}"
 sudo pacman -S "${core}"

@@ -26,7 +26,7 @@ cp-spacemacs(){
 
 # TODO: add diff check
 restore-spacemacs(){
-    cp -i "$SCRIPTPATH/home/.spacemacs" ~/.spacemacs
+    ln -s "$SCRIPTPATH/home/.spacemacs" ~/.spacemacs
     if [ -f "$SCRIPTPATH/home/.spacemacs" ]
         then
             green-msg "Restored"
