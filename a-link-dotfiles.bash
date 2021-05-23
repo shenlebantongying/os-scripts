@@ -39,4 +39,5 @@ green-msg "Linking ${2} to ${1}"
 
 link_file "${HOME}/.bashrc" "${SCRIPTPATH}/home/.bashrc"
 link_file "${HOME}/.bash_profile" "${SCRIPTPATH}/home/.bash_profile"
+link_file "${HOME}/.vimrc" "${SCRIPTPATH}/home/.vimrc"
 

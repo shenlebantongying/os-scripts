@@ -11,11 +11,21 @@ ark \
 bash-completion \
 shellcheck \
 qt5-tools \
-akregator \
-fuse
-hunspell
-hunspell-en_us
+fuse\
+hunspell\
+hunspell-en_us\
+newsboat
 "
+
+utl="fzf\
+ack\
+ncdu\
+"
+
 
 sudo pacman -S --needed "${needed}"
 sudo pacman -S "${core}"
+
+#fonts
+
+sudo pacman -S ttf-roboto
