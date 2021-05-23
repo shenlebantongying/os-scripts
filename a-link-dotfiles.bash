@@ -5,7 +5,6 @@ set -e
 SCRIPT=$(realpath "$0") # -> Complete path /home/slbtty/scripts/sourcetest.bash
 SCRIPTPATH=$(dirname "$SCRIPT") #-> only /home/slbtty/scripts
 
-
 function _color_echo()
 {
   echo -e "\e[0;$1m [slb] $2\e[0m"
@@ -40,22 +39,4 @@ green-msg "Linking ${2} to ${1}"
 
 link_file "${HOME}/.bashrc" "${SCRIPTPATH}/home/.bashrc"
 link_file "${HOME}/.bash_profile" "${SCRIPTPATH}/home/.bash_profile"
-
-# if [ -f bashrc ];
-# then
-#     rm bashrc
-#     red-msg "Remove ${bashrc}"
-# else
-#     green-msg "No ${bashrc} in home"
-# fi
-
-
-# if [ -f bashprofile ];
-# then
-#     rm bashrc
-#     red-msg "Remove ${bashprofile}"
-# else
-#     green-msg "No ${bashprofile} in home"
-# fi
-
 
