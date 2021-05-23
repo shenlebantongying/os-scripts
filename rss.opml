@@ -1,72 +1,65 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<opml version="1.0">
- <head>
-  <text/>
- </head>
- <body>
-  <outline isOpen="false" id="2618891202" text="tool-update">
-   <outline xmlUrl="https://blog.jabref.org/feed.xml" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="https://blog.jabref.org/" id="3633783903" useCustomFetchInterval="false" description="The blog of the literature management software JabRef" type="rss" title="JabRef" fetchInterval="30" text="JabRef" comment=""/>
-  </outline>
-  <outline isOpen="false" id="2003060181" text="UnixPeople">
-   <outline isOpen="false" id="3320975477" text="BSD">
-    <outline maxArticleNumber="1000" version="RSS" fetchInterval="30" copyright="" archiveMode="globalDefault" title="vermaden" type="rss" logoUrl="https://vermaden.files.wordpress.com/2018/04/avatar-big-static-release.png?w=32" logoWidth="32" text="vermaden" logoHeight="32" maxArticleAge="60" useCustomFetchInterval="false" xmlUrl="https://vermaden.wordpress.com/feed/" htmlUrl="https://vermaden.wordpress.com" id="1882553761" description="Another ${RANDOM} sysadmin sharing his experiences of work at IT industry." comment=""/>
-    <outline xmlUrl="https://unixsheikh.com/feed.rss" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" loadLinkedWebsite="true" htmlUrl="https://unixsheikh.com" id="3425730843" faviconUrl="file:///home/slbtty/.cache/favicons/unixsheikh.com.png" useCustomFetchInterval="false" description="Articles and tutorials about open source, BSD and GNU/Linux system administration, and programming - the pragmatic way." type="rss" title="unixsheikh.com" fetchInterval="30" text="unixsheikh.com" comment=""/>
-   </outline>
-   <outline isOpen="false" id="3067527723" text="Linux">
-    <outline xmlUrl="http://kroah.com/log/index.rss" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="http://kroah.com/log/" id="1309804627" useCustomFetchInterval="false" description="" type="rss" title="Greg kh" fetchInterval="30" text="Greg kh" comment=""/>
-   </outline>
-  </outline>
-  <outline isOpen="false" id="3906318834" text="Friends">
-   <outline xmlUrl="https://www.alanshawn.com/atom.xml" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="https://www.alanshawn.com/" id="2850301457" faviconUrl="file:///home/slbtty/.cache/favicons/www.alanshawn.com.png" useCustomFetchInterval="false" description="" type="rss" title="Alan Xiang's Blog" fetchInterval="30" text="Alan Xiang's Blog" comment=""/>
-   <outline maxArticleNumber="1000" faviconUrl="file:///home/slbtty/.cache/favicons/asaba.sakuragawa.moe_wp-content_uploads_2018_06_cropped-Progynova-2mg-32x32.png" version="RSS" fetchInterval="30" copyright="" archiveMode="globalDefault" title="櫻川家::浅羽" type="rss" logoUrl="https://asaba.sakuragawa.moe/wp-content/uploads/2018/06/cropped-Progynova-2mg-32x32.png" logoWidth="32" text="櫻川家::浅羽" maxArticleAge="60" loadLinkedWebsite="true" logoHeight="32" useCustomFetchInterval="false" xmlUrl="https://asaba.sakuragawa.moe/feed/" htmlUrl="https://asaba.sakuragawa.moe" id="36388294" description="肥宅快樂獸的吐槽流" comment=""/>
-   <outline xmlUrl="https://www.nayuki.io/rss20.xml" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="https://www.nayuki.io/" id="345694468" useCustomFetchInterval="false" description="" type="rss" title="Project Nayuki" fetchInterval="30" text="Project Nayuki" comment=""/>
-   <outline xmlUrl="https://blog.lilydjwg.me/feed" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="https://blog.lilydjwg.me/" id="1163863047" useCustomFetchInterval="false" description="" type="rss" title="依云's Blog" fetchInterval="30" text="依云's Blog" comment=""/>
-   <outline xmlUrl="https://cdn.jwz.org/blog/feed/" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" loadLinkedWebsite="true" htmlUrl="https://www.jwz.org/blog/" id="532790481" faviconUrl="file:///home/slbtty/.cache/favicons/cdn.jwz.org.png" useCustomFetchInterval="false" description="" type="rss" title="jwz" fetchInterval="30" text="jwz" comment=""/>
-   <outline xmlUrl="https://www.csslayer.info/wordpress/feed/" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" loadLinkedWebsite="true" htmlUrl="https://www.csslayer.info/wordpress" id="452091677" faviconUrl="file:///home/slbtty/.cache/favicons/www.csslayer.info.png" useCustomFetchInterval="false" description="Unlimited Code Works" type="rss" title="CS Slayer" fetchInterval="30" text="CS Slayer" comment=""/>
-   <outline xmlUrl="https://blog.sgorava.xyz/index.xml" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" loadLinkedWebsite="true" htmlUrl="https://blog.sgorava.xyz/" id="3827946122" faviconUrl="file:///home/slbtty/.cache/favicons/blog.sgorava.xyz.png" useCustomFetchInterval="false" description="" type="rss" title="blog.sgorava.xyz" fetchInterval="30" text="blog.sgorava.xyz" comment=""/>
-   <outline maxArticleNumber="1000" faviconWidth="0" faviconUrl="file:///home/slbtty/.cache/favicons/sh.alynx.one.png" version="RSS" fetchInterval="30" copyright="" archiveMode="globalDefault" faviconHeight="0" title="喵's StackHarbor (Arch SUSE)" type="rss" text="喵's StackHarbor (Arch SUSE)" maxArticleAge="60" useCustomFetchInterval="false" xmlUrl="https://sh.alynx.one/atom.xml" htmlUrl="https://sh.alynx.one/" id="1778383149" description="Whisper to the World" comment=""/>
-   <outline xmlUrl="https://farseerfc.me/feeds/atom.xml" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="//farseerfc.me/" id="526726216" faviconUrl="file:///home/slbtty/.cache/favicons/farseerfc.me.png" useCustomFetchInterval="false" description="" type="rss" title="Farseerfc的小窩" fetchInterval="30" text="Farseerfc的小窩" comment=""/>
-   <outline xmlUrl="https://blog.lilydjwg.me/feed" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" loadLinkedWebsite="true" htmlUrl="https://blog.lilydjwg.me/" id="360441352" useCustomFetchInterval="false" description="" type="rss" title="依云's Blog" fetchInterval="30" text="依云's Blog" comment=""/>
-   <outline xmlUrl="https://blog.codingnow.com/atom.xml" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="https://blog.codingnow.com/" id="2022882948" faviconUrl="file:///home/slbtty/.cache/favicons/blog.codingnow.com.png" useCustomFetchInterval="false" description="思绪来得快去得也快，偶尔会在这里停留" type="rss" title="云风的 BLOG" fetchInterval="30" text="云风的 BLOG" comment=""/>
-   <outline xmlUrl="https://ridiculousfish.com/blog/atom.xml" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="http://ridiculousfish.com/blog/" id="1916145858" useCustomFetchInterval="false" description="" type="rss" title="ridiculous_fish" fetchInterval="30" text="ridiculous_fish" comment=""/>
-   <outline xmlUrl="https://i.nebula.moe/rss.xml" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="https://i.nebula.moe/" id="3811264412" useCustomFetchInterval="false" description="" type="rss" title="奇想斋" fetchInterval="30" text="奇想斋" comment=""/>
-   <outline xmlUrl="http://www.greghendershott.com/feeds/all.atom.xml" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="https://www.greghendershott.com/tags/all.html" id="3193647513" faviconUrl="file:///home/slbtty/.cache/favicons/www.greghendershott.com.png" useCustomFetchInterval="false" description="" type="rss" title="Greg Hendershott" fetchInterval="30" text="Greg Hendershott" comment=""/>
-  </outline>
-  <outline isOpen="false" id="3266422870" text="General IT">
-   <outline xmlUrl="https://directory.fsf.org/wiki/Special:Ask/-5B-5BSubmitted-20date::%2B-5D-5D/mainlabel%3D/limit%3D50/order%3Ddescending/sort%3DSubmitted-20date/offset%3D0/format%3Drss/searchlabel%3DNew-20packages-20RSS-20feed/title%3DFree-20Software-20Directory/description%3DRecent-20updates-20to-20Free-20Software-20Directory-20(directory.fsf.org)" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="https://directory.fsf.org/wiki/Special:Ask/-5B-5BSubmitted-20date::%2B-5D-5D/mainlabel%3D/limit%3D50/order%3Ddescending/sort%3DSubmitted-20date/offset%3D0/format%3Drss/searchlabel%3DNew-20packages-20RSS-20feed/title%3DFree-20Software-20Directory/description%3DRecent-20updates-20to-20Free-20Software-20Directory-20(directory.fsf.org)" id="3544198485" faviconUrl="file:///home/slbtty/.cache/favicons/directory.fsf.org.png" useCustomFetchInterval="false" description="$1 $2 feed" type="rss" title="Free Software Directory" fetchInterval="30" text="Free Software Directory" comment=""/>
-   <outline xmlUrl="https://drewdevault.com/blog/index.xml" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" loadLinkedWebsite="true" htmlUrl="https://drewdevault.com" id="2705609850" useCustomFetchInterval="false" description="Recent content in Blogs on Drew DeVault's blog" type="rss" title="Drew DeVault's blog" fetchInterval="30" text="Drew DeVault's blog" comment=""/>
-   <outline xmlUrl="https://lucumr.pocoo.org/feed.atom" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" loadLinkedWebsite="true" htmlUrl="http://lucumr.pocoo.org/" id="1540948801" useCustomFetchInterval="false" description="Armin Ronacher&amp;apos;s personal blog about programming, games and random thoughts that come to his mind." type="rss" title="Armin Ronacher's Thoughts and Writings" fetchInterval="30" text="Armin Ronacher's Thoughts and Writings" comment=""/>
-   <outline xmlUrl="https://nullprogram.com/feed/" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="https://nullprogram.com" id="183845745" faviconUrl="file:///home/slbtty/.cache/favicons/nullprogram.com.png" useCustomFetchInterval="false" description="" type="rss" title="null program" fetchInterval="30" text="null program" comment=""/>
-   <outline xmlUrl="https://rosenzweig.io/feed.xml" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="https://rosenzweig.io/" id="898934559" faviconUrl="file:///home/slbtty/.cache/favicons/rosenzweig.io.png" useCustomFetchInterval="false" description="Software freedom, graphics, and gay" type="rss" title="Alyssa Rosenzweig&#xa;" fetchInterval="30" text="Alyssa Rosenzweig&#xa;" comment=""/>
-   <outline maxArticleNumber="1000" faviconUrl="file:///home/slbtty/.cache/favicons/daniel.haxx.se.png" version="RSS" fetchInterval="30" copyright="" archiveMode="globalDefault" title="daniel.haxx.se -> cURL" type="rss" logoUrl="https://daniel.haxx.se/blog/wp-content/uploads/2015/08/cropped-Daniel-head-greenshirt-32x32.jpg" logoWidth="32" text="daniel.haxx.se -> cURL" maxArticleAge="60" loadLinkedWebsite="true" logoHeight="32" useCustomFetchInterval="false" xmlUrl="https://daniel.haxx.se/blog/feed/" htmlUrl="https://daniel.haxx.se/blog" id="3271464210" description="tech, open source and networking" comment=""/>
-   <outline xmlUrl="https://martinfowler.com/feed.atom" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="https://martinfowler.com" id="3650504657" useCustomFetchInterval="false" description="Master feed of news and updates from martinfowler.com" type="rss" title="Martin Fowler" fetchInterval="30" text="Martin Fowler" comment=""/>
-   <outline xmlUrl="https://hpjansson.org/blag/feed/" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="https://hpjansson.org/blag" id="1978589016" useCustomFetchInterval="false" description="Personal blag of H. P. Jansson: Free Software, Open Source mostly." type="rss" title="hpjansson" fetchInterval="30" text="hpjansson" comment=""/>
-   <outline maxArticleNumber="1000" version="RSS" fetchInterval="30" copyright="" archiveMode="globalDefault" title="Raymond Chen – The Old New Thing" type="rss" logoUrl="https://devblogs.microsoft.com/oldnewthing/wp-content/uploads/sites/38/2021/03/Microsoft-Favicon.png" logoWidth="32" text="Raymond Chen – The Old New Thing" logoHeight="32" maxArticleAge="60" useCustomFetchInterval="false" xmlUrl="https://devblogs.microsoft.com/oldnewthing/author/oldnewthing/feed" htmlUrl="https://devblogs.microsoft.com/oldnewthing" id="2873614659" description="" comment=""/>
-   <outline xmlUrl="https://linuxreviews.org/feed.rss" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="https://linuxreviews.org/LinuxReviews" id="3501995994" faviconUrl="file:///home/slbtty/.cache/favicons/linuxreviews.org.png" useCustomFetchInterval="false" description="From LinuxReviews" type="rss" title="LinuxReviews News (RSS/English)" fetchInterval="30" text="LinuxReviews News (RSS/English)" comment=""/>
-  </outline>
-  <outline isOpen="false" id="3739890308" text="ProgrammingLanguages">
-   <outline isOpen="false" id="3145602021" text="C++">
-    <outline xmlUrl="https://www.cppstories.com/index.xml" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" loadLinkedWebsite="true" htmlUrl="https://www.cppstories.com/" id="2472099858" useCustomFetchInterval="false" description="Recent content on C++ Stories" type="rss" title="C++ Stories" fetchInterval="30" text="C++ Stories" comment=""/>
-    <outline xmlUrl="https://iscinumpy.gitlab.io/index.xml" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" loadLinkedWebsite="true" htmlUrl="https://iscinumpy.gitlab.io/" id="950797968" useCustomFetchInterval="false" description="Recent content on ISciNumPy" type="rss" title="ISciNumPy" fetchInterval="30" text="ISciNumPy" comment=""/>
-    <outline xmlUrl="https://preshing.com/feed" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" loadLinkedWebsite="true" htmlUrl="https://preshing.com/" id="713438103" faviconUrl="file:///home/slbtty/.cache/favicons/preshing.com.png" useCustomFetchInterval="false" description="" type="rss" title="Preshing on Programming" fetchInterval="30" text="Preshing on Programming" comment=""/>
-    <outline xmlUrl="https://feeds.feedburner.com/abseilio" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" loadLinkedWebsite="true" htmlUrl="https://abseil.io" id="1923933018" faviconUrl="file:///home/slbtty/.cache/favicons/feeds.feedburner.com_fb_images_favicon.png" useCustomFetchInterval="false" description="An open-source collection of C++ library code designed to&#xd;&lt;br/>    augment the C++ standard library" type="rss" title="Abseil Blog &amp; Tips" fetchInterval="30" text="Abseil Blog &amp; Tips" comment=""/>
-    <outline xmlUrl="https://oleksandrkvl.github.io/feed.xml" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="/" id="2467210018" useCustomFetchInterval="false" description="Thoughts, experiments, software, C++" type="rss" title="Oleksandr Koval’s blog" fetchInterval="30" text="Oleksandr Koval’s blog" comment=""/>
-    <outline xmlUrl="https://isocpp.org/blog/rss" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="Copyright 2021" htmlUrl="http://isocpp.org/blog" id="2756287697" faviconUrl="file:///home/slbtty/.cache/favicons/isocpp.org.png" useCustomFetchInterval="false" description="" type="rss" title="Standard C++" fetchInterval="30" text="Standard C++" comment=""/>
-   </outline>
-   <outline isOpen="false" id="1730106697" text="Lisp">
-    <outline xmlUrl="http://funcall.blogspot.com/feeds/posts/default?alt=rss" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" loadLinkedWebsite="true" htmlUrl="http://funcall.blogspot.com/" id="3657798735" faviconUrl="file:///home/slbtty/.cache/favicons/funcall.blogspot.com.png" useCustomFetchInterval="false" description="Unorthodox opinions on computer science and programming." type="rss" title="Abstract Heresies" fetchInterval="30" text="Abstract Heresies" comment=""/>
-    <outline xmlUrl="http://p-cos.blogspot.com/feeds/posts/default?alt=rss" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="http://p-cos.blogspot.com/" id="2845020492" faviconUrl="file:///home/slbtty/.cache/favicons/p-cos.blogspot.com.png" useCustomFetchInterval="false" description="Pascal Costanza's Highly Opinionated Blog." type="rss" title="p-cos blog" fetchInterval="30" text="p-cos blog" comment=""/>
-   </outline>
-  </outline>
-  <outline isOpen="false" id="2652167971" text="KDE">
-   <outline xmlUrl="https://purinchu.net/wp/feed/feed.xml" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="https://www.purinchu.net/wp/" id="2789597969" faviconUrl="file:///home/slbtty/.cache/favicons/purinchu.net.png" useCustomFetchInterval="false" description="Michael Pyne&amp;apos;s personal blog" type="rss" title="Michael Pyne’s personal blog" fetchInterval="30" text="Michael Pyne’s personal blog" comment=""/>
-   <outline isOpen="false" id="3766815620" text="qt">
-    <outline xmlUrl="http://feeds.woboq.com/woboq" archiveMode="globalDefault" version="RSS" maxArticleAge="60" maxArticleNumber="1000" copyright="" htmlUrl="https://woboq.com" id="691799700" useCustomFetchInterval="false" description="Woboq does Qt consulting and services" type="rss" title="Woboq" fetchInterval="30" text="Woboq" comment=""/>
-   </outline>
-   <outline xmlUrl="https://dot.kde.org/rss.xml" archiveMode="globalDefault" version="RSS" maxArticleAge="0" maxArticleNumber="0" copyright="" htmlUrl="https://dot.kde.org/frontpage" id="3640517839" useCustomFetchInterval="false" description="" type="rss" title="KDE Dot News" fetchInterval="0" text="KDE Dot News" comment=""/>
-   <outline maxArticleNumber="0" faviconWidth="0" faviconUrl="file:///home/slbtty/.cache/favicons/planet.kde.org.png" version="RSS" fetchInterval="0" copyright="" archiveMode="globalDefault" faviconHeight="0" title="Planet KDE" type="rss" logoUrl="https://planet.kde.org/img/planet.png" text="Planet KDE" logoWidth="0" maxArticleAge="0" logoHeight="0" useCustomFetchInterval="false" xmlUrl="https://planet.kde.org/global/atom.xml" htmlUrl="https://planet.kde.org/" id="2295605682" description="" comment=""/>
-   <outline maxArticleNumber="1000" faviconUrl="file:///home/slbtty/.local/share/akregator/data/i6CMi1fP" version="RSS" fetchInterval="30" copyright="" archiveMode="globalDefault" title="KDAB Blogs – KDAB" type="rss" logoUrl="https://www.kdab.com/wp-content/uploads/stories/cropped-Favicon-32x32.png" logoWidth="32" text="KDAB Blogs – KDAB" logoHeight="32" maxArticleAge="60" useCustomFetchInterval="false" xmlUrl="file:///home/slbtty/.local/share/akregator/data/i6CMi1fP" htmlUrl="https://www.kdab.com" id="2677854616" description="The Qt Experts" comment=""/>
-  </outline>
- </body>
+<?xml version="1.0" ?>
+<opml version="2.0">
+  <head/>
+  <body>
+    <outline type="rss" title="tool-update">
+      <outline type="rss" xmlUrl="https://blog.jabref.org/feed.xml" title="JabRef | Blog"/>
+    </outline>
+    <outline type="rss" title="UnixPeople/BSD">
+      <outline type="rss" xmlUrl="https://vermaden.wordpress.com/feed/" title="𝚟𝚎𝚛𝚖𝚊𝚍𝚎𝚗"/>
+      <outline type="rss" xmlUrl="https://unixsheikh.com/feed.rss" title="unixsheikh.com"/>
+    </outline>
+    <outline type="rss" title="UnixPeople/Linux">
+      <outline type="rss" xmlUrl="http://kroah.com/log/index.rss" title="Linux Kernel Monkey Log"/>
+    </outline>
+    <outline type="rss" title="Friends">
+      <outline type="rss" xmlUrl="https://www.alanshawn.com/atom.xml" title="Alan Xiang's Blog"/>
+      <outline type="rss" xmlUrl="https://asaba.sakuragawa.moe/feed/" title="櫻川家::浅羽"/>
+      <outline type="rss" xmlUrl="https://www.nayuki.io/rss20.xml" title="Project Nayuki"/>
+      <outline type="rss" xmlUrl="https://blog.lilydjwg.me/feed" title="依云's Blog"/>
+      <outline type="rss" xmlUrl="https://cdn.jwz.org/blog/feed/" title="jwz"/>
+      <outline type="rss" xmlUrl="https://www.csslayer.info/wordpress/feed/" title="CS Slayer"/>
+      <outline type="rss" xmlUrl="https://blog.sgorava.xyz/index.xml" title="My land"/>
+      <outline type="rss" xmlUrl="https://sh.alynx.one/atom.xml" title="喵's StackHarbor"/>
+      <outline type="rss" xmlUrl="https://farseerfc.me/feeds/atom.xml" title="Farseerfc的小窩"/>
+      <outline type="rss" xmlUrl="https://blog.codingnow.com/atom.xml" title="云风的 BLOG"/>
+      <outline type="rss" xmlUrl="https://ridiculousfish.com/blog/atom.xml" title="ridiculous_fish"/>
+      <outline type="rss" xmlUrl="https://i.nebula.moe/rss.xml" title="奇想斋"/>
+      <outline type="rss" xmlUrl="http://www.greghendershott.com/feeds/all.atom.xml" title="Posts tagged &quot;all&quot;"/>
+    </outline>
+    <outline type="rss" title="General IT">
+      <outline type="rss" xmlUrl="https://directory.fsf.org/wiki/Special:Ask/-5B-5BSubmitted-20date::%2B-5D-5D/mainlabel%3D/limit%3D50/order%3Ddescending/sort%3DSubmitted-20date/offset%3D0/format%3Drss/searchlabel%3DNew-20packages-20RSS-20feed/title%3DFree-20Software-20Directory/description%3DRecent-20updates-20to-20Free-20Software-20Directory-20(directory.fsf.org)" title="Free Software Directory"/>
+      <outline type="rss" xmlUrl="https://drewdevault.com/blog/index.xml" title="Drew DeVault's blog"/>
+      <outline type="rss" xmlUrl="https://lucumr.pocoo.org/feed.atom" title="Armin Ronacher's Thoughts and Writings"/>
+      <outline type="rss" xmlUrl="https://nullprogram.com/feed/" title="null program"/>
+      <outline type="rss" xmlUrl="https://rosenzweig.io/feed.xml" title="On Life and Lisp"/>
+      <outline type="rss" xmlUrl="https://daniel.haxx.se/blog/feed/" title="daniel.haxx.se"/>
+      <outline type="rss" xmlUrl="https://martinfowler.com/feed.atom" title="Martin Fowler"/>
+      <outline type="rss" xmlUrl="https://hpjansson.org/blag/feed/" title="Et tu, Cthulhu"/>
+      <outline type="rss" xmlUrl="https://devblogs.microsoft.com/oldnewthing/author/oldnewthing/feed" title="Raymond Chen – The Old New Thing"/>
+      <outline type="rss" xmlUrl="https://linuxreviews.org/feed.rss" title="LinuxReviews News (RSS/English)"/>
+    </outline>
+    <outline type="rss" title="ProgrammingLanguages/C++">
+      <outline type="rss" xmlUrl="https://www.cppstories.com/index.xml" title="C++ Stories"/>
+      <outline type="rss" xmlUrl="https://iscinumpy.gitlab.io/index.xml" title="ISciNumPy"/>
+      <outline type="rss" xmlUrl="https://preshing.com/feed" title="Preshing on Programming"/>
+      <outline type="rss" xmlUrl="https://feeds.feedburner.com/abseilio" title="Abseil Blog &amp; Tips"/>
+      <outline type="rss" xmlUrl="https://oleksandrkvl.github.io/feed.xml" title="Oleksandr Koval’s blog"/>
+      <outline type="rss" xmlUrl="https://isocpp.org/blog/rss" title="Standard C++"/>
+    </outline>
+    <outline type="rss" title="ProgrammingLanguages/Lisp">
+      <outline type="rss" xmlUrl="http://funcall.blogspot.com/feeds/posts/default?alt=rss" title="Abstract Heresies"/>
+      <outline type="rss" xmlUrl="http://p-cos.blogspot.com/feeds/posts/default?alt=rss" title="p-cos blog"/>
+    </outline>
+    <outline type="rss" title="KDE">
+      <outline type="rss" xmlUrl="https://purinchu.net/wp/feed/feed.xml" title="Michael Pyne’s personal blog"/>
+      <outline type="rss" xmlUrl="https://dot.kde.org/rss.xml" title="KDE.news"/>
+      <outline type="rss" xmlUrl="https://planet.kde.org/global/atom.xml" title="Planet KDE | English"/>
+      <outline type="rss" xmlUrl="file:///home/slbtty/.local/share/akregator/data/i6CMi1fP" title=""/>
+    </outline>
+    <outline type="rss" title="KDE/qt">
+      <outline type="rss" xmlUrl="http://feeds.woboq.com/woboq" title="Woboq"/>
+    </outline>
+  </body>
 </opml>
 
