@@ -13,11 +13,17 @@ psql -> main cli
 
 check port -> `cat /etc/services | grep postgresql`
 
+by default, new schema goes into "public"
+
 # Misc
 
 default data dir
 
 /var/lib/postgres/data/
 
+pSQL Use cluster->databases->schemas hierarchy
+-> MySql only use schemas
+
 TODO:
 + .pgpass?
++ Important feature -> PostGIS
