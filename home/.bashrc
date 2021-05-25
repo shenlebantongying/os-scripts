@@ -15,7 +15,8 @@ PS1='[\u@\h \W]\$ '
 PATH=$PATH\
 :${HOME}/.local/bin\
 :${HOME}/bin\
-:${HOME}/script
+:${HOME}/script\
+:${HOME}/.cargo/bin
 
 LESSOPEN="|lesspipe.sh %s"; export LESSOPEN
 
@@ -43,3 +44,4 @@ extract () {
    fi
 }
 
+. "$HOME/.cargo/env"

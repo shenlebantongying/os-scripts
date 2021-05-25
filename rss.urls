@@ -1,4 +1,5 @@
 https://blog.jabref.org/feed.xml "tool-update"
+https://www.lyx.org/misc/rss/lyx_news_feed.xml "tool-update"
 https://vermaden.wordpress.com/feed/ "UnixPeople/BSD"
 https://unixsheikh.com/feed.rss "UnixPeople/BSD"
 http://kroah.com/log/index.rss "UnixPeople/Linux"
@@ -37,4 +38,5 @@ https://purinchu.net/wp/feed/feed.xml "KDE"
 http://feeds.woboq.com/woboq "KDE/qt"
 https://dot.kde.org/rss.xml "KDE"
 https://planet.kde.org/global/atom.xml "KDE"
-file:///home/slbtty/.local/share/akregator/data/i6CMi1fP "KDE"
+http://techrights.org/feed/ "news"
+https://lucumr.pocoo.org/feed.atom

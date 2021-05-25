@@ -4,6 +4,7 @@
   <body>
     <outline type="rss" title="tool-update">
       <outline type="rss" xmlUrl="https://blog.jabref.org/feed.xml" title="JabRef | Blog"/>
+      <outline type="rss" xmlUrl="https://www.lyx.org/misc/rss/lyx_news_feed.xml" title="LyX news feed"/>
     </outline>
     <outline type="rss" title="UnixPeople/BSD">
       <outline type="rss" xmlUrl="https://vermaden.wordpress.com/feed/" title="𝚟𝚎𝚛𝚖𝚊𝚍𝚎𝚗"/>
@@ -55,10 +56,12 @@
       <outline type="rss" xmlUrl="https://purinchu.net/wp/feed/feed.xml" title="Michael Pyne’s personal blog"/>
       <outline type="rss" xmlUrl="https://dot.kde.org/rss.xml" title="KDE.news"/>
       <outline type="rss" xmlUrl="https://planet.kde.org/global/atom.xml" title="Planet KDE | English"/>
-      <outline type="rss" xmlUrl="file:///home/slbtty/.local/share/akregator/data/i6CMi1fP" title=""/>
     </outline>
     <outline type="rss" title="KDE/qt">
       <outline type="rss" xmlUrl="http://feeds.woboq.com/woboq" title="Woboq"/>
+    </outline>
+    <outline type="rss" title="news">
+      <outline type="rss" xmlUrl="http://techrights.org/feed/" title="Techrights"/>
     </outline>
   </body>
 </opml>
