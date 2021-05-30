@@ -8,7 +8,9 @@
 EDITOR=vim
 
 alias ls='ls --color=auto'
-alias ll='ls -l -h --color=auto'
+
+#conflict with llvm's ll 
+#alias ll='ls -l -h --color=auto'
 
 PS1='[\u@\h \W]\$ '
 

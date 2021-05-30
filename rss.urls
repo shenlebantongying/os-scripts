@@ -39,4 +39,6 @@ http://feeds.woboq.com/woboq "KDE/qt"
 https://dot.kde.org/rss.xml "KDE"
 https://planet.kde.org/global/atom.xml "KDE"
 http://techrights.org/feed/ "news"
-https://lucumr.pocoo.org/feed.atom
+https://lucumr.pocoo.org/feed.atom "General IT"
+https://benjamincongdon.me/blog/feed.xml "General IT"
+https://matklad.github.io/feed.xml "General IT"
