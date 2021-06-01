@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/bash
 
 set -e
 
@@ -40,4 +40,6 @@ green-msg "Linking ${2} to ${1}"
 link_file "${HOME}/.bashrc" "${SCRIPTPATH}/home/.bashrc"
 link_file "${HOME}/.bash_profile" "${SCRIPTPATH}/home/.bash_profile"
 link_file "${HOME}/.vimrc" "${SCRIPTPATH}/home/.vimrc"
+link_file "${HOME}/.config/nvim/init.vim" "${SCRIPTPATH}/home/.config/nvim/init.vim"
 
+# link_file .spacemacs are inside setup-spacemacs.bash

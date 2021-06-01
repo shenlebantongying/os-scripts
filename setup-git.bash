@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 
-if [ -x "$(command -v kate)" ]; then
+if [ -x "$(command -v nvim)" ]; then
+  echo '> Set nvim as editor'
+  git config --global core.editor "nvim"
+elif [ -x "$(command -v vim)" ]; then
+  echo '> Set vim as editor'
+  git config --global core.editor "vim"
+elif [ -x "$(command -v kate)" ]; then
   echo '> Set Kate as editor'
   git config --global core.editor "kate"
 elif [ -x "$(command -v emacs)" ]; then

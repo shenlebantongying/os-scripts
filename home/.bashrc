@@ -8,6 +8,9 @@
 EDITOR=vim
 
 alias ls='ls --color=auto'
+alias a-addrss='vim ~/.newsboat/urls'
+alias vim='nvim'
+alias vimdiff='nvim -d'
 
 #conflict with llvm's ll 
 #alias ll='ls -l -h --color=auto'

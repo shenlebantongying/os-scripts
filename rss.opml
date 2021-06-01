@@ -42,6 +42,7 @@
       <outline type="rss" xmlUrl="https://lucumr.pocoo.org/feed.atom" title="Armin Ronacher's Thoughts and Writings"/>
       <outline type="rss" xmlUrl="https://benjamincongdon.me/blog/feed.xml" title="Ben Congdon"/>
       <outline type="rss" xmlUrl="https://matklad.github.io/feed.xml" title="matklad"/>
+      <outline type="rss" xmlUrl="https://raphlinus.github.io/feed.xml" title="Raph Levien’s blog"/>
     </outline>
     <outline type="rss" title="ProgrammingLanguages/C++">
       <outline type="rss" xmlUrl="https://www.cppstories.com/index.xml" title="C++ Stories"/>
