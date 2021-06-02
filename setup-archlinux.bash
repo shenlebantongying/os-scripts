@@ -14,7 +14,8 @@ qt5-tools \
 fuse\
 hunspell\
 hunspell-en_us\
-newsboat
+newsboat\
+xdg-desktop-portal-kde
 "
 
 utl="fzf\
