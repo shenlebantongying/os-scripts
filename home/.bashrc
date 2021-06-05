@@ -15,13 +15,14 @@ alias vimdiff='nvim -d'
 #conflict with llvm's ll 
 #alias ll='ls -l -h --color=auto'
 
-PS1='[\u@\h \W]\$ '
+PS1='\n[\t \w]\n\$ '
 
 PATH=$PATH\
 :${HOME}/.local/bin\
 :${HOME}/bin\
 :${HOME}/script\
-:${HOME}/.cargo/bin
+:${HOME}/.cargo/bin\
+:${HOME}/.dotnet
 
 LESSOPEN="|lesspipe.sh %s"; export LESSOPEN
 

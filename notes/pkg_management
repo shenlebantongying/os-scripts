@@ -1,0 +1,3 @@
+`pacman -Qi` -> What depend on package X?
+
+`pip3 list --outdated --user`
