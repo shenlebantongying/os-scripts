@@ -28,8 +28,7 @@
       <outline type="rss" xmlUrl="https://i.nebula.moe/rss.xml" title="奇想斋"/>
       <outline type="rss" xmlUrl="http://www.greghendershott.com/feeds/all.atom.xml" title="Posts tagged &quot;all&quot;"/>
     </outline>
-    <outline type="rss" title="General IT">
-      <outline type="rss" xmlUrl="https://directory.fsf.org/wiki/Special:Ask/-5B-5BSubmitted-20date::%2B-5D-5D/mainlabel%3D/limit%3D50/order%3Ddescending/sort%3DSubmitted-20date/offset%3D0/format%3Drss/searchlabel%3DNew-20packages-20RSS-20feed/title%3DFree-20Software-20Directory/description%3DRecent-20updates-20to-20Free-20Software-20Directory-20(directory.fsf.org)" title="Free Software Directory"/>
+    <outline type="rss" title="IT">
       <outline type="rss" xmlUrl="https://drewdevault.com/blog/index.xml" title="Drew DeVault's blog"/>
       <outline type="rss" xmlUrl="https://lucumr.pocoo.org/feed.atom" title="Armin Ronacher's Thoughts and Writings"/>
       <outline type="rss" xmlUrl="https://nullprogram.com/feed/" title="null program"/>
@@ -43,8 +42,16 @@
       <outline type="rss" xmlUrl="https://benjamincongdon.me/blog/feed.xml" title="Ben Congdon"/>
       <outline type="rss" xmlUrl="https://matklad.github.io/feed.xml" title="matklad"/>
       <outline type="rss" xmlUrl="https://raphlinus.github.io/feed.xml" title="Raph Levien’s blog"/>
+      <outline type="rss" xmlUrl="https://eliasdaler.github.io/feed.xml" title="Elias Daler's blog"/>
+      <outline type="rss" xmlUrl="https://netcan.github.io/atom.xml" title="Netcan on Programming"/>
+      <outline type="rss" xmlUrl="https://www.internalpointers.com/rss" title="Internal Pointers"/>
+      <outline type="rss" xmlUrl="https://matt.might.net/articles/feed.rss" title="Matt Might's blog"/>
+      <outline type="rss" xmlUrl="http://wcook.blogspot.com/feeds/posts/default?alt=rss" title="William Cook's Fusings"/>
+      <outline type="rss" xmlUrl="https://ctian.livejournal.com/data/rss" title="Chun Tian (binghe)"/>
+      <outline type="rss" xmlUrl="https://michaelnielsen.org/blog/feed/" title="Michael Nielsen"/>
+      <outline type="rss" xmlUrl="http://research.swtch.com/feed.atom" title=""/>
     </outline>
-    <outline type="rss" title="ProgrammingLanguages/C++">
+    <outline type="rss" title="C++">
       <outline type="rss" xmlUrl="https://www.cppstories.com/index.xml" title="C++ Stories"/>
       <outline type="rss" xmlUrl="https://iscinumpy.gitlab.io/index.xml" title="ISciNumPy"/>
       <outline type="rss" xmlUrl="https://preshing.com/feed" title="Preshing on Programming"/>
@@ -52,7 +59,7 @@
       <outline type="rss" xmlUrl="https://oleksandrkvl.github.io/feed.xml" title="Oleksandr Koval’s blog"/>
       <outline type="rss" xmlUrl="https://isocpp.org/blog/rss" title="Standard C++"/>
     </outline>
-    <outline type="rss" title="ProgrammingLanguages/Lisp">
+    <outline type="rss" title="Lisp">
       <outline type="rss" xmlUrl="http://funcall.blogspot.com/feeds/posts/default?alt=rss" title="Abstract Heresies"/>
       <outline type="rss" xmlUrl="http://p-cos.blogspot.com/feeds/posts/default?alt=rss" title="p-cos blog"/>
     </outline>
@@ -66,6 +73,9 @@
     </outline>
     <outline type="rss" title="news">
       <outline type="rss" xmlUrl="http://techrights.org/feed/" title="Techrights"/>
+    </outline>
+    <outline type="rss" title="python">
+      <outline type="rss" xmlUrl="http://feeds.feedburner.com/PythonInsider" title="Python Insider"/>
     </outline>
   </body>
 </opml>

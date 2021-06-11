@@ -6,4 +6,3 @@ if [ "$CONT" = "y" ]; then
 else
   echo "exit";
 fi
-

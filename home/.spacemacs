@@ -49,6 +49,7 @@ This function should only modify configuration layer settings."
      ;; git
      helm
      perl5
+     latex
      ;; lsp
      ;; markdown
      multiple-cursors

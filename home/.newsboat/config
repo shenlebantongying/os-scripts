@@ -1,0 +1,11 @@
+browser "xdg-open '%u'"
+
+auto-reload yes
+feed-sort-order title-dec
+
+reload-threads 2
+
+bind-key w up
+bind-key s down
+bind-key d open
+bind-key x open-in-browser-and-mark-read

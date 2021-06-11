@@ -1,9 +1,14 @@
-#
-# ~/.bashrc
-#
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
+## Copied from ubuntu's default
+# don't put duplicate lines or lines starting with space in the history.
+# See bash(1) for more options
+HISTCONTROL=ignoreboth
+
+# check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
 
 EDITOR=vim
 
@@ -21,8 +26,13 @@ PATH=$PATH\
 :${HOME}/.local/bin\
 :${HOME}/bin\
 :${HOME}/script\
-:${HOME}/.cargo/bin\
-:${HOME}/.dotnet
+:${HOME}/.dotnet\
+:${HOME}/.ghcup/
+
+
+# TODO: what is inside the env script?
+. "$HOME/.cargo/env"
+[ -f "/home/slbtty/.ghcup/env" ] && source "/home/slbtty/.ghcup/env" # ghcup-env
 
 LESSOPEN="|lesspipe.sh %s"; export LESSOPEN
 
@@ -50,4 +60,6 @@ extract () {
    fi
 }
 
-. "$HOME/.cargo/env"
+function gitcom() {
+  git commit -m "[> $(date -u)"
+}
