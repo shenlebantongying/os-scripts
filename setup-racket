@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
-source slb.bash
+
+set -e
+function green-msg(){ 
+    echo -e "\e[0;32m[slb] $1\e[0m"
+}
 
 if command -v racket &> /dev/null
 then

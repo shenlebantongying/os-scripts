@@ -11,16 +11,17 @@ ark \
 bash-completion \
 shellcheck \
 qt5-tools \
-fuse\
-hunspell\
-hunspell-en_us\
-newsboat\
-xdg-desktop-portal-kde
+fuse \
+hunspell \
+hunspell-en_us \
+newsboat \
+xdg-desktop-portal-kde \
 "
 
-utl="fzf\
-ack\
-ncdu\
+utl="fzf \
+ack \
+ncdu \
+man-db \
 "
 
 

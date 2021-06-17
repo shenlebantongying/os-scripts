@@ -27,6 +27,7 @@
       <outline type="rss" xmlUrl="https://ridiculousfish.com/blog/atom.xml" title="ridiculous_fish"/>
       <outline type="rss" xmlUrl="https://i.nebula.moe/rss.xml" title="奇想斋"/>
       <outline type="rss" xmlUrl="http://www.greghendershott.com/feeds/all.atom.xml" title="Posts tagged &quot;all&quot;"/>
+      <outline type="rss" xmlUrl="https://pockies.github.io/feed.xml" title="Pockies"/>
     </outline>
     <outline type="rss" title="IT">
       <outline type="rss" xmlUrl="https://drewdevault.com/blog/index.xml" title="Drew DeVault's blog"/>
@@ -49,7 +50,10 @@
       <outline type="rss" xmlUrl="http://wcook.blogspot.com/feeds/posts/default?alt=rss" title="William Cook's Fusings"/>
       <outline type="rss" xmlUrl="https://ctian.livejournal.com/data/rss" title="Chun Tian (binghe)"/>
       <outline type="rss" xmlUrl="https://michaelnielsen.org/blog/feed/" title="Michael Nielsen"/>
-      <outline type="rss" xmlUrl="http://research.swtch.com/feed.atom" title=""/>
+      <outline type="rss" xmlUrl="http://research.swtch.com/feed.atom" title="research!rsc"/>
+      <outline type="rss" xmlUrl="http://blog.ezyang.com/feed/" title="ezyang’s blog"/>
+      <outline type="rss" xmlUrl="https://dr-knz.net/feeds/all.rss.xml" title="dr knz @ work"/>
+      <outline type="rss" xmlUrl="https://unixism.net/feed/" title="Unixism"/>
     </outline>
     <outline type="rss" title="C++">
       <outline type="rss" xmlUrl="https://www.cppstories.com/index.xml" title="C++ Stories"/>

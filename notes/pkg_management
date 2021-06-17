@@ -1,3 +1,5 @@
 `pacman -Qi` -> What depend on package X?
+`pacman -Qm` -> list local aur
+`pacman -Qo` -> file belong to which file?
 
 `pip3 list --outdated --user`

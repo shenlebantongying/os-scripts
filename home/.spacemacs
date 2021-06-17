@@ -549,10 +549,11 @@ before packages are loaded."
   (put 'suspend-frame 'disabled t)
   (setq tab-always-indent 'complete)
   (menu-bar-mode)
-  (tool-bar-mode)
+  ;;(tool-bar-mode)
   (setq default-tab-width 4)
   (add-hook 'scheme-mode-hook 'enable-paredit-mode)
-  (xterm-mouse-mode -1)
+  ;; Doesn't work on some terminals
+  ;;(xterm-mouse-mode -1)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will

@@ -27,15 +27,17 @@ PATH=$PATH\
 :${HOME}/bin\
 :${HOME}/script\
 :${HOME}/.dotnet\
-:${HOME}/.ghcup/
-
+:${HOME}/.ghcup/\
+:${HOME}/.cabal/bin\
+:${HOME}/.rbenv/bin
 
 # TODO: what is inside the env script?
-. "$HOME/.cargo/env"
-[ -f "/home/slbtty/.ghcup/env" ] && source "/home/slbtty/.ghcup/env" # ghcup-env
+eval $(opam env)
+eval "$(rbenv init - bash)"
+[ -f "${HOME}/.cargo/env" ] && source "${HOME}/.cargo/env"
+[ -f "${HOME}/.ghcup/env" ] && source "${HOME}/.ghcup/env" # ghcup-env
 
 LESSOPEN="|lesspipe.sh %s"; export LESSOPEN
-
 
 # Extra commands
 
@@ -60,6 +62,6 @@ extract () {
    fi
 }
 
-function gitcom() {
-  git commit -m "[> $(date -u)"
-}
+# function gitcom() {
+#     git commit -m "[> $(date -u)"
+# }
