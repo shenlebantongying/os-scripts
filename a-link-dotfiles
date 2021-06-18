@@ -7,7 +7,7 @@ SCRIPTPATH=$(dirname "$SCRIPT") #-> only /home/slbtty/scripts
 
 function _color_echo()
 {
-  echo -e "\e[0;$1m [slb] $2\e[0m"
+  echo -e "\e[0;$1m> $2\e[0m"
 }
 
 # Note: - maybe invlid for some shell env
@@ -26,21 +26,73 @@ _color_echo "34" "$1";
 # $1 -> Path to file inside git
 # $2 -> Path to system target 
 function link_file(){
+
+if [ ! -f "$2" ];
+then
+    red-msg "$2 doesn't exist! Trying to copy it from home!"
+    if [ -f "$1" ]; 
+    then
+        cp "$1" "$2"
+    else 
+        red-msg "$1 doesn't exist too!"
+        return;
+    fi 
+fi
+
 if [ -f "$1" ];
 then
-    rm "$1"
-    red-msg "Remove $1"
+    if [ "$(file --mime-type --brief "$1")" == "inode/symlink" ];then
+        green-msg "${1} is already linked!"
+    else
+        ln -s "$2" "$1"
+        green-msg "Link ${2} to ${1}"
+    fi
 else
     green-msg "No $1 in home"
 fi
-ln -s "$2" "$1"
-green-msg "Linking ${2} to ${1}"
 }
+
+function link_file2(){
+    homeloc="${HOME}/${1}"
+    scrploc="${SCRIPTPATH}/home/${1}"
+    
+if [ ! -f "$scrploc" ];
+then
+    red-msg "$scrploc doesn't exist"
+    green-msg "Trying to copy it from $homeloc"
+    if [ -f "$homeloc" ]; 
+    then
+        green-msg "Copying $homeloc to $scrploc"
+        dirloc=$(dirname "$scrploc")
+        mkdir -p "$dirloc" &&  cp "$homeloc" "$scrploc"
+    else 
+        red-msg "$homeloc doesn't exist too!"
+        return;
+    fi 
+fi
+
+if [ -f "$homeloc" ];
+then
+    if [ "$(file --mime-type --brief "$1")" == "inode/symlink" ];then
+        green-msg "${1} is already linked!"
+    else 
+        red-msg "Remove original $homeloc"
+        rm "$homeloc"
+    fi
+else
+    green-msg "No $homeloc in home"
+fi
+ln -s "$scrploc" "$homeloc"
+green-msg "Link ${homeloc} to ${scrploc}"
+}
+
 
 link_file "${HOME}/.bashrc" "${SCRIPTPATH}/home/.bashrc"
 link_file "${HOME}/.bash_profile" "${SCRIPTPATH}/home/.bash_profile"
 link_file "${HOME}/.vimrc" "${SCRIPTPATH}/home/.vimrc"
 link_file "${HOME}/.config/nvim/init.vim" "${SCRIPTPATH}/home/.config/nvim/init.vim"
 link_file "${HOME}/.newsboat/config" "${SCRIPTPATH}/home/.newsboat/config"
-
 # link_file .spacemacs are inside setup-spacemacs.bash
+
+link_file2 ".config/ranger/rc.conf"
+link_file2 ".config/ranger/rifle.conf"

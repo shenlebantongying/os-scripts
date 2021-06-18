@@ -10,12 +10,16 @@ HISTCONTROL=ignoreboth
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-EDITOR=vim
+export EDITOR=nvim
+export VISUAL=nvim
 
 alias ls='ls --color=auto'
 alias a-addrss='vim ~/.newsboat/urls'
 alias vim='nvim'
 alias vimdiff='nvim -d'
+
+# nav expert
+alias q='cd ../'
 
 #conflict with llvm's ll 
 #alias ll='ls -l -h --color=auto'

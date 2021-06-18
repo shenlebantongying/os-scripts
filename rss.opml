@@ -13,7 +13,7 @@
     <outline type="rss" title="UnixPeople/Linux">
       <outline type="rss" xmlUrl="http://kroah.com/log/index.rss" title="Linux Kernel Monkey Log"/>
     </outline>
-    <outline type="rss" title="Friends">
+    <outline type="rss" title="friends">
       <outline type="rss" xmlUrl="https://www.alanshawn.com/atom.xml" title="Alan Xiang's Blog"/>
       <outline type="rss" xmlUrl="https://asaba.sakuragawa.moe/feed/" title="櫻川家::浅羽"/>
       <outline type="rss" xmlUrl="https://www.nayuki.io/rss20.xml" title="Project Nayuki"/>
@@ -29,7 +29,7 @@
       <outline type="rss" xmlUrl="http://www.greghendershott.com/feeds/all.atom.xml" title="Posts tagged &quot;all&quot;"/>
       <outline type="rss" xmlUrl="https://pockies.github.io/feed.xml" title="Pockies"/>
     </outline>
-    <outline type="rss" title="IT">
+    <outline type="rss" title="software">
       <outline type="rss" xmlUrl="https://drewdevault.com/blog/index.xml" title="Drew DeVault's blog"/>
       <outline type="rss" xmlUrl="https://lucumr.pocoo.org/feed.atom" title="Armin Ronacher's Thoughts and Writings"/>
       <outline type="rss" xmlUrl="https://nullprogram.com/feed/" title="null program"/>
@@ -54,8 +54,9 @@
       <outline type="rss" xmlUrl="http://blog.ezyang.com/feed/" title="ezyang’s blog"/>
       <outline type="rss" xmlUrl="https://dr-knz.net/feeds/all.rss.xml" title="dr knz @ work"/>
       <outline type="rss" xmlUrl="https://unixism.net/feed/" title="Unixism"/>
+      <outline type="rss" xmlUrl="https://blog.feabhas.com/feed/" title="Sticky Bits – Powered by Feabhas"/>
     </outline>
-    <outline type="rss" title="C++">
+    <outline type="rss" title="c++">
       <outline type="rss" xmlUrl="https://www.cppstories.com/index.xml" title="C++ Stories"/>
       <outline type="rss" xmlUrl="https://iscinumpy.gitlab.io/index.xml" title="ISciNumPy"/>
       <outline type="rss" xmlUrl="https://preshing.com/feed" title="Preshing on Programming"/>
@@ -67,12 +68,12 @@
       <outline type="rss" xmlUrl="http://funcall.blogspot.com/feeds/posts/default?alt=rss" title="Abstract Heresies"/>
       <outline type="rss" xmlUrl="http://p-cos.blogspot.com/feeds/posts/default?alt=rss" title="p-cos blog"/>
     </outline>
-    <outline type="rss" title="KDE">
+    <outline type="rss" title="kde">
       <outline type="rss" xmlUrl="https://purinchu.net/wp/feed/feed.xml" title="Michael Pyne’s personal blog"/>
       <outline type="rss" xmlUrl="https://dot.kde.org/rss.xml" title="KDE.news"/>
       <outline type="rss" xmlUrl="https://planet.kde.org/global/atom.xml" title="Planet KDE | English"/>
     </outline>
-    <outline type="rss" title="KDE/qt">
+    <outline type="rss" title="kde/qt">
       <outline type="rss" xmlUrl="http://feeds.woboq.com/woboq" title="Woboq"/>
     </outline>
     <outline type="rss" title="news">
@@ -80,6 +81,9 @@
     </outline>
     <outline type="rss" title="python">
       <outline type="rss" xmlUrl="http://feeds.feedburner.com/PythonInsider" title="Python Insider"/>
+    </outline>
+    <outline type="rss" title="linux">
+      <outline type="rss" xmlUrl="http://www.kroah.com/log/index.rss" title="Linux Kernel Monkey Log"/>
     </outline>
   </body>
 </opml>
