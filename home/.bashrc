@@ -17,9 +17,18 @@ alias ls='ls --color=auto'
 alias a-addrss='vim ~/.newsboat/urls'
 alias vim='nvim'
 alias vimdiff='nvim -d'
+alias e='emacs'
 
 # nav expert
-alias q='cd ../'
+alias q='cd ..'
+alias qq='cd ../..'
+alias qqq='cd ../../..'
+
+# mad man nav
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
 
 #conflict with llvm's ll 
 #alias ll='ls -l -h --color=auto'
