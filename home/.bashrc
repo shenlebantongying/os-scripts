@@ -10,13 +10,27 @@ HISTCONTROL=ignoreboth
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# a hack to make cd easier.
+# cd ./nice -> cd nice
+CDPATH=".:~"
+
 export EDITOR=nvim
 export VISUAL=nvim
 
+# better defaults
 alias ls='ls --color=auto'
-alias a-addrss='vim ~/.newsboat/urls'
+alias pstree='pstree --highlight-all --show-pids --hide-threads'
 alias vim='nvim'
 alias vimdiff='nvim -d'
+
+# handy toolkits
+alias byte2readable='numfmt --to=iec-i --suffix=B'
+alias cmx='chmod +x'
+alias gs='git status -sb'
+alias a-addrss='vim ~/.newsboat/urls'
+
+# shortcuts
+alias v='nvim-qt'
 alias e='emacs'
 
 # nav expert
@@ -45,7 +59,7 @@ PATH=$PATH\
 :${HOME}/.rbenv/bin
 
 # TODO: what is inside the env script?
-eval $(opam env)
+eval "$(opam env)"
 eval "$(rbenv init - bash)"
 [ -f "${HOME}/.cargo/env" ] && source "${HOME}/.cargo/env"
 [ -f "${HOME}/.ghcup/env" ] && source "${HOME}/.ghcup/env" # ghcup-env

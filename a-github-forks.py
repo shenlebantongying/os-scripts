@@ -2,6 +2,8 @@
 import requests
 import sys
 
+# TODO: implement comare functionality https://docs.github.com/en/rest/reference/repos#compare-two-commits
+
 username="shenlebantongying"
 token=""
 aAuth=(username,token)

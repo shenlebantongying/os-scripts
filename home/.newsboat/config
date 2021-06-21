@@ -1,7 +1,7 @@
 browser "xdg-open '%u'"
 
 auto-reload yes
-feed-sort-order title-dec
+feed-sort-order unreadarticlecount-asc
 
 reload-threads 2
 

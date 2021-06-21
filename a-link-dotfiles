@@ -96,3 +96,4 @@ link_file "${HOME}/.newsboat/config" "${SCRIPTPATH}/home/.newsboat/config"
 
 link_file2 ".config/ranger/rc.conf"
 link_file2 ".config/ranger/rifle.conf"
+link_file2 ".config/nvim/ginit.vim"

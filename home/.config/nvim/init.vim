@@ -1,5 +1,7 @@
 " barebone vimrc <- this is a comment
 
+set autochdir
+
 syntax enable
 
 set encoding=utf-8

@@ -17,6 +17,11 @@ function _color_echo()
 function green-msg2(){ 
     echo -e "\e[0;32m[slb] $1\e[0m"
 }
+
+function red-msg2(){ 
+    echo -e "\e[0;31m[slb] $1\e[0m"
+}
+
 # Note: - maybe invlid for some shell env
 function red-msg(){ 
     _color_echo "31" "$1";

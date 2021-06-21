@@ -24,4 +24,8 @@ GUI app without output `> /dev/null 2>&1`
 ```
 function guisu(){pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY DBUS_SESSION_BUS_ADDRESS=$DBUS_SESSION_BUS_ADDRES dbus-launch "$1"> /dev/null 2>&1}
 ```
+##
 
+Remove all lines begin with # or //
+
+grep -o '^[^#].*' file

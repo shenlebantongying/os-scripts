@@ -24,9 +24,16 @@ ncdu \
 man-db \
 "
 
+# wl-copy wl-paste for future
+neovim="neovim \
+neovim-qt \
+xclip \
+xsel \
+"
 
 sudo pacman -S --needed "${needed}"
 sudo pacman -S "${core}"
+sudo pacman -S "${neovim}"
 
 #fonts
 
