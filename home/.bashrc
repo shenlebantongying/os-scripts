@@ -17,6 +17,7 @@ CDPATH=".:~"
 export EDITOR=nvim
 export VISUAL=nvim
 
+
 # better defaults
 alias ls='ls --color=auto'
 alias pstree='pstree --highlight-all --show-pids --hide-threads'
@@ -43,7 +44,6 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
-
 #conflict with llvm's ll 
 #alias ll='ls -l -h --color=auto'
 
@@ -52,17 +52,20 @@ PS1='\n[\t \w]\n\$ '
 PATH=$PATH\
 :${HOME}/.local/bin\
 :${HOME}/bin\
-:${HOME}/script\
+:${HOME}/s\
 :${HOME}/.dotnet\
-:${HOME}/.ghcup/\
+:${HOME}/.ghcup/bin\
 :${HOME}/.cabal/bin\
-:${HOME}/.rbenv/bin
+:${HOME}/.rbenv/bin\
+:${HOME}/.cargo/bin\
 
-# TODO: what is inside the env script?
 eval "$(opam env)"
 eval "$(rbenv init - bash)"
-[ -f "${HOME}/.cargo/env" ] && source "${HOME}/.cargo/env"
-[ -f "${HOME}/.ghcup/env" ] && source "${HOME}/.ghcup/env" # ghcup-env
+
+
+# -> uselss, env files are just appending PATH withe extra steps
+# [ -f "${HOME}/.ghcup/env" ] && source "${HOME}/.ghcup/env" # ghcup-env
+# [ -f "${HOME}/.cargo/env" ] && source "${HOME}/.cargo/env"
 
 LESSOPEN="|lesspipe.sh %s"; export LESSOPEN
 
@@ -92,3 +95,14 @@ extract () {
 # function gitcom() {
 #     git commit -m "[> $(date -u)"
 # }
+
+
+# Antlr and java
+
+# disabled due to annoyance
+# export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.defaultlaf=javax.swing.plaf.nimbus.NimbusLookAndFeel'
+
+alias antlr4='java -Xmx500M -cp "/usr/local/lib/antlr-4.9-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
+alias grun='java -Xmx500M -cp "/usr/local/lib/antlr-4.9-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'
+
+export CLASSPATH=".:/usr/local/lib/antlr-4.9-complete.jar:$CLASSPATH"

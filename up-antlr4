@@ -1,0 +1,7 @@
+#!/bin/bash
+
+#<https://github.com/antlr/antlr4/blob/master/doc/getting-started.md>
+
+set -e
+cd /usr/local/lib
+curl -O https://www.antlr.org/download/antlr-4.9-complete.jar

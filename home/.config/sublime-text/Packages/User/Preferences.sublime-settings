@@ -1,0 +1,28 @@
+{
+	"font_size": 10,
+	"ui_scale": 1.2,
+	"font_face": "Hack",
+
+	// speed
+	"hardware_acceleration": "opengl",
+	"animation_enabled": false,
+	"tree_animation_enabled": false,
+
+	// tab bar
+	"hide_tab_scrolling_buttons": true,
+	"highlight_modified_tabs": true,
+	
+	//misc
+	"remember_workspace": false,
+
+	"added_words":
+	[
+		"python3"
+	],
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+	"close_windows_when_empty": false,
+	"color_scheme": "Mariana.sublime-color-scheme",
+}
