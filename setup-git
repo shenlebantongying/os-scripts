@@ -20,4 +20,7 @@ fi
 git config --global user.name "shenleban tongying"
 git config --global user.email shenlebantongying@gmail.com
 
+git config --global core.autocrlf input
+git config --global init.defaultBranch main
+
 git config --list

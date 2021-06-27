@@ -10,4 +10,3 @@ if(Test-Path $PROFILE.CurrentUserAllHosts){
 }
 
 New-link $PSScriptRoot\backup\profile.ps1 $profile.CurrentUserAllHosts
-

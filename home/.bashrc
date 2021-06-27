@@ -28,11 +28,13 @@ alias vimdiff='nvim -d'
 alias byte2readable='numfmt --to=iec-i --suffix=B'
 alias cmx='chmod +x'
 alias gs='git status -sb'
-alias a-addrss='vim ~/.newsboat/urls'
+alias a-rss='vim ~/.newsboat/urls'
 
 # shortcuts
 alias v='nvim-qt'
 alias e='emacs'
+alias sublime='subl'
+alias merge='smerge'
 
 # nav expert
 alias q='cd ..'

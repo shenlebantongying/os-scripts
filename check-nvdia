@@ -1,0 +1,13 @@
+#!/bin/sh
+
+set -x
+
+lspci -nnk | grep -iA2 vga 
+
+# lspci
+# -nn             Show both textual and numeric ID's (names & numbers)
+# -k              Show kernel drivers handling each device
+
+# grep
+# -i, --ignore-case         ignore case distinctions in patterns and data
+# -A, --after-context=NUM   print NUM lines of trailing context

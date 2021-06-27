@@ -1,6 +1,5 @@
 {
-	"font_size": 10,
-	"ui_scale": 1.2,
+	"font_size": 13,
 	"font_face": "Hack",
 
 	// speed
@@ -13,7 +12,8 @@
 	"highlight_modified_tabs": true,
 	
 	//misc
-	"remember_workspace": false,
+	//"remember_workspace": false,
+
 
 	"added_words":
 	[
@@ -24,5 +24,5 @@
 		"Vintage",
 	],
 	"close_windows_when_empty": false,
-	"color_scheme": "Mariana.sublime-color-scheme",
+	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
 }
