@@ -1,3 +1,4 @@
+Set-PSReadLineOption -Colors @{ Command = 'Magenta' }
 function write-hello(){
     Write-Host 'Hello, World!'
 }

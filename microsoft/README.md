@@ -1,11 +1,6 @@
 # prefix
 
-a -> one time operation
-i -> inspect system
-setup -> setup software
-up -> better setup, can update the software too
-
-fix -> remove annoyance
+follow the standard of `Get-Verb`
 
 # TODO
 
