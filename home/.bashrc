@@ -46,6 +46,12 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 
+#wraping lisp
+# -> give power to their shell without using GNU readline
+# Some app doesn't work with rlwrap
+# link sbcl to /usr/bin/lisp for this
+alias lisp="rlwrap lisp"
+
 #conflict with llvm's ll 
 #alias ll='ls -l -h --color=auto'
 

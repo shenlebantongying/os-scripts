@@ -1,5 +1,5 @@
 {
-	"font_size": 13,
+	"font_size": 14,
 	"font_face": "Hack",
 
 	// speed
@@ -12,7 +12,7 @@
 	"highlight_modified_tabs": true,
 	
 	//misc
-	//"remember_workspace": false,
+	"remember_workspace": false,
 
 
 	"added_words":
