@@ -231,7 +231,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-light
+   dotspacemacs-themes '(tsdh-light
+                         spacemacs-light
                          spacemacs-dark)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
@@ -605,16 +606,12 @@ This function is called at the very end of Spacemacs initialization."
      ("FIXME" . "#dc752f")
      ("XXX+" . "#dc752f")
      ("\\?\\?\\?+" . "#dc752f")))
- '(package-selected-packages
-   '(yapfify stickyfunc-enhance sphinx-doc pytest pyenv-mode py-isort poetry transient pippel pipenv pyvenv pip-requirements nose lsp-python-ms lsp-pyright live-py-mode importmagic epc ctable concurrent deferred helm-pydoc helm-gtags helm-cscope xcscope ggtags dap-mode lsp-treemacs bui lsp-mode cython-mode counsel-gtags counsel swiper ivy company-anaconda blacken anaconda-mode pythonic yasnippet-snippets ws-butler writeroom-mode winum which-key volatile-highlights vi-tilde-fringe uuidgen utop use-package unfill undo-tree treemacs-projectile treemacs-persp treemacs-icons-dired treemacs-evil toc-org symon symbol-overlay string-inflection string-edit spaceline-all-the-icons slime-company restart-emacs request rainbow-delimiters racket-mode quickrun popwin pcre2el password-generator paradox overseer org-superstar org-rich-yank org-projectile org-present org-pomodoro org-mime org-download org-contrib org-cliplink org-brain open-junk-file ocp-indent ocamlformat nameless mwim multi-line mmm-mode merlin-iedit merlin-eldoc merlin-company markdown-toc lorem-ipsum link-hint keycast indent-guide hybrid-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-xref helm-themes helm-swoop helm-purpose helm-projectile helm-org-rifle helm-org helm-mode-manager helm-make helm-ls-git helm-flx helm-descbinds helm-company helm-c-yasnippet helm-ag google-translate golden-ratio gnuplot gh-md geiser fuzzy font-lock+ flycheck-pos-tip flycheck-package flycheck-ocaml flycheck-elsa flx-ido fancy-battery eyebrowse expand-region evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-textobj-line evil-surround evil-org evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state evil-lion evil-indent-plus evil-iedit-state evil-goggles evil-exchange evil-escape evil-ediff evil-easymotion evil-collection evil-cleverparens evil-args evil-anzu eval-sexp-fu erlang emr elisp-slime-nav editorconfig dune dumb-jump drag-stuff dotenv-mode dired-quick-sort diminish define-word company-reftex company-plsense company-math company-auctex common-lisp-snippets command-log-mode column-enforce-mode clean-aindent-mode centered-cursor-mode auto-yasnippet auto-highlight-symbol auto-compile auctex-latexmk aggressive-indent ace-link ace-jump-helm-line ac-ispell))
- '(pdf-view-midnight-colors '("#655370" . "#fbf8ef"))
  '(show-paren-mode t)
  '(tab-stop-list '(4 8 12 16 20 24 28 32))
- '(tool-bar-mode nil))
+ '(tool-bar-mode nil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Hack" :foundry "SRC" :slant normal :weight normal :height 128 :width normal)))))
 )

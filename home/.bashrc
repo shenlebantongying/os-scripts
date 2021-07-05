@@ -66,6 +66,7 @@ PATH=$PATH\
 :${HOME}/.cabal/bin\
 :${HOME}/.rbenv/bin\
 :${HOME}/.cargo/bin\
+:/usr/local/Wolfram/Mathematica/12.3/Executables
 
 eval "$(opam env)"
 eval "$(rbenv init - bash)"
