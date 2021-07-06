@@ -68,9 +68,16 @@ PATH=$PATH\
 :${HOME}/.cargo/bin\
 :/usr/local/Wolfram/Mathematica/12.3/Executables
 
+# Fixme -> shorter version?
+if command -v opam &> /dev/null
+then
 eval "$(opam env)"
-eval "$(rbenv init - bash)"
+fi
 
+if command -v rbenv &> /dev/null
+then
+    eval "$(rbenv init - bash)"
+fi
 
 # -> uselss, env files are just appending PATH withe extra steps
 # [ -f "${HOME}/.ghcup/env" ] && source "${HOME}/.ghcup/env" # ghcup-env
