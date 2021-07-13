@@ -28,11 +28,13 @@ alias vimdiff='nvim -d'
 alias byte2readable='numfmt --to=iec-i --suffix=B'
 alias cmx='chmod +x'
 alias gs='git status -sb'
-alias a-addrss='vim ~/.newsboat/urls'
+alias a-rss='vim ~/.newsboat/urls'
 
 # shortcuts
 alias v='nvim-qt'
 alias e='emacs'
+alias sublime='subl'
+alias merge='smerge'
 
 # nav expert
 alias q='cd ..'
@@ -43,6 +45,12 @@ alias qqq='cd ../../..'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
+
+#wraping lisp
+# -> give power to their shell without using GNU readline
+# Some app doesn't work with rlwrap
+# link sbcl to /usr/bin/lisp for this
+alias lisp="rlwrap lisp"
 
 #conflict with llvm's ll 
 #alias ll='ls -l -h --color=auto'
@@ -58,10 +66,18 @@ PATH=$PATH\
 :${HOME}/.cabal/bin\
 :${HOME}/.rbenv/bin\
 :${HOME}/.cargo/bin\
+:/usr/local/Wolfram/Mathematica/12.3/Executables
 
+# Fixme -> shorter version?
+if command -v opam &> /dev/null
+then
 eval "$(opam env)"
-eval "$(rbenv init - bash)"
+fi
 
+if command -v rbenv &> /dev/null
+then
+    eval "$(rbenv init - bash)"
+fi
 
 # -> uselss, env files are just appending PATH withe extra steps
 # [ -f "${HOME}/.ghcup/env" ] && source "${HOME}/.ghcup/env" # ghcup-env

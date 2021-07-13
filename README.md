@@ -5,5 +5,8 @@ A collection of scripts to do system maintaining
 + backup -> move files to tree here
 + setup -> install software or/and tweak some config
 + up -> for software that require special update
++ check -> display certain values
+
+Verb list of powershell -> <https://docs.microsoft.com/en-us/powershell/scripting/developer/cmdlet/approved-verbs-for-windows-powershell-commands>
 
 TODO -> /util folder for common tasks. 

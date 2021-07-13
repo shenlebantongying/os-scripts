@@ -7,7 +7,10 @@ SCRIPTPATH=$(dirname "$SCRIPT") #-> only /home/slbtty/scripts
 
 # Old Akregator
 # cp ~/.local/share/akregator/data/feeds.opml "$SCRIPTPATH"/rss.opml
-diff ~/.newsboat/urls "${SCRIPTPATH}"/rss.urls
+
+# Diff will stop bash execuation folw, check `man diff`
+diff ~/.newsboat/urls "${SCRIPTPATH}"/rss.urls && echo "no new urls" || echo "=[New Urls]="
+
 cp ~/.newsboat/urls "${SCRIPTPATH}"/rss.urls
 /usr/share/doc/newsboat/contrib/exportOPMLWithTags.py ~/.newsboat/urls > "${SCRIPTPATH}"/rss.opml
 

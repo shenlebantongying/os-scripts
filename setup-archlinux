@@ -5,6 +5,7 @@ git"
 
 core="firefox \
 noto-fonts-cjk \
+ttf-inconsolata \
 vlc \
 okular \
 ark \

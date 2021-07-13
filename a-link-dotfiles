@@ -56,8 +56,13 @@ then
 else
     green-msg "No $homeloc at home"
 fi
-ln -s "$scrploc" "$homeloc"
+ln -sf "$scrploc" "$homeloc"
 green-msg "Link ${homeloc} to ${scrploc}"
+}
+
+function link_dir(){
+    # ln -s cannot create directories automatically :(
+    mkdir -p "${HOME}/${1}"
 }
 
 link_file2 ".bashrc"
@@ -65,13 +70,19 @@ link_file2 ".bash_profile"
 link_file2 ".vimrc"
 link_file2 ".newsboat/config"
 link_file2 ".spacemacs"
+
+link_dir ".config/ranger"
 link_file2 ".config/ranger/rc.conf"
 link_file2 ".config/ranger/rifle.conf"
+
+link_dir ".config/nvim"
 link_file2 ".config/nvim/init.vim"
 link_file2 ".config/nvim/ginit.vim"
 
-# sublime text4
+link_dir ".config/sublime-text/Packages/User"
 link_file2 ".config/sublime-text/Packages/User/Preferences.sublime-settings"
 link_file2 ".config/sublime-text/Packages/User/Package Control.sublime-settings"
-
 link_file2 ".config/sublime-text/Packages/User/Terminus.sublime-settings"
+
+#lisp related
+link_file2 ".sbclrc"

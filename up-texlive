@@ -1,0 +1,9 @@
+#!/usr/bin/sh
+
+set -e
+set -x
+
+sudo tlmgr update --self
+sudo tlmgr update --list
+sudo tlmgr update --all
+sudo tlmgr update --list

@@ -32,8 +32,8 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(
-     ;; ----------------------------------------------------------------
+   '(python
+     ;; --------------------:  --------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
      ;; `M-m f e R' (Emacs style) to install them.
@@ -41,7 +41,10 @@ This function should only modify configuration layer settings."
      auto-completion
      better-defaults
      markdown
+     shell-scripts
+     erlang
      common-lisp
+     scheme
      ocaml
      command-log
      emacs-lisp
@@ -182,7 +185,7 @@ It should only modify the values of Spacemacs settings."
    ;; directory. A string value must be a path to an image format supported
    ;; by your Emacs build.
    ;; If the value is nil then no banner is displayed. (default 'official)
-   dotspacemacs-startup-banner 'official
+   dotspacemacs-startup-banner nil
 
    ;; List of items to show in startup buffer or an association list of
    ;; the form `(list-type . list-size)`. If nil then it is disabled.
@@ -194,12 +197,14 @@ It should only modify the values of Spacemacs settings."
    ;; pair of numbers, e.g. `(recents-by-project . (7 .  5))', where the first
    ;; number is the project limit and the second the limit on the recent files
    ;; within a project.
-   dotspacemacs-startup-lists '((recents . 5)
-                                (projects . 7))
+   dotspacemacs-startup-lists '((recents . 20)
+                                (projects . 5))
 
    ;; True if the home buffer should respond to resize events. (default t)
    dotspacemacs-startup-buffer-responsive t
 
+   ;; Show numbers before the startup list lines. (default t)
+   dotspacemacs-show-startup-list-numbers t
    ;; The minimum delay in seconds between number key presses. (default 0.4)
    dotspacemacs-startup-buffer-multi-digit-delay 0.4
 
@@ -226,7 +231,8 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-light
+   dotspacemacs-themes '(tsdh-light
+                         spacemacs-light
                          spacemacs-dark)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
@@ -417,7 +423,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; If non-nil smartparens-mode will be enabled in programming modes.
    ;; (default t)
-   dotspacemacs-activate-smartparens-mode t
+   dotspacemacs-activate-smartparens-mode nil
 
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
    ;; over any automatically added closing parenthesis, bracket, quote, etc...
@@ -476,14 +482,14 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-icon-title-format nil
 
    ;; Show trailing whitespace (default t)
-   dotspacemacs-show-trailing-whitespace t
+   dotspacemacs-show-trailing-whitespace nil
 
    ;; Delete whitespace while saving buffer. Possible values are `all'
    ;; to aggressively delete empty line and long sequences of whitespace,
    ;; `trailing' to delete only the whitespace at end of lines, `changed' to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'trailing
 
    ;; If non nil activate `clean-aindent-mode' which tries to correct
    ;; virtual indentation of simple modes. This can interfer with mode specific
@@ -492,6 +498,8 @@ It should only modify the values of Spacemacs settings."
    ;; (default t)
    dotspacemacs-use-clean-aindent-mode t
 
+   ;; Accept SPC as y for prompts if non nil. (default nil)
+   dotspacemacs-use-SPC-as-y nil
    ;; If non-nil shift your number row to match the entered keyboard layout
    ;; (only in insert state). Currently supported keyboard layouts are:
    ;; `qwerty-us', `qwertz-de' and `querty-ca-fr'.
@@ -537,8 +545,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   "Library to load while dumping.
 This function is called only while dumping Spacemacs configuration. You can
 `require' or `load' the libraries of your choice that will be included in the
-dump."
-)
+dump.")
 
 
 (defun dotspacemacs/user-config ()
@@ -553,10 +560,16 @@ before packages are loaded."
   ;;(tool-bar-mode)
   (setq default-tab-width 4)
   (add-hook 'scheme-mode-hook 'enable-paredit-mode)
+  (add-hook 'slime-mode-hook 'prettify-symbols-mode)
+  (add-hook 'slime-mode-hook 'enable-paredit-mode)
   ;; Doesn't work on some terminals
   ;; xterm mose mode is actually old thing?
   (xterm-mouse-mode -1)
 
+  ;; sync with local disk
+  (global-auto-revert-mode t)
+  ;; languages
+  (setq geiser-chicken-binary "chicken-csi")
 )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -571,12 +584,34 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ansi-color-names-vector
+   ["#d2ceda" "#f2241f" "#67b11d" "#b1951d" "#3a81c3" "#a31db1" "#21b8c7" "#655370"])
+ '(blink-cursor-mode nil)
+ '(column-number-mode t)
  '(evil-want-Y-yank-to-eol nil)
- '(tab-stop-list '(4 8 12 16 20 24 28 32)))
+ '(global-display-line-numbers-mode t)
+ '(hl-todo-keyword-faces
+   '(("TODO" . "#dc752f")
+     ("NEXT" . "#dc752f")
+     ("THEM" . "#2d9574")
+     ("PROG" . "#3a81c3")
+     ("OKAY" . "#3a81c3")
+     ("DONT" . "#f2241f")
+     ("FAIL" . "#f2241f")
+     ("DONE" . "#42ae2c")
+     ("NOTE" . "#b1951d")
+     ("KLUDGE" . "#b1951d")
+     ("HACK" . "#b1951d")
+     ("TEMP" . "#b1951d")
+     ("FIXME" . "#dc752f")
+     ("XXX+" . "#dc752f")
+     ("\\?\\?\\?+" . "#dc752f")))
+ '(show-paren-mode t)
+ '(tab-stop-list '(4 8 12 16 20 24 28 32))
+ '(tool-bar-mode nil)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
 )
