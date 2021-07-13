@@ -1,0 +1,15 @@
+== Rock ==
+
+Quick open
+    Wox
+
+QuickSearch
+    Everything
+    SwiftSearch
+
+Full text index
+    Copernic Desktop
+    
+TeX/LaTeX
+    MiKTeX
+    

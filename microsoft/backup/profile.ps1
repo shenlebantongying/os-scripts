@@ -1,3 +1,7 @@
+
+# Bash-style auto complete
+Set-PSReadlineKeyHandler -Key Tab -Function Complete
+
 Set-PSReadLineOption -Colors @{ Command = 'Magenta' }
 function write-hello(){
     Write-Host 'Hello, World!'
