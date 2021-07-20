@@ -3,6 +3,8 @@ import os
 import xml.etree.ElementTree as e
 import tempfile
 
+# TODO: strip feed.rss at the end
+
 """
 Perview rss.opml with browser
 """
@@ -17,20 +19,20 @@ def attr_exist(ele, s):
 
 r = get_subtree(e.parse('rss.opml').getroot(), 'body')
 
-def html(s): return "<!doctype html>\n<html><head><title>rss.opml</title></head><body>{}</body></html>".format(s)
-def ul(s): return '<ul>{}</ul>'.format(s)
-def li(s): return '<li>{}</li>'.format(s)
-def li_a(s, href): return '<li><a href="{href}">{s}</a></li>'.format(href=href, s=s)
+def html(s): return "<!doctype html>\n<html><head><title>rss.opml</title></head>\n<body>\n{}\n</body></html>".format(s)
+def ul(s): return '<ul>{}</ul>\n'.format(s)
+def li(s): return '\t<li>{}</li>\n'.format(s)
+def li_a(s, href): return '\t<li><a href="{href}">{s}</a></li>\n'.format(href=href, s=s)
 
 def scan_outline(e):
     if len(e) == 0:
-        if attr_exist(e, 'htmlUrl'):
-            return li_a(e.attrib["text"], e.attrib["htmlUrl"])
+        if attr_exist(e, 'xmlUrl'):
+            return li_a(e.attrib["title"], e.attrib["xmlUrl"])
         else:
-            return li(e.attrib["text"])
+            return li(e.attrib["title"])
     else:
         if e.tag != "body":
-            l = [li(e.attrib["text"])]
+            l = [li(e.attrib["title"])]
         else:
             l=[]
 
