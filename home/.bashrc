@@ -51,6 +51,7 @@ alias ....="cd ../../.."
 # Some app doesn't work with rlwrap
 # link sbcl to /usr/bin/lisp for this
 alias lisp="rlwrap lisp"
+alias sml="rlwrap smlnj"
 
 #conflict with llvm's ll 
 #alias ll='ls -l -h --color=auto'
@@ -66,6 +67,7 @@ PATH=$PATH\
 :${HOME}/.cabal/bin\
 :${HOME}/.rbenv/bin\
 :${HOME}/.cargo/bin\
+:${HOME}/.emacs.d/bin\
 :/usr/local/Wolfram/Mathematica/12.3/Executables
 
 # Fixme -> shorter version?

@@ -67,17 +67,13 @@ function link_dir(){
 
 link_file2 ".bashrc"
 link_file2 ".bash_profile"
-link_file2 ".vimrc"
 link_file2 ".newsboat/config"
-link_file2 ".spacemacs"
 
 link_dir ".config/ranger"
 link_file2 ".config/ranger/rc.conf"
 link_file2 ".config/ranger/rifle.conf"
 
-link_dir ".config/nvim"
-link_file2 ".config/nvim/init.vim"
-link_file2 ".config/nvim/ginit.vim"
+
 
 link_dir ".config/sublime-text/Packages/User"
 link_file2 ".config/sublime-text/Packages/User/Preferences.sublime-settings"
@@ -86,3 +82,18 @@ link_file2 ".config/sublime-text/Packages/User/Terminus.sublime-settings"
 
 #lisp related
 link_file2 ".sbclrc"
+
+#editors
+link_file2 ".spacemacs"
+
+link_dir ".doom.d"
+link_file2 ".doom.d/init.el"
+link_file2 ".doom.d/config.el"
+link_file2 ".doom.d/packages.el"
+
+link_file2 ".vimrc"
+
+link_dir ".config/nvim"
+link_file2 ".config/nvim/init.vim"
+link_file2 ".config/nvim/ginit.vim"
+

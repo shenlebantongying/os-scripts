@@ -43,6 +43,7 @@ This function should only modify configuration layer settings."
      markdown
      shell-scripts
      erlang
+     sml
      common-lisp
      scheme
      ocaml
@@ -268,7 +269,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; The leader key accessible in `emacs state' and `insert state'
    ;; (default "M-m")
-   dotspacemacs-emacs-leader-key "M-m"
+   dotspacemacs-emacs-leader-key "s-x"
 
    ;; Major mode leader key is a shortcut key which is the equivalent of
    ;; pressing `<leader> m`. Set it to `nil` to disable it. (default ",")
@@ -565,6 +566,9 @@ before packages are loaded."
   ;; Doesn't work on some terminals
   ;; xterm mose mode is actually old thing?
   (xterm-mouse-mode -1)
+
+  ;; tab completion that doesn't work for me
+  (electric-indent-mode 0)
 
   ;; sync with local disk
   (global-auto-revert-mode t)
