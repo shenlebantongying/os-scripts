@@ -97,3 +97,7 @@ link_dir ".config/nvim"
 link_file2 ".config/nvim/init.vim"
 link_file2 ".config/nvim/ginit.vim"
 
+#coqide
+link_dir ".config/coq"
+link_file2 ".config/coq/coqiderc"
+link_file2 ".config/coq/coqide.keys"
