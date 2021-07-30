@@ -34,6 +34,7 @@
     </outline>
     <outline type="rss" title="python">
       <outline type="rss" xmlUrl="http://feeds.feedburner.com/PythonInsider" title="Python Insider"/>
+      <outline type="rss" xmlUrl="https://tenthousandmeters.com/feeds/all.atom.xml" title="Ten thousand meters"/>
     </outline>
     <outline type="rss" title="kde/qt">
       <outline type="rss" xmlUrl="http://feeds.woboq.com/woboq" title="Woboq"/>
@@ -103,9 +104,6 @@
     <outline type="rss" title="ocaml">
       <outline type="rss" xmlUrl="https://blog.shaynefletcher.org/feeds/posts/default" title="Shayne Fletcher"/>
     </outline>
-    <outline type="rss" title="c">
-      <outline type="rss" xmlUrl="https://c-for-dummies.com/blog/?feed=rss2" title="C For Dummies Blog"/>
-    </outline>
     <outline type="rss" title="sql">
       <outline type="rss" xmlUrl="https://blog.nelhage.com/atom.xml" title="Posts on Made of Bugs"/>
     </outline>
@@ -123,6 +121,12 @@
     </outline>
     <outline type="rss" title="gnu">
       <outline type="rss" xmlUrl="http://www.pixelbeat.org/feed/rss2.xml" title="www.pixelbeat.org"/>
+    </outline>
+    <outline type="rss" title="perl">
+      <outline type="rss" xmlUrl="https://phoenixtrap.com/feed/" title="The Phoenix Trap"/>
+    </outline>
+    <outline type="rss" title="opensource">
+      <outline type="rss" xmlUrl="https://sfconservancy.org/feeds/blog/" title="The Software Freedom Conservancy Blog."/>
     </outline>
   </body>
 </opml>

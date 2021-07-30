@@ -1,0 +1,11 @@
+#!/usr/bin/bash
+
+set -e
+set -x
+
+opam install opam-depext
+opam-depext coq
+opam-depext coqide
+opam install coq coqide
+opam repo add coq-released https://coq.inria.fr/opam/released
+# opam search coq

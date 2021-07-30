@@ -3,11 +3,17 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+(setq default-tab-width 4)
+(setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
+
 (menu-bar-mode)
+(tool-bar-mode)
+
 (setq +doom-dashboard-functions
   '(doom-dashboard-widget-shortmenu))
 (setq initial-frame-alist '((width . 90) (height . 40)))
 
+(setq geiser-smart-tab-mode t)
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
@@ -30,6 +36,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
+;;(setq doom-theme 'doom-one-light)
 (setq doom-theme 'doom-homage-white)
 (setq doom-font (font-spec :family "JetBrains Mono" :size 12.0))
 
@@ -40,7 +47,6 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
-
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;

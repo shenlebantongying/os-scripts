@@ -64,7 +64,6 @@ https://www.nayuki.io/rss20.xml friends
 https://dave.cheney.net/feed/atom golang
 https://herbsutter.com/feed/ c++
 https://blog.shaynefletcher.org/feeds/posts/default ocaml
-https://c-for-dummies.com/blog/?feed=rss2 c
 https://dthompson.us/feed.xml software
 https://blog.nelhage.com/atom.xml sql
 https://weinholt.se/feed.xml scheme
@@ -74,3 +73,6 @@ https://tymoon.eu/api/reader/atom lisp
 https://neovim.io/news.xml neovim
 https://fare.livejournal.com/data/rss lisp
 http://www.pixelbeat.org/feed/rss2.xml gnu
+https://phoenixtrap.com/feed/ perl
+https://sfconservancy.org/feeds/blog/ opensource
+https://tenthousandmeters.com/feeds/all.atom.xml python

@@ -29,6 +29,7 @@ alias byte2readable='numfmt --to=iec-i --suffix=B'
 alias cmx='chmod +x'
 alias gs='git status -sb'
 alias a-rss='vim ~/.newsboat/urls'
+alias fzfopen='kde-open5 $(fzf) &> /dev/null'
 
 # shortcuts
 alias v='nvim-qt'
@@ -124,3 +125,7 @@ alias antlr4='java -Xmx500M -cp "/usr/local/lib/antlr-4.9-complete.jar:$CLASSPAT
 alias grun='java -Xmx500M -cp "/usr/local/lib/antlr-4.9-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'
 
 export CLASSPATH=".:/usr/local/lib/antlr-4.9-complete.jar:$CLASSPATH"
+
+function krm(){
+    kioclient5 move "$@" trash:/
+}
