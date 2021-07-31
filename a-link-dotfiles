@@ -5,22 +5,21 @@ set -e
 SCRIPT=$(realpath "$0") # -> Complete path /home/slbtty/scripts/sourcetest.bash
 SCRIPTPATH=$(dirname "$SCRIPT") #-> only /home/slbtty/scripts
 
-function _color_echo()
-{
-  echo -e "\e[0;$1m> $2\e[0m"
-}
+# updated color display as it doesn't supported in some systems
+# https://stackoverflow.com/questions/25879183/can-terminal-app-be-made-to-respect-ansi-escape-codes
 
-# Note: - maybe invlid for some shell env
+# TODO: check other nanmes for tput
+
 function red-msg(){ 
-    _color_echo "31" "$1";
+      echo -e "$(tput setaf 9)$1$(tput sgr 0)"
 }
 
 function green-msg(){ 
-    echo -e "\033[1;32m > $1 \e[0m"
+      echo -e "$(tput setaf 10)$1$(tput sgr 0)"
 }
 
 function blue-msg(){ 
-_color_echo "34" "$1";
+      echo -e "$(tput setaf 21)$1$(tput sgr 0)"
 }
 
 # $1 -> Path to file inside git
@@ -67,13 +66,13 @@ function link_dir(){
 
 link_file2 ".bashrc"
 link_file2 ".bash_profile"
+
+link_dir ".newsboat"
 link_file2 ".newsboat/config"
 
 link_dir ".config/ranger"
 link_file2 ".config/ranger/rc.conf"
 link_file2 ".config/ranger/rifle.conf"
-
-
 
 link_dir ".config/sublime-text/Packages/User"
 link_file2 ".config/sublime-text/Packages/User/Preferences.sublime-settings"
