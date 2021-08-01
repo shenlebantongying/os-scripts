@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
 
+set -e
+set -x
+
 # TODO: automatically get the file name via Curl?
-curl -L  'https://www.zotero.org/download/client/dl?channel=release&platform=linux-x86_64' --output zotero.tar.bz2
+curl -L  'https://www.zotero.org/download/client/dl?channel=beta&platform=linux-x86_64' --output zotero.tar.bz2
 
 tar -xvf ./zotero.tar.bz2 -C "$HOME/bin"
 
