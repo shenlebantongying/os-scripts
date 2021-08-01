@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 set -e
 function green-msg(){ 
     echo -e "\e[0;32m[slb] $1\e[0m"

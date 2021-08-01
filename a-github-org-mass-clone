@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 read -p "Need github token stored in T7!" CONT
 if [ "$CONT" = "y" ]; then
