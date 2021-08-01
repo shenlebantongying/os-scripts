@@ -11,7 +11,13 @@ SCRIPTPATH=$(dirname "$SCRIPT") #-> only /home/slbtty/scripts
 # Diff will stop bash execuation folw, check `man diff`
 diff ~/.newsboat/urls "${SCRIPTPATH}"/rss.urls && echo "no new urls" || echo "=[New Urls]="
 
-cp ~/.newsboat/urls "${SCRIPTPATH}"/rss.urls
-/usr/share/doc/newsboat/contrib/exportOPMLWithTags.py ~/.newsboat/urls > "${SCRIPTPATH}"/rss.opml
+if [[ -f ~/.newsboat/urls ]]; then
+    cp ~/.newsboat/urls "${SCRIPTPATH}"/rss.urls
+    /usr/share/doc/newsboat/contrib/exportOPMLWithTags.py ~/.newsboat/urls > "${SCRIPTPATH}"/rss.opml
+else 
+    cp "${SCRIPTPATH}"/rss.urls ~/.newsboat/urls 
+fi
+
+
 
 echo "OK"
