@@ -36,10 +36,3 @@ up/down -> move line of code
 ## Shift
 
 f12 -> peek (aka jumping around define)
-
-# Spacemacs
-
-Management `SPC `
-+ Window  `w`
-+ File `f` 
-+ Buffer `b`

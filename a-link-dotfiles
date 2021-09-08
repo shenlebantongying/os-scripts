@@ -85,12 +85,11 @@ link_file2 ".config/sublime-text/Packages/User/Terminus.sublime-settings"
 link_file2 ".sbclrc"
 
 #editors
-link_file2 ".spacemacs"
-
 link_dir ".doom.d"
 link_file2 ".doom.d/init.el"
 link_file2 ".doom.d/config.el"
 link_file2 ".doom.d/packages.el"
+link_file2 ".emacs.d/.local/cache/treemacs-persist"
 
 link_file2 ".vimrc"
 
