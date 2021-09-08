@@ -1,5 +1,5 @@
 {
-	"font_size": 14,
+	"font_size": 12,
 	"font_face": "Hack",
 
 	// speed
@@ -25,4 +25,5 @@
 	],
 	"close_windows_when_empty": false,
 	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
+	"theme": "auto",
 }

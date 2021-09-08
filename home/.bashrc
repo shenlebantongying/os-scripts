@@ -53,6 +53,7 @@ alias ....="cd ../../.."
 # link sbcl to /usr/bin/lisp for this
 alias lisp="rlwrap lisp"
 alias sml="rlwrap smlnj"
+alias maxima="rlwrap maxima"
 
 #conflict with llvm's ll 
 #alias ll='ls -l -h --color=auto'
