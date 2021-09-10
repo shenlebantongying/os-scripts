@@ -73,6 +73,12 @@ https://tymoon.eu/api/reader/atom lisp
 https://neovim.io/news.xml neovim
 https://fare.livejournal.com/data/rss lisp
 http://www.pixelbeat.org/feed/rss2.xml gnu
-https://phoenixtrap.com/feed/ perl
+# https://phoenixtrap.com/feed/ perl -> shit ranting
 https://sfconservancy.org/feeds/blog/ opensource
 https://tenthousandmeters.com/feeds/all.atom.xml python
+https://betterexplained.com/feed/ math
+https://eli.thegreenplace.net/feeds/all.atom.xml software
+https://www.craigfe.io/feed.xml ocaml
+http://www.lispology.com/rss?JHE+3 lisp
+https://www.ocamlpro.com/feed/ ocaml
+https://fsharpforfunandprofit.com/index.xml fsharp

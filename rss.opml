@@ -31,6 +31,7 @@
       <outline type="rss" xmlUrl="https://utcc.utoronto.ca/~cks/space/blog/?atom" title="Chris's Wiki :: blog"/>
       <outline type="rss" xmlUrl="https://www.internalpointers.com/rss" title="Internal Pointers"/>
       <outline type="rss" xmlUrl="https://dthompson.us/feed.xml" title="dthompson"/>
+      <outline type="rss" xmlUrl="https://eli.thegreenplace.net/feeds/all.atom.xml" title="Eli Bendersky's website"/>
     </outline>
     <outline type="rss" title="python">
       <outline type="rss" xmlUrl="http://feeds.feedburner.com/PythonInsider" title="Python Insider"/>
@@ -103,6 +104,8 @@
     </outline>
     <outline type="rss" title="ocaml">
       <outline type="rss" xmlUrl="https://blog.shaynefletcher.org/feeds/posts/default" title="Shayne Fletcher"/>
+      <outline type="rss" xmlUrl="https://www.craigfe.io/feed.xml" title="craigfe.io RSS Feed"/>
+      <outline type="rss" xmlUrl="https://www.ocamlpro.com/feed/" title="OCamlPro"/>
     </outline>
     <outline type="rss" title="sql">
       <outline type="rss" xmlUrl="https://blog.nelhage.com/atom.xml" title="Posts on Made of Bugs"/>
@@ -115,6 +118,7 @@
       <outline type="rss" xmlUrl="http://planet.lisp.org/rss20.xml" title="Planet Lisp"/>
       <outline type="rss" xmlUrl="https://tymoon.eu/api/reader/atom" title="妖怪世捨て人"/>
       <outline type="rss" xmlUrl="https://fare.livejournal.com/data/rss" title="Cybernethics / Cybernéthique"/>
+      <outline type="rss" xmlUrl="http://www.lispology.com/rss?JHE+3" title="Lispology"/>
     </outline>
     <outline type="rss" title="neovim">
       <outline type="rss" xmlUrl="https://neovim.io/news.xml" title="Neovim"/>
@@ -122,11 +126,17 @@
     <outline type="rss" title="gnu">
       <outline type="rss" xmlUrl="http://www.pixelbeat.org/feed/rss2.xml" title="www.pixelbeat.org"/>
     </outline>
-    <outline type="rss" title="perl">
-      <outline type="rss" xmlUrl="https://phoenixtrap.com/feed/" title="The Phoenix Trap"/>
+    <outline type="rss" title="https://phoenixtrap.com/feed/">
+      <outline type="rss" xmlUrl="#" title=""/>
     </outline>
     <outline type="rss" title="opensource">
       <outline type="rss" xmlUrl="https://sfconservancy.org/feeds/blog/" title="The Software Freedom Conservancy Blog."/>
+    </outline>
+    <outline type="rss" title="math">
+      <outline type="rss" xmlUrl="https://betterexplained.com/feed/" title="BetterExplained"/>
+    </outline>
+    <outline type="rss" title="fsharp">
+      <outline type="rss" xmlUrl="https://fsharpforfunandprofit.com/index.xml" title="F# for Fun and Profit"/>
     </outline>
   </body>
 </opml>

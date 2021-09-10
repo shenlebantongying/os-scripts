@@ -28,8 +28,9 @@ alias vimdiff='nvim -d'
 alias byte2readable='numfmt --to=iec-i --suffix=B'
 alias cmx='chmod +x'
 alias gs='git status -sb'
-alias a-rss='vim ~/.newsboat/urls'
+alias a-rss='emacs ~/.newsboat/urls'
 alias fzfopen='kde-open5 $(fzf) &> /dev/null'
+alias date="date +"%Y-%m-%d""
 
 # shortcuts
 alias v='nvim-qt'
@@ -49,11 +50,10 @@ alias ....="cd ../../.."
 
 #wraping lisp
 # -> give power to their shell without using GNU readline
-# Some app doesn't work with rlwrap
-# link sbcl to /usr/bin/lisp for this
-alias lisp="rlwrap lisp"
+alias cl="rlwrap lisp"
 alias sml="rlwrap smlnj"
-alias maxima="rlwrap maxima"
+alias maxima="rlwrap maxima" # rmaxima also works
+alias fsi="dotnet fsi"
 
 #conflict with llvm's ll 
 #alias ll='ls -l -h --color=auto'

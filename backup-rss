@@ -18,6 +18,4 @@ else
     cp "${SCRIPTPATH}"/rss.urls ~/.newsboat/urls 
 fi
 
-
-
 echo "OK"
