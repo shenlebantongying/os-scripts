@@ -62,7 +62,16 @@
 
 (map!
  "s-o" #'find-file-at-point
- "s-t" #'treemacs)
+ "s-t" #'treemacs
+ ;; wasd
+ "s-w" #'previous-line
+ "s-s" #'next-line
+ "s-a" #'backward-char
+ "s-d" #'forward-char
+;; q - e
+ "s-q" #'backward-word
+ "s-e" #'forward-word
+ )
 
 ;; override some defaults
 (use-package! treemacs
