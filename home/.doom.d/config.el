@@ -8,12 +8,11 @@
 
 (menu-bar-mode)
 (tool-bar-mode)
+(setq display-line-numbers-type t)
 
 (setq +doom-dashboard-functions
   '(doom-dashboard-widget-shortmenu))
 (setq initial-frame-alist '((width . 90) (height . 40)))
-
-(setq geiser-smart-tab-mode t)
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
@@ -44,10 +43,6 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 
-;; This determines the style of line numbers in effect. If set to `nil', line
-;; numbers are disabled. For relative line numbers, set this to `relative'.
-(setq display-line-numbers-type t)
-
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
@@ -66,5 +61,15 @@
 ;; they are implemented.
 
 (map!
-  "s-o" #'find-file-at-point
-)
+ "s-o" #'find-file-at-point
+ "s-t" #'treemacs)
+
+;; override some defaults
+(use-package! treemacs
+  :config
+  (setq treemacs-follow-mode t
+        treemacs-position 'right))
+
+;; Scheme
+
+(setq geiser-smart-tab-mode t)
