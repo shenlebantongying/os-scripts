@@ -30,7 +30,7 @@ alias cmx='chmod +x'
 alias gs='git status -sb'
 alias a-rss='emacs ~/.newsboat/urls'
 alias fzfopen='kde-open5 $(fzf) &> /dev/null'
-alias date="date +"%Y-%m-%d""
+alias date-simple="date +"%Y-%m-%d""
 
 # shortcuts
 alias v='nvim-qt'

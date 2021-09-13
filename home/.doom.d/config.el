@@ -32,16 +32,8 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-;; There are two ways to load a theme. Both assume the theme is installed and
-;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function. This is the default:
-;;(setq doom-theme 'doom-one-light)
 (setq doom-theme 'doom-homage-white)
 (setq doom-font (font-spec :family "JetBrains Mono" :size 12.0))
-
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -82,3 +74,8 @@
 ;; Scheme
 
 (setq geiser-smart-tab-mode t)
+(after! geiser
+  (setq geiser-guile-binary (executable-find "guile3")))
+
+;; org-mode
+(setq org-directory "~/workbench-universe/")
