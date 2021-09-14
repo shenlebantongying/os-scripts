@@ -60,9 +60,11 @@
  "s-s" #'next-line
  "s-a" #'backward-char
  "s-d" #'forward-char
-;; q - e
+ ;; q - e
  "s-q" #'backward-word
- "s-e" #'forward-word
+
+ ;; org
+ "s-l" #'org-preview-latex-fragment
  )
 
 ;; override some defaults
@@ -79,3 +81,10 @@
 
 ;; org-mode
 (setq org-directory "~/workbench-universe/")
+
+; better latexing
+(use-package! org-fragtog
+:after org
+:hook (org-mode . org-fragtog-mode)
+:config
+)

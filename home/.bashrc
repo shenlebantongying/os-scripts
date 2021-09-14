@@ -60,12 +60,12 @@ alias fsi="dotnet fsi"
 
 PS1='\n[\t \w]\n\$ '
 
-PATH=$PATH\
+PATH=${HOME}/.ghcup/bin\
+:$PATH\
 :${HOME}/.local/bin\
 :${HOME}/bin\
 :${HOME}/s\
 :${HOME}/.dotnet\
-:${HOME}/.ghcup/bin\
 :${HOME}/.cabal/bin\
 :${HOME}/.rbenv/bin\
 :${HOME}/.cargo/bin\

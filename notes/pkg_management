@@ -2,5 +2,6 @@ pacman -Qi -> What depend on package X?
 pacman -Ss -> list all installable pkgs
 pacman -Qm -> list local aur
 pacman -Qo -> file belong to which file?
+pacman -Qqe -> list of explicitly installed packages
 
 pip3 list --outdated --user

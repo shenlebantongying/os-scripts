@@ -58,6 +58,7 @@
        :tools
        (eval +overlay)     ; run code, run (also, repls)
        lookup              ; navigate your code and its documentation
+       magit
 
        :os
        (:if IS-MAC macos)  ; improve compatibility with macOS
@@ -66,12 +67,14 @@
        coq               ; proofs-as-programs
        emacs-lisp        ; drown in parentheses
        erlang            ; an elegant language for a more civilized age
-       latex             ; writing papers in Emacs has never been so fun
+       (latex +latexmk
+              +cdlatex)  ; writing papers in Emacs has never been so fun
        markdown          ; writing docs for people to ignore
-       (org +pandoc)               ; organize your plain life in plain text
+       (org +pandoc
+            +pretty)     ; organize your plain life in plain text
        (scheme +chez 
-               +guile)      ; a fully conniving family of lisps
-       sh                  ; she sells {ba,z,fi}sh shells on the C xor
+               +guile)    ; a fully conniving family of lisps
+       sh                 ; she sells {ba,z,fi}sh shells on the C xor
        sml
 
        :email
