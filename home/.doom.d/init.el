@@ -70,8 +70,7 @@
        (latex +latexmk
               +cdlatex)  ; writing papers in Emacs has never been so fun
        markdown          ; writing docs for people to ignore
-       (org +pandoc
-            +pretty)     ; organize your plain life in plain text
+       (org +pandoc)     ; organize your plain life in plain text
        (scheme +chez 
                +guile)    ; a fully conniving family of lisps
        sh                 ; she sells {ba,z,fi}sh shells on the C xor
