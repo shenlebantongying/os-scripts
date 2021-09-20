@@ -19,7 +19,7 @@ function green-msg(){
 }
 
 function blue-msg(){ 
-      echo -e "$(tput setaf 21)$1$(tput sgr 0)"
+      echo -e "$(tput setaf 27)$1$(tput sgr 0)"
 }
 
 # $1 -> Path to file inside git
