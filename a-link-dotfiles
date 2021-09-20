@@ -100,3 +100,16 @@ link_file2 ".config/nvim/ginit.vim"
 link_dir ".config/coq"
 link_file2 ".config/coq/coqiderc"
 link_file2 ".config/coq/coqide.keys"
+
+
+#fish
+link_dir ".config/fish"
+link_dir ".config/functions"
+link_file2 ".config/fish/config.fish"
+link_file2 ".config/fish/fish_variables"
+
+# loop throught all files under fish/functions, and strip first a few parts.
+for FILE in "${HOME}"/.config/fish/functions/*;
+do
+    link_file2 "${FILE#*/*/*/}";
+done
