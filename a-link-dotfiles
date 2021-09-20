@@ -71,15 +71,17 @@ function link_folder(){
     homeloc="${HOME}/${1}"
     scrploc="${SCRIPTPATH}/home/${1}"
 
+    for FILE in "${scrploc}"*;
+    do
+        link_file2 "${FILE#*/*/*/*/*/}"
+    done
+
     for FILE in "${homeloc}"*;
     do  
         link_file2 "${FILE#*/*/*/}";
     done
 
-    for FILE in "${scrploc}"*;
-    do
-        link_file2 "${FILE#*/*/*/*/*/}"
-    done
+
 }
 
 link_file2 ".bashrc"
