@@ -1,4 +1,7 @@
 if status is-interactive
+
+# [PATH]
+#======================================================
     switch (uname)
         case Linux
             set PATH \
@@ -27,5 +30,13 @@ if status is-interactive
             $PATH
         case '*'
                 echo !!!! OS undetectable
+    end
+
+    # special paths
+    if type -q "opam"
+        eval (opam env)
+    end
+    if type -q "rbenv"
+        rbenv init - fish | source
     end
 end

@@ -72,9 +72,6 @@
       <outline type="rss" xmlUrl="https://blog.jabref.org/feed.xml" title="JabRef | Blog"/>
       <outline type="rss" xmlUrl="https://www.lyx.org/misc/rss/lyx_news_feed.xml" title="LyX news feed"/>
     </outline>
-    <outline type="rss" title="https://cdn.jwz.org/blog/feed/">
-      <outline type="rss" xmlUrl="#" title=""/>
-    </outline>
     <outline type="rss" title="kde">
       <outline type="rss" xmlUrl="https://dot.kde.org/rss.xml" title="KDE.news"/>
       <outline type="rss" xmlUrl="https://planet.kde.org/global/atom.xml" title="Planet KDE | English"/>
@@ -126,9 +123,6 @@
     <outline type="rss" title="gnu">
       <outline type="rss" xmlUrl="http://www.pixelbeat.org/feed/rss2.xml" title="www.pixelbeat.org"/>
     </outline>
-    <outline type="rss" title="https://phoenixtrap.com/feed/">
-      <outline type="rss" xmlUrl="#" title=""/>
-    </outline>
     <outline type="rss" title="opensource">
       <outline type="rss" xmlUrl="https://sfconservancy.org/feeds/blog/" title="The Software Freedom Conservancy Blog."/>
     </outline>
@@ -137,6 +131,9 @@
     </outline>
     <outline type="rss" title="fsharp">
       <outline type="rss" xmlUrl="https://fsharpforfunandprofit.com/index.xml" title="F# for Fun and Profit"/>
+    </outline>
+    <outline type="rss" title="java">
+      <outline type="rss" xmlUrl="https://inside.java/feed.xml" title="insidejava"/>
     </outline>
   </body>
 </opml>
