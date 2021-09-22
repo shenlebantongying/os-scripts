@@ -65,22 +65,22 @@ function link_dir(){
 }
 
 # link everything under a folder
-# TODO: here is a duplicate
 function link_folder(){
 
-    homeloc="${HOME}/${1}"
+    lfhloc="${HOME}/${1}"
     scrploc="${SCRIPTPATH}/home/${1}"
 
     for FILE in "${scrploc}"*;
-    do
+    do  
+         red-msg "${FILE#*/*/*/*/*/}"
         link_file2 "${FILE#*/*/*/*/*/}"
     done
 
-    for FILE in "${homeloc}"*;
+    for FILE2 in "${lfhloc}"*.fish;
     do  
-        link_file2 "${FILE#*/*/*/}";
+        echo "${FILE2}"
+        link_file2 "${FILE2#*/*/*/}"
     done
-
 
 }
 
