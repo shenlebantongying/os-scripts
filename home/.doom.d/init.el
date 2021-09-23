@@ -72,7 +72,8 @@
        markdown          ; writing docs for people to ignore
        (org +pandoc)     ; organize your plain life in plain text
        (scheme +chez 
-               +guile)    ; a fully conniving family of lisps
+               +guile
+               +chibi)    ; a fully conniving family of lisps
        sh                 ; she sells {ba,z,fi}sh shells on the C xor
        sml
 
