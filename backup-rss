@@ -13,7 +13,13 @@ diff ~/.newsboat/urls "${SCRIPTPATH}"/rss.urls && echo "no new urls" || echo "=[
 
 if [[ -f ~/.newsboat/urls ]]; then
     cp ~/.newsboat/urls "${SCRIPTPATH}"/rss.urls
-    /usr/share/doc/newsboat/contrib/exportOPMLWithTags.py ~/.newsboat/urls > "${SCRIPTPATH}"/rss.opml
+
+    if [[ $(uname -m) == 'arm64' ]]; then
+        /opt/homebrew/share/doc/newsboat/contrib/exportOPMLWithTags.py
+    else
+        /usr/share/doc/newsboat/contrib/exportOPMLWithTags.py ~/.newsboat/urls > "${SCRIPTPATH}"/rss.opml
+    fi
+    
 else 
     cp "${SCRIPTPATH}"/rss.urls ~/.newsboat/urls 
 fi

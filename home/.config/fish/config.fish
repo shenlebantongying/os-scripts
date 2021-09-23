@@ -32,6 +32,11 @@ if status is-interactive
                 echo !!!! OS undetectable
     end
 
+    # M1 homebrew 
+    if test "arm" = (uname -p)
+        eval (/opt/homebrew/bin/brew shellenv)
+    end
+
     # special paths
     if type -q "opam"
         eval (opam env)

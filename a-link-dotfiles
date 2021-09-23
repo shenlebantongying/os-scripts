@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# this file require GNU coreutils & newest bash
+
 set -e
 
 SCRIPT=$(realpath "$0") # -> Complete path /home/slbtty/scripts/sourcetest.bash
@@ -86,8 +88,6 @@ function link_folder(){
 
 link_file2 ".bashrc"
 link_file2 ".bash_profile"
-
-link_file2 ".zshrc"
 
 link_dir ".newsboat"
 link_file2 ".newsboat/config"
