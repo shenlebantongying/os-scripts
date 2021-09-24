@@ -27,6 +27,8 @@ if status is-interactive
                 $HOME/.rbenv/bin \
                 $HOME/.cargo/bin \
                 $HOME/.emacs.d/bin \
+                /usr/local/smlnj/bin \
+                /opt/homebrew/opt/llvm/bin \
             $PATH
         case '*'
                 echo !!!! OS undetectable
@@ -42,6 +44,6 @@ if status is-interactive
         eval (opam env)
     end
     if type -q "rbenv"
-        rbenv init - fish | source
+        source (rbenv init -|psub)
     end
 end

@@ -24,3 +24,8 @@ git config --global core.autocrlf input
 git config --global init.defaultBranch main
 
 git config --list
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    echo .DS_Store >> ~/.gitignore_global
+    git config --global core.excludesfile ~/.gitignore_global
+fi

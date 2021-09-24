@@ -25,7 +25,7 @@
        doom-dashboard    ; a nifty splash screen for Emacs
        doom-quit         ; DOOM quit-message prompts when you quit Emacs
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
-       ligatures         ; ligatures and symbols to make your code pretty again
+       ;ligatures  ;; -> This mode might be congative burden
        modeline          ; snazzy, Atom-inspired modeline, plus API
        ophints           ; highlight the region an operation acts on
        (popup +defaults)   ; tame sudden yet inevitable temporary windows
@@ -74,7 +74,7 @@
        (scheme +chez 
                +guile
                +chibi)    ; a fully conniving family of lisps
-       sh                 ; she sells {ba,z,fi}sh shells on the C xor
+       (sh +fish)         ; she sells {ba,z,fi}sh shells on the C xor
        sml
 
        :email
