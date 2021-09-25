@@ -21,6 +21,7 @@ if status is-interactive
             set PATH \
                 $HOME/.ghcup/bin \
                 $HOME/.local/bin \
+                $HOME/Library/Python/3.9/bin \
                 $HOME/bin \
                 $HOME/scripts \
                 $HOME/.cabal/bin \

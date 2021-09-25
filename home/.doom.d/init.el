@@ -17,29 +17,24 @@
 (doom! :input
 
        :completion
-       company           ; the ultimate code completion backend
-       (ivy +icons)        ; a search engine for love and life
+       (company +childframe)         ; the ultimate code completion backend
+       (vertico +icons)        ; a search engine for love and life
 
        :ui
        doom              ; what makes DOOM look the way it does
        doom-dashboard    ; a nifty splash screen for Emacs
-       doom-quit         ; DOOM quit-message prompts when you quit Emacs
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
-       ;ligatures  ;; -> This mode might be congative burden
        modeline          ; snazzy, Atom-inspired modeline, plus API
        ophints           ; highlight the region an operation acts on
        (popup +defaults)   ; tame sudden yet inevitable temporary windows
        tabs              ; a tab bar for Emacs
-       treemacs          ; a project drawer, like neotree but cooler
+       neotree
        vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        window-select     ; visually switch windows
-       workspaces        ; tab emulation, persistence & separate workspaces
        zen               ; distraction-free coding or writing
 
        :editor
-       file-templates    ; auto-snippets for empty files
-       fold              ; (nigh) universal code folding
        snippets          ; my elves. They type so I don't have to
 
        :emacs
@@ -75,6 +70,7 @@
                +guile
                +chibi)    ; a fully conniving family of lisps
        (sh +fish)         ; she sells {ba,z,fi}sh shells on the C xor
+       python
        sml
 
        :email

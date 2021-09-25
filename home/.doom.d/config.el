@@ -55,7 +55,7 @@
 
 (map!
  "s-o" #'find-file-at-point
- "s-t" #'treemacs
+ "s-t" #'+neotree/open
  ;; wasd
  "s-w" #'previous-line
  "s-s" #'next-line
@@ -69,10 +69,10 @@
  )
 
 ;; override some defaults
-(use-package! treemacs
-  :config
-  (setq treemacs-follow-mode t
-        treemacs-position 'right))
+;; (use-package! treemacs
+;;   :config
+;;   (setq treemacs-follow-mode t
+;;         treemacs-position 'right))
 
 ;; Scheme
 
@@ -89,3 +89,7 @@
 :hook (org-mode . org-fragtog-mode)
 :config
 )
+
+;; pre lang
+(after! python
+  (setq python-shell-interpreter "ipython3"))
