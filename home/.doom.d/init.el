@@ -31,7 +31,7 @@
        neotree
        vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
-       window-select     ; visually switch windows
+       (window-select +switch-window)     ; visually switch windows
        zen               ; distraction-free coding or writing
 
        :editor

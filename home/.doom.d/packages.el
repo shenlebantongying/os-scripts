@@ -49,5 +49,8 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-
 (package! org-fragtog)
+(package! kaolin-themes)
+(package! solo-jazz-theme)
+(package! spacemacs-theme)
+(package! modus-themes)

@@ -1,3 +1,4 @@
+
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
@@ -13,7 +14,6 @@
 
 (setq +doom-dashboard-functions
   '(doom-dashboard-widget-shortmenu))
-(setq initial-frame-alist '((width . 90) (height . 40)))
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
@@ -33,7 +33,7 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-(setq doom-theme 'doom-homage-white)
+(setq doom-theme 'modus-operandi)
 (setq doom-font (font-spec :family "JetBrains Mono" :size 12.0))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
@@ -53,6 +53,24 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+
+;; mac related bindings
+(when IS-MAC
+  (setq
+   mac-function-modifier 'hyper)
+  (map!
+   "H-w" #'previous-line
+   "H-s" #'next-line
+   "H-a" #'backward-char
+   "H-d" #'forward-char
+   "H-q" #'backward-word
+   "H-e" #'forward-word
+   "H-2" #'scroll-down
+   "H-x" #'scroll-up
+   )
+  )
+
+;; generic
 (map!
  "s-o" #'find-file-at-point
  "s-t" #'+neotree/open
@@ -63,9 +81,12 @@
  "s-d" #'forward-char
  ;; q - e
  "s-q" #'backward-word
+ "s-e" #'forward-word
 
  ;; org
  "s-l" #'org-preview-latex-fragment
+
+ "<f5>" #'+vterm/toggle
  )
 
 ;; override some defaults
@@ -80,16 +101,15 @@
 (after! geiser
   (setq geiser-guile-binary (executable-find "guile3")))
 
-;; org-mode
-(setq org-directory "~/workbench-universe/")
-
-; better latexing
-(use-package! org-fragtog
-:after org
-:hook (org-mode . org-fragtog-mode)
-:config
-)
-
-;; pre lang
 (after! python
   (setq python-shell-interpreter "ipython3"))
+
+(after! centaur-tabs
+   (setq centaur-tabs-height 1)
+)
+
+(after! doom-modeline
+  (setq doom-modeline-height 1)
+  )
+
+(setq org-directory "~/workbench-universe/")
