@@ -72,6 +72,7 @@
        (sh +fish)         ; she sells {ba,z,fi}sh shells on the C xor
        python
        sml
+       ocaml
 
        :email
 
