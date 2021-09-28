@@ -13,7 +13,7 @@
 (setq display-line-numbers-type t)
 
 (setq +doom-dashboard-functions
-  '(doom-dashboard-widget-shortmenu))
+      '(doom-dashboard-widget-shortmenu))
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
@@ -33,7 +33,7 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-(setq doom-theme 'modus-operandi)
+(setq doom-theme 'doom-one-light)
 (setq doom-font (font-spec :family "JetBrains Mono" :size 12.0))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
@@ -105,11 +105,24 @@
   (setq python-shell-interpreter "ipython3"))
 
 (after! centaur-tabs
-   (setq centaur-tabs-height 1)
-)
+   (setq centaur-tabs-height 1))
 
 (after! doom-modeline
-  (setq doom-modeline-height 1)
-  )
+  (setq doom-modeline-height 1))
 
 (setq org-directory "~/workbench-universe/")
+
+(use-package! dashboard
+  :hook
+  ((after-init . dashboard-setup-startup-hook))
+  :config
+  (setq dashboard-filter-agenda-entry 'dashboard-filter-agenda-by-todo)
+  :custom
+  (dashboard-startup-banner nil)
+  (dashboard-center-content t)
+  (dashboard-set-file-icons t)
+  (dashboard-set-heading-icons t)
+  (dashboard-items '((recents  . 6)
+                     (projects . 10)
+                     (agenda . 6)))
+ )

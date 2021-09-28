@@ -22,7 +22,7 @@
 
        :ui
        doom              ; what makes DOOM look the way it does
-       doom-dashboard    ; a nifty splash screen for Emacs
+       ;doom-dashboard    ; a nifty splash screen for Emacs
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        indent-guides
        modeline          ; snazzy, Atom-inspired modeline, plus API
@@ -36,7 +36,7 @@
        zen               ; distraction-free coding or writing
 
        :editor
-       snippets          ; my elves. They type so I don't have to
+       snippets
 
        :emacs
        (dired +icons)             ; making dired pretty [functional]
@@ -54,7 +54,6 @@
        :tools
        (eval +overlay)     ; run code, run (also, repls)
        lookup              ; navigate your code and its documentation
-       magit
 
        :os
        (:if IS-MAC macos)  ; improve compatibility with macOS

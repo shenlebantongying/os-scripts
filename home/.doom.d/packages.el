@@ -50,7 +50,11 @@
 ;(unpin! t)
 
 (package! org-fragtog)
+
+;; extra themes
 (package! kaolin-themes)
 (package! solo-jazz-theme)
 (package! spacemacs-theme)
 (package! modus-themes)
+
+(package! dashboard)
