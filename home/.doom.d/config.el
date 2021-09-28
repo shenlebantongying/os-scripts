@@ -116,7 +116,7 @@
   :hook
   ((after-init . dashboard-setup-startup-hook))
   :config
-  (setq dashboard-filter-agenda-entry 'dashboard-filter-agenda-by-todo)
+ ;; (setq dashboard-filter-agenda-entry 'dashboard-filter-agenda-by-todo)
   :custom
   (dashboard-startup-banner nil)
   (dashboard-center-content t)
@@ -124,5 +124,6 @@
   (dashboard-set-heading-icons t)
   (dashboard-items '((recents  . 6)
                      (projects . 10)
-                     (agenda . 6)))
+                     ;;(agenda . 6)
+                     ))
  )
