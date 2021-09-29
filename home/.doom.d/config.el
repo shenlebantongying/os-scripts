@@ -57,7 +57,9 @@
 ;; mac related bindings
 (when IS-MAC
   (setq
-   mac-function-modifier 'hyper)
+   mac-function-modifier 'hyper
+   mac-right-option-modifier 'control
+   )
   (map!
    "H-w" #'previous-line
    "H-s" #'next-line
@@ -122,7 +124,7 @@
   (dashboard-center-content t)
   (dashboard-set-file-icons t)
   (dashboard-set-heading-icons t)
-  (dashboard-items '((recents  . 6)
+  (dashboard-items '((recents  . 10)
                      (projects . 10)
                      ;;(agenda . 6)
                      ))

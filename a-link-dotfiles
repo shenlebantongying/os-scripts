@@ -12,20 +12,20 @@ SCRIPTPATH=$(dirname "$SCRIPT") #-> only /home/slbtty/scripts
 
 # TODO: check other nanmes for tput
 
-function red-msg(){ 
+function red-msg(){
       echo -e "$(tput setaf 9)$1$(tput sgr 0)"
 }
 
-function green-msg(){ 
+function green-msg(){
       echo -e "$(tput setaf 10)$1$(tput sgr 0)"
 }
 
-function blue-msg(){ 
+function blue-msg(){
       echo -e "$(tput setaf 27)$1$(tput sgr 0)"
 }
 
 # $1 -> Path to file inside git
-# $2 -> Path to system target 
+# $2 -> Path to system target
 function link_file2(){
     homeloc="${HOME}/${1}"
     scrploc="${SCRIPTPATH}/home/${1}"
@@ -33,15 +33,15 @@ if [ ! -f "$scrploc" ];
 then
     red-msg "$scrploc doesn't exist"
     blue-msg "Trying to copy it from $homeloc"
-    if [ -f "$homeloc" ]; 
+    if [ -f "$homeloc" ];
     then
         green-msg "Copying $homeloc to $scrploc"
         dirloc=$(dirname "$scrploc")
         mkdir -p "$dirloc" &&  cp "$homeloc" "$scrploc"
-    else 
+    else
         red-msg "$homeloc doesn't exist too!"
         return;
-    fi 
+    fi
 fi
 
 if [ -f "$homeloc" ];
@@ -50,7 +50,7 @@ then
     if [ "$(file --mime-type --brief "$1")" == "inode/symlink" ];then
         green-msg "${1} is already linked!"
         return;
-    else 
+    else
         blue-msg "Remove original $homeloc"
         rm "$homeloc"
     fi
@@ -73,12 +73,12 @@ function link_folder(){
     scrploc="${SCRIPTPATH}/home/${1}"
 
     for FILE in "${scrploc}"*;
-    do  
+    do
         link_file2 "${FILE#*/*/*/*/*/}"
     done
 
     for FILE2 in "${lfhloc}"*.fish;
-    do  
+    do
         echo "${FILE2}"
         link_file2 "${FILE2#*/*/*/}"
     done
@@ -108,6 +108,10 @@ link_dir ".doom.d"
 link_file2 ".doom.d/init.el"
 link_file2 ".doom.d/config.el"
 link_file2 ".doom.d/packages.el"
+
+# alternative
+link_dir ".spacemacs.d"
+link_file2 ".spacemacs.d/init.el"
 
 link_file2 ".vimrc"
 

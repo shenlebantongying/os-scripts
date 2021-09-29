@@ -54,10 +54,13 @@
        :tools
        (eval +overlay)     ; run code, run (also, repls)
        lookup              ; navigate your code and its documentation
+       (lsp +peek)
 
        :os
        (:if IS-MAC macos)  ; improve compatibility with macOS
+                           ;
        :lang
+       (cc +lsp)
        common-lisp       ; if you've seen one lisp, you've seen them all
        coq               ; proofs-as-programs
        emacs-lisp        ; drown in parentheses
