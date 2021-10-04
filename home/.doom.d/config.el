@@ -33,8 +33,8 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-(setq doom-theme 'doom-one-light)
-(setq doom-font (font-spec :family "JetBrains Mono" :size 12.0))
+(setq doom-theme 'doom-one)
+(setq doom-font (font-spec :family "JetBrains Mono" :size 13.0))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -53,12 +53,11 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-
 ;; mac related bindings
 (when IS-MAC
   (setq
    mac-function-modifier 'hyper
-   mac-right-option-modifier 'control
+  ;; mac-right-option-modifier 'control
    )
   (map!
    "H-w" #'previous-line
@@ -76,15 +75,6 @@
 (map!
  "s-o" #'find-file-at-point
  "s-t" #'+neotree/open
- ;; wasd
- "s-w" #'previous-line
- "s-s" #'next-line
- "s-a" #'backward-char
- "s-d" #'forward-char
- ;; q - e
- "s-q" #'backward-word
- "s-e" #'forward-word
-
  ;; org
  "s-l" #'org-preview-latex-fragment
 
@@ -107,7 +97,8 @@
   (setq python-shell-interpreter "ipython3"))
 
 (after! centaur-tabs
-   (setq centaur-tabs-height 1))
+  (setq centaur-tabs-height 15
+        centaur-tabs-set-bar 'under))
 
 (after! doom-modeline
   (setq doom-modeline-height 1))

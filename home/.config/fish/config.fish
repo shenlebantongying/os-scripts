@@ -20,17 +20,19 @@ switch (uname)
     case Darwin
         set PATH \
             $HOME/.ghcup/bin \
+            $HOME/.cabal/bin \
             $HOME/.local/bin \
             $HOME/Library/Python/3.9/bin \
             $HOME/bin \
             $HOME/scripts \
-            $HOME/.cabal/bin \
             $HOME/.rbenv/bin \
             $HOME/.cargo/bin \
             $HOME/.emacs.d/bin \
             /usr/local/smlnj/bin \
             /opt/homebrew/opt/llvm/bin \
             $PATH
+
+        source {$HOME}/.iterm2_shell_integration.fish
     case '*'
             echo !!!! OS undetectable
 end

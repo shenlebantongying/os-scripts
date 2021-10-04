@@ -61,6 +61,7 @@
                            ;
        :lang
        (cc +lsp)
+       clojure
        common-lisp       ; if you've seen one lisp, you've seen them all
        coq               ; proofs-as-programs
        emacs-lisp        ; drown in parentheses
