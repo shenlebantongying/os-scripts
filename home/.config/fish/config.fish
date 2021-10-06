@@ -49,4 +49,9 @@ end
     if type -q "rbenv"
         source (rbenv init -|psub)
     end
+
+    # taskwarrior
+    if type -q "task"
+        task list 
+    end
 end
