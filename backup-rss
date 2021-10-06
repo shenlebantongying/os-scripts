@@ -15,7 +15,7 @@ if [[ -f ~/.newsboat/urls ]]; then
     cp ~/.newsboat/urls "${SCRIPTPATH}"/rss.urls
 
     if [[ $(uname -m) == 'arm64' ]]; then
-        /opt/homebrew/share/doc/newsboat/contrib/exportOPMLWithTags.py
+        /opt/homebrew/share/doc/newsboat/contrib/exportOPMLWithTags.py ~/.newsboat/urls > "${SCRIPTPATH}"/rss.opml
     else
         /usr/share/doc/newsboat/contrib/exportOPMLWithTags.py ~/.newsboat/urls > "${SCRIPTPATH}"/rss.opml
     fi
