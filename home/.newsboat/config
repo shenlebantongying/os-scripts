@@ -1,4 +1,4 @@
-browser "open '%u'"
+browser "newsboat-browser.sh '%u'"
 
 auto-reload yes
 feed-sort-order unreadarticlecount-asc
