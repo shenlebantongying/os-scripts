@@ -1,3 +1,5 @@
+# shortcuts:
+# PL -> Programming languages
 http://blog.ezyang.com/feed/ software
 http://feeds.feedburner.com/PythonInsider python
 http://feeds.woboq.com/woboq kde/qt
@@ -17,7 +19,6 @@ https://blog.jabref.org/feed.xml tool-update
 https://blog.lilydjwg.me/feed friends
 https://blog.petdance.com/feed.xml software
 https://blog.sgorava.xyz/index.xml friends
-# https://cdn.jwz.org/blog/feed/ friends
 https://ctian.livejournal.com/data/rss software
 https://daniel.haxx.se/blog/feed/ software
 https://devblogs.microsoft.com/oldnewthing/author/oldnewthing/feed software
@@ -33,7 +34,6 @@ https://i.nebula.moe/rss.xml friends
 https://iscinumpy.gitlab.io/index.xml c++
 https://isocpp.org/blog/rss c++
 https://linuxreviews.org/feed.rss software
-https://lucumr.pocoo.org/feed.atom software
 https://lucumr.pocoo.org/feed.atom software
 https://martinfowler.com/feed.atom software
 https://matklad.github.io/feed.xml software
@@ -73,7 +73,6 @@ https://tymoon.eu/api/reader/atom lisp
 https://neovim.io/news.xml neovim
 https://fare.livejournal.com/data/rss lisp
 http://www.pixelbeat.org/feed/rss2.xml gnu
-# https://phoenixtrap.com/feed/ perl -> shit ranting
 https://sfconservancy.org/feeds/blog/ opensource
 https://tenthousandmeters.com/feeds/all.atom.xml python
 https://betterexplained.com/feed/ math
@@ -83,3 +82,18 @@ http://www.lispology.com/rss?JHE+3 lisp
 https://www.ocamlpro.com/feed/ ocaml
 https://fsharpforfunandprofit.com/index.xml fsharp
 https://inside.java/feed.xml java
+http://lambda-the-ultimate.org/rss.xml PL
+https://slbtty.gitlab.io/feed.xml self
+http://jakob.space/feed.xml PL
+https://www.more-magic.net/feed.atom scheme
+https://tess.oconnor.cx/feed life
+http://modernescpp.com/?format=feed&type=rss c++
+http://neugierig.org/software/blog/atom.xml software
+https://64k.space/feed.xml software
+https://code.visualstudio.com/feed.xml vscode
+https://www.murilopereira.com/index.xml general
+https://planet.emacslife.com/atom.xml emacs
+https://borretti.me/feed.xml PL
+http://www.weaselhat.com/feed/ PL
+https://blog.sigplan.org/ PL
+https://www.stephendiehl.com/posts.html/feed.atom haskell

@@ -33,7 +33,7 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-(setq doom-theme 'doom-one)
+(setq doom-theme 'modus-operandi)
 (setq doom-font (font-spec :family "JetBrains Mono" :size 13.0))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
@@ -56,6 +56,8 @@
 ;; mac related bindings
 (when IS-MAC
   (setq
+   mac-right-command-modifier 'control
+   mac-right-option-modifier 'meta
    mac-function-modifier 'hyper
   ;; mac-right-option-modifier 'control
    )
