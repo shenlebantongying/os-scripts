@@ -23,6 +23,8 @@ git config --global user.email shenlebantongying@gmail.com
 git config --global core.autocrlf input
 git config --global init.defaultBranch main
 
+git config --global alias.nocommit 'commit -a --allow-empty-message -m ""'
+
 git config --list
 
 if [[ "$OSTYPE" == "darwin"* ]]; then

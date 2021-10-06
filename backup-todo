@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+cd ${HOME}/.task || exit
+git commit -a --allow-empty-message -m ''
+git push
+echo "Tasks pushed to"
+git remote -v

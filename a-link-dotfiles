@@ -135,3 +135,4 @@ link_dir ".config/functions"
 link_folder ".config/fish/functions/"
 
 link_file2 ".guile"
+link_file2 ".taskrc"

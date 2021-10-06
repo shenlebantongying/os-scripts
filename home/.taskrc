@@ -1,0 +1,15 @@
+# [Created by task 2.5.3 10/6/2021]
+
+# Use the command 'task show' to see all defaults and overrides
+
+# Files
+data.location=~/.task
+
+default.command=list
+search.case.sensitive=no
+
+# List all projects with `task projects`, including those completed.
+list.all.projects=yes
+
+# Color theme (uncomment one to use)
+include /opt/homebrew/share/doc/task/rc/light-256.theme
