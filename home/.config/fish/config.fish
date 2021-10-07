@@ -32,15 +32,27 @@ switch (uname)
             /opt/homebrew/opt/llvm/bin \
             $PATH
 
+            # M1 homebrew
+         if test "arm" = (uname -p)
+             eval (/opt/homebrew/bin/brew shellenv)
+         end
+
+        # homebrew M1 mac specific completion
+        if test -d (brew --prefix)"/share/fish/completions"
+            set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/completions
+        end
+
+        if test -d (brew --prefix)"/share/fish/vendor_completions.d"
+            set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
+        end
+
         source {$HOME}/.iterm2_shell_integration.fish
+
     case '*'
             echo !!!! OS undetectable
 end
 
-    # M1 homebrew 
-    if test "arm" = (uname -p)
-        eval (/opt/homebrew/bin/brew shellenv)
-    end
+
 
     # special paths
     if type -q "opam"
