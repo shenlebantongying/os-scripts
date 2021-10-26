@@ -94,6 +94,7 @@ link_file2 ".newsboat/config"
 link_dir ".config/ranger"
 link_file2 ".config/ranger/rc.conf"
 link_file2 ".config/ranger/rifle.conf"
+link_file2 ".config/ranger/scope.sh"
 
 link_dir ".config/sublime-text/Packages/User"
 link_file2 ".config/sublime-text/Packages/User/Preferences.sublime-settings"
