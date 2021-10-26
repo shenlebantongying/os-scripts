@@ -18,7 +18,15 @@ switch (uname)
             /usr/local/Wolfram/Mathematica/12.3/Executables \
             $PATH
     case Darwin
+
+         # M1 homebrew, we want to override some brew path
+         if test "arm" = (uname -p)
+             eval (/opt/homebrew/bin/brew shellenv)
+         end
+
+
         set PATH \
+            $HOME/Qt/6.2.0/macos/bin \
             $HOME/.ghcup/bin \
             $HOME/.cabal/bin \
             $HOME/.local/bin \
@@ -29,13 +37,13 @@ switch (uname)
             $HOME/.cargo/bin \
             $HOME/.emacs.d/bin \
             /usr/local/smlnj/bin \
+        # shadowing system built-ins
             /opt/homebrew/opt/llvm/bin \
+            # make GNU great again
+            /opt/homebrew/opt/bison/bin \
+            /opt/homebrew/opt/libxslt/bin \
+            /opt/homebrew/opt/make/libexec/gnubin \
             $PATH
-
-            # M1 homebrew
-         if test "arm" = (uname -p)
-             eval (/opt/homebrew/bin/brew shellenv)
-         end
 
         # homebrew M1 mac specific completion
         if test -d (brew --prefix)"/share/fish/completions"
