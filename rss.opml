@@ -55,7 +55,7 @@
       <outline type="rss" xmlUrl="https://blog.lilydjwg.me/feed" title="依云's Blog"/>
       <outline type="rss" xmlUrl="https://blog.sgorava.xyz/index.xml" title="My land"/>
       <outline type="rss" xmlUrl="https://farseerfc.me/feeds/atom.xml" title="Farseerfc的小窩"/>
-      <outline type="rss" xmlUrl="https://i.nebula.moe/rss.xml" title=""/>
+      <outline type="rss" xmlUrl="https://i.nebula.moe/rss.xml" title="奇想齋"/>
       <outline type="rss" xmlUrl="https://pockies.github.io/feed.xml" title="Pockies"/>
       <outline type="rss" xmlUrl="https://ridiculousfish.com/blog/atom.xml" title="ridiculous_fish"/>
       <outline type="rss" xmlUrl="https://sh.alynx.one/atom.xml" title="喵's StackHarbor"/>
@@ -162,6 +162,12 @@
     </outline>
     <outline type="rss" title="haskell">
       <outline type="rss" xmlUrl="https://www.stephendiehl.com/feed.atom" title="Stephen Diehl"/>
+    </outline>
+    <outline type="rss" title="gtk">
+      <outline type="rss" xmlUrl="https://blog.gtk.org/feed/" title="GTK Development Blog"/>
+    </outline>
+    <outline type="rss" title="cmake">
+      <outline type="rss" xmlUrl="https://crascit.com/feed/" title="Crascit"/>
     </outline>
   </body>
 </opml>
