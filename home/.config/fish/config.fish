@@ -30,7 +30,7 @@ switch (uname)
             $HOME/.ghcup/bin \
             $HOME/.cabal/bin \
             $HOME/.local/bin \
-            $HOME/Library/Python/3.9/bin \
+            $HOME/Library/Python/3.10/bin \
             $HOME/bin \
             $HOME/scripts \
             $HOME/.rbenv/bin \
