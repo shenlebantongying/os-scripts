@@ -1,6 +1,47 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# Precedence for interactive shell:
+# 1. Personal scripts/Binaries
+# 2. Language's dedicated manager
+# 3. guix or nix
+# 4. System's package
+
+#[ GUIX
+GUIX_PROFILE="$HOME/.config/guix/current"
+source "$GUIX_PROFILE/etc/profile"
+export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
+#] END GUIX
+
+PATH=${HOME}/s\
+:${HOME}/bin\
+:${HOME}/.local/bin\
+:${HOME}/.ghcup/bin\
+:${HOME}/.cabal/bin\
+:${HOME}/.rbenv/bin\
+:${HOME}/.cargo/bin\
+:${HOME}/.emacs.d/bin\
+:${HOME}/.local/share/coursier/bin\
+:${HOME}/.dotnet\
+:$PATH\
+:/usr/local/Wolfram/Mathematica/12.3/Executables
+
+# Fixme -> shorter version?
+if command -v opam &> /dev/null
+then
+eval "$(opam env)"
+fi
+
+if command -v rbenv &> /dev/null
+then
+    eval "$(rbenv init - bash)"
+fi
+
+export PS1="[\[\e[32m\]\A\[\e[m\]] \u@\h \[\e[34m\]\w\[\e[m\] \n> "
+export LESSOPEN="|lesspipe.sh %s"; export LESSOPEN
+export LESS='--mouse --wheel-lines=10'
+# Extra commands
+
 ## Copied from ubuntu's default
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -12,11 +53,10 @@ shopt -s checkwinsize
 
 # a hack to make cd easier.
 # cd ./nice -> cd nice
-CDPATH=".:~"
+CDPATH=".:~:/"
 
 export EDITOR=nvim
 export VISUAL=nvim
-
 
 # better defaults
 alias ls='ls --color=auto'
@@ -33,8 +73,6 @@ alias fzfopen='kde-open5 $(fzf) &> /dev/null'
 alias date-simple="date +"%Y-%m-%d""
 
 # shortcuts
-alias v='nvim-qt'
-alias e='emacs'
 alias sublime='subl'
 alias merge='smerge'
 
@@ -54,43 +92,6 @@ alias cl="rlwrap lisp"
 alias sml="rlwrap smlnj"
 alias maxima="rlwrap maxima" # rmaxima also works
 alias fsi="dotnet fsi"
-
-#conflict with llvm's ll 
-#alias ll='ls -l -h --color=auto'
-
-PS1='\n[\t \w]\n\$ '
-
-PATH=${HOME}/.ghcup/bin\
-:$PATH\
-:${HOME}/.local/bin\
-:${HOME}/bin\
-:${HOME}/s\
-:${HOME}/.dotnet\
-:${HOME}/.cabal/bin\
-:${HOME}/.rbenv/bin\
-:${HOME}/.cargo/bin\
-:${HOME}/.emacs.d/bin\
-:${HOME}/.local/share/coursier/bin\
-:/usr/local/Wolfram/Mathematica/12.3/Executables
-
-# Fixme -> shorter version?
-if command -v opam &> /dev/null
-then
-eval "$(opam env)"
-fi
-
-if command -v rbenv &> /dev/null
-then
-    eval "$(rbenv init - bash)"
-fi
-
-# -> uselss, env files are just appending PATH withe extra steps
-# [ -f "${HOME}/.ghcup/env" ] && source "${HOME}/.ghcup/env" # ghcup-env
-# [ -f "${HOME}/.cargo/env" ] && source "${HOME}/.cargo/env"
-
-LESSOPEN="|lesspipe.sh %s"; export LESSOPEN
-
-# Extra commands
 
 extract () {
    if [ -f $1 ] ; then
@@ -113,16 +114,8 @@ extract () {
    fi
 }
 
-# function gitcom() {
-#     git commit -m "[> $(date -u)"
-# }
-
-
 # Antlr and java
-
-# disabled due to annoyance
 # export _JAVA_OPTIONS='-Dawt.useSystemAAFontSettings=on -Dswing.defaultlaf=javax.swing.plaf.nimbus.NimbusLookAndFeel'
-
 alias antlr4='java -Xmx500M -cp "/usr/local/lib/antlr-4.9-complete.jar:$CLASSPATH" org.antlr.v4.Tool'
 alias grun='java -Xmx500M -cp "/usr/local/lib/antlr-4.9-complete.jar:$CLASSPATH" org.antlr.v4.gui.TestRig'
 
