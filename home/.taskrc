@@ -12,4 +12,4 @@ search.case.sensitive=no
 list.all.projects=yes
 
 # Color theme (uncomment one to use)
-include /opt/homebrew/share/doc/task/rc/light-256.theme
+include .taskrc_theme

@@ -8,7 +8,7 @@
 # 4. System's package
 
 #[ GUIX
-GUIX_PROFILE="$HOME/.config/guix/current"
+GUIX_PROFILE="/home/slbtty/.guix-profile"
 source "$GUIX_PROFILE/etc/profile"
 export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
 #] END GUIX
@@ -65,6 +65,7 @@ alias vim='nvim'
 alias vimdiff='nvim -d'
 
 # handy toolkits
+alias open="kde-open5 &>/dev/null"
 alias byte2readable='numfmt --to=iec-i --suffix=B'
 alias cmx='chmod +x'
 alias gs='git status -sb'
@@ -123,4 +124,8 @@ export CLASSPATH=".:/usr/local/lib/antlr-4.9-complete.jar:$CLASSPATH"
 
 function krm(){
     kioclient5 move "$@" trash:/
+}
+
+function peek(){
+    eval "$@" 2>/dev/null | kate -i &>/dev/null & 
 }
