@@ -1,17 +1,18 @@
+# For Linux-based system only.
+
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 # Precedence for interactive shell:
 # 1. Personal scripts/Binaries
 # 2. Language's dedicated manager
-# 3. guix or nix
-# 4. System's package
+# 3. Nix or Guix
+# 4. Flatpak/Snap
+# 5. System's package
 
-#[ GUIX
-GUIX_PROFILE="/home/slbtty/.guix-profile"
-source "$GUIX_PROFILE/etc/profile"
-export GUIX_LOCPATH="$HOME/.guix-profile/lib/locale"
-#] END GUIX
+#[ NIX
+export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
+#] END NIX
 
 PATH=${HOME}/s\
 :${HOME}/bin\

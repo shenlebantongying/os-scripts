@@ -13,3 +13,4 @@ list.all.projects=yes
 
 # Color theme (uncomment one to use)
 include .taskrc_theme
+news.version=2.6.0
