@@ -19,4 +19,4 @@ opam init
 fi
 
 eval $(opam env)
-opam install merlin utop ocp-indent ocamlformat
+opam install merlin utop ocp-indent ocamlformat ocaml-lsp-server 

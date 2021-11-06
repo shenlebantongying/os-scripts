@@ -30,13 +30,15 @@ switch (uname)
             $HOME/.ghcup/bin \
             $HOME/.cabal/bin \
             $HOME/.local/bin \
-            $HOME/Library/Python/3.9/bin \
             $HOME/bin \
             $HOME/scripts \
             $HOME/.rbenv/bin \
             $HOME/.cargo/bin \
             $HOME/.emacs.d/bin \
             /usr/local/smlnj/bin \
+        # Python
+            $HOME/Library/Python/3.10/bin \
+            /opt/homebrew/opt/python@3.10/bin \
         # shadowing system built-ins
             /opt/homebrew/opt/llvm/bin \
             # make GNU great again
