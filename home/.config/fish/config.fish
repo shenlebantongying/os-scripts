@@ -56,8 +56,6 @@ switch (uname)
             set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
         end
 
-        source {$HOME}/.iterm2_shell_integration.fish
-
         set -gx EDITOR nvim
 
     case '*'
