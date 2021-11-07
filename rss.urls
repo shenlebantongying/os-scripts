@@ -1,5 +1,7 @@
 # shortcuts:
 # PL -> Programming languages
+# metaquery all unreaded
+"query:Unread Articles:unread = \"yes\""
 http://blog.ezyang.com/feed/ software
 http://feeds.feedburner.com/PythonInsider python
 http://feeds.woboq.com/woboq kde/qt
@@ -19,7 +21,6 @@ https://blog.jabref.org/feed.xml tool-update
 https://blog.lilydjwg.me/feed friends
 https://blog.petdance.com/feed.xml software
 https://blog.sgorava.xyz/index.xml friends
-# https://cdn.jwz.org/blog/feed/ friends
 https://ctian.livejournal.com/data/rss software
 https://daniel.haxx.se/blog/feed/ software
 https://devblogs.microsoft.com/oldnewthing/author/oldnewthing/feed software
@@ -100,5 +101,6 @@ https://blog.sigplan.org/feed/ PL
 https://www.stephendiehl.com/feed.atom haskell
 https://blog.gtk.org/feed/ gtk
 https://crascit.com/feed/ cmake
+https://lemire.me/blog/feed/ general
 https://popey.com/blog/index.xml linux
 https://weekly.nixos.org/feeds/all.atom.xml nix

@@ -68,7 +68,7 @@
     </outline>
     <outline type="rss" title="linux">
       <outline type="rss" xmlUrl="http://www.kroah.com/log/index.rss" title="Linux Kernel Monkey Log"/>
-      <outline type="rss" xmlUrl="https://popey.com/blog/index.xml" title="Alan Pope's blog"/>
+      <outline type="rss" xmlUrl="https://popey.com/blog/index.xml" title=""/>
     </outline>
     <outline type="rss" title="tool-update">
       <outline type="rss" xmlUrl="https://blog.jabref.org/feed.xml" title="JabRef | Blog"/>
@@ -157,6 +157,7 @@
     </outline>
     <outline type="rss" title="general">
       <outline type="rss" xmlUrl="https://www.murilopereira.com/index.xml" title="Murilo Pereira"/>
+      <outline type="rss" xmlUrl="https://lemire.me/blog/feed/" title="Daniel Lemire's blog"/>
     </outline>
     <outline type="rss" title="emacs">
       <outline type="rss" xmlUrl="https://planet.emacslife.com/atom.xml" title="Planet Emacslife"/>
@@ -171,7 +172,7 @@
       <outline type="rss" xmlUrl="https://crascit.com/feed/" title="Crascit"/>
     </outline>
     <outline type="rss" title="nix">
-      <outline type="rss" xmlUrl="https://weekly.nixos.org/feeds/all.atom.xml" title="NixOS Weekly"/>
+      <outline type="rss" xmlUrl="https://weekly.nixos.org/feeds/all.atom.xml" title=""/>
     </outline>
   </body>
 </opml>

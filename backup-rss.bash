@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-
-set -ex
-
 SCRIPT=$(realpath "$0") # -> Complete path /home/slbtty/scripts/sourcetest.bash
 SCRIPTPATH=$(dirname "$SCRIPT") #-> only /home/slbtty/scripts
+
+echo "!!!! require sdiff 3.X"
 
 # Old Akregator
 # cp ~/.local/share/akregator/data/feeds.opml "$SCRIPTPATH"/rss.opml
@@ -13,8 +12,8 @@ diff ~/.newsboat/urls "${SCRIPTPATH}"/rss.urls && echo "no new urls" || echo "=[
 
 if [[ -f ~/.newsboat/urls ]]; then
     sdiff ~/.newsboat/urls "${SCRIPTPATH}"/rss.urls -o ~/.newsboat/urls_temp
-    cp ~/.newsboat/urls_temp ~/.newsboat/urls 
-    cp ~/.newsboat/urls_temp  "${SCRIPTPATH}"/rss.urls
+    cp -i ~/.newsboat/urls_temp ~/.newsboat/urls 
+    cp -i ~/.newsboat/urls_temp "${SCRIPTPATH}"/rss.urls
     rm ~/.newsboat/urls_temp
 
     if [[ $(uname -m) == 'arm64' ]]; then

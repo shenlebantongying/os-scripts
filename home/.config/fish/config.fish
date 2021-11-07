@@ -58,6 +58,8 @@ switch (uname)
 
         source {$HOME}/.iterm2_shell_integration.fish
 
+        set -gx EDITOR nvim
+
     case '*'
             echo !!!! OS undetectable
 end
