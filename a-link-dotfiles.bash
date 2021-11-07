@@ -90,6 +90,7 @@ link_file2 ".bash_profile"
 
 link_dir ".newsboat"
 link_file2 ".newsboat/config"
+link_file2 ".newsboat/urls"
 
 link_dir ".config/ranger"
 link_file2 ".config/ranger/rc.conf"

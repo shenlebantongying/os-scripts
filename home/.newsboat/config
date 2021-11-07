@@ -3,7 +3,7 @@ browser "newsboat-browser.sh '%u'"
 auto-reload yes
 feed-sort-order unreadarticlecount-asc
 
-reload-threads 2
+reload-threads 3
 
 bind-key w up
 bind-key s down
