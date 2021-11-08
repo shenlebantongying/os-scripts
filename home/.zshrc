@@ -1,53 +1,69 @@
-# Mainly for macos, but someday i may use a BSD
 export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
+
+ZSH_CUSTOM=$HOME/.oh-my-zsh/custom
+
+if [ ! -d $HOME/.oh-my-zsh ]; then 
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+fi
+if [ ! -d $HOME/.oh-my-zsh/custom/plugins/zsh-autosuggestions ]; then 
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM}/plugins/zsh-autosuggestions
+fi
+
+plugins=(git
+         zsh-autosuggestions
+         web-search
+         dirhistory # use alt + <- / -> to go back/forth
+        )
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=cyan,underline"
+
+case `uname` in
+    Darwin)
+    # commands for OS X go here
+    ;;
+    Linux)
+        path=(
+            $HOME/s
+            $HOME/scripts
+            $HOME/bin
+            $HOME/.local/bin
+            $path
+        )
+
+        plugins+=(archlinux)
+
+    ;;
+    *)
+    echo Path not set, cuz no idea about sys
+  ;;
+esac
+
+export PATH
+
 
 # zsh itself
 HISTSIZE=10000
 SAVEHIST=10000
 setopt histignoredups
 
-# oh-my-zsh #############################
-export ZSH="/Users/Bash/.oh-my-zsh"
-ZSH_THEME="aussiegeek"
+export ZSH=$HOME/.oh-my-zsh
 
-plugins=(git)
+ZSH_THEME="kphoen"
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS="true"
+
+ENABLE_CORRECTION="true"
+COMPLETION_WAITING_DOTS="true"
+
+# Uncomment the following line if you want to disable marking untracked files
+# under VCS as dirty. This makes repository status check for large repositories
+# much, much faster.
+# DISABLE_UNTRACKED_FILES_DIRTY="true"
+
 
 source $ZSH/oh-my-zsh.sh
-##########################################
 
-# personal
-path+=$HOME/scripts
-path+=$HOME/.emacs.d/bin
+# User configuration
 
-# homebrew
-path+='/usr/local/bin'
-path+='/usr/local/sbin'
-path+='/usr/local/smlnj/bin'
-path+='/usr/local/opt/openjdk/bin'
-path+='/usr/local/opt/sqlite/bin'
-
-## GNU
-path+='/usr/local/opt/coreutils/libexec/gnubin'
-
-#????
-path+='/Library/Frameworks/Mono.framework/Versions/Current/Commands'
-
-export PATH
-
-# Fixme -> shorter version?
-if command -v opam &> /dev/null
-then
-eval "$(opam env)"
-fi
-
-alias todo="code ./todo.md"
-
-export VISUAL=vim
-export EDITOR="$VISUAL"
-
-# opam configuration
-#test -r /Users/Bash/.opam/opam-init/init.zsh && . /Users/Bash/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-# Haskell Platform
-#[ -f "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}v/.ghcup/env" ] && source "${GHCUP_INSTALL_BASE_PREFIX:=$HOME}/.ghcup/env"
+cdpath=($HOME / ..)

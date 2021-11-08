@@ -85,6 +85,7 @@ function link_folder(){
 
 }
 
+link_file2 ".zshrc"
 link_file2 ".bashrc"
 link_file2 ".bash_profile"
 

@@ -16,6 +16,7 @@ export LOCALE_ARCHIVE=/usr/lib/locale/locale-archive
 
 PATH=${HOME}/s\
 :${HOME}/bin\
+:${HOME}/.deno/bin\
 :${HOME}/.local/bin\
 :${HOME}/.ghcup/bin\
 :${HOME}/.cabal/bin\
@@ -54,7 +55,7 @@ shopt -s checkwinsize
 
 # a hack to make cd easier.
 # cd ./nice -> cd nice
-CDPATH=".:~:/"
+CDPATH=".:..:~:/"
 
 export EDITOR=nvim
 export VISUAL=nvim
