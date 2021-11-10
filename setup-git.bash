@@ -24,6 +24,7 @@ git config --global core.autocrlf input
 git config --global init.defaultBranch main
 
 git config --global alias.nocommit 'commit -a --allow-empty-message -m ""'
+git config --global core.pager cat
 
 git config --list
 

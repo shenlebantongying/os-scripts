@@ -1,0 +1,14 @@
+#extrautils
+bat
+fzf
+jq
+ncdu
+ripgrep
+surfraw
+tree
+#scripting
+deno
+guile
+racket
+sbcl
+#end

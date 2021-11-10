@@ -57,6 +57,7 @@ switch (uname)
         end
 
         set -gx EDITOR nvim
+        set -gx CDPATH . ~
 
     case '*'
             echo !!!! OS undetectable
