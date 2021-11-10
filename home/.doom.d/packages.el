@@ -57,4 +57,4 @@
 (package! spacemacs-theme)
 (package! modus-themes)
 
-(package! dashboard)
+;(package! dashboard)

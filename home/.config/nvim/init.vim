@@ -1,4 +1,4 @@
-" barebone vimrc <- this is a comment
+
 
 set autochdir
 

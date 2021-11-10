@@ -34,7 +34,12 @@
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
 (setq doom-theme 'modus-operandi)
-(setq doom-font (font-spec :family "JetBrains Mono" :size 13.0))
+(cond
+ (IS-MAC
+  (setq doom-font (font-spec :family "JetBrains Mono" :size 15.0)))
+ (IS-LINUX
+  (setq doom-font (font-spec :family "JetBrains Mono" :size 13.0)))
+)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
@@ -56,8 +61,6 @@
 ;; mac related bindings
 (when IS-MAC
   (setq
-   mac-right-command-modifier 'control
-   mac-right-option-modifier 'meta
    mac-function-modifier 'hyper
   ;; mac-right-option-modifier 'control
    )
@@ -99,7 +102,7 @@
   (setq python-shell-interpreter "ipython3"))
 
 (after! centaur-tabs
-  (setq centaur-tabs-height 15
+  (setq centaur-tabs-height 20
         centaur-tabs-set-bar 'under))
 
 (after! doom-modeline
@@ -107,18 +110,18 @@
 
 (setq org-directory "~/workbench-universe/")
 
-(use-package! dashboard
-  :hook
-  ((after-init . dashboard-setup-startup-hook))
-  :config
- ;; (setq dashboard-filter-agenda-entry 'dashboard-filter-agenda-by-todo)
-  :custom
-  (dashboard-startup-banner nil)
-  (dashboard-center-content t)
-  (dashboard-set-file-icons t)
-  (dashboard-set-heading-icons t)
-  (dashboard-items '((recents  . 10)
-                     (projects . 10)
-                     ;;(agenda . 6)
-                     ))
- )
+;(use-package! dashboard
+;  :hook
+;  ((after-init . dashboard-setup-startup-hook))
+;  :config
+; ;; (setq dashboard-filter-agenda-entry 'dashboard-filter-agenda-by-todo)
+;  :custom
+;  (dashboard-startup-banner nil)
+;  (dashboard-center-content t)
+;  (dashboard-set-file-icons t)
+;  (dashboard-set-heading-icons t)
+;  (dashboard-items '((recents  . 10)
+;                     (projects . 10)
+;                     ;;(agenda . 6)
+;                     ))
+; )
