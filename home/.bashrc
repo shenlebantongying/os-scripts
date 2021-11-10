@@ -79,16 +79,6 @@ alias date-simple="date +"%Y-%m-%d""
 alias sublime='subl'
 alias merge='smerge'
 
-# nav expert
-alias q='cd ..'
-alias qq='cd ../..'
-alias qqq='cd ../../..'
-
-# mad man nav
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-
 #wraping lisp
 # -> give power to their shell without using GNU readline
 alias cl="rlwrap lisp"
