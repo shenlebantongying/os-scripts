@@ -36,7 +36,7 @@
 (setq doom-theme 'modus-operandi)
 (cond
  (IS-MAC
-  (setq doom-font (font-spec :family "JetBrains Mono" :size 15.0)))
+  (setq doom-font (font-spec :family "JetBrains Mono" :size 14.0)))
  (IS-LINUX
   (setq doom-font (font-spec :family "JetBrains Mono" :size 13.0)))
 )

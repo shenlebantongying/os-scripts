@@ -18,7 +18,7 @@
 (define parent-dir
   (command-line
    #:args (pname)
-   (expand-user-path pname)))
+   (path->complete-path(expand-user-path pname))))
 
 (for-each
  (λ (arg)
@@ -36,6 +36,6 @@
        [(equal? type 'link)
         acc]))
    '()
-   (current-directory))
+   parent-dir)
   #:key second
   <))

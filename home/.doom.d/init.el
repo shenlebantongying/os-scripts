@@ -75,6 +75,7 @@
        python
        sml
        ocaml
+       (racket +xp)
 
        :email
 
