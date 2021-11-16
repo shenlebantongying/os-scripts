@@ -125,3 +125,25 @@
 ;                     ;;(agenda . 6)
 ;                     ))
 ; )
+
+;; racket
+
+(add-hook 'racket-mode-hook #'racket-unicode-input-method-enable)
+
+;; as recommended by 
+(use-package paredit
+  :ensure t
+  :config
+  (dolist (m '(
+	       racket-mode-hook
+         ;emacs-lisp-mode-hook
+	       ;racket-repl-mode-hook
+         ))
+    (add-hook m #'paredit-mode))
+  (bind-keys :map paredit-mode-map
+	     ("{"   . paredit-open-curly)
+	     ("}"   . paredit-close-curly))
+  (unless terminal-frame
+    (bind-keys :map paredit-mode-map
+	       ("M-[" . paredit-wrap-square)
+	       ("M-{" . paredit-wrap-curly))))
