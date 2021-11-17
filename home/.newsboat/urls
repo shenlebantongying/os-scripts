@@ -1,7 +1,9 @@
 # shortcuts:
 # PL -> Programming languages
 # metaquery all unreaded
-"query:Unread Articles:unread = \"yes\""
+"query:Unread Articles:unread = \"yes\"" .meta
+# academic journals
+https://www.cambridge.org/core/rss/product/id/49AD4731AAB0E94D8EF98BBB4EE56A7F .CS
 http://blog.ezyang.com/feed/ software
 http://feeds.feedburner.com/PythonInsider python
 http://feeds.woboq.com/woboq kde/qt
