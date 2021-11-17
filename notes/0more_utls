@@ -9,6 +9,9 @@ tree
 #scripting
 deno
 guile
+julia
 racket
 sbcl
+smlnj
+swi-prolog
 #end
