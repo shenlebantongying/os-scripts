@@ -15,9 +15,9 @@ else
     cd ./ChezScheme || exit
 fi
 
-./configure --pb 
+./configure --pb --installprefix=/usr/local --installschemename=chez --installscriptname=chez-script
 make
-sudo make install InstallSchemeName=chez
+sudo make install 
 
 # # FUCK CHEZ
 
