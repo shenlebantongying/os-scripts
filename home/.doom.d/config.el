@@ -96,7 +96,8 @@
 
 (setq geiser-smart-tab-mode t)
 (after! geiser
-  (setq geiser-guile-binary (executable-find "guile3")))
+  (setq geiser-guile-binary (executable-find "guile3"))
+  (setq geiser-chez-binary  (executable-find "chez")))
 
 (after! python
   (setq python-shell-interpreter "ipython3"))

@@ -13,8 +13,10 @@ then
 else
     git clone --depth=1 git@github.com:racket/ChezScheme.git
     cd ./ChezScheme || exit
+    git submodule init
 fi
 
+git submodule update
 ./configure --pb --installprefix=/usr/local --installschemename=chez --installscriptname=chez-script
 make
 sudo make install 
