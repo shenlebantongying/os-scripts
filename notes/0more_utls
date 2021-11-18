@@ -7,11 +7,14 @@ ripgrep
 surfraw
 tree
 #scripting
+chez
 deno
+fish
 guile
 julia
 racket
 sbcl
 smlnj
 swi-prolog
+tcl
 #end
