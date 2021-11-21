@@ -126,6 +126,9 @@ link_file2 ".config/nvim/ginit.vim"
 link_dir ".config/kak"
 link_file2 ".config/kak/kakrc"
 
+link_dir ".config/kak/autoload"
+link_file2 ".config/kak/autoload/racket.kak"
+
 #coqide
 link_dir ".config/coq"
 link_file2 ".config/coq/coqiderc"

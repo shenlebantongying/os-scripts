@@ -1,3 +1,12 @@
 colorscheme kaleidoscope-light
 set-option global tabstop 4
-add-highlighter global/ number-lines -hlcursor
+add-highlighter global/ number-lines -hlcursor 
+add-highlighter global/ show-matching
+
+# lsp related
+eval %sh{kak-lsp --kakoune -s $kak_session}  # Not needed if you load it with plug.kak.
+hook global WinSetOption filetype=(racket) %{
+    lsp-enable-window
+}
+
+map global user l %{: enter-user-mode lsp<ret>} -docstring "LSP mode"
