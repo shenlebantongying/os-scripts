@@ -1,5 +1,15 @@
+# bindings
+# https://github.com/mawww/kakoune/wiki/Selections
+map global user a '*%s<ret>' -docstring 'select all current selection'
+
 colorscheme kaleidoscope-light
+set-option global ui_options terminal_status_on_top=true
+
+# display words "FIXME"/"TODO"/"XXX"/"NOTE" in bold and reversed.
+add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:default+rb
+
 set-option global tabstop 4
+
 add-highlighter global/ number-lines -hlcursor 
 add-highlighter global/ show-matching
 
