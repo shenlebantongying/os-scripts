@@ -18,9 +18,6 @@ hook global WinSetOption filetype=racket %{
 
 hook -group racket-highlight global WinSetOption filetype=racket %{
   add-highlighter -override window/racket ref racket
-  hook -once -always window WinSetOption filetype=.* %{
-    remove-highlighter window/racket
-  }
 }
 
 # --------------------------------------------------------------------------------------------------- #

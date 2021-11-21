@@ -10,3 +10,8 @@ hook global WinSetOption filetype=(racket) %{
 }
 
 map global user l %{: enter-user-mode lsp<ret>} -docstring "LSP mode"
+
+def link-autoload %sh{
+    mkdir -p "$kak_config/autoload"
+    ln -s "$kak_runtime/autoload" "$kak_config/autoload/standard-library"
+}
