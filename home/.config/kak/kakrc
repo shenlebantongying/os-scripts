@@ -1,0 +1,3 @@
+colorscheme kaleidoscope-light
+set-option global tabstop 4
+add-highlighter global/ number-lines -hlcursor

@@ -61,7 +61,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 # better defaults
-alias ls='ls --color=auto'
+# alias ls='ls --color=auto' #too ugly
 alias pstree='pstree --highlight-all --show-pids --hide-threads'
 alias vim='nvim'
 alias vimdiff='nvim -d'

@@ -122,6 +122,10 @@ link_dir ".config/nvim"
 link_file2 ".config/nvim/init.vim"
 link_file2 ".config/nvim/ginit.vim"
 
+#kakoune
+link_dir ".config/kak"
+link_file2 ".config/kak/kakrc"
+
 #coqide
 link_dir ".config/coq"
 link_file2 ".config/coq/coqiderc"
