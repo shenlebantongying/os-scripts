@@ -122,9 +122,11 @@ link_dir ".config/nvim"
 link_file2 ".config/nvim/init.vim"
 link_file2 ".config/nvim/ginit.vim"
 
-#kakoune
+#kakoune & halix
 link_dir ".config/kak"
 link_file2 ".config/kak/kakrc"
+link_dir ".config/helix"
+link_file2 ".config/helix/config.toml"
 
 link_dir ".config/kak/autoload"
 link_file2 ".config/kak/autoload/racket.kak"
