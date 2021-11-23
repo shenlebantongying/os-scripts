@@ -38,8 +38,10 @@
  (IS-MAC
   (setq doom-font (font-spec :family "JetBrains Mono" :size 14.0)))
  (IS-LINUX
-  (setq doom-font (font-spec :family "JetBrains Mono" :size 13.0)))
+  (setq doom-font (font-spec :family "Hack" :size 12.0)))
 )
+
+(setq font-lock-maximum-decoration 1)
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;

@@ -17,6 +17,7 @@ switch (uname)
             $HOME/.local/share/coursier/bin \
             /usr/local/Wolfram/Mathematica/12.3/Executables \
             $PATH
+		set -gx CDPATH . ~
     case Darwin
 
          # M1 homebrew, we want to override some brew path
