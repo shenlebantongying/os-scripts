@@ -1,10 +1,15 @@
 browser "newsboat-browser.sh '%u'"
 
 auto-reload yes
+prepopulate-query-feeds yes
 feed-sort-order unreadarticlecount-asc
+
+datetime-format "%y/%m/%d"
 
 reload-threads 3
 
+unbind-key o
+unbind-key O
 bind-key w up
 bind-key s down
 bind-key d open

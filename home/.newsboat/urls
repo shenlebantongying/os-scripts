@@ -2,6 +2,7 @@
 # PL -> Programming languages
 # metaquery all unreaded
 "query:Unread Articles:unread = \"yes\"" .meta
+"query:Recent articles:age between 0:30" .meta
 # academic journals
 https://www.cambridge.org/core/rss/product/id/49AD4731AAB0E94D8EF98BBB4EE56A7F .CS
 http://blog.ezyang.com/feed/ software
@@ -109,3 +110,4 @@ https://weekly.nixos.org/feeds/all.atom.xml nix
 https://racket-news.com/feeds/all.atom.xml racket
 https://lexi-lambda.github.io/feeds/all.atom.xml PL
 http://okmij.org/ftp/rss.xml OlegKiselyov
+https://gretzuni.com/atom/
