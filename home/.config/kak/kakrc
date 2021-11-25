@@ -21,10 +21,9 @@ eval %sh{kak-lsp --kakoune -s $kak_session}  # Not needed if you load it with pl
 
 map global user l %{: enter-user-mode lsp<ret>} -docstring "LSP mode"
 
-def link-autoload %sh{
+define-command link-autoloadi %{ nop %sh{
     mkdir -p "$kak_config/autoload"
-    ln -s "$kak_runtime/autoload" "$kak_config/autoload/standard-library"
-}
+    ln -s "$kak_runtime/autoload" "$kak_config/autoload/standard-library"}}
 
 evaluate-commands %sh{
     plugins="$kak_config/plugins"

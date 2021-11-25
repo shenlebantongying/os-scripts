@@ -21,7 +21,7 @@
 
 (for ([l data])
   (cond
-    [(not (non-empty-string? l)) void]
+    [(zero? (string-length l)) void]
     [(string-prefix? l "#")
       (begin
         (set! section-names (append section-names (list l)))
