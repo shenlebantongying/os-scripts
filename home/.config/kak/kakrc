@@ -49,7 +49,7 @@ hook global RegisterModified '"' %{ nop %sh{
         Linux)
         	wl-copy -n "$kak_main_reg_dquote" > /dev/null 2>&1 & ;;	
         Darwin)
-        	pbcopy "$kak_main_reg_dquote" ;;
+        	printf "%s" "$kak_main_reg_dquote" | pbcopy ;;
         esac
 }}
 
