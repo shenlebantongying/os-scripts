@@ -42,3 +42,14 @@ hook global WinSetOption filetype=(racket) %{
     expandtab
 }
 
+map global normal '#' :comment-line<ret>
+
+hook global RegisterModified '"' %{ nop %sh{
+    case $(uname) in
+        Linux)
+        	wl-copy -n "$kak_main_reg_dquote" > /dev/null 2>&1 & ;;	
+        Darwin)
+        	pbcopy "$kak_main_reg_dquote" ;;
+        esac
+}}
+
