@@ -16,5 +16,8 @@ racket
 sbcl
 smlnj
 swi-prolog
-tcl
+tclz
+#editor
+emacs
+kakoune
 #end

@@ -21,13 +21,14 @@
 
 (for ([l data])
   (cond
+    [(not (non-empty-string? l)) void]
     [(string-prefix? l "#")
       (begin
         (set! section-names (append section-names (list l)))
         (unless (empty? temp-list)
           (begin (if (empty? sorted-util-names)
-                     (set! sorted-util-names temp-list)
-                     (set! sorted-util-names (list sorted-util-names temp-list)))
+                     (set! sorted-util-names (list temp-list))
+                     (set! sorted-util-names (append sorted-util-names (list temp-list))))
                  (set! temp-list '()))))]
     [else (set! temp-list (append temp-list (list l)))]
     ))
