@@ -3,7 +3,9 @@
 map global user a '*%s<ret>' -docstring 'select all current selection'
 
 colorscheme kaleidoscope-light
-set-option global ui_options terminal_status_on_top=true
+set-option global ui_options terminal_status_on_top=true terminal_assistant=none
+
+set global modelinefmt '%val{bufname} %val{cursor_line}:%val{cursor_char_column} {{context_info}} {{mode_info}}'
 
 # display words "FIXME"/"TODO"/"XXX"/"NOTE" in bold and reversed.
 add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:default+rb
@@ -11,14 +13,11 @@ add-highlighter global/ regex [\[{()}\]] 0:rgb:808080
 
 set-option global tabstop 4
 
-add-highlighter global/ number-lines -hlcursor 
+add-highlighter global/ number-lines -hlcursor -relative
 add-highlighter global/ show-matching
 
 # lsp related
 eval %sh{kak-lsp --kakoune -s $kak_session}  # Not needed if you load it with plug.kak.
-hook global WinSetOption filetype=(racket) %{
-    lsp-enable-window
-}
 
 map global user l %{: enter-user-mode lsp<ret>} -docstring "LSP mode"
 
@@ -27,12 +26,20 @@ def link-autoload %sh{
     ln -s "$kak_runtime/autoload" "$kak_config/autoload/standard-library"
 }
 
-# evaluate-commands %sh{
-#     plugins="$kak_config/plugins"
-#     mkdir -p "$plugins"
-#     [ ! -e "$plugins/plug.kak" ] && \
-#         git clone -q https://github.com/andreyorst/plug.kak.git "$plugins/plug.kak"
-#     printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
-# }
+evaluate-commands %sh{
+    plugins="$kak_config/plugins"
+    mkdir -p "$plugins"
+    [ ! -e "$plugins/plug.kak" ] && \
+        git clone -q https://github.com/andreyorst/plug.kak.git "$plugins/plug.kak"
+    printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
+}
 
-# plug "andreyorst/plug.kak" noload
+plug "andreyorst/plug.kak" noload
+plug "andreyorst/smarttab.kak"
+
+hook global WinSetOption filetype=(racket) %{
+    lsp-enable-window
+    set-option buffer indentwidth 2
+    expandtab
+}
+
