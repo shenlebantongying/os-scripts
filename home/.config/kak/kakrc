@@ -7,6 +7,7 @@ set-option global ui_options terminal_status_on_top=true
 
 # display words "FIXME"/"TODO"/"XXX"/"NOTE" in bold and reversed.
 add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:default+rb
+add-highlighter global/ regex [\[{()}\]] 0:rgb:808080
 
 set-option global tabstop 4
 
@@ -25,3 +26,13 @@ def link-autoload %sh{
     mkdir -p "$kak_config/autoload"
     ln -s "$kak_runtime/autoload" "$kak_config/autoload/standard-library"
 }
+
+# evaluate-commands %sh{
+#     plugins="$kak_config/plugins"
+#     mkdir -p "$plugins"
+#     [ ! -e "$plugins/plug.kak" ] && \
+#         git clone -q https://github.com/andreyorst/plug.kak.git "$plugins/plug.kak"
+#     printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
+# }
+
+# plug "andreyorst/plug.kak" noload
