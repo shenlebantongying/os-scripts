@@ -119,8 +119,9 @@ link_file2 ".spacemacs.d/init.el"
 link_file2 ".vimrc"
 
 link_dir ".config/nvim"
-link_file2 ".config/nvim/init.vim"
-link_file2 ".config/nvim/ginit.vim"
+# link_file2 ".config/nvim/init.vim"
+link_file2 ".config/nvim/init.lua"
+#link_file2 ".config/nvim/ginit.vim"
 
 #kakoune & halix
 link_dir ".config/kak"
