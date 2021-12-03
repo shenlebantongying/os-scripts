@@ -75,7 +75,7 @@ end
     end
 
     # taskwarrior
-    if type -q "task"
-        task list 
-    end
+    # if type -q "task"
+        # task list 
+    # end
 end
