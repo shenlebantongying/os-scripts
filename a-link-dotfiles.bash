@@ -154,3 +154,5 @@ link_file2 ".taskrc_theme"
 #kate
 link_dir ".local/share/org.kde.syntax-highlighting/themes"
 link_file2 ".local/share/org.kde.syntax-highlighting/themes/Homunculus.theme"
+link_file2 ".local/share/org.kde.syntax-highlighting/themes/Monochrome.theme"
+

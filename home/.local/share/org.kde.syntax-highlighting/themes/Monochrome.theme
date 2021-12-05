@@ -8,7 +8,7 @@
         }
     },
     "editor-colors": {
-        "BackgroundColor": "#f7f3f3",
+        "BackgroundColor": "#fffbfb",
         "BracketMatching": "#fceae2",
         "CodeFolding": "#94caef",
         "CurrentLine": "#daecf7",
@@ -38,7 +38,7 @@
         "WordWrapMarker": "#ededed"
     },
     "metadata": {
-        "name": "Homunculus",
+        "name": "Monochrome",
         "revision": 1
     },
     "text-styles": {
@@ -50,51 +50,51 @@
         },
         "Annotation": {
             "selected-text-color": "#000000",
-            "text-color": "#ca60ca"
+            "text-color": "#000000"
         },
         "Attribute": {
             "selected-text-color": "#000000",
-            "text-color": "#0057ae"
+            "text-color": "#000000"
         },
         "BaseN": {
             "selected-text-color": "#000000",
-            "text-color": "#b08000"
+            "text-color": "#000000"
         },
         "BuiltIn": {
             "selected-text-color": "#000000",
-            "text-color": "#644a9b"
+            "text-color": "#000000"
         },
         "Char": {
             "selected-text-color": "#000000",
-            "text-color": "#924c9d"
+            "text-color": "#000000"
         },
         "Comment": {
             "selected-text-color": "#000000",
-            "text-color": "#505050"
+            "text-color": "#272727"
         },
         "CommentVar": {
-            "selected-text-color": "#ffffff",
-            "text-color": "#0095ff"
+            "selected-text-color": "#000000",
+            "text-color": "#000000"
         },
         "Constant": {
             "selected-text-color": "#000000",
-            "text-color": "#aa5500"
+            "text-color": "#000000"
         },
         "ControlFlow": {
             "selected-text-color": "#000000",
-            "text-color": "#005f88"
+            "text-color": "#000000"
         },
         "DataType": {
             "selected-text-color": "#000000",
-            "text-color": "#0057ae"
+            "text-color": "#000000"
         },
         "DecVal": {
             "selected-text-color": "#000000",
-            "text-color": "#b08000"
+            "text-color": "#000000"
         },
         "Documentation": {
             "selected-text-color": "#000000",
-            "text-color": "#2a486a"
+            "text-color": "#13202f"
         },
         "Error": {
             "selected-text-color": "#9c0e0e",
@@ -103,19 +103,19 @@
         },
         "Extension": {
             "selected-text-color": "#000000",
-            "text-color": "#0095ff"
+            "text-color": "#000000"
         },
         "Float": {
             "selected-text-color": "#000000",
-            "text-color": "#b08000"
+            "text-color": "#000000"
         },
         "Function": {
             "selected-text-color": "#000000",
-            "text-color": "#721045"
+            "text-color": "#000000"
         },
         "Import": {
             "selected-text-color": "#000000",
-            "text-color": "#813e00"
+            "text-color": "#000000"
         },
         "Information": {
             "selected-text-color": "#000000",
@@ -123,15 +123,15 @@
         },
         "Keyword": {
             "selected-text-color": "#000000",
-            "text-color": "#5317ac"
+            "text-color": "#000000"
         },
         "Normal": {
             "selected-text-color": "#000000",
-            "text-color": "#303030"
+            "text-color": "#000000"
         },
         "Operator": {
             "selected-text-color": "#000000",
-            "text-color": "#b455b4"
+            "text-color": "#000000"
         },
         "Others": {
             "selected-text-color": "#000000",
@@ -139,7 +139,7 @@
         },
         "Preprocessor": {
             "selected-text-color": "#000000",
-            "text-color": "#006e28"
+            "text-color": "#000000"
         },
         "RegionMarker": {
             "selected-text-color": "#000000",
@@ -147,23 +147,23 @@
         },
         "SpecialChar": {
             "selected-text-color": "#000000",
-            "text-color": "#3daee9"
+            "text-color": "#000000"
         },
         "SpecialString": {
             "selected-text-color": "#000000",
-            "text-color": "#854001"
+            "text-color": "#000000"
         },
         "String": {
             "selected-text-color": "#000000",
-            "text-color": "#2544bb"
+            "text-color": "#000000"
         },
         "Variable": {
             "selected-text-color": "#000000",
-            "text-color": "#0057ae"
+            "text-color": "#363636"
         },
         "VerbatimString": {
             "selected-text-color": "#000000",
-            "text-color": "#2544bb"
+            "text-color": "#000000"
         },
         "Warning": {
             "selected-text-color": "#9c0e0e",
