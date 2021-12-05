@@ -150,3 +150,7 @@ link_folder ".config/fish/functions/"
 link_file2 ".guile"
 link_file2 ".taskrc"
 link_file2 ".taskrc_theme"
+
+#kate
+link_dir ".local/share/org.kde.syntax-highlighting/themes"
+link_file2 ".local/share/org.kde.syntax-highlighting/themes/Homunculus.theme"
