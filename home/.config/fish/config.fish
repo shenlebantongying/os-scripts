@@ -5,6 +5,7 @@ if status is-interactive
 switch (uname)
     case Linux
         set PATH \
+            $HOME/.deno/bin \
             $HOME/.ghcup/bin \
             $HOME/.local/bin \
             $HOME/bin \
