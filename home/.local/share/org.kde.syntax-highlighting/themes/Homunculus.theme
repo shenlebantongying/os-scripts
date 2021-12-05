@@ -9,9 +9,9 @@
     },
     "editor-colors": {
         "BackgroundColor": "#f7f2f2",
-        "BracketMatching": "#f2eff3",
+        "BracketMatching": "#fceae2",
         "CodeFolding": "#94caef",
-        "CurrentLine": "#f8f8f8",
+        "CurrentLine": "#daecf7",
         "CurrentLineNumber": "#1e1e1e",
         "IconBorder": "#f0f0f0",
         "IndentationLine": "#d2d2d2",
@@ -127,7 +127,7 @@
         },
         "Normal": {
             "selected-text-color": "#000000",
-            "text-color": "#1f1c1b"
+            "text-color": "#303030"
         },
         "Operator": {
             "selected-text-color": "#000000",
