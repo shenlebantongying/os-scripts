@@ -8,7 +8,7 @@
         }
     },
     "editor-colors": {
-        "BackgroundColor": "#fffbfb",
+        "BackgroundColor": "#ffffff",
         "BracketMatching": "#fceae2",
         "CodeFolding": "#94caef",
         "CurrentLine": "#daecf7",
@@ -135,7 +135,7 @@
         },
         "Others": {
             "selected-text-color": "#000000",
-            "text-color": "#006e28"
+            "text-color": "#000000"
         },
         "Preprocessor": {
             "selected-text-color": "#000000",

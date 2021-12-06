@@ -18,7 +18,6 @@ switch (uname)
             $HOME/.local/share/coursier/bin \
             /usr/local/Wolfram/Mathematica/12.3/Executables \
             $PATH
-		set -gx CDPATH . ~
     case Darwin
 
          # M1 homebrew, we want to override some brew path
@@ -58,14 +57,12 @@ switch (uname)
             set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
         end
 
-        set -gx EDITOR nvim
-        set -gx CDPATH . ~
-
     case '*'
             echo !!!! OS undetectable
 end
 
-
+    set -gx CDPATH . ~ ..
+    set -gx EDITOR kak
 
     # special paths
     if type -q "opam"
