@@ -20,11 +20,14 @@ switch (uname)
             $PATH
     case Darwin
 
-         # M1 homebrew, we want to override some brew path
-         if test "arm" = (uname -p)
+        # M1 homebrew, we want to override some brew path
+        if test "arm" = (uname -p)
              eval (/opt/homebrew/bin/brew shellenv)
-         end
+        end
 
+        if set -q KITTY_WINDOW_ID
+            kitty @ set-font-size 14
+        end 
 
         set PATH \
             $HOME/Qt/6.2.0/macos/bin \
