@@ -64,7 +64,7 @@ switch (uname)
             echo !!!! OS undetectable
 end
 
-    set -gx CDPATH . ~ ..
+    set -gx CDPATH . .. ~ /
     set -gx EDITOR kak
 
     # special paths
