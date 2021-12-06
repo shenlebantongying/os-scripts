@@ -66,7 +66,7 @@ end
 
     # special paths
     if type -q "opam"
-        eval (opam env)
+        eval (opam env --shell=fish)
     end
     if type -q "rbenv"
         source (rbenv init -|psub)
