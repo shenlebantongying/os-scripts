@@ -119,8 +119,12 @@ link_file2 ".spacemacs.d/init.el"
 link_file2 ".vimrc"
 
 link_dir ".config/nvim"
-# link_file2 ".config/nvim/init.vim"
-link_file2 ".config/nvim/init.lua"
+link_file2 ".config/nvim/init.vim"
+link_dir ".config/nvim/colors"
+link_file2  ".config/nvim/colors/dichromatic.vim"
+
+# lua version of nvim doesn't have enough doc to quickly do config
+#link_file2 ".config/nvim/init.lua"
 #link_file2 ".config/nvim/ginit.vim"
 
 #kakoune & halix
