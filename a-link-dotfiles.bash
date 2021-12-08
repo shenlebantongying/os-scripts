@@ -164,3 +164,4 @@ link_file2 ".local/share/org.kde.syntax-highlighting/themes/Monochrome.theme"
 #kitty
 link_dir ".config/kitty/"
 link_file2 ".config/kitty/kitty.conf"
+touch ~/.config/kitty/local.conf

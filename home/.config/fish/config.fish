@@ -25,10 +25,6 @@ switch (uname)
              eval (/opt/homebrew/bin/brew shellenv)
         end
 
-        if set -q $KITTY_WINDOW_ID
-            kitty @ set-font-size 15
-        end 
-
         set PATH \
             $HOME/Qt/6.2.0/macos/bin \
             $HOME/.ghcup/bin \
@@ -46,6 +42,7 @@ switch (uname)
         # shadowing system built-ins
             /opt/homebrew/opt/llvm/bin \
             # make GNU great again
+            /opt/homebrew/opt/findutils/libexec/gnubin \
             /opt/homebrew/opt/bison/bin \
             /opt/homebrew/opt/libxslt/bin \
             /opt/homebrew/opt/make/libexec/gnubin \
