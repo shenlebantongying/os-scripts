@@ -26,7 +26,7 @@ switch (uname)
         end
 
         if set -q KITTY_WINDOW_ID
-            kitty @ set-font-size 14
+            kitty @ set-font-size 15
         end 
 
         set PATH \
