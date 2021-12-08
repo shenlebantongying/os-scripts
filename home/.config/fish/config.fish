@@ -25,7 +25,7 @@ switch (uname)
              eval (/opt/homebrew/bin/brew shellenv)
         end
 
-        if set -q KITTY_WINDOW_ID
+        if set -q $KITTY_WINDOW_ID
             kitty @ set-font-size 15
         end 
 
