@@ -109,7 +109,8 @@
         centaur-tabs-set-bar 'under))
 
 (after! doom-modeline
-  (setq doom-modeline-height 1))
+  (setq doom-modeline-height 1)
+  (setq doom-modeline-icon nil))
 
 (setq org-directory "~/workbench-universe/")
 
