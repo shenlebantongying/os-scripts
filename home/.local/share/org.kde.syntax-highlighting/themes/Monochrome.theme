@@ -5,11 +5,57 @@
                 "selected-text-color": "#904200",
                 "text-color": "#005f88"
             }
+        },
+        "Racket": {
+            "Brackets1": {
+                "text-color": "#00007f"
+            },
+            "Brackets2": {
+                "text-color": "#0000ff"
+            },
+            "Brackets3": {
+                "text-color": "#0055ff"
+            },
+            "Brackets4": {
+                "text-color": "#00aaff"
+            },
+            "Brackets5": {
+                "text-color": "#00ffff"
+            },
+            "Brackets6": {
+                "text-color": "#aaffff"
+            },
+            "Other Brackets": {
+                "text-color": "#caffff"
+            }
+        },
+        "Scheme": {
+            "Brackets1": {
+                "text-color": "#bab9b7"
+            },
+            "Brackets2": {
+                "text-color": "#bab9b7"
+            },
+            "Brackets3": {
+                "text-color": "#bab9b7"
+            },
+            "Brackets4": {
+                "text-color": "#bab9b7"
+            },
+            "Brackets5": {
+                "text-color": "#bab9b7"
+            },
+            "Brackets6": {
+                "text-color": "#bab9b7"
+            },
+            "Other Brackets": {
+                "text-color": "#bab9b7"
+            }
         }
     },
     "editor-colors": {
         "BackgroundColor": "#ffffff",
-        "BracketMatching": "#fceae2",
+        "BracketMatching": "#fff6c0",
         "CodeFolding": "#94caef",
         "CurrentLine": "#daecf7",
         "CurrentLineNumber": "#1e1e1e",
@@ -63,7 +109,7 @@
         "BuiltIn": {
             "selected-text-color": "#000000",
             "text-color": "#000000"
-        },
+        },remember
         "Char": {
             "selected-text-color": "#000000",
             "text-color": "#000000"

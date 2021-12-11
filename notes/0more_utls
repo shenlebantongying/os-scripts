@@ -1,5 +1,6 @@
 #extrautils
 bat
+fd
 fzf
 jq
 ncdu
@@ -20,4 +21,6 @@ tclz
 #editor
 emacs
 kakoune
+#misc
+newboat
 #end
