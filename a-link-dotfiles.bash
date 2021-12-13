@@ -89,6 +89,7 @@ link_file2 ".zshrc"
 link_file2 ".bashrc"
 link_file2 ".bash_profile"
 link_file2 ".tmux.conf"
+link_file2 ".npmrc"
 
 link_dir ".newsboat"
 link_file2 ".newsboat/config"

@@ -6,6 +6,8 @@ switch (uname)
     case Linux
         set PATH \
             $HOME/.deno/bin \
+            $HOME/npm/bin \
+            $HOME/go/bin \
             $HOME/.ghcup/bin \
             $HOME/.local/bin \
             $HOME/bin \
