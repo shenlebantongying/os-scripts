@@ -34,6 +34,7 @@
        zen               ; distraction-free coding or writing
 
        :editor
+       ;parinfer -> good mode, but not everyone follow the indentation standard.
        snippets
 
        :emacs
