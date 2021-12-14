@@ -1,0 +1,10 @@
+[General]
+actionName=externaltool_xdgopen
+arguments=%{Document:Selection:Text}
+cmdname=open-link
+executable=/usr/bin/xdg-open
+icon=firefox-developer-edition
+name=xdg-open
+output=Ignore
+reload=false
+save=None
