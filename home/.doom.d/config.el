@@ -38,7 +38,8 @@
  (IS-MAC
   (setq doom-font (font-spec :family "JetBrains Mono" :size 14.0)))
  (IS-LINUX
-  (setq doom-font (font-spec :family "Terminus" :weight 'bold :size 14.0)))
+;;(setq doom-font (font-spec :family "Terminus" :weight 'bold :size 14.0)))
+  (setq doom-font (font-spec :family "Cascadia Code" :size 13.0)))
 )
 
 (setq font-lock-maximum-decoration 1)
