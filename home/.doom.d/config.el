@@ -151,3 +151,15 @@
     (bind-keys :map paredit-mode-map
 	       ("M-[" . paredit-wrap-square)
 	       ("M-{" . paredit-wrap-curly))))
+
+
+;; (defun efs/display-startup-time ()
+;;   (message
+;;    "Emacs loaded in %s with %d garbage collections."
+;;    (format
+;;     "%.2f seconds"
+;;     (float-time
+;;      (time-subtract after-init-time before-init-time)))
+;;    gcs-done))
+
+;; (add-hook 'emacs-startup-hook #'efs/display-startup-time)
