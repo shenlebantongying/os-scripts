@@ -105,8 +105,11 @@
   (setq python-shell-interpreter "ipython3"))
 
 (after! centaur-tabs
-  (setq centaur-tabs-height 20
-        centaur-tabs-set-bar 'under))
+  (setq centaur-tabs-height 10)
+  (setq centaur-tabs-set-icons nil)
+  (setq centaur-tabs-set-bar 'under)
+  (setq x-underline-at-descent-line t)
+)
 
 (after! doom-modeline
   (setq doom-modeline-height 1)
@@ -139,18 +142,18 @@
   :ensure t
   :config
   (dolist (m '(
-	       racket-mode-hook
-         ;emacs-lisp-mode-hook
-	       ;racket-repl-mode-hook
+               racket-mode-hook
+               ;emacs-lisp-mode-hook
+               ;racket-repl-mode-hook
          ))
     (add-hook m #'paredit-mode))
   (bind-keys :map paredit-mode-map
-	     ("{"   . paredit-open-curly)
-	     ("}"   . paredit-close-curly))
+             ("{"   . paredit-open-curly)
+             ("}"   . paredit-close-curly))
   (unless terminal-frame
     (bind-keys :map paredit-mode-map
-	       ("M-[" . paredit-wrap-square)
-	       ("M-{" . paredit-wrap-curly))))
+               ("M-[" . paredit-wrap-square)
+               ("M-{" . paredit-wrap-curly))))
 
 
 ;; (defun efs/display-startup-time ()
