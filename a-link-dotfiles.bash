@@ -170,3 +170,4 @@ touch ~/.config/kitty/local.conf
 #kate
 link_dir ".config/kate/externaltools"
 link_file2 ".config/kate/externaltools/xdg-open"
+link_file2 ".config/kate/externaltools/googlesearch"

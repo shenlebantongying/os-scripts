@@ -1,0 +1,9 @@
+[General]
+actionName=externaltool_GoogleSearch
+arguments=https://www.google.com/search?q=%{Document:Selection:Text}
+executable=/usr/bin/xdg-open
+icon=plasma-search
+name=GoogleSearch
+output=Ignore
+reload=false
+save=None
