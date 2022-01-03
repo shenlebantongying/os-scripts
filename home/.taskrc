@@ -12,5 +12,5 @@ search.case.sensitive=no
 list.all.projects=yes
 
 # Color theme (uncomment one to use)
-include .taskrc_theme
+# include .taskrc_theme
 news.version=2.6.0
