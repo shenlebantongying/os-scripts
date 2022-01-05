@@ -88,6 +88,8 @@
  "s-b" #'consult-buffer
  "s-w" #'ace-window
  "s-f" #'consult-line
+ "s-c" #'kill-ring-save
+ "s-v" #'yank
  ;; org
  "s-l" #'org-preview-latex-fragment
 

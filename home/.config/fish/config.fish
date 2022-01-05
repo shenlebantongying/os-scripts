@@ -64,7 +64,7 @@ switch (uname)
 end
 
     set -gx CDPATH . .. ~ /
-    set -gx EDITOR kak
+    set -gx EDITOR emacs -nw -Q
 
     # special paths
     if type -q "opam"
