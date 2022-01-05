@@ -1,6 +1,7 @@
 [General]
 actionName=externaltool_xdgopen
 arguments=%{Document:Selection:Text}
+cmdname=xdg-open
 executable=/usr/bin/xdg-open
 icon=firefox-developer-edition
 name=xdg-open

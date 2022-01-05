@@ -8,12 +8,14 @@
 (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
 
 (menu-bar-mode)
+
+(menu-bar-left-scroll-bar)
 ; (tool-bar-mode)
 
 (setq display-line-numbers-type t)
 
-(setq +doom-dashboard-functions
-      '(doom-dashboard-widget-shortmenu))
+;;(setq +doom-dashboard-functions
+;;      '(doom-dashboard-widget-shortmenu))
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
@@ -82,7 +84,10 @@
 ;; generic
 (map!
  "s-o" #'find-file-at-point
- "s-t" #'+neotree/open
+ "s-t" #'find-file
+ "s-b" #'consult-buffer
+ "s-w" #'ace-window
+ "s-f" #'consult-line
  ;; org
  "s-l" #'org-preview-latex-fragment
 
@@ -167,3 +172,8 @@
 ;;    gcs-done))
 
 ;; (add-hook 'emacs-startup-hook #'efs/display-startup-time)
+
+(use-package goggles
+  :hook ((prog-mode text-mode) . goggles-mode)
+  :config
+  (setq-default goggles-pulse t)) ;; set to nil to disable pulsing
