@@ -147,7 +147,6 @@ link_file2 ".config/coq/coqide.keys"
 #fish
 link_dir ".config/fish"
 link_file2 ".config/fish/config.fish"
-link_file2 ".config/fish/fish_variables"
 
 link_dir ".config/functions"
 # loop throught all files under fish/functions, and strip first a few parts.
