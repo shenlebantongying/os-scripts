@@ -1,10 +1,9 @@
-
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-(setq default-tab-width 4)
+(setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
 (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
 
@@ -12,8 +11,6 @@
 
 (menu-bar-left-scroll-bar)
 ; (tool-bar-mode)
-
-(setq display-line-numbers-type t)
 
 ;;(setq +doom-dashboard-functions
 ;;      '(doom-dashboard-widget-shortmenu))
@@ -92,6 +89,8 @@
  "s-c" #'kill-ring-save
  "s-v" #'yank
  "s-r" #'consult-recent-file
+ "s-z" #'undo
+ "s-Z" #'undo-fu-only-redo
  ;; org
  "s-l" #'org-preview-latex-fragment
 
@@ -277,3 +276,6 @@
   (add-to-list 'completion-at-point-functions #'cape-symbol)
   ;;(add-to-list 'completion-at-point-functions #'cape-line)
 )
+
+(defun insert-current-date () (interactive)
+ (isert (shell-command-to-string "date +%Y-%m-%d")))
