@@ -92,6 +92,7 @@
  "s-f" #'consult-line
  "s-c" #'kill-ring-save
  "s-v" #'yank
+ "s-r" #'consult-recent-file
  ;; org
  "s-l" #'org-preview-latex-fragment
 
