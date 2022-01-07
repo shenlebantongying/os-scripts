@@ -17,7 +17,7 @@
 (doom! :input
 
        :completion
-       (company +childframe)         ; the ultimate code completion backend
+       ;(company +childframe)         ; the ultimate code completion backend
        (vertico +icons)        ; a search engine for love and life
 
        :ui
