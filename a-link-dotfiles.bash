@@ -168,3 +168,7 @@ touch ~/.config/kitty/local.conf
 link_dir ".config/kate/externaltools"
 link_file2 ".config/kate/externaltools/xdg-open"
 link_file2 ".config/kate/externaltools/googlesearch"
+
+#ocaml
+link_dir ".config/utop"
+link_file2 ".config/utop/init.ml"
