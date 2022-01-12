@@ -53,6 +53,7 @@
        (eval +overlay)     ; run code, run (also, repls)
        lookup              ; navigate your code and its documentation
        (lsp +peek)
+       editorconfig
 
        :os
        (:if IS-MAC macos)  ; improve compatibility with macOS

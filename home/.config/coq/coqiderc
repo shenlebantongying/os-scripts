@@ -68,7 +68,7 @@ tactic.primitive = "" "" "false" "false" "false" "false"
 tactic.string = "" "" "false" "false" "false" "false" 
 text_font = "Hack 11" 
 user_queries = 
-vertical_tabs = "false" 
+vertical_tabs = "true" 
 window_height = "600" 
 window_width = "800" 
 

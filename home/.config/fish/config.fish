@@ -65,6 +65,7 @@ end
 
     set -gx CDPATH . .. ~ /
     set -gx EDITOR emacs -nw -Q
+    set -gx SYSTEMD_PAGER cat
 
     # special paths
     if type -q "opam"
