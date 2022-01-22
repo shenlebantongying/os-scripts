@@ -116,14 +116,13 @@
   (setq python-shell-interpreter "ipython3"))
 
 (after! centaur-tabs
-  (setq centaur-tabs-height 10)
+  (setq centaur-tabs-height 5)
   (setq centaur-tabs-set-icons nil)
   (setq centaur-tabs-set-bar 'under)
   (setq x-underline-at-descent-line t)
 )
 
 (after! doom-modeline
-  (setq doom-modeline-height 1)
   (setq doom-modeline-icon nil))
 
 (setq org-directory "~/workbench-universe/")
