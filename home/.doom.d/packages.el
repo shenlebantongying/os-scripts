@@ -60,3 +60,4 @@
 (package! goggles)
 (package! corfu)
 (package! cape)
+(package! adaptive-wrap :disable t)
