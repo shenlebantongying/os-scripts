@@ -279,3 +279,10 @@
 
 (defun insert-current-date () (interactive)
  (isert (shell-command-to-string "date +%Y-%m-%d")))
+
+(after! latex
+  (setq-local font-lock-maximum-decoration t)
+  ;; to future, there is a bug about truncate-lines,
+  ;; this is a temporal solution
+  (set-local 'truncate-lines t)
+)
