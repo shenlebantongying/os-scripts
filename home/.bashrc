@@ -18,6 +18,7 @@ PATH=${HOME}/s\
 :${HOME}/bin\
 :${HOME}/.deno/bin\
 :${HOME}/.local/bin\
+:${HOME}/.opam/default/bin\
 :${HOME}/.ghcup/bin\
 :${HOME}/.cabal/bin\
 :${HOME}/.rbenv/bin\
@@ -121,3 +122,8 @@ function krm(){
 function peek(){
     eval "$@" 2>/dev/null | kate -i &>/dev/null & 
 }
+
+
+# BEGIN_KITTY_SHELL_INTEGRATION
+if test -n "$KITTY_INSTALLATION_DIR" -a -e "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; then source "$KITTY_INSTALLATION_DIR/shell-integration/bash/kitty.bash"; fi
+# END_KITTY_SHELL_INTEGRATION
