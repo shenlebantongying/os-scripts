@@ -7,6 +7,8 @@
 (setq indent-line-function 'insert-tab)
 (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
 
+(setq initial-frame-alist '( (width . 110) (height . 40)))
+
 (menu-bar-mode)
 
 (menu-bar-left-scroll-bar)
