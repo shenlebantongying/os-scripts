@@ -17,13 +17,13 @@
 (doom! :input
 
        :completion
-       ;(company +childframe)         ; the ultimate code completion backend
+       (company +childframe)         ; the ultimate code completion backend
        (vertico +icons)        ; a search engine for love and life
 
        :ui
        doom              ; what makes DOOM look the way it does
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
-       modeline          ; snazzy, Atom-inspired modeline, plus API
+       ;; modeline          ; snazzy, Atom-inspired modeline, plus API
        ophints           ; highlight the region an operation acts on
        (popup +defaults)   ; tame sudden yet inevitable temporary windows
        tabs              ; a tab bar for Emacs
@@ -75,7 +75,7 @@
        python
        sml
        ocaml
-       (racket +xp)
+       racket
 
        :email
 

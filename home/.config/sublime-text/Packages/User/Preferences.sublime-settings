@@ -21,9 +21,10 @@
 	],
 	"ignored_packages":
 	[
+		"C++",
 		"Vintage",
 	],
 	"close_windows_when_empty": false,
-	"color_scheme": "Packages/Color Scheme - Default/Mariana.sublime-color-scheme",
+	"color_scheme": "Mariana.sublime-color-scheme",
 	"theme": "auto",
 }

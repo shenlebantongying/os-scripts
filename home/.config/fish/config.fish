@@ -48,6 +48,7 @@ switch (uname)
             /opt/homebrew/opt/bison/bin \
             /opt/homebrew/opt/libxslt/bin \
             /opt/homebrew/opt/make/libexec/gnubin \
+            /opt/homebrew/opt/grep/libexec/gnubin \
             $PATH
 
         # homebrew M1 mac specific completion
@@ -66,6 +67,7 @@ end
     set -gx CDPATH . .. ~ /
     set -gx EDITOR emacs -nw -Q
     set -gx SYSTEMD_PAGER cat
+    set -gx NO_COLOR
 
     # special paths
     if type -q "opam"

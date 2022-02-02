@@ -58,6 +58,6 @@
 (package! modus-themes)
 
 (package! goggles)
-(package! corfu)
-(package! cape)
+;; (package! corfu)
+;; (package! cape)
 (package! adaptive-wrap :disable t)
