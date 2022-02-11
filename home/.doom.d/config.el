@@ -293,3 +293,6 @@
           (lambda ()
             (visual-line-mode -1)
             (toggle-truncate-lines 1)))
+
+(custom-set-faces '(font-lock-function-name-face ((t (:foreground "black")))))
+(custom-set-faces '(font-lock-keyword-face ((t (:foreground "black")))))
