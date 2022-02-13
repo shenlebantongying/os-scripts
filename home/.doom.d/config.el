@@ -294,5 +294,13 @@
             (visual-line-mode -1)
             (toggle-truncate-lines 1)))
 
-(custom-set-faces '(font-lock-function-name-face ((t (:foreground "black")))))
-(custom-set-faces '(font-lock-keyword-face ((t (:foreground "black")))))
+(custom-set-faces
+ '(font-lock-function-name-face ((t (:foreground "black"))))
+ '(font-lock-keyword-face ((t (:foreground "black"))))
+ '(font-lock-type-face ((t (:foreground "black"))))
+ '(font-lock-builtin-face ((t (:foreground "black"))))
+ '(font-lock-variable-name-face ((t (:foreground "black"))))
+ '(font-lock-constant-face ((t (:foreground "black"))))
+ '(font-lock-string-face ((t (:foreground "black"))))
+ '(highlight-numbers-number ((t (:foreground "black"))))
+)

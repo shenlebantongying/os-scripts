@@ -86,3 +86,10 @@ color.undo.before=yellow
 color.undo.after=green
 
 news.version=2.6.0
+uda.url.type=string
+uda.url.label=URL
+
+report.web.columns=id,tags,description,url,urgency
+report.web.description=Bookmarks
+report.web.filter=status:pending
+report.next.sort=urgency-

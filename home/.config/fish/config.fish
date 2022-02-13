@@ -37,6 +37,7 @@ switch (uname)
             $HOME/.rbenv/bin \
             $HOME/.cargo/bin \
             $HOME/.emacs.d/bin \
+            $HOME/npm/bin \
             /usr/local/smlnj/bin \
         # Python
             $HOME/Library/Python/3.10/bin \
