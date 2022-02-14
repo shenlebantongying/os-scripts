@@ -92,4 +92,4 @@ uda.url.label=URL
 report.web.columns=id,tags,description,url,urgency
 report.web.description=Bookmarks
 report.web.filter=status:pending
-report.next.sort=urgency-
+report.web.sort=urgency-

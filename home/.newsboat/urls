@@ -114,7 +114,6 @@ https://gretzuni.com/atom/
 http://www.turtleware.eu/rss.xml lisp
 https://writings.stephenwolfram.com/feed/
 https://defn.io/index.xml
-http://research.swtch.com/feed.atom
 https://wadler.blogspot.com/feeds/posts/default
 http://www.randomhacks.net/feed.xml
 http://lambda-the-ultimate.org/rss.xml
@@ -131,3 +130,5 @@ https://www.haskellforall.com/feeds/posts/default
 https://jao.io/blog/rss.xml
 https://planet.scheme.org/atom.xml
 https://programmingpraxis.com/feed/
+https://cstheory.stackexchange.com/feeds/user/2185
+http://math.andrej.com/feed.xml
