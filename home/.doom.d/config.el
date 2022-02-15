@@ -118,15 +118,17 @@
 (after! python
   (setq python-shell-interpreter "ipython3"))
 
-(after! centaur-tabs
+(use-package centaur-tabs
+  :init
+  (setq centaur-tabs-enable-key-bindings t)
+  :ensure t
+  :config
   (setq centaur-tabs-height 5)
   (setq centaur-tabs-set-icons nil)
   (setq centaur-tabs-set-bar 'under)
   (setq x-underline-at-descent-line t)
+  (setq centaur-tabs-enable-key-bindings t)
 )
-
-(after! doom-modeline
-  (setq doom-modeline-icon nil))
 
 (setq org-directory "~/workbench-universe/")
 
@@ -150,7 +152,7 @@
 
 (add-hook 'racket-mode-hook #'racket-unicode-input-method-enable)
 
-;; as recommended by 
+;; as recommended by
 (use-package paredit
   :ensure t
   :config
@@ -180,7 +182,7 @@
 
 ;; (add-hook 'emacs-startup-hook #'efs/display-startup-time)
 
-(use-package goggles
+(use-package! goggles
   :hook ((prog-mode text-mode) . goggles-mode)
   :config
   (setq-default goggles-pulse t)) ;; set to nil to disable pulsing
@@ -230,7 +232,7 @@
 ;;          ("C-M-/" . dabbrev-expand)))
 
 ;; A few more useful configurations...
-(use-package emacs
+(use-package! emacs
   :init
   ;; TAB cycle if there are only few candidates
   (setq completion-cycle-threshold 3)
@@ -279,8 +281,10 @@
 ;;   ;;(add-to-list 'completion-at-point-functions #'cape-line)
 ;; )
 
-(defun insert-current-date () (interactive)
- (isert (shell-command-to-string "date +%Y-%m-%d")))
+(defun insert-current-date ()
+  "Insert standard date."
+  (interactive)
+  (isert (shell-command-to-string "date +%Y-%m-%d")))
 
 ;; LaTeX related
 
@@ -304,4 +308,5 @@
  '(font-lock-constant-face ((t (:foreground "black"))))
  '(font-lock-string-face ((t (:foreground "black"))))
  '(highlight-numbers-number ((t (:foreground "black"))))
+ '(font-lock-negation-char-face ((t (:foreground "black"))))
 )

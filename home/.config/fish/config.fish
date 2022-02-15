@@ -77,6 +77,9 @@ end
     if type -q "rbenv"
         source (rbenv init -|psub)
     end
+    if type -q "zoxide"
+        zoxide init fish | source
+    end
 
     # taskwarrior
     # if type -q "task"
