@@ -83,6 +83,7 @@
 
 ;; generic
 (map!
+ "RET" #'electric-newline-and-maybe-indent
  "s-o" #'find-file-at-point
  "s-t" #'find-file
  "s-b" #'consult-buffer

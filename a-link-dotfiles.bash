@@ -77,7 +77,7 @@ function link_folder(){
         link_file2 "${FILE#*/*/*/*/*/}"
     done
 
-    for FILE2 in "${lfhloc}"*.fish;
+    for FILE2 in "${lfhloc}"{*.fish,*.lua};
     do
         echo "${FILE2}"
         link_file2 "${FILE2#*/*/*/}"
@@ -148,9 +148,14 @@ link_file2 ".config/coq/coqide.keys"
 link_dir ".config/fish"
 link_file2 ".config/fish/config.fish"
 
-link_dir ".config/functions"
+link_dir ".config/fish/functions"
 # loop throught all files under fish/functions, and strip first a few parts.
 link_folder ".config/fish/functions/"
+
+# hammerspoon
+link_dir ".hammerspoon"
+# loop throught all files under fish/functions, and strip first a few parts.
+link_folder ".hammerspoon/"
 
 link_file2 ".guile"
 link_file2 ".taskrc"
