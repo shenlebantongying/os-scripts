@@ -44,7 +44,8 @@
        vterm             ; the best terminal emulation in Emacs
 
        :checkers
-       syntax              ; tasing you for every semicolon you forget
+       ;;syntax         ; Somehow uselss, because if you don't
+                        ;understand the language, syntax check cannot save u
        spell ; tasing you for misspelling mispelling
 
        :tools
@@ -76,7 +77,7 @@
        lua
 
        :private
-       racket
+        racketgit
 
        :email
 
