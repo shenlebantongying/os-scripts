@@ -77,7 +77,7 @@ function link_folder(){
         link_file2 "${FILE#*/*/*/*/*/}"
     done
 
-    for FILE2 in "${lfhloc}"{*.fish,*.lua};
+    for FILE2 in "${lfhloc}"{*.fish,*.lua,*.el,*.md};
     do
         echo "${FILE2}"
         link_file2 "${FILE2#*/*/*/}"
@@ -113,6 +113,10 @@ link_dir ".doom.d"
 link_file2 ".doom.d/init.el"
 link_file2 ".doom.d/config.el"
 link_file2 ".doom.d/packages.el"
+
+link_dir ".doom.d/modules/private/racketgit"
+link_folder ".doom.d/modules/private/racketgit/"
+
 
 # alternative
 link_dir ".spacemacs.d"

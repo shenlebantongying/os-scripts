@@ -73,8 +73,10 @@
        python
        sml
        ocaml
-       racket
        lua
+
+       :private
+       racket
 
        :email
 

@@ -309,4 +309,5 @@
  '(font-lock-string-face ((t (:foreground "black"))))
  '(highlight-numbers-number ((t (:foreground "black"))))
  '(font-lock-negation-char-face ((t (:foreground "black"))))
+ '(show-paren-match ((t (:background "red1" :foreground "white"))))
 )
