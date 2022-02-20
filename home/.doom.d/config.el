@@ -194,6 +194,7 @@
             (visual-line-mode -1)
             (toggle-truncate-lines 1)))
 
+(setq! show-paren-style 'expression)
 (custom-set-faces
  '(font-lock-function-name-face ((t (:foreground "black"))))
  '(font-lock-keyword-face ((t (:foreground "black"))))
@@ -205,4 +206,5 @@
  '(highlight-numbers-number ((t (:foreground "black"))))
  '(font-lock-negation-char-face ((t (:foreground "black"))))
  '(show-paren-match ((t (:background "red1" :foreground "white"))))
+ '(show-paren-match-expression ((t (:background "LemonChiffon"))))
 )
