@@ -121,7 +121,6 @@
 (use-package centaur-tabs
   :init
   (setq centaur-tabs-enable-key-bindings t)
-  :ensure t
   :config
   (setq centaur-tabs-height 5)
   (setq centaur-tabs-set-icons nil)
@@ -139,7 +138,6 @@
 
 ;; as recommended by
 (use-package paredit
-  :ensure t
   :config
   (dolist (m '(
                ;racket-mode-hook
@@ -195,16 +193,23 @@
             (toggle-truncate-lines 1)))
 
 (setq! show-paren-style 'expression)
-(custom-set-faces
- '(font-lock-function-name-face ((t (:foreground "black"))))
- '(font-lock-keyword-face ((t (:foreground "black"))))
- '(font-lock-type-face ((t (:foreground "black"))))
- '(font-lock-builtin-face ((t (:foreground "black"))))
- '(font-lock-variable-name-face ((t (:foreground "black"))))
- '(font-lock-constant-face ((t (:foreground "black"))))
- '(font-lock-string-face ((t (:foreground "black"))))
- '(highlight-numbers-number ((t (:foreground "black"))))
- '(font-lock-negation-char-face ((t (:foreground "black"))))
- '(show-paren-match ((t (:background "red1" :foreground "white"))))
- '(show-paren-match-expression ((t (:background "LemonChiffon"))))
-)
+(with-eval-after-load "modus-themes"
+  (custom-set-faces
+   '(font-lock-function-name-face ((t (:foreground "black"))))
+   '(font-lock-keyword-face ((t (:foreground "black"))))
+   '(font-lock-type-face ((t (:foreground "black"))))
+   '(font-lock-builtin-face ((t (:foreground "black"))))
+   '(font-lock-variable-name-face ((t (:foreground "black"))))
+   '(font-lock-constant-face ((t (:foreground "black"))))
+   '(font-lock-string-face ((t (:foreground "black"))))
+   '(highlight-numbers-number ((t (:foreground "black"))))
+   '(font-lock-negation-char-face ((t (:foreground "black"))))
+   '(show-paren-match ((t (:background "red1" :foreground "white"))))
+   '(show-paren-match-expression ((t (:background "LightGoldenrod"))))
+))
+
+(defun occur-at-point ()
+  "Run occur using the `word-at-point'."
+  (interactive)
+  (let ((term (thing-at-point 'word t)))
+    (occur term)))
