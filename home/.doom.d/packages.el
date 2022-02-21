@@ -56,6 +56,7 @@
 (package! solo-jazz-theme)
 (package! spacemacs-theme)
 (package! modus-themes)
+(package! paren-face)
 
 (package! goggles)
 ;; (package! corfu)

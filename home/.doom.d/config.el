@@ -1,7 +1,6 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-;; Place your private configuration here! Remember, you do not need to run 'doom
-;; sync' after modifying this file!
+(load! "+prog")
 
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
@@ -174,11 +173,6 @@
   ;; `completion-at-point' is often bound to M-TAB.
   (setq tab-always-indent 'complete))
 
-(defun insert-current-date ()
-  "Insert standard date."
-  (interactive)
-  (isert (shell-command-to-string "date +%Y-%m-%d")))
-
 ;; LaTeX related
 
 (after! latex
@@ -204,12 +198,10 @@
    '(font-lock-string-face ((t (:foreground "black"))))
    '(highlight-numbers-number ((t (:foreground "black"))))
    '(font-lock-negation-char-face ((t (:foreground "black"))))
+   '(rainbow-delimiters-depth-1-face ((t (:foreground "#145c33"))))
    '(show-paren-match ((t (:background "red1" :foreground "white"))))
    '(show-paren-match-expression ((t (:background "LightGoldenrod"))))
 ))
 
-(defun occur-at-point ()
-  "Run occur using the `word-at-point'."
-  (interactive)
-  (let ((term (thing-at-point 'word t)))
-    (occur term)))
+(with-eval-after-load "paren-face"
+  (set-face-attribute 'parenthesis nil :foreground "purple"))
