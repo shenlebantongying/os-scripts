@@ -66,9 +66,12 @@
        (latex +latexmk)  ; writing papers in Emacs has never been so fun
        markdown          ; writing docs for people to ignore
        (org +pandoc)     ; organize your plain life in plain text
-       (scheme +chez 
+       (scheme +chez
                +guile
-               +chibi)    ; a fully conniving family of lisps
+               +chibi
+               +mit
+               +chicken
+               +gambit)    ; a fully conniving family of lisps
        (sh +fish)         ; she sells {ba,z,fi}sh shells on the C xor
        python
        sml

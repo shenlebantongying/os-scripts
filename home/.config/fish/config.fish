@@ -50,6 +50,8 @@ switch (uname)
             /opt/homebrew/opt/libxslt/bin \
             /opt/homebrew/opt/make/libexec/gnubin \
             /opt/homebrew/opt/grep/libexec/gnubin \
+        # Fix crazy homebrew
+           /opt/homebrew/opt/gambit-scheme/current/bin \
             $PATH
 
         # homebrew M1 mac specific completion

@@ -107,9 +107,11 @@
 
 ;; Scheme
 
+
 (setq geiser-smart-tab-mode t)
 (after! geiser
-  (setq geiser-guile-binary (executable-find "guile3"))
+  (setq geiser-guile-binary (let ((guile-exec (executable-find "guile3")))
+                              (if guile-exec guile-exec (executable-find "guile"))))
   (setq geiser-chez-binary  (executable-find "chez")))
 
 (after! python
@@ -197,7 +199,7 @@
    '(highlight-numbers-number ((t (:foreground "black"))))
    '(font-lock-negation-char-face ((t (:foreground "black"))))
    '(rainbow-delimiters-depth-1-face ((t (:foreground "#145c33"))))
-   '(show-paren-match ((t (:background "red1" :foreground "black"))))
+  ;; '(show-paren-match ((t (:background "red1" :foreground "black"))))
    '(show-paren-match-expression ((t (:background "LightGoldenrod"))))
 ))
 
@@ -217,3 +219,4 @@
                         'vertical-border
                         (make-glyph-code ?│))
     (xterm-mouse-mode 1))
+(setq which-key-idle-delay 0.1)
