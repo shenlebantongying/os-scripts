@@ -24,7 +24,6 @@
        doom              ; what makes DOOM look the way it does
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        ;; modeline          ; snazzy, Atom-inspired modeline, plus API
-       ophints           ; highlight the region an operation acts on
        (popup +defaults)   ; tame sudden yet inevitable temporary windows
        tabs              ; a tab bar for Emacs
        window-select     ; visually switch windows

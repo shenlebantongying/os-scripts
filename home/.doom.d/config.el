@@ -9,7 +9,7 @@
 (setq initial-frame-alist '( (width . 110) (height . 40)))
 
 (menu-bar-mode)
-
+(setq-default frame-title-format "%f")
 (menu-bar-left-scroll-bar)
 ; (tool-bar-mode)
 
@@ -153,10 +153,10 @@
                ("M-{" . paredit-wrap-curly))))
 
 
-(use-package! goggles
-  :hook ((prog-mode text-mode) . goggles-mode)
+(use-package goggles
+  :hook ((prog-mode text-mode racket-mode) . goggles-mode)
   :config
-  (setq-default goggles-pulse t)) ;; set to nil to disable pulsing
+  (setq-default goggles-pulse t))
 
 ;; A few more useful configurations...
 (use-package! emacs
