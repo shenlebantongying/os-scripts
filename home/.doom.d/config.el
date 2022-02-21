@@ -37,7 +37,7 @@
 (setq doom-theme 'modus-operandi)
 (cond
  (IS-MAC
-  (setq doom-font (font-spec :family "JetBrains Mono" :size 14.0)))
+  (setq doom-font (font-spec :family "JetBrains Mono" :size 15.0)))
  (IS-LINUX
 ;;(setq doom-font (font-spec :family "Terminus" :weight 'bold :size 14.0)))
   (setq doom-font (font-spec :family "Cascadia Code" :size 13.0)))
@@ -95,8 +95,6 @@
  "s-Z" #'undo-fu-only-redo
  ;; org
  "s-l" #'org-preview-latex-fragment
-
- "<f5>" #'+vterm/toggle
  )
 
  (global-unset-key (kbd "C-z"))
@@ -186,7 +184,7 @@
             (visual-line-mode -1)
             (toggle-truncate-lines 1)))
 
-(setq! show-paren-style 'expression)
+(setq! show-paren-style 'parenthesis)
 (with-eval-after-load "modus-themes"
   (custom-set-faces
    '(font-lock-function-name-face ((t (:foreground "black"))))
@@ -199,9 +197,23 @@
    '(highlight-numbers-number ((t (:foreground "black"))))
    '(font-lock-negation-char-face ((t (:foreground "black"))))
    '(rainbow-delimiters-depth-1-face ((t (:foreground "#145c33"))))
-   '(show-paren-match ((t (:background "red1" :foreground "white"))))
+   '(show-paren-match ((t (:background "red1" :foreground "black"))))
    '(show-paren-match-expression ((t (:background "LightGoldenrod"))))
 ))
 
 (with-eval-after-load "paren-face"
   (set-face-attribute 'parenthesis nil :foreground "purple"))
+
+(after! scheme
+  (remove-hook 'scheme-mode-hook #'rainbow-delimiters-mode)
+  (add-hook 'scheme-mode-hook #'paren-face-mode))
+(after! geiser
+  (remove-hook 'geiser-mode-hook #'rainbow-delimiters-mode))
+
+
+;; when `emacs -nw`
+(unless (display-graphic-p)
+    (set-display-table-slot standard-display-table
+                        'vertical-border
+                        (make-glyph-code ?│))
+    (xterm-mouse-mode 1))
