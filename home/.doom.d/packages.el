@@ -64,3 +64,4 @@
 (package! adaptive-wrap :disable t)
 (package! auto-highlight-symbol)
 (package! transpose-frame)
+(package! multiple-cursors)

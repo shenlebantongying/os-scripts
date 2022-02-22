@@ -113,11 +113,20 @@
   :config
   (setq centaur-tabs-height 5)
   (setq centaur-tabs-set-icons nil)
-  (setq centaur-tabs-set-bar 'under)
+  (setq centaur-tabs-set-bar nil)
   (setq x-underline-at-descent-line t)
   :bind
-  ("<c-s-left>" . centaur-tabs-backward)
-  ("<c-s-right>" . centaur-tabs-forward)
+  ("<C-s-left>" . centaur-tabs-backward)
+  ("<C-s-right>" . centaur-tabs-forward)
+  ("s-1" . centaur-tabs-select-visible-tab)
+  ("s-2" . centaur-tabs-select-visible-tab)
+  ("s-3" . centaur-tabs-select-visible-tab)
+  ("s-4" . centaur-tabs-select-visible-tab)
+  ("s-5" . centaur-tabs-select-visible-tab)
+  ("s-6" . centaur-tabs-select-visible-tab)
+  ("s-7" . centaur-tabs-select-visible-tab)
+  ("s-8" . centaur-tabs-select-visible-tab)
+  ("s-9" . centaur-tabs-select-visible-tab)
 )
 
 (setq org-directory "~/workbench-universe/")
@@ -221,3 +230,11 @@
   (setq doom-modeline-height 1)
   (setq doom-modeline-icon nil)
 )
+
+(with-eval-after-load 'company-coq
+  (add-to-list 'company-coq-disabled-features 'prettify-symbols))
+
+;; proof-general
+(use-package proof-general
+  :custom
+  (proof-three-window-mode-policy 'hybird))
