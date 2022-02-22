@@ -6,15 +6,12 @@
 (setq indent-line-function 'insert-tab)
 (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
 
-(setq initial-frame-alist '( (width . 110) (height . 40)))
+(setq initial-frame-alist '((width . 110) (height . 40)))
 
 (menu-bar-mode)
+(tool-bar-mode)
 (setq-default frame-title-format "%f")
 (menu-bar-left-scroll-bar)
-; (tool-bar-mode)
-
-;;(setq +doom-dashboard-functions
-;;      '(doom-dashboard-widget-shortmenu))
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
@@ -99,14 +96,7 @@
 
  (global-unset-key (kbd "C-z"))
 
-;; override some defaults
-;; (use-package! treemacs
-;;   :config
-;;   (setq treemacs-follow-mode t
-;;         treemacs-position 'right))
-
 ;; Scheme
-
 
 (setq geiser-smart-tab-mode t)
 (after! geiser
@@ -118,18 +108,19 @@
   (setq python-shell-interpreter "ipython3"))
 
 (use-package centaur-tabs
-  :init
-  (setq centaur-tabs-enable-key-bindings t)
+  ;; :init
+  ;; (setq centaur-tabs-enable-key-bindings t)
   :config
   (setq centaur-tabs-height 5)
   (setq centaur-tabs-set-icons nil)
   (setq centaur-tabs-set-bar 'under)
   (setq x-underline-at-descent-line t)
-  (setq centaur-tabs-enable-key-bindings t)
+  :bind
+  ("<c-s-left>" . centaur-tabs-backward)
+  ("<c-s-right>" . centaur-tabs-forward)
 )
 
 (setq org-directory "~/workbench-universe/")
-
 
 ;; racket
 
@@ -203,6 +194,11 @@
    '(show-paren-match-expression ((t (:background "LightGoldenrod"))))
 ))
 
+(use-package! modues-themes
+  :defer nil
+  :config
+  (setq modus-themes-hl-line '(accented)))
+
 (with-eval-after-load "paren-face"
   (set-face-attribute 'parenthesis nil :foreground "purple"))
 
@@ -211,7 +207,6 @@
   (add-hook 'scheme-mode-hook #'paren-face-mode))
 (after! geiser
   (remove-hook 'geiser-mode-hook #'rainbow-delimiters-mode))
-
 
 ;; when `emacs -nw`
 (unless (display-graphic-p)
