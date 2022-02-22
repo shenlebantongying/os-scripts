@@ -215,3 +215,9 @@
                         (make-glyph-code ?│))
     (xterm-mouse-mode 1))
 (setq which-key-idle-delay 0.1)
+
+(use-package doom-modeline
+  :config
+  (setq doom-modeline-height 1)
+  (setq doom-modeline-icon nil)
+)

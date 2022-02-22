@@ -28,6 +28,8 @@
        tabs              ; a tab bar for Emacs
        window-select     ; visually switch windows
        zen               ; distraction-free coding or writing
+       modeline
+       minimap
 
        :editor
        ;parinfer -> good mode, but not everyone follow the indentation standard.
