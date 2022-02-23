@@ -65,3 +65,4 @@
 (package! auto-highlight-symbol)
 (package! transpose-frame)
 (package! multiple-cursors)
+(package! undo-tree)

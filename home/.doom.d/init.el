@@ -62,7 +62,6 @@
        (cc +lsp)
        clojure
        common-lisp       ; if you've seen one lisp, you've seen them all
-       coq               ; proofs-as-programs
        emacs-lisp        ; drown in parentheses
        erlang            ; an elegant language for a more civilized age
        (latex +latexmk)  ; writing papers in Emacs has never been so fun
@@ -82,6 +81,7 @@
 
        :private
         racketgit
+        proofgeneral
 
        :email
 

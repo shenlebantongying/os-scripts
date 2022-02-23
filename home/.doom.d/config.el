@@ -9,7 +9,6 @@
 (setq initial-frame-alist '((width . 110) (height . 40)))
 
 (menu-bar-mode)
-(tool-bar-mode)
 (setq-default frame-title-format "%f")
 (menu-bar-left-scroll-bar)
 
@@ -34,6 +33,7 @@
 (setq doom-theme 'modus-operandi)
 (cond
  (IS-MAC
+  (tool-bar-mode)
   (setq doom-font (font-spec :family "JetBrains Mono" :size 15.0)))
  (IS-LINUX
 ;;(setq doom-font (font-spec :family "Terminus" :weight 'bold :size 14.0)))
@@ -199,6 +199,8 @@
    '(highlight-numbers-number ((t (:foreground "black"))))
    '(font-lock-negation-char-face ((t (:foreground "black"))))
    '(rainbow-delimiters-depth-1-face ((t (:foreground "#145c33"))))
+   '(proof-tactics-name-face ((t (:foreground "black"))))
+   '(coq-solve-tactics-face ((t (:foreground "black"))))
   ;; '(show-paren-match ((t (:background "red1" :foreground "black"))))
    '(show-paren-match-expression ((t (:background "LightGoldenrod"))))
 ))
@@ -238,3 +240,10 @@
 (use-package proof-general
   :custom
   (proof-three-window-mode-policy 'hybird))
+
+(use-package company-coq
+  :init
+   (setq company-coq-disabled-features '(hello company-defaults code-folding)))
+
+(after! coq-mode
+  (tool-bar-mode 1))
