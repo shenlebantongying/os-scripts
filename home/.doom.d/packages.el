@@ -66,3 +66,4 @@
 (package! transpose-frame)
 (package! multiple-cursors)
 (package! undo-tree)
+(package! tempel)

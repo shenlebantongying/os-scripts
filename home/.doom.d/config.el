@@ -8,6 +8,7 @@
 
 (setq initial-frame-alist '((width . 110) (height . 40)))
 
+(set-fringe-mode 0)
 (menu-bar-mode)
 (setq-default frame-title-format "%f")
 (menu-bar-left-scroll-bar)
@@ -34,7 +35,7 @@
 (cond
  (IS-MAC
   (tool-bar-mode)
-  (setq doom-font (font-spec :family "JetBrains Mono" :size 15.0)))
+  (setq doom-font (font-spec :family "Ubuntu Mono" :size 18.0)))
  (IS-LINUX
 ;;(setq doom-font (font-spec :family "Terminus" :weight 'bold :size 14.0)))
   (setq doom-font (font-spec :family "Cascadia Code" :size 13.0)))
@@ -211,7 +212,7 @@
   (setq modus-themes-hl-line '(accented)))
 
 (with-eval-after-load "paren-face"
-  (set-face-attribute 'parenthesis nil :foreground "purple"))
+  (set-face-attribute 'parenthesis nil :foreground "thistle4"))
 
 (after! scheme
   (remove-hook 'scheme-mode-hook #'rainbow-delimiters-mode)
@@ -247,3 +248,7 @@
 
 (after! coq-mode
   (tool-bar-mode 1))
+
+(use-package! tempel
+  :init
+  (setq tempel-file (expand-file-name "templates" doom-private-dir)))
