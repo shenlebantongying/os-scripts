@@ -25,7 +25,7 @@
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        ;; modeline          ; snazzy, Atom-inspired modeline, plus API
        (popup +defaults)   ; tame sudden yet inevitable temporary windows
-       tabs              ; a tab bar for Emacs
+       ;;tabs              ; a tab bar for Emacs
        window-select     ; visually switch windows
        zen               ; distraction-free coding or writing
        modeline

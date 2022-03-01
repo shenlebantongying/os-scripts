@@ -84,6 +84,7 @@
  "s-o" #'find-file-at-point
  "s-t" #'find-file
  "s-b" #'consult-buffer
+ "M-s-b" #'ibuffer
  "s-w" #'ace-window
  "s-f" #'consult-line
  "s-c" #'kill-ring-save
@@ -108,27 +109,28 @@
 (after! python
   (setq python-shell-interpreter "ipython3"))
 
-(use-package centaur-tabs
-  ;; :init
-  ;; (setq centaur-tabs-enable-key-bindings t)
-  :config
-  (setq centaur-tabs-height 5)
-  (setq centaur-tabs-set-icons nil)
-  (setq centaur-tabs-set-bar nil)
-  (setq x-underline-at-descent-line t)
-  :bind
-  ("<C-s-left>" . centaur-tabs-backward)
-  ("<C-s-right>" . centaur-tabs-forward)
-  ("s-1" . centaur-tabs-select-visible-tab)
-  ("s-2" . centaur-tabs-select-visible-tab)
-  ("s-3" . centaur-tabs-select-visible-tab)
-  ("s-4" . centaur-tabs-select-visible-tab)
-  ("s-5" . centaur-tabs-select-visible-tab)
-  ("s-6" . centaur-tabs-select-visible-tab)
-  ("s-7" . centaur-tabs-select-visible-tab)
-  ("s-8" . centaur-tabs-select-visible-tab)
-  ("s-9" . centaur-tabs-select-visible-tab)
-)
+;; No tabs are needed
+;; (use-package centaur-tabs
+;;   ;; :init
+;;   ;; (setq centaur-tabs-enable-key-bindings t)
+;;   :config
+;;   (setq centaur-tabs-height 5)
+;;   (setq centaur-tabs-set-icons nil)
+;;   (setq centaur-tabs-set-bar nil)
+;;   (setq x-underline-at-descent-line t)
+;;   :bind
+;;   ("<C-s-left>" . centaur-tabs-backward)
+;;   ("<C-s-right>" . centaur-tabs-forward)
+;;   ("s-1" . centaur-tabs-select-visible-tab)
+;;   ("s-2" . centaur-tabs-select-visible-tab)
+;;   ("s-3" . centaur-tabs-select-visible-tab)
+;;   ("s-4" . centaur-tabs-select-visible-tab)
+;;   ("s-5" . centaur-tabs-select-visible-tab)
+;;   ("s-6" . centaur-tabs-select-visible-tab)
+;;   ("s-7" . centaur-tabs-select-visible-tab)
+;;   ("s-8" . centaur-tabs-select-visible-tab)
+;;   ("s-9" . centaur-tabs-select-visible-tab)
+;; )
 
 (setq org-directory "~/workbench-universe/")
 
