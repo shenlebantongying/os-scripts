@@ -10,6 +10,7 @@
 
 (set-fringe-mode 0)
 (menu-bar-mode)
+(setq tab-bar-separator " ")
 (setq-default frame-title-format "%f")
 (menu-bar-left-scroll-bar)
 

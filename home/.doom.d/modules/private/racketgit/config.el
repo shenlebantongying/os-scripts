@@ -9,4 +9,8 @@
 (use-package! racket-mode
   :mode "\\.rkt\\'"  ; give it precedence over :lang scheme
   :config
-  (set-repl-handler! 'racket-mode #'+racket/open-repl))
+  (set-repl-handler! 'racket-mode #'+racket/open-repl)
+
+  (add-hook! 'racket-mode-hook
+             #'paren-face-mode)
+)
