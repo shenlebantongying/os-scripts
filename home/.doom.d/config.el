@@ -8,6 +8,7 @@
 
 (setq initial-frame-alist '((width . 110) (height . 40)))
 
+(setq display-line-numbers-type nil)
 (set-fringe-mode 0)
 (menu-bar-mode)
 (setq tab-bar-separator " ")

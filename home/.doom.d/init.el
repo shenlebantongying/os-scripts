@@ -78,6 +78,7 @@
        sml
        ocaml
        lua
+       haskell
 
        :private
         racketgit
