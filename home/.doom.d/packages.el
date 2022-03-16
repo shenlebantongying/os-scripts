@@ -67,3 +67,7 @@
 (package! multiple-cursors)
 (package! undo-tree)
 (package! tempel)
+(package! org-modern)
+(package! imenu-list)
+(package! paredit)
+(package! dired-sidebar)

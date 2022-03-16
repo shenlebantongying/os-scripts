@@ -17,7 +17,6 @@
 (doom! :input
 
        :completion
-       (company +childframe)         ; the ultimate code completion backend
        (vertico +icons)        ; a search engine for love and life
 
        :ui
@@ -83,10 +82,11 @@
        :private
         racketgit
         proofgeneral
+        corfu
 
        :email
 
        :app
 
        :config
-       (default +bindings +smartparens))
+       (default +smartparens))

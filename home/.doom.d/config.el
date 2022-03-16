@@ -9,11 +9,9 @@
 (setq initial-frame-alist '((width . 110) (height . 40)))
 
 (setq display-line-numbers-type nil)
-(set-fringe-mode 0)
 (menu-bar-mode)
 (setq tab-bar-separator " ")
 (setq-default frame-title-format "%f")
-(menu-bar-left-scroll-bar)
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
@@ -36,7 +34,6 @@
 (setq doom-theme 'modus-operandi)
 (cond
  (IS-MAC
-  (tool-bar-mode)
   (setq doom-font (font-spec :family "Ubuntu Mono" :size 18.0)))
  (IS-LINUX
 ;;(setq doom-font (font-spec :family "Terminus" :weight 'bold :size 14.0)))
@@ -62,6 +59,10 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
+(global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "C-<wheel-down>"))
+(global-unset-key (kbd "C-<wheel-up>"))
+
 ;; mac related bindings
 (when IS-MAC
   (setq
@@ -69,22 +70,17 @@
   ;; mac-right-option-modifier 'control
    )
   (map!
-   "H-w" #'previous-line
-   "H-s" #'next-line
-   "H-a" #'backward-char
-   "H-d" #'forward-char
-   "H-q" #'backward-word
-   "H-e" #'forward-word
-   "H-2" #'scroll-down
-   "H-x" #'scroll-up
+   "C-<wheel-up>" #'next-line
+   "C-<wheel-down>" #'previous-line
+   "C-<wheel-left>" #'forward-char
+   "C-<wheel-right>" #'backward-char
    )
-  )
+)
 
 ;; generic
 (map!
  "RET" #'electric-newline-and-maybe-indent
  "s-o" #'find-file-at-point
- "s-t" #'find-file
  "s-b" #'consult-buffer
  "M-s-b" #'ibuffer
  "s-w" #'ace-window
@@ -98,7 +94,7 @@
  "s-l" #'org-preview-latex-fragment
  )
 
- (global-unset-key (kbd "C-z"))
+
 
 ;; Scheme
 
@@ -144,7 +140,7 @@
 (use-package paredit
   :config
   (dolist (m '(
-               ;racket-mode-hook
+               racket-mode-hook
                ;emacs-lisp-mode-hook
                ;racket-repl-mode-hook
          ))
@@ -230,7 +226,7 @@
                         'vertical-border
                         (make-glyph-code ?│))
     (xterm-mouse-mode 1))
-(setq which-key-idle-delay 0.1)
+(setq which-key-idle-delay 10000)
 
 (use-package doom-modeline
   :config
@@ -256,3 +252,12 @@
 (use-package! tempel
   :init
   (setq tempel-file (expand-file-name "templates" doom-private-dir)))
+
+
+(use-package dired-sidebar
+  :bind (("s-t" . dired-sidebar-toggle-sidebar))
+  :ensure t
+  :commands (dired-sidebar-toggle-sidebar)
+  :init
+  :config
+  (setq dired-sidebar-theme 'none))

@@ -122,6 +122,9 @@ link_folder ".doom.d/modules/private/racketgit/"
 link_dir ".doom.d/modules/private/proofgeneral"
 link_folder ".doom.d/modules/private/proofgeneral/"
 
+link_dir ".doom.d/modules/private/corfu"
+link_folder ".doom.d/modules/private/corfu/"
+
 # alternative
 link_dir ".spacemacs.d"
 link_file2 ".spacemacs.d/init.el"
