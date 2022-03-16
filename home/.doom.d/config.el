@@ -92,9 +92,7 @@
  "s-Z" #'undo-fu-only-redo
  ;; org
  "s-l" #'org-preview-latex-fragment
- )
-
-
+)
 
 ;; Scheme
 
