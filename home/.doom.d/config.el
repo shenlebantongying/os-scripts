@@ -1,13 +1,13 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 (load! "+prog")
-
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
 (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
 
 (setq initial-frame-alist '((width . 110) (height . 40)))
 
+(context-menu-mode)
 (setq display-line-numbers-type nil)
 (menu-bar-mode)
 (setq tab-bar-separator " ")
@@ -34,7 +34,8 @@
 (setq doom-theme 'modus-operandi)
 (cond
  (IS-MAC
-  (setq doom-font (font-spec :family "Ubuntu Mono" :size 18.0)))
+  (setq doom-font (font-spec :family "Ubuntu Mono" :size 18.0))
+  (setq doom-unicode-font (font-spec :family "JuliaMono")))
  (IS-LINUX
 ;;(setq doom-font (font-spec :family "Terminus" :weight 'bold :size 14.0)))
   (setq doom-font (font-spec :family "Cascadia Code" :size 13.0)))
@@ -92,7 +93,10 @@
  "s-Z" #'undo-fu-only-redo
  ;; org
  "s-l" #'org-preview-latex-fragment
-)
+ ;; expand-region
+ "C-="  #'er/expand-region
+ "C--"  #'er/contract-region
+ )
 
 ;; Scheme
 
@@ -224,7 +228,7 @@
                         'vertical-border
                         (make-glyph-code ?│))
     (xterm-mouse-mode 1))
-(setq which-key-idle-delay 10000)
+(setq which-key-idle-delay 1000)
 
 (use-package doom-modeline
   :config

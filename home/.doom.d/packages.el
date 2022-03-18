@@ -71,3 +71,4 @@
 (package! imenu-list)
 (package! paredit)
 (package! dired-sidebar)
+(package! page-break-lines)

@@ -110,10 +110,7 @@ link_file2 ".sbclrc"
 
 #editors
 link_dir ".doom.d"
-link_file2 ".doom.d/init.el"
-link_file2 ".doom.d/config.el"
-link_file2 ".doom.d/+prog.el"
-link_file2 ".doom.d/packages.el"
+link_folder ".doom.d/"
 link_file2 ".doom.d/templates"
 
 link_dir ".doom.d/modules/private/racketgit"
