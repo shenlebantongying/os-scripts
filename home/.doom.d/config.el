@@ -1,6 +1,8 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
 (load! "+prog")
+(load! "+bind")
+
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
 (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
@@ -34,11 +36,12 @@
 (setq doom-theme 'modus-operandi)
 (cond
  (IS-MAC
-  (setq doom-font (font-spec :family "Ubuntu Mono" :size 18.0))
+  (setq doom-font (font-spec :family "Ubuntu Mono" :size 19.0))
   (setq doom-unicode-font (font-spec :family "JuliaMono")))
  (IS-LINUX
-;;(setq doom-font (font-spec :family "Terminus" :weight 'bold :size 14.0)))
-  (setq doom-font (font-spec :family "Cascadia Code" :size 13.0)))
+  ;;(setq doom-font (font-spec :family "Terminus" :weight 'bold :size 14.0)))
+  (setq doom-font (font-spec :family "Cascadia Code" :size 13.0))
+  (setq doom-unicode-font (font-spec :family "JuliaMono")))
 )
 
 (setq font-lock-maximum-decoration 1)
@@ -60,44 +63,6 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-(global-unset-key (kbd "C-z"))
-(global-unset-key (kbd "C-<wheel-down>"))
-(global-unset-key (kbd "C-<wheel-up>"))
-
-;; mac related bindings
-(when IS-MAC
-  (setq
-   mac-function-modifier 'hyper
-  ;; mac-right-option-modifier 'control
-   )
-  (map!
-   "C-<wheel-up>" #'next-line
-   "C-<wheel-down>" #'previous-line
-   "C-<wheel-left>" #'forward-char
-   "C-<wheel-right>" #'backward-char
-   )
-)
-
-;; generic
-(map!
- "RET" #'electric-newline-and-maybe-indent
- "s-o" #'find-file-at-point
- "s-b" #'consult-buffer
- "M-s-b" #'ibuffer
- "s-w" #'ace-window
- "s-f" #'consult-line
- "s-c" #'kill-ring-save
- "s-v" #'yank
- "s-r" #'consult-recent-file
- "s-z" #'undo
- "s-Z" #'undo-fu-only-redo
- ;; org
- "s-l" #'org-preview-latex-fragment
- ;; expand-region
- "C-="  #'er/expand-region
- "C--"  #'er/contract-region
- )
-
 ;; Scheme
 
 (setq geiser-smart-tab-mode t)
@@ -108,29 +73,6 @@
 
 (after! python
   (setq python-shell-interpreter "ipython3"))
-
-;; No tabs are needed
-;; (use-package centaur-tabs
-;;   ;; :init
-;;   ;; (setq centaur-tabs-enable-key-bindings t)
-;;   :config
-;;   (setq centaur-tabs-height 5)
-;;   (setq centaur-tabs-set-icons nil)
-;;   (setq centaur-tabs-set-bar nil)
-;;   (setq x-underline-at-descent-line t)
-;;   :bind
-;;   ("<C-s-left>" . centaur-tabs-backward)
-;;   ("<C-s-right>" . centaur-tabs-forward)
-;;   ("s-1" . centaur-tabs-select-visible-tab)
-;;   ("s-2" . centaur-tabs-select-visible-tab)
-;;   ("s-3" . centaur-tabs-select-visible-tab)
-;;   ("s-4" . centaur-tabs-select-visible-tab)
-;;   ("s-5" . centaur-tabs-select-visible-tab)
-;;   ("s-6" . centaur-tabs-select-visible-tab)
-;;   ("s-7" . centaur-tabs-select-visible-tab)
-;;   ("s-8" . centaur-tabs-select-visible-tab)
-;;   ("s-9" . centaur-tabs-select-visible-tab)
-;; )
 
 (setq org-directory "~/workbench-universe/")
 
@@ -155,11 +97,31 @@
                ("M-[" . paredit-wrap-square)
                ("M-{" . paredit-wrap-curly))))
 
-
 (use-package goggles
-  :hook ((prog-mode text-mode racket-mode) . goggles-mode)
+  :hook ((prog-mode text-mode racket) . goggles-mode)
   :config
   (setq-default goggles-pulse t))
+
+(use-package! pulsar
+  :init
+  ;;(pulsar-setup)
+  :config
+  (setq pulsar-pulse t)
+  (setq pulsar-delay 0.055)
+  (setq pulsar-iterations 5))
+(customize-set-variable
+   'pulsar-pulse-functions ; Read the doc string for why not `setq'
+   '(recenter-top-bottom
+     bookmark-jump
+     forward-page
+     backward-page
+     scroll-up-command
+     scroll-down-command
+     ;; your commands
+     drag-down-stuff
+     drag-stuff-up
+     forward-paragraph
+     backward-paragraph))
 
 ;; A few more useful configurations...
 (use-package! emacs
@@ -255,11 +217,11 @@
   :init
   (setq tempel-file (expand-file-name "templates" doom-private-dir)))
 
-
-(use-package dired-sidebar
+(use-package! dired-sidebar
   :bind (("s-t" . dired-sidebar-toggle-sidebar))
-  :ensure t
   :commands (dired-sidebar-toggle-sidebar)
   :init
   :config
   (setq dired-sidebar-theme 'none))
+
+(after! dired (dired-launch-enable))

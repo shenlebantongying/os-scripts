@@ -6,6 +6,25 @@
   (let ((term (thing-at-point 'word t)))
     (occur term)))
 
+
+;;;###autoload
+(defun crux-rename-file-and-buffer ()
+  "Rename current buffer and if the buffer is visiting a file, rename it too."
+  (interactive)
+  (let ((filename (buffer-file-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (rename-buffer (read-from-minibuffer "New name: " (buffer-name)))
+      (let* ((new-name (read-file-name "New name: " (file-name-directory filename)))
+             (containing-dir (file-name-directory new-name)))
+        (make-directory containing-dir t)
+        (cond
+         ((vc-backend filename) (vc-rename-file filename new-name))
+         (t
+          (rename-file filename new-name t)
+          (set-visited-file-name new-name t t)))))))
+
+(defalias 'crux-rename-buffer-and-file #'crux-rename-file-and-buffer)
+
 (defun insert-current-date ()
   "Insert standard date."
   (interactive)
@@ -37,13 +56,21 @@
   (insert ";; -*- geiser-scheme-implementation: " choice " -*-"))
 
 (defun copy-cdpath ()
-  "copy the cur path to clipboard"
+  "copy the cur path and cd to clipboard"
   (interactive)
   (let ((cdp (concat "cd " (file-name-directory (or load-file-name buffer-file-name)))))
     (kill-new cdp)
-    (message "%s" cdp)))
+    (message "Clipboard <- %s" cdp)))
 
-(map! "C-c d" #'copy-cdpath)
+(defun copy-filepath ()
+  "copy the cur path to clipboard"
+  (interactive)
+  (let ((cdp (buffer-file-name)))
+    (kill-new cdp)
+    (message "Clipboard <- %s" cdp)))
+
+(map! "C-c d" #'copy-cdpath
+      "C-c p" #'copy-filepath)
 
 ;; Note -> the primary source for this is
 ;; https://ruzkuku.com/texts/emacs-mouse.html

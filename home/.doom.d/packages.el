@@ -58,9 +58,6 @@
 (package! modus-themes)
 (package! paren-face)
 
-(package! goggles)
-;; (package! corfu)
-;; (package! cape)
 (package! adaptive-wrap :disable t)
 (package! auto-highlight-symbol)
 (package! transpose-frame)
@@ -72,3 +69,8 @@
 (package! paredit)
 (package! dired-sidebar)
 (package! page-break-lines)
+(package! dired-launch)
+(package! goggles)
+(package! pulsar
+  :recipe (:host github
+           :repo "protesilaos/pulsar"))
