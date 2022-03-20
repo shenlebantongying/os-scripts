@@ -31,9 +31,11 @@
  "s-r" #'consult-recent-file
  "s-z" #'undo
  "s-Z" #'undo-fu-only-redo
+ "s-[" #'previous-buffer
+ "s-]" #'next-buffer
  ;; org
  "s-l" #'org-preview-latex-fragment
  ;; expand-region
  "C-="  #'er/expand-region
  "C--"  #'er/contract-region
- )
+)

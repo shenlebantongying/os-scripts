@@ -71,6 +71,7 @@
 (package! page-break-lines)
 (package! dired-launch)
 (package! goggles)
+(package! bookmark-view)
 (package! pulsar
   :recipe (:host github
            :repo "protesilaos/pulsar"))

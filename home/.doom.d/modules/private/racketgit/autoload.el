@@ -4,14 +4,15 @@
 (defun racket-fmt ()
   "run formatter on racket buffer"
   (interactive)
-  (save-excursion
-    (shell-command-on-region
+  (let ((cur-pos (point)))
+
+  (shell-command-on-region
      ;; beginning and end of buffer
 
      (point-min)
      (point-max)
      ;; command and parameters
-     "raco fmt"
+     "raco format"
      ;; output buffer
      (current-buffer)
      ;; replace?
@@ -19,4 +20,5 @@
      ;; name of the error buffer
      "*Rackt fmt Error Buffer*"
      ;; show error buffer?
-     t)))
+     t))
+  (goto-char (point))))

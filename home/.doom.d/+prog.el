@@ -93,3 +93,9 @@
              #'context-menu-ffap)
 (add-hook 'context-menu-functions
           #'context-menu-my)
+
+(defun reload-file ()
+    "reload file from the disk (not auto-save) without confirm"
+    (interactive)
+    (revert-buffer t t t)
+    (message "%s" "File reloaded."))

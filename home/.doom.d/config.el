@@ -36,7 +36,7 @@
 (setq doom-theme 'modus-operandi)
 (cond
  (IS-MAC
-  (setq doom-font (font-spec :family "Ubuntu Mono" :size 19.0))
+  (setq doom-font (font-spec :family "Ubuntu Mono" :size 18.0))
   (setq doom-unicode-font (font-spec :family "JuliaMono")))
  (IS-LINUX
   ;;(setq doom-font (font-spec :family "Terminus" :weight 'bold :size 14.0)))

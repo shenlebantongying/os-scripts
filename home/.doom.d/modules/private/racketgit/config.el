@@ -18,8 +18,10 @@
    (map!
     "H-l" #'racket-insert-lambda
     "H-i" #'racket-fmt
+    "H-p" #'racket-cycle-paren-shapes
     "C-k"  #'sp-kill-hybrid-sexp
+    "H-t" #'sp-transpose-sexp
     "<prior>" #'sp-up-sexp
     "<next>" #'sp-down-sexp
-    "<end>" #'sp-forward-sexp
-    "<home>" #'sp-backward-sexp)))
+    "<end>" #'sp-forward-parallel-sexp
+    "<home>" #'sp-backward-parallel-sexp)))
