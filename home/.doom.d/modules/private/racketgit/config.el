@@ -21,6 +21,7 @@
     "H-p" #'racket-cycle-paren-shapes
     "C-k"  #'sp-kill-hybrid-sexp
     "H-t" #'sp-transpose-sexp
+    "s-<f1>" #'racket-xp-documentation
     "<prior>" #'sp-up-sexp
     "<next>" #'sp-down-sexp
     "<end>" #'sp-forward-parallel-sexp

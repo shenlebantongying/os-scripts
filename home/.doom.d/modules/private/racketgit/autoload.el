@@ -5,10 +5,8 @@
   "run formatter on racket buffer"
   (interactive)
   (let ((cur-pos (point)))
-
-  (shell-command-on-region
+    (shell-command-on-region
      ;; beginning and end of buffer
-
      (point-min)
      (point-max)
      ;; command and parameters
@@ -21,4 +19,4 @@
      "*Rackt fmt Error Buffer*"
      ;; show error buffer?
      t))
-  (goto-char (point))))
+  (goto-char (point)))
