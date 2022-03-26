@@ -15,6 +15,32 @@
 (setq tab-bar-separator " ")
 (setq-default frame-title-format "%f")
 
+;; Make sure that the packaged version are used
+;; and without the overhead of doom emacs
+(use-package modus-themes
+  :ensure
+  :init
+  (custom-set-faces
+   '(font-lock-function-name-face ((t (:foreground "black"))))
+   '(font-lock-keyword-face ((t (:foreground "black"))))
+   '(font-lock-type-face ((t (:foreground "black"))))
+   '(font-lock-builtin-face ((t (:foreground "black"))))
+   '(font-lock-variable-name-face ((t (:foreground "black"))))
+   '(font-lock-constant-face ((t (:foreground "black"))))
+   '(font-lock-string-face ((t (:foreground "black"))))
+   '(highlight-numbers-number ((t (:foreground "black"))))
+   '(font-lock-negation-char-face ((t (:foreground "black"))))
+   '(rainbow-delimiters-depth-1-face ((t (:foreground "#145c33"))))
+   '(proof-tactics-name-face ((t (:foreground "black"))))
+   '(coq-solve-tactics-face ((t (:foreground "black"))))
+  ;; '(show-paren-match ((t (:background "red1" :foreground "black"))))
+   '(show-paren-match-expression ((t (:background "LightGoldenrod"))))
+   )
+  (setq  modus-themes-hl-line '(accented))
+  (modus-themes-load-themes)
+  :config
+  (modus-themes-load-operandi))
+
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "slbtty"
@@ -33,7 +59,6 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-(setq doom-theme 'modus-operandi)
 (cond
  (IS-MAC
   (setq doom-font (font-spec :family "Ubuntu Mono" :size 18.0))
@@ -152,28 +177,6 @@
             (toggle-truncate-lines 1)))
 
 (setq! show-paren-style 'parenthesis)
-(with-eval-after-load "modus-themes"
-  (custom-set-faces
-   '(font-lock-function-name-face ((t (:foreground "black"))))
-   '(font-lock-keyword-face ((t (:foreground "black"))))
-   '(font-lock-type-face ((t (:foreground "black"))))
-   '(font-lock-builtin-face ((t (:foreground "black"))))
-   '(font-lock-variable-name-face ((t (:foreground "black"))))
-   '(font-lock-constant-face ((t (:foreground "black"))))
-   '(font-lock-string-face ((t (:foreground "black"))))
-   '(highlight-numbers-number ((t (:foreground "black"))))
-   '(font-lock-negation-char-face ((t (:foreground "black"))))
-   '(rainbow-delimiters-depth-1-face ((t (:foreground "#145c33"))))
-   '(proof-tactics-name-face ((t (:foreground "black"))))
-   '(coq-solve-tactics-face ((t (:foreground "black"))))
-  ;; '(show-paren-match ((t (:background "red1" :foreground "black"))))
-   '(show-paren-match-expression ((t (:background "LightGoldenrod"))))
-))
-
-(use-package! modues-themes
-  :defer nil
-  :config
-  (setq modus-themes-hl-line '(accented)))
 
 (with-eval-after-load "paren-face"
   (set-face-attribute 'parenthesis nil :foreground "thistle4"))
