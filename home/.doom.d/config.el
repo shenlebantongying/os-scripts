@@ -7,7 +7,7 @@
 (setq indent-line-function 'insert-tab)
 (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
 
-(setq initial-frame-alist '((width . 110) (height . 40)))
+(setq initial-frame-alist '((width . 110) (height . 53)))
 
 (context-menu-mode)
 (setq display-line-numbers-type nil)
@@ -36,7 +36,9 @@
   ;; '(show-paren-match ((t (:background "red1" :foreground "black"))))
    '(show-paren-match-expression ((t (:background "LightGoldenrod"))))
    )
-  (setq  modus-themes-hl-line '(accented))
+
+  (setq  modus-themes-hl-line '(accented)
+         modus-themes-mode-line '(borderless))
   (modus-themes-load-themes)
   :config
   (modus-themes-load-operandi))
@@ -179,7 +181,7 @@
 (setq! show-paren-style 'parenthesis)
 
 (with-eval-after-load "paren-face"
-  (set-face-attribute 'parenthesis nil :foreground "thistle4"))
+  (set-face-attribute 'parenthesis nil :foreground "#00B2B2"))
 
 (after! scheme
   (remove-hook 'scheme-mode-hook #'rainbow-delimiters-mode)
@@ -221,7 +223,7 @@
   (setq tempel-file (expand-file-name "templates" doom-private-dir)))
 
 (use-package! dired-sidebar
-  :bind (("s-t" . dired-sidebar-toggle-sidebar))
+  :bind (("s-t" . dired-sidebar-toggle-with-current-directory))
   :commands (dired-sidebar-toggle-sidebar)
   :init
   :config

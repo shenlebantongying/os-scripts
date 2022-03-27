@@ -1,0 +1,33 @@
+#+TITLE:   completion/corfu
+#+DATE:    Mar 20, 2022
+#+SINCE:   v2.0
+#+STARTUP: inlineimages
+* Table of Contents :TOC_3:noexport:
+- [[#description][Description]]
+  - [[#module-flags][Module Flags]]
+  - [[#plugins][Plugins]]
+- [[#features][Features]]
+  - [[#code-completion][Code Completion]]
+
+* Description
+This module provides code completion, provided by [[https://github.com/minad/corfu][corfu]] which relies on the Emacs completion facilities and concentrates on providing a polished completion UI.
+
+** Module Flags
++ =+icons= Add icons to completion selections.
+
+** Plugins
++ [[https://github.com/galeo/corfu-doc][corfu-doc]]
++ [[https://github.com/minad/cape][cape]]
++ [[https://github.com/jdtsmith/kind-icon][kind-icon]]
+
+* Features
+** Code Completion
+| Keybind | Description                           |
+|---------+---------------------------------------|
+| =C-n=   | Go to next candidate                  |
+| =C-p=   | Go to previous candidate              |
+| =C-h=   | Display documentation (if available)  |
+| =M-h=   | Same above but display in mini-buffer |
+| =C-u=   | Move to previous page of candidates   |
+| =C-d=   | Move to next page of candidates       |
+| =TAB=   | Complete selected candidate           |

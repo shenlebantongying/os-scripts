@@ -14,6 +14,7 @@
 ~/.config/sublime-text/Packages/User/Package Control.sublime-settings
 ~/.config/sublime-text/Packages/User/Terminus.sublime-settings
 ~/.doom.d/**/*.el
+~/.doom.d/**/*.org
 ~/.spacemacs.d/*.el
 
 ~/.config/nvim/init.vim
@@ -40,7 +41,7 @@
 ~/.local/share/org.kde.syntax-highlighting/themes/*.theme
 
 #kitty
-~/.config/kitty/*.conf
+~/.config/kitty/kitty.conf
 
 #kate
 ~/.config/kate/externaltools/*

@@ -20,7 +20,7 @@
        (vertico +icons)        ; a search engine for love and life
 
        :ui
-       doom              ; what makes DOOM look the way it does
+       ;;doom              ; what makes DOOM look the way it does
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        (popup +defaults)   ; tame sudden yet inevitable temporary windows
        ;;tabs              ; a tab bar for Emacs
@@ -51,7 +51,6 @@
        (eval +overlay)     ; run code, run (also, repls)
        lookup              ; navigate your code and its documentation
        (lsp +peek)
-       magit
        ; editorconfig uselss
 
        :os
@@ -79,11 +78,13 @@
        lua
        haskell
 
+
        :private
-        racketgit
-        proofgeneral
-        dashboard
-        (corfu +icons)
+       magit
+       racketgit
+       proofgeneral
+       dashboard
+       (corfu +icons)
 
 
        :email
