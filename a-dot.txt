@@ -15,6 +15,7 @@
 ~/.config/sublime-text/Packages/User/Terminus.sublime-settings
 ~/.doom.d/**/*.el
 ~/.doom.d/**/*.org
+~/.doom.d/templates
 ~/.spacemacs.d/*.el
 
 ~/.config/nvim/init.vim

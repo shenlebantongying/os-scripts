@@ -26,7 +26,6 @@
        ;;tabs              ; a tab bar for Emacs
        window-select     ; visually switch windows
        zen               ; distraction-free coding or writing
-       modeline
        minimap
 
        :editor
@@ -64,7 +63,6 @@
        erlang            ; an elegant language for a more civilized age
        (latex +latexmk)  ; writing papers in Emacs has never been so fun
        markdown          ; writing docs for people to ignore
-       (org +pandoc)     ; organize your plain life in plain text
        (scheme +chez
                +guile
                +chibi
@@ -84,6 +82,8 @@
        racketgit
        proofgeneral
        dashboard
+       org
+       ;modeline
        (corfu +icons)
 
 

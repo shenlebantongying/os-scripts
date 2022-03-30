@@ -3,7 +3,7 @@
 (global-unset-key (kbd "C-z"))
 (global-unset-key (kbd "C-<wheel-down>"))
 (global-unset-key (kbd "C-<wheel-up>"))
-
+
 ;; mac related bindings
 (when IS-MAC
   (setq
@@ -11,13 +11,13 @@
   ;; mac-right-option-modifier 'control
    )
   (map!
-   "C-<wheel-up>" #'next-line
-   "C-<wheel-down>" #'previous-line
+   ;;"C-<wheel-up>" #'next-line
+   ;;"C-<wheel-down>" #'previous-line
    "C-<wheel-left>" #'forward-char
    "C-<wheel-right>" #'backward-char
    )
 )
-
+
 ;; generic
 (map!
  "RET" #'electric-newline-and-maybe-indent
@@ -38,4 +38,10 @@
  ;; expand-region
  "C-="  #'er/expand-region
  "C--"  #'er/contract-region
+
+ ;; the ^L
+ "s-{" #'backward-page
+ "s-}" #'forward-page
 )
+
+(define-key mode-line-buffer-identification-keymap [mode-line mouse-1] 'consult-buffer)

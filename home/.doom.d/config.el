@@ -9,7 +9,6 @@
 
 (setq initial-frame-alist '((width . 110) (height . 53)))
 
-(context-menu-mode)
 (setq display-line-numbers-type nil)
 (menu-bar-mode)
 (setq tab-bar-separator " ")
@@ -38,7 +37,7 @@
    )
 
   (setq  modus-themes-hl-line '(accented)
-         modus-themes-mode-line '(borderless))
+         modus-themes-mode-line '(moody))
   (modus-themes-load-themes)
   :config
   (modus-themes-load-operandi))
@@ -60,6 +59,7 @@
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
+
 
 (cond
  (IS-MAC
@@ -101,8 +101,6 @@
 (after! python
   (setq python-shell-interpreter "ipython3"))
 
-(setq org-directory "~/workbench-universe/")
-
 ;; racket
 
 (add-hook 'racket-mode-hook #'racket-unicode-input-method-enable)
@@ -112,7 +110,8 @@
   :config
   (dolist (m '(
                racket-mode-hook
-               ;emacs-lisp-mode-hook
+               geiser-mode-hook
+               emacs-lisp-mode-hook
                ;racket-repl-mode-hook
          ))
     (add-hook m #'paredit-mode))
@@ -197,12 +196,6 @@
     (xterm-mouse-mode 1))
 (setq which-key-idle-delay 1000)
 
-(use-package doom-modeline
-  :config
-  (setq doom-modeline-height 1)
-  (setq doom-modeline-icon nil)
-)
-
 (with-eval-after-load 'company-coq
   (add-to-list 'company-coq-disabled-features 'prettify-symbols))
 
@@ -230,3 +223,21 @@
   (setq dired-sidebar-theme 'none))
 
 (after! dired (dired-launch-enable))
+
+(use-package! moody
+  :config
+  (setq x-underline-at-descent-line t
+        moody-mode-line-height 20)
+  (moody-replace-mode-line-buffer-identification)
+  (moody-replace-vc-mode)
+  (moody-replace-eldoc-minibuffer-message-function))
+
+(use-package! minions
+  :init
+  (minions-mode))
+
+(vertico-mouse-mode)
+
+(set-default 'preview-scale-function 1.0)
+
+(setq mouse-drag-and-drop-region t)

@@ -49,12 +49,7 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
-(package! org-fragtog)
-
 ;; extra themes
-(package! kaolin-themes)
-(package! solo-jazz-theme)
-(package! spacemacs-theme)
 (package! modus-themes)
 (package! paren-face)
 
@@ -64,7 +59,6 @@
 (package! multiple-cursors)
 (package! undo-tree)
 (package! tempel)
-(package! org-modern)
 (package! imenu-list)
 (package! paredit)
 (package! dired-sidebar)
@@ -75,3 +69,7 @@
 (package! pulsar
   :recipe (:host github
            :repo "protesilaos/pulsar"))
+(package! moody)
+(package! minions)
+
+(package! rg)

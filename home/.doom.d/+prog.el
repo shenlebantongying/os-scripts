@@ -1,6 +1,6 @@
-;;; ~/.doom.d/+prog.el -*- lexical-binding: t; -*-
+;;; -*- lexical-binding: t; -*-
 
-(defun occur-at-point ()
+(defun +occur-at-point ()
   "Run occur using the `word-at-point'."
   (interactive)
   (let ((term (thing-at-point 'word t)))
@@ -24,6 +24,7 @@
           (set-visited-file-name new-name t t)))))))
 
 (defalias 'crux-rename-buffer-and-file #'crux-rename-file-and-buffer)
+(defalias 'org-toc #'imenu-list)
 
 (defun insert-current-date ()
   "Insert standard date."
@@ -47,7 +48,7 @@
   (set-mark (point))
   (goto-match-paren 1))
 
-(defun insert-geiser-implementation (choice)
+(defun +insert-geiser-implementation (choice)
   "insert the string that indicating which scheme are using."
   (interactive
    (let ((completion-ignore-case t))
@@ -55,14 +56,14 @@
                           (seq-map (lambda (x) `(,x . ,x)) geiser-active-implementations) nil t))))
   (insert ";; -*- geiser-scheme-implementation: " choice " -*-"))
 
-(defun copy-cdpath ()
+(defun +copy-cdpath ()
   "copy the cur path and cd to clipboard"
   (interactive)
   (let ((cdp (concat "cd " (file-name-directory (or load-file-name buffer-file-name)))))
     (kill-new cdp)
     (message "Clipboard <- %s" cdp)))
 
-(defun copy-filepath ()
+(defun +copy-filepath ()
   "copy the cur path to clipboard"
   (interactive)
   (let ((cdp (buffer-file-name)))
@@ -75,12 +76,13 @@
 ;; Note -> the primary source for this is
 ;; https://ruzkuku.com/texts/emacs-mouse.html
 
-(defun consult-word-at-point ()
+(defun +consult-word-at-point ()
   "Use current word as initial term"
   (interactive)
   (consult-line (current-word) nil))
 
 ;; context menu mode
+(context-menu-mode)
 (defun context-menu-my (menu click)
   "Polulate MENU with command to consult word"
   ;;(mouse-set-point click)
@@ -94,14 +96,15 @@
 (add-hook 'context-menu-functions
           #'context-menu-my)
 
-(defun reload-file ()
+
+(defun +reload-file ()
     "reload file from the disk (not auto-save) without confirm"
     (interactive)
     (revert-buffer t t t)
     (message "%s" "File reloaded."))
 :
 
-(defun xah-open-in-external-app (&optional @fname)
+(defun +xah-open-in-external-app (&optional @fname)
   "Open the current file or dired marked files in external app.
 When called in emacs lisp, if @fname is given, open that.
 URL `http://xahlee.info/emacs/emacs/emacs_dired_open_file_in_ext_apps.html'
@@ -133,3 +136,26 @@ Version 2019-11-04 2021-02-16"
         (mapc
          (lambda ($fpath) (let ((process-connection-type nil))
                             (start-process "" nil "xdg-open" $fpath))) $file-list))))))
+
+
+(defun +delete-process-at-point ()
+  (interactive)
+  (let ((process (get-text-property (point) 'tabulated-list-id)))
+    (cond ((and process
+                (processp process))
+           (delete-process process)
+           (revert-buffer))
+          (t
+           (error "no process at point!")))))
+
+(defun +markdown-convert-buffer-to-org ()
+    "Convert the current buffer's content from markdown to orgmode format and save it with the current buffer's file name but with .org extension."
+    (interactive)
+    (shell-command-on-region (point-min) (point-max)
+                             (format "pandoc -f markdown -t org -o %s"
+                                     (concat (file-name-sans-extension (buffer-file-name)) ".org"))))
+(defun +merriam-webster-dict-at-point ()
+  "Search the word at point"
+  (interactive)
+  (+xah-open-in-external-app (concat "https://www.merriam-webster.com/dictionary/" (current-word)))
+)
