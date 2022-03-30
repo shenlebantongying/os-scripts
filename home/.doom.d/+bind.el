@@ -42,6 +42,10 @@
  ;; the ^L
  "s-{" #'backward-page
  "s-}" #'forward-page
+
+ ;;
+
+ "s-<mouse-1>" #'mc/add-cursor-on-click
 )
 
 (define-key mode-line-buffer-identification-keymap [mode-line mouse-1] 'consult-buffer)

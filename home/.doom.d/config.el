@@ -37,7 +37,7 @@
    )
 
   (setq  modus-themes-hl-line '(accented)
-         modus-themes-mode-line '(moody))
+         )
   (modus-themes-load-themes)
   :config
   (modus-themes-load-operandi))
@@ -104,24 +104,6 @@
 ;; racket
 
 (add-hook 'racket-mode-hook #'racket-unicode-input-method-enable)
-
-;; as recommended by
-(use-package paredit
-  :config
-  (dolist (m '(
-               racket-mode-hook
-               geiser-mode-hook
-               emacs-lisp-mode-hook
-               ;racket-repl-mode-hook
-         ))
-    (add-hook m #'paredit-mode))
-  (bind-keys :map paredit-mode-map
-             ("{"   . paredit-open-curly)
-             ("}"   . paredit-close-curly))
-  (unless terminal-frame
-    (bind-keys :map paredit-mode-map
-               ("M-[" . paredit-wrap-square)
-               ("M-{" . paredit-wrap-curly))))
 
 (use-package goggles
   :hook ((prog-mode text-mode racket) . goggles-mode)
@@ -224,20 +206,66 @@
 
 (after! dired (dired-launch-enable))
 
-(use-package! moody
-  :config
-  (setq x-underline-at-descent-line t
-        moody-mode-line-height 20)
-  (moody-replace-mode-line-buffer-identification)
-  (moody-replace-vc-mode)
-  (moody-replace-eldoc-minibuffer-message-function))
-
-(use-package! minions
-  :init
-  (minions-mode))
-
 (vertico-mouse-mode)
 
 (set-default 'preview-scale-function 1.0)
 
 (setq mouse-drag-and-drop-region t)
+
+(use-package ryo-modal
+  :commands ryo-modal-mode
+  :bind ("C-c SPC" . ryo-modal-mode)
+  :init
+  :config
+  (ryo-modal-keys
+   ("," ryo-modal-repeat)
+   ("q" ryo-modal-mode)
+   ("h" backward-char)
+   ("j" next-line)
+   ("k" previous-line)
+   ("l" forward-char))
+
+  (ryo-modal-keys
+   ;; First argument to ryo-modal-keys may be a list of keywords.
+   ;; These keywords will be applied to all keybindings.
+   (:norepeat t)
+   ("0" "M-0")
+   ("1" "M-1")
+   ("2" "M-2")
+   ("3" "M-3")
+   ("4" "M-4")
+   ("5" "M-5")
+   ("6" "M-6")
+   ("7" "M-7")
+   ("8" "M-8")
+   ("9" "M-9")))
+
+
+;; (setq-default mode-line-format
+;;               '("%e"
+;;                 (:eval (if (bound-and-true-p ryo-modal-mode) "Emacs| " "Ryo| "))
+;;                 mode-line-mule-info
+;;                 mode-line-front-space
+;;                 mode-line-client
+;;                 mode-line-modified
+;;                 mode-line-frame-identification
+;;                 mode-line-buffer-identification
+;;                 mode-line-position
+;;                 (vc-mode vc-mode) " "
+;;                 mode-line-modes
+;;                 mode-line-misc-info
+;;                 mode-line-end-spaces
+;;                 ))
+
+(use-package doom-modeline
+  :ensure t
+  :init
+  (setq minions-mode-line-lighter "𝄞")
+  (minions-mode)
+  (doom-modeline-mode 1)
+  :config
+  (setq doom-modeline-icon  nil)
+  (setq doom-modeline-height 1)
+  (setq doom-modeline-hud t)
+  (setq doom-modeline-minor-modes t)
+)

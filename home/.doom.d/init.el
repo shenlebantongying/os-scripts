@@ -76,16 +76,13 @@
        lua
        haskell
 
-
        :private
        magit
        racketgit
        proofgeneral
        dashboard
        org
-       ;modeline
        (corfu +icons)
-
 
        :email
 

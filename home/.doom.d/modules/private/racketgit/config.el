@@ -15,19 +15,26 @@
              #'racket-xp-mode)
   (setq racket-xp-after-change-refresh-delay 3)
   (when IS-MAC
-   (map! :map racket-mode-map
-    "H-l" #'racket-insert-lambda
-    "H-i" #'racket-fmt
-    "H-p" #'racket-cycle-paren-shapes
-    "C-k"  #'sp-kill-hybrid-sexp
-    "H-t" #'sp-transpose-sexp
-    "s-<f1>" #'racket-xp-documentation
-    "<prior>" #'sp-up-sexp
-    "<next>" #'sp-down-sexp
-    "<end>" #'sp-forward-parallel-sexp
-    "<home>" #'sp-backward-parallel-sexp))
-    (mapcar (lambda (x) (put x 'racket-indent-function 1))
-           (list 'run*
+    (map! :map racket-mode-map
+          "H-l" #'racket-insert-lambda
+          "H-i" #'racket-fmt
+          "H-p" #'racket-cycle-paren-shapes
+          "H-t" #'sp-transpose-sexp
+          "<prior>" #'sp-up-sexp
+          "<next>" #'sp-down-sexp
+          "<end>" #'sp-forward-parallel-sexp
+          "<home>" #'sp-backward-parallel-sexp))
+  (map! :map racket-mode-map
+        "C-k"  #'sp-kill-hybrid-sexp
+        "s-<f1>" #'racket-xp-documentation
+        "C-<right>" #'sp-forward-slurp-sexp
+        "C-<left>" #'sp-forward-barf-sexp
+        "C-M-<left>" #'sp-backward-slurp-sexp
+        "C-M-<right>" #'sp-backward-barf-sexp
+        "ESC <up> " #'sp-splice-sexp-killing-around
+        )
+  (mapcar (lambda (x) (put x 'racket-indent-function 1))
+            (list 'run*
                  'fresh
                  'claim))
 )

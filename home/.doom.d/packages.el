@@ -60,7 +60,6 @@
 (package! undo-tree)
 (package! tempel)
 (package! imenu-list)
-(package! paredit)
 (package! dired-sidebar)
 (package! page-break-lines)
 (package! dired-launch)
@@ -69,7 +68,7 @@
 (package! pulsar
   :recipe (:host github
            :repo "protesilaos/pulsar"))
-(package! moody)
-(package! minions)
-
 (package! rg)
+(package! ryo-modal)
+(package! minions)
+(package! doom-modeline)
