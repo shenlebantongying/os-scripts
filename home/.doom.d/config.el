@@ -206,15 +206,13 @@
 
 (after! dired (dired-launch-enable))
 
-(vertico-mouse-mode)
-
 (set-default 'preview-scale-function 1.0)
 
 (setq mouse-drag-and-drop-region t)
 
 (use-package ryo-modal
   :commands ryo-modal-mode
-  :bind ("C-c SPC" . ryo-modal-mode)
+  :bind ("s-<escape>" . ryo-modal-mode)
   :init
   :config
   (ryo-modal-keys
@@ -269,3 +267,4 @@
   (setq doom-modeline-hud t)
   (setq doom-modeline-minor-modes t)
 )
+

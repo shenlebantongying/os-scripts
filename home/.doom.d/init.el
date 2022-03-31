@@ -39,7 +39,6 @@
        undo              ; persistent, smarter undo for your inevitable mistakes
 
        :term
-       vterm             ; the best terminal emulation in Emacs
 
        :checkers
        ;;syntax         ; Somehow uselss, because if you don't
@@ -83,6 +82,7 @@
        dashboard
        org
        (corfu +icons)
+       eshell
 
        :email
 
