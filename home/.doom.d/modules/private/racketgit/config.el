@@ -32,6 +32,9 @@
         "C-M-<left>" #'sp-backward-slurp-sexp
         "C-M-<right>" #'sp-backward-barf-sexp
         "ESC <up> " #'sp-splice-sexp-killing-around
+        "s-(" #'sp-wrap-round
+        "s-[" #'sp-wrap-square
+        "s-{" #'sp-wrap-curly
         )
   (mapcar (lambda (x) (put x 'racket-indent-function 1))
             (list 'run*
@@ -50,3 +53,5 @@
      (face-remap-add-relative 'font-lock-comment-face :foreground "#772277")
      (face-remap-add-relative 'highlight-numbers-number :foreground "#222277")
      (face-remap-add-relative 'font-lock-constant-face :foreground "#227722")))
+
+(add-hook 'racket-mode-hook #'smartparens-strict-mode)

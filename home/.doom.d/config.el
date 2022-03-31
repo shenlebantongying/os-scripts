@@ -14,6 +14,8 @@
 (setq tab-bar-separator " ")
 (setq-default frame-title-format "%f")
 
+(setq recentf-max-saved-items 500)
+
 ;; Make sure that the packaged version are used
 ;; and without the overhead of doom emacs
 (use-package modus-themes

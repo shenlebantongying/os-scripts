@@ -1,27 +1,5 @@
 ;;; term/eshell/autoload/prompts.el -*- lexical-binding: t; -*-
 
-;;;###autoload
-(defface +eshell-prompt-pwd '((t (:inherit font-lock-constant-face)))
-  "TODO"
-  :group 'eshell)
-
-;;;###autoload
-(defface +eshell-prompt-git-branch '((t (:inherit font-lock-builtin-face)))
-  "TODO"
-  :group 'eshell)
-
-
-(defun +eshell--current-git-branch ()
-  ;; TODO Refactor me
-  (cl-destructuring-bind (status . output)
-      (doom-call-process "git" "symbolic-ref" "-q" "--short" "HEAD")
-    (if (equal status 0)
-        (format " [%s]" output)
-      (cl-destructuring-bind (status . output)
-          (doom-call-process "git" "describe" "--all" "--always" "HEAD")
-        (if (equal status 0)
-            (format " [%s]" output)
-          "")))))
 
 ;;;###autoload
 (defun +eshell-default-prompt-fn ()
@@ -33,7 +11,5 @@
                             pwd
                           (abbreviate-file-name (shrink-path-file pwd)))
                         'face '+eshell-prompt-pwd))
-          (propertize (+eshell--current-git-branch)
-                      'face '+eshell-prompt-git-branch)
           (propertize " λ" 'face (if (zerop eshell-last-command-status) 'success 'error))
           " "))
