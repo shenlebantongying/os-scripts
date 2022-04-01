@@ -102,7 +102,7 @@
     (interactive)
     (revert-buffer t t t)
     (message "%s" "File reloaded."))
-:
+
 
 (defun +xah-open-in-external-app (&optional @fname)
   "Open the current file or dired marked files in external app.
@@ -138,7 +138,7 @@ Version 2019-11-04 2021-02-16"
                             (start-process "" nil "xdg-open" $fpath))) $file-list))))))
 
 
-(defun +delete-process-at-point ()
+(defun +kill-process-at-point ()
   (interactive)
   (let ((process (get-text-property (point) 'tabulated-list-id)))
     (cond ((and process
@@ -159,3 +159,8 @@ Version 2019-11-04 2021-02-16"
   (interactive)
   (+xah-open-in-external-app (concat "https://www.merriam-webster.com/dictionary/" (current-word)))
 )
+
+(defun +open-dir-in-external-file-manager ()
+  "Open file in external program"
+  (interactive)
+  (+xah-open-in-external-app (file-name-directory (buffer-file-name))))
