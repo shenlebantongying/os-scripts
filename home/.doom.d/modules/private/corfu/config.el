@@ -1,3 +1,5 @@
+;; Reasoning to use auto: Reduce time for retrying!
+
 (use-package corfu
   :custom
   (corfu-cycle t)                
@@ -9,6 +11,7 @@
   (corfu-min-width 40)
   (corfu-on-exact-match 'insert)
   :config
+  (map! "s-." #'completion-at-point)
   (map! :map corfu-map
         "TAB" #'corfu-insert
         "<escape>" #'corfu-quit

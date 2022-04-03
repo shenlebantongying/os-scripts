@@ -69,6 +69,5 @@
   :recipe (:host github
            :repo "protesilaos/pulsar"))
 (package! rg)
-(package! ryo-modal)
 (package! minions)
 (package! doom-modeline)

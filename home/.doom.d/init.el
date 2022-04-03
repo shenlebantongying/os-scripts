@@ -48,14 +48,13 @@
        :tools
        (eval +overlay)     ; run code, run (also, repls)
        lookup              ; navigate your code and its documentation
-       (lsp +peek)
-       ; editorconfig uselss
 
        :os
        (:if IS-MAC macos)  ; improve compatibility with macOS
                            ;
        :lang
-       (cc +lsp)
+       cc
+       go
        clojure
        common-lisp       ; if you've seen one lisp, you've seen them all
        emacs-lisp        ; drown in parentheses
@@ -83,6 +82,7 @@
        org
        (corfu +icons)
        eshell
+       syntax
 
        :email
 

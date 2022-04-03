@@ -49,3 +49,6 @@
 
 #ocaml
 ~/.config/utop/init.ml
+
+~/Library/Scripts/*
+~/Library/Script Libraries/*

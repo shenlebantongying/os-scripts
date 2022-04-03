@@ -11,6 +11,7 @@
 
 (setq display-line-numbers-type nil)
 (menu-bar-mode)
+(display-time-mode)
 (setq tab-bar-separator " ")
 (setq-default frame-title-format "%f")
 
@@ -211,35 +212,6 @@
 (set-default 'preview-scale-function 1.0)
 
 (setq mouse-drag-and-drop-region t)
-
-(use-package ryo-modal
-  :commands ryo-modal-mode
-  :bind ("s-<escape>" . ryo-modal-mode)
-  :init
-  :config
-  (ryo-modal-keys
-   ("," ryo-modal-repeat)
-   ("q" ryo-modal-mode)
-   ("h" backward-char)
-   ("j" next-line)
-   ("k" previous-line)
-   ("l" forward-char))
-
-  (ryo-modal-keys
-   ;; First argument to ryo-modal-keys may be a list of keywords.
-   ;; These keywords will be applied to all keybindings.
-   (:norepeat t)
-   ("0" "M-0")
-   ("1" "M-1")
-   ("2" "M-2")
-   ("3" "M-3")
-   ("4" "M-4")
-   ("5" "M-5")
-   ("6" "M-6")
-   ("7" "M-7")
-   ("8" "M-8")
-   ("9" "M-9")))
-
 
 ;; (setq-default mode-line-format
 ;;               '("%e"

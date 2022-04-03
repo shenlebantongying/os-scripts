@@ -55,3 +55,9 @@
      (face-remap-add-relative 'font-lock-constant-face :foreground "#227722")))
 
 (add-hook 'racket-mode-hook #'smartparens-strict-mode)
+
+(add-hook 'racket-xp-mode-hook
+          (lambda ()
+            (remove-hook 'pre-redisplay-functions
+                         #'racket-xp-pre-redisplay
+                         t)))

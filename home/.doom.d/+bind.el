@@ -8,6 +8,7 @@
 (when IS-MAC
   (setq
    mac-function-modifier 'hyper
+   mac-right-option-modifier 'alt
   ;; mac-right-option-modifier 'control
    )
   (map!
