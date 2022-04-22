@@ -52,6 +52,8 @@ switch (uname)
             /opt/homebrew/opt/libxslt/bin \
             /opt/homebrew/opt/make/libexec/gnubin \
             /opt/homebrew/opt/grep/libexec/gnubin \
+            # TCL/TK
+            /opt/homebrew/opt/tcl-tk/bin/ \
         # Fix crazy homebrew
            /opt/homebrew/opt/gambit-scheme/current/bin \
             $PATH

@@ -164,3 +164,13 @@ Version 2019-11-04 2021-02-16"
   "Open file in external program"
   (interactive)
   (+xah-open-in-external-app (file-name-directory (buffer-file-name))))
+
+(defun +shell-command-on-region-or-line ()
+  "Run selected text or use the current line."
+  (interactive)
+  (shell-command
+    (if (use-region-p)
+        ;; current selection
+        (buffer-substring (region-beginning) (region-end))
+        ;; current line
+        (thing-at-point 'line t))))

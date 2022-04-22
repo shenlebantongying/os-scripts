@@ -3,8 +3,6 @@
 (load! "+prog")
 (load! "+bind")
 
-(setq initial-buffer-choice "~/ac/")
-
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
 (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
@@ -75,7 +73,7 @@
   (setq doom-unicode-font (font-spec :family "JuliaMono")))
  (IS-LINUX
   ;;(setq doom-font (font-spec :family "Terminus" :weight 'bold :size 14.0)))
-  (setq doom-font (font-spec :family "Cascadia Code" :size 13.0))
+  (setq doom-font (font-spec :family "Cascadia Code" :size 12.0))
   (setq doom-unicode-font (font-spec :family "JuliaMono")))
 )
 
@@ -209,3 +207,6 @@
   (setq doom-modeline-hud t)
   (setq doom-modeline-minor-modes t)
 )
+
+(after! cc-mode
+  (remove-hook 'c-mode-common-hook #'rainbow-delimiters-mode))

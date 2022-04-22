@@ -52,3 +52,4 @@
 
 ~/Library/Scripts/*
 ~/Library/Script Libraries/*
+~/Library/Application Support/Sublime Text/Packages/User/Breakers.sublime-color-scheme
