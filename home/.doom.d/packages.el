@@ -71,3 +71,4 @@
 (package! rg)
 (package! minions)
 (package! doom-modeline)
+(package! affe)

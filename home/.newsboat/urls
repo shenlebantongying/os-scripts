@@ -54,8 +54,6 @@ https://raphlinus.github.io/feed.xml software
 https://ridiculousfish.com/blog/atom.xml friends
 https://rosenzweig.io/feed.xml software
 https://sh.alynx.one/atom.xml friends
-https://unixism.net/feed/ software
-https://unixsheikh.com/feed.rss UnixPeople/BSD
 https://utcc.utoronto.ca/~cks/space/blog/?atom software
 https://vermaden.wordpress.com/feed/ UnixPeople/BSD
 https://www.alanshawn.com/atom.xml friends
@@ -137,3 +135,4 @@ https://sachachua.com/blog/feed
 https://semantic-domain.blogspot.com/feeds/posts/default
 https://alan.petitepomme.net/cwn/cwn.rss ocaml
 https://cacm.acm.org/magazine.rss
+https://0pointer.net/blog/index.atom

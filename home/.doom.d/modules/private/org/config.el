@@ -4,8 +4,10 @@
   :defer-incrementally
   org org-agenda
   :config
-  (setq org-agenda-files (directory-files-recursively "~/ArtifactCabinet/" "\\.org$"))
-)
+  (setq org-agenda-files (directory-files-recursively "~/ac/" "\\.org$"))
+  (setq org-todo-keywords
+        '((sequence "TODO" "|" "DONE")
+          (sequence "WORD" "|" "MEMORIZED"))))
 
 (use-package! ox-pandoc
   :when (executable-find "pandoc")

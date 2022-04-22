@@ -39,6 +39,8 @@ switch (uname)
             $HOME/.emacs.d/bin \
             $HOME/npm/bin \
             /usr/local/smlnj/bin \
+        # Scala
+            "$HOME/Library/Application Support/Coursier/bin" \
         # Python
             $HOME/Library/Python/3.10/bin \
             /opt/homebrew/opt/python@3.10/bin \

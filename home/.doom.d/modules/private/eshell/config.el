@@ -141,11 +141,6 @@ You should use `set-eshell-alias!' to change this.")
          "e" #'eshell-insert-envvar
          "s" #'+eshell/search-history)))
 
-
-(use-package! eshell-up
-  :commands eshell-up eshell-up-peek)
-
-
 (use-package! eshell-z
   :after eshell
   :config
@@ -160,32 +155,10 @@ You should use `set-eshell-alias!' to change this.")
   :config (setup-esh-help-eldoc))
 
 
-(use-package! eshell-did-you-mean
-  :after esh-mode ; Specifically esh-mode, not eshell
-  :config
-  (eshell-did-you-mean-setup)
-  ;; HACK There is a known issue with `eshell-did-you-mean' where it does not
-  ;;      work on first invocation, so we invoke it once manually by setting the
-  ;;      last command and then calling the output filter.
-  (setq eshell-last-command-name "catt")
-  (eshell-did-you-mean-output-filter "catt: command not found"))
-
 
 (use-package eshell-syntax-highlighting
   :hook (eshell-mode . eshell-syntax-highlighting-mode))
 
-
-(use-package! fish-completion
-  :hook (eshell-mode . fish-completion-mode)
-  :init (setq fish-completion-fallback-on-bash-p t)
-  :config
-  ;; HACK Even with `fish-completion-fallback-on-bash-p' non-nil,
-  ;;      `fish-completion--list-completions-with-desc' will throw an error if
-  ;;      fish isn't installed (and so, will fail to fall back to bash), so we
-  ;;      advise it to fail silently.
-  (defadvice! +eshell--fallback-to-bash-a (&rest _)
-    :before-until #'fish-completion--list-completions-with-desc
-    (unless (executable-find "fish") "")))
 
 (defun +eshell-new-frame ()
   "Open eshell in new frame."

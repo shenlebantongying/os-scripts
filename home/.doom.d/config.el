@@ -3,11 +3,16 @@
 (load! "+prog")
 (load! "+bind")
 
+(setq initial-buffer-choice "~/ac/")
+
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
 (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
 
-(setq initial-frame-alist '((width . 110) (height . 53)))
+(setq initial-frame-alist '((width . 110) (height . 50)))
+(setq-default cursor-type 'bar)
+
+(global-hl-line-mode)
 
 (setq display-line-numbers-type nil)
 (menu-bar-mode)
@@ -66,7 +71,7 @@
 
 (cond
  (IS-MAC
-  (setq doom-font (font-spec :family "Ubuntu Mono" :size 18.0))
+  (setq doom-font (font-spec :family "Ubuntu Mono" :size 16.0))
   (setq doom-unicode-font (font-spec :family "JuliaMono")))
  (IS-LINUX
   ;;(setq doom-font (font-spec :family "Terminus" :weight 'bold :size 14.0)))
@@ -112,27 +117,6 @@
   :hook ((prog-mode text-mode racket) . goggles-mode)
   :config
   (setq-default goggles-pulse t))
-
-(use-package! pulsar
-  :init
-  ;;(pulsar-setup)
-  :config
-  (setq pulsar-pulse t)
-  (setq pulsar-delay 0.055)
-  (setq pulsar-iterations 5))
-(customize-set-variable
-   'pulsar-pulse-functions ; Read the doc string for why not `setq'
-   '(recenter-top-bottom
-     bookmark-jump
-     forward-page
-     backward-page
-     scroll-up-command
-     scroll-down-command
-     ;; your commands
-     drag-down-stuff
-     drag-stuff-up
-     forward-paragraph
-     backward-paragraph))
 
 ;; A few more useful configurations...
 (use-package! emacs
@@ -213,22 +197,6 @@
 
 (setq mouse-drag-and-drop-region t)
 
-;; (setq-default mode-line-format
-;;               '("%e"
-;;                 (:eval (if (bound-and-true-p ryo-modal-mode) "Emacs| " "Ryo| "))
-;;                 mode-line-mule-info
-;;                 mode-line-front-space
-;;                 mode-line-client
-;;                 mode-line-modified
-;;                 mode-line-frame-identification
-;;                 mode-line-buffer-identification
-;;                 mode-line-position
-;;                 (vc-mode vc-mode) " "
-;;                 mode-line-modes
-;;                 mode-line-misc-info
-;;                 mode-line-end-spaces
-;;                 ))
-
 (use-package doom-modeline
   :ensure t
   :init
@@ -241,4 +209,3 @@
   (setq doom-modeline-hud t)
   (setq doom-modeline-minor-modes t)
 )
-

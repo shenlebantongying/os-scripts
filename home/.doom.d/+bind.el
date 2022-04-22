@@ -34,6 +34,7 @@
  "s-Z" #'undo-fu-only-redo
  "s-[" #'previous-buffer
  "s-]" #'next-buffer
+ "s-/" #'affe-find
  ;; org
  "s-l" #'org-preview-latex-fragment
  ;; expand-region
@@ -47,6 +48,9 @@
  ;;
 
  "s-<mouse-1>" #'mc/add-cursor-on-click
+ "s-<mouse-3>" #'+spell/correct
+ "C-$" #'+spell/correct
+ "<f12>" #'org-agenda
 )
 
 (define-key mode-line-buffer-identification-keymap [mode-line mouse-1] 'consult-buffer)

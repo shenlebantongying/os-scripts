@@ -78,7 +78,7 @@
        magit
        racketgit
        proofgeneral
-       dashboard
+       ;;dashboard
        org
        (corfu +icons)
        eshell
