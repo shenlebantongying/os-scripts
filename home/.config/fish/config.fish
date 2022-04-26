@@ -72,7 +72,7 @@ switch (uname)
 end
 
     set -gx CDPATH . .. ~ /
-    set -gx EDITOR emacs -nw
+    set -gx EDITOR emacs -nw -q
     set -gx SYSTEMD_PAGER cat
     set -gx NO_COLOR
 

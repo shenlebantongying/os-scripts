@@ -16,28 +16,11 @@ set-option global tabstop 4
 add-highlighter global/ number-lines -hlcursor -relative
 add-highlighter global/ show-matching
 
-# lsp related
-eval %sh{kak-lsp --kakoune -s $kak_session}  # Not needed if you load it with plug.kak.
-
-map global user l %{: enter-user-mode lsp<ret>} -docstring "LSP mode"
-
 define-command link-autoloadi %{ nop %sh{
     mkdir -p "$kak_config/autoload"
     ln -s "$kak_runtime/autoload" "$kak_config/autoload/standard-library"}}
 
-evaluate-commands %sh{
-    plugins="$kak_config/plugins"
-    mkdir -p "$plugins"
-    [ ! -e "$plugins/plug.kak" ] && \
-        git clone -q https://github.com/andreyorst/plug.kak.git "$plugins/plug.kak"
-    printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
-}
-
-plug "andreyorst/plug.kak" noload
-plug "andreyorst/smarttab.kak"
-
 hook global WinSetOption filetype=(racket) %{
-    lsp-enable-window
     set-option buffer indentwidth 2
     expandtab
 }
@@ -52,4 +35,3 @@ hook global RegisterModified '"' %{ nop %sh{
         	printf "%s" "$kak_main_reg_dquote" | pbcopy ;;
         esac
 }}
-

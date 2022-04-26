@@ -23,15 +23,13 @@
         ;; corfu docs
         "C-d" #'corfu-doc-toggle
         "M-j" #'corfu-doc-scroll-down
-        "M-k" #'corfu-doc-scroll-up)
-  :init
-  (corfu-global-mode))
+        "M-k" #'corfu-doc-scroll-up))
 
 ;; Enable Corfu completion UI
 ;; See the Corfu README for more configuration tips.
 (use-package corfu
   :init
-  (corfu-global-mode)
+  (global-corfu-mode)
   (corfu-doc-mode))
 
 (use-package cape

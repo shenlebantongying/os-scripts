@@ -51,6 +51,7 @@
  "s-<mouse-3>" #'+spell/correct
  "C-$" #'+spell/correct
  "<f12>" #'org-agenda
+ "C-`" #'terminal-here
 )
 
 (define-key mode-line-buffer-identification-keymap [mode-line mouse-1] 'consult-buffer)

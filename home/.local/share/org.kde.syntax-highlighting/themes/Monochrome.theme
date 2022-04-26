@@ -8,25 +8,25 @@
         },
         "Racket": {
             "Brackets1": {
-                "text-color": "#00007f"
+                "text-color": "#535353"
             },
             "Brackets2": {
-                "text-color": "#0000ff"
+                "text-color": "#535353"
             },
             "Brackets3": {
-                "text-color": "#0055ff"
+                "text-color": "#535353"
             },
             "Brackets4": {
-                "text-color": "#00aaff"
+                "text-color": "#535353"
             },
             "Brackets5": {
-                "text-color": "#00ffff"
+                "text-color": "#535353"
             },
             "Brackets6": {
-                "text-color": "#aaffff"
+                "text-color": "#535353"
             },
             "Other Brackets": {
-                "text-color": "#caffff"
+                "text-color": "#4a4a4a"
             }
         },
         "Scheme": {

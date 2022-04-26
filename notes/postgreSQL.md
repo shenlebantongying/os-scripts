@@ -2,6 +2,7 @@ Refresh install of PostgreSQL only use 80mb of memory.
 
 # Management 101
 
+## Linux
 Service -> `systemctl status postgresql.service`
 
 ```
@@ -15,7 +16,7 @@ check port -> `cat /etc/services | grep postgresql`
 
 by default, new schema goes into "public"
 
-# Misc
+### Misc
 
 default data dir
 
@@ -27,3 +28,15 @@ pSQL Use cluster->databases->schemas hierarchy
 TODO:
 + .pgpass?
 + Important feature -> PostGIS
+
+
+## on MacOS
+
+installed by `brew`
+
+```
+brew services restart postgres
+```
+
+default database name is `postgres`
+

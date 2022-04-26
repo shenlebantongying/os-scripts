@@ -81,7 +81,7 @@
        ;;dashboard
        org
        (corfu +icons)
-       eshell
+       ;; eshell => the experience is not worth
        syntax
 
        :email

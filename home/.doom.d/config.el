@@ -1,21 +1,23 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
-
 (load! "+prog")
 (load! "+bind")
+(load! "+feed")
 
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
 (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
 
-(setq initial-frame-alist '((width . 110) (height . 50)))
+(advice-add #'doom-highlight-non-default-indentation-h :override #'ignore)
+
+(setq initial-frame-alist '((width . 100) (height . 50)))
 (setq-default cursor-type 'bar)
 
 (global-hl-line-mode)
 
 (setq display-line-numbers-type nil)
 (menu-bar-mode)
-(display-time-mode)
 (setq tab-bar-separator " ")
+(global-form-feed-mode)
 (setq-default frame-title-format "%f")
 
 (setq recentf-max-saved-items 500)
@@ -40,17 +42,18 @@
    '(coq-solve-tactics-face ((t (:foreground "black"))))
   ;; '(show-paren-match ((t (:background "red1" :foreground "black"))))
    '(show-paren-match-expression ((t (:background "LightGoldenrod"))))
-   )
+   '(org-block ((t (:background "#f8f8f8" :extend t))))
+   '(org-block-begin-line ((t (:background "#f8f8f8" :extend t))))
+   '(org-verbatim ((t (:background "#f8f8f8")))))
 
-  (setq  modus-themes-hl-line '(accented)
-         )
+  (setq  modus-themes-hl-line '(accented))
   (modus-themes-load-themes)
   :config
   (modus-themes-load-operandi))
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "slbtty"
+(setq user-full-name "shenlebantongying"
       user-mail-address "shenlebantongying@gmail.com")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
@@ -70,7 +73,9 @@
 (cond
  (IS-MAC
   (setq doom-font (font-spec :family "Ubuntu Mono" :size 16.0))
-  (setq doom-unicode-font (font-spec :family "JuliaMono")))
+  (setq doom-unicode-font (font-spec :family "JuliaMono"))
+  (setq terminal-here-mac-terminal-command 'iterm2))
+
  (IS-LINUX
   ;;(setq doom-font (font-spec :family "Terminus" :weight 'bold :size 14.0)))
   (setq doom-font (font-spec :family "Cascadia Code" :size 12.0))
@@ -210,3 +215,4 @@
 
 (after! cc-mode
   (remove-hook 'c-mode-common-hook #'rainbow-delimiters-mode))
+

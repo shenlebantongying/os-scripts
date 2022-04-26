@@ -1,6 +1,6 @@
 " barebone vimrc <- this is a comment
 
-syntax enable
+" syntax enable
 
 set encoding=utf-8
 
@@ -11,10 +11,10 @@ set expandtab
 
 set number
 set showcmd
-set cursorline
 
 set wildmenu
 set showmatch
+: hi MatchParen ctermbg=lightblue
 
 set hlsearch
 
@@ -26,18 +26,10 @@ set mouse=a
 
 set autoindent
 
-
-"_________________________________________________________________________
-" AUTOMATIC BACKUP FILES
-"
-" Enable backup files - Every time you save a file, it will create a copy of the file
-" called <filename>~ (e.g., file.txt~) in the directory ~/.vim_backup_files/.
-" This is *NOT* a comphrehensive backup solution, but it can help sometimes.
-"
-let &backupdir=($HOME . '/.vim_backup_files')
-if ! isdirectory(&backupdir)
-	call mkdir(&backupdir, "", 0700)
+if has("autocmd")
+    au BufReadPost *.rkt,*.rktl set filetype=racket
+    au filetype racket set autoindent
+    au filetype racket syntax off
 endif
-set backup
 
-
+set completeopt=menu,menuone,noselect
