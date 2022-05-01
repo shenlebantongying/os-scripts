@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+
+# Traco -> a simple unix style website change tracker.
+
+set -e
+
+gui_viewer="smerge"
+
+# change dir to the traco dir
+cd "$(dirname "$(realpath "$0")")"
+
+case "${1}" in
+    o) # open
+        $gui_viewer .
+    ;;
+    p) # purge
+        rm -rf ./.git/
+        rm -rf ./*.html
+    ;;
+    *)
+    # detect if the traco folder is a git repo
+    if [[ ! $(git  rev-parse --is-inside-work-tree ) == 'true' ]]
+    then
+        git init
+        touch "urls"
+        git add .
+        git commit -a --allow-empty-message -m ''
+    fi
+
+    # awk -> use the urls file
+    # match NF (not empty) and /^[^#]/ (not start with #) lines
+    # use cURL to download the file and redirect them to corresponding html files
+    awk 'NF && /^[^#]/ { system("curl -s "$2" > "$1".html") }' urls
+
+
+    # git ls-files -o -m |-> obtain newly added and modified files (website changed)
+    # Pipe the result to awk |-> conver to a regex like "name1|name2|name3|useless"
+    # grep the urls file with the regex
+    grep -wE "$(git ls-files -o -m | awk -F '[.=]' '{printf "%s|",$1} END {printf "%s","useless"}')" urls
+
+    git add .
+    git commit -a --allow-empty-message -m ''
+esac

@@ -3,6 +3,10 @@
 (load! "+bind")
 (load! "+feed")
 
+(when IS-LINUX
+(add-to-list 'load-path "~/.doom.d/cyclone/")
+(require 'geiser-cyclone))
+
 (setq-default tab-width 4)
 (setq indent-line-function 'insert-tab)
 (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
@@ -198,8 +202,6 @@
 
 (set-default 'preview-scale-function 1.0)
 
-(setq mouse-drag-and-drop-region t)
-
 (use-package doom-modeline
   :ensure t
   :init
@@ -216,3 +218,19 @@
 (after! cc-mode
   (remove-hook 'c-mode-common-hook #'rainbow-delimiters-mode))
 
+
+
+(use-package! maxima
+  :init
+  (add-hook 'maxima-mode-hook #'maxima-hook-function)
+  (add-hook 'maxima-inferior-mode-hook #'maxima-hook-function)
+  (setq
+   org-format-latex-options (plist-put org-format-latex-options :scale 2.0)
+   maxima-display-maxima-buffer nil)
+  :mode ("\\.mac\\'" . maxima-mode)
+  :interpreter ("maxima" . maxima-mode))
+
+(use-package graphviz-dot-mode
+  :ensure t
+  :config
+  (setq graphviz-dot-indent-width 4))

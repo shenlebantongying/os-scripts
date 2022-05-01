@@ -74,3 +74,6 @@
 (package! elfeed)
 (package! form-feed)
 (package! terminal-here)
+
+(package! maxima)
+(package! graphviz-dot-mode)

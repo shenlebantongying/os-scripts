@@ -48,7 +48,7 @@
   (set-mark (point))
   (goto-match-paren 1))
 
-(defun +insert-geiser-implementation (choice)
+(defun +insert-geiser-scheme-implementation (choice)
   "insert the string that indicating which scheme are using."
   (interactive
    (let ((completion-ignore-case t))

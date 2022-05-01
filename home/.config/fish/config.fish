@@ -10,6 +10,7 @@ switch (uname)
             $HOME/go/bin \
             $HOME/.ghcup/bin \
             $HOME/.local/bin \
+            $HOME/.tracko \
             $HOME/bin \
             $HOME/s \
             $HOME/.dotnet \
@@ -73,6 +74,7 @@ end
 
     set -gx CDPATH . .. ~ /
     set -gx EDITOR emacs -nw -q
+    set -gx PAGER cat
     set -gx SYSTEMD_PAGER cat
     set -gx NO_COLOR
 

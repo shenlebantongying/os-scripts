@@ -5,6 +5,7 @@
   :defer-incrementally
   org org-agenda
   :config
+  (setq org-link-descriptive nil)
   (setq org-agenda-files (directory-files-recursively "~/ac/" "\\.org$"))
   (setq org-todo-keywords
         '((sequence "TODO" "|" "DONE")

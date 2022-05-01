@@ -146,6 +146,8 @@ for confirmation when needed."
 "https://danlark.org/feed/"
 ;; extras after migration
 "https://engineering.fb.com/feed/"
+"https://spwhitton.name/blog/index.atom"
+"https://darkcoding.net/index.xml"
 ))
   :config
   (map! :map elfeed-show-mode-map

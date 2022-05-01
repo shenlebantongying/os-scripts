@@ -46,8 +46,6 @@
  "s-}" #'forward-page
 
  ;;
-
- "s-<mouse-1>" #'mc/add-cursor-on-click
  "s-<mouse-3>" #'+spell/correct
  "C-$" #'+spell/correct
  "<f12>" #'org-agenda

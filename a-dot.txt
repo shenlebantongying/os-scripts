@@ -55,3 +55,7 @@
 
 # No, it might cause problems
 #~/Library/Application Support/Sublime Text/Packages/User/Breakers.sublime-color-scheme
+
+#traco
+~/.traco/traco
+~/.traco/urls
