@@ -60,8 +60,6 @@ If no viewer is found, `latex-preview-pane-mode' is used.")
   ;; Set-up chktex.
   (setcar (cdr (assoc "Check" TeX-command-list)) "chktex -v6 -H %s")
   (setq-hook! 'TeX-mode-hook
-    ;; Tell Emacs how to parse TeX files.
-    ispell-parser 'tex
     ;; Don't auto-fill in math blocks.
     fill-nobreak-predicate (cons #'texmathp fill-nobreak-predicate))
   ;; Enable `rainbow-mode' after applying styles to the buffer.
@@ -113,10 +111,10 @@ If no viewer is found, `latex-preview-pane-mode' is used.")
           LaTeX-section-label)
         LaTeX-fill-break-at-separators nil
         LaTeX-item-indent 0)
-
-(after! latex
-  (setq font-lock-maximum-decoration t)
+      ;; Tell Emacs how to parse TeX files.
+  (setq ispell-parser 'tex)
 )
+
 
 ;; to future, there is a bug about truncate-lines,
 ;; this is a temporal solution

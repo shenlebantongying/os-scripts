@@ -88,8 +88,6 @@
   (setq doom-unicode-font (font-spec :family "JuliaMono")))
 )
 
-(setq font-lock-maximum-decoration 1)
-
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
@@ -223,3 +221,9 @@
   :ensure t
   :config
   (setq graphviz-dot-indent-width 4))
+
+(add-hook! 'latex-mode
+           (lambda ()
+             (setq spell-fu-faces-exclude
+                   '(font-lock-keyword-face
+                     font-lock-builtin-face))))
