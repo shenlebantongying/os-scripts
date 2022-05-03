@@ -59,7 +59,6 @@
        common-lisp       ; if you've seen one lisp, you've seen them all
        emacs-lisp        ; drown in parentheses
        erlang            ; an elegant language for a more civilized age
-       (latex +latexmk)  ; writing papers in Emacs has never been so fun
        markdown          ; writing docs for people to ignore
        (scheme +chez
                +guile
@@ -83,6 +82,8 @@
        (corfu +icons)
        ;; eshell => the experience is not worth
        syntax
+       (auctex +latexmk)  ; writing papers in Emacs has never been so fun
+
 
        :email
 

@@ -11,6 +11,8 @@
 (setq indent-line-function 'insert-tab)
 (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
 
+(setq-default fill-column 90)
+
 (advice-add #'doom-highlight-non-default-indentation-h :override #'ignore)
 
 (setq initial-frame-alist '((width . 100) (height . 50)))
@@ -139,19 +141,6 @@
   ;; Enable indentation+completion using the TAB key.
   ;; `completion-at-point' is often bound to M-TAB.
   (setq tab-always-indent 'complete))
-
-;; LaTeX related
-
-(after! latex
-  (setq font-lock-maximum-decoration t)
-)
-
-;; to future, there is a bug about truncate-lines,
-;; this is a temporal solution
-(add-hook 'LaTeX-mode-hook
-          (lambda ()
-            (visual-line-mode -1)
-            (toggle-truncate-lines 1)))
 
 (setq! show-paren-style 'parenthesis)
 
