@@ -10,7 +10,7 @@ switch (uname)
             $HOME/go/bin \
             $HOME/.ghcup/bin \
             $HOME/.local/bin \
-            $HOME/.tracko \
+            $HOME/.traco \
             $HOME/bin \
             $HOME/s \
             $HOME/.dotnet \
@@ -35,6 +35,7 @@ switch (uname)
             $HOME/.local/bin \
             $HOME/bin \
             $HOME/scripts \
+            $HOME/.traco \
             $HOME/.rbenv/bin \
             $HOME/.cargo/bin \
             $HOME/.emacs.d/bin \
