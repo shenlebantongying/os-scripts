@@ -150,6 +150,7 @@ for confirmation when needed."
 "https://darkcoding.net/index.xml"
 "https://justinmeiners.github.io/feed.xml"
 "https://chaoxuprime.com/rss.xml"
+"https://jgrulich.cz/feed/"
 ))
   :config
   (map! :map elfeed-show-mode-map
