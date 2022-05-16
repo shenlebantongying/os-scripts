@@ -21,6 +21,7 @@
 ~/.spacemacs.d/*.el
 # new age!
 ~/.emacs.d/init.el
+~/.emacs.d/modules/*.el
 
 ~/.config/nvim/init.vim
 ~/.config/nvim/colors/dichromatic.vim

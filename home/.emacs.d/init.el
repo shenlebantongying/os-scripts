@@ -1,20 +1,17 @@
 ;;; -*- lexical-binding: t; -*-
+
+;; [Globally critical things]
 (defconst IS-MAC     (eq system-type 'darwin))
 (defconst IS-LINUX   (eq system-type 'gnu/linux))
 
-(setq inhibit-startup-screen t)
-(setq initial-scratch-message nil)
-(defalias 'yes-or-no-p 'y-or-n-p)
+(add-to-list 'load-path (concat user-emacs-directory "modules"))
+(load "+bind.el")
 
-
+(setq make-backup-files nil)
 
 (when IS-MAC
   (dolist (dir '("/Applications/Racket v8.5/bin/racket"))
     (add-to-list 'exec-path dir)))
-
-(global-unset-key (kbd "C-z"))
-(global-unset-key (kbd "C-<wheel-down>"))
-(global-unset-key (kbd "C-<wheel-up>"))
 
 ;; Setup straight and use-package
 (defvar bootstrap-version)
@@ -32,11 +29,13 @@
 
 (straight-use-package 'use-package)
 
-(when IS-MAC
-  (use-package exec-path-from-shell
-    :straight t
-    :init
-    (exec-path-from-shell-initialize)))
+
+(setq inhibit-startup-screen t)
+(setq initial-scratch-message nil)
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+(setq vc-follow-symlinks nil)
+
 
 ;; vertico, orderless, marginalia, 
 (use-package vertico
@@ -178,3 +177,4 @@
 ;; [ +bind.el ]
 
 (global-set-key (kbd "s-b") 'consult-buffer)
+
