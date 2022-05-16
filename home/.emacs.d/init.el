@@ -7,7 +7,8 @@
 (when IS-MAC
   (dolist (dir '("/Applications/Racket v8.5/bin/racket"
 		 "/opt/homebrew/opt/python@3.10/bin/"
-                 "/opt/homebrew/bin/"))
+                 "/opt/homebrew/bin/"
+		 "/Library/TeX/texbin"))
     (add-to-list 'exec-path dir)))
 
 ;; Setup straight and use-package
@@ -37,7 +38,7 @@
   :ensure
   :init
   (setq modus-themes-hl-line '(accented))
-  (setq modus-themes-mode-line '())
+  (setq modus-themes-mode-line '(borderless))
   (custom-set-faces
    ;; All black pls
    '(font-lock-function-name-face ((t (:foreground "black"))))
@@ -64,7 +65,6 @@
 
 (tool-bar-mode -1)
 (menu-bar-mode)
-(global-display-line-numbers-mode)
 
 (setq initial-frame-alist '((width . 100) (height . 50)))
 (setq-default cursor-type 'bar)
@@ -146,6 +146,17 @@
 	aw-background t)
   :bind
   (("s-w" . #'ace-window)))
+
+(straight-use-package 'transpose-frame)
+(straight-use-package 'imenu-list)
+
+(use-package dired-sidebar
+  :straight t
+  :bind (("s-t" . dired-sidebar-toggle-with-current-directory))
+  :commands (dired-sidebar-toggle-sidebar)
+  :init
+  :config
+  (setq dired-sidebar-theme 'none))
 
 
 ;; [ Hacks for `emacs -nw`]
