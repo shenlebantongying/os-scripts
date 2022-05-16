@@ -32,7 +32,7 @@ def filetable(p:str):
 
 def operate(home_path:pathlib.Path,store_path:pathlib.Path):
     print(home_path,store_path)
-    if home_path.is_symlink():
+    if home_path.is_symlink() or home_path.is_dir():
         return
     elif home_path.is_file():
         os.renames(home_path,store_path)

@@ -22,6 +22,7 @@
 # new age!
 ~/.emacs.d/init.el
 ~/.emacs.d/modules/*.el
+~/.emacs.d/snippets/**/*
 
 ~/.config/nvim/init.vim
 ~/.config/nvim/colors/dichromatic.vim

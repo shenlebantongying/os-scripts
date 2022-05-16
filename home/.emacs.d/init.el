@@ -57,7 +57,7 @@
    '(org-verbatim ((t (:background "#f8f8f8"))))
 
    ;; Comment
-   '(font-lock-comment-face ((t (:foreground "Firebrick"))))
+   '(font-lock-comment-face ((t (:foreground "BlueViolet"))))
    )
 )
 
@@ -169,5 +169,3 @@
 ;; [ Clean up ]
   (when (get-buffer "*straight-process*")
     (kill-buffer "*straight-process*"))
-
-(executable-find "python3")
