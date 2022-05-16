@@ -1,3 +1,4 @@
+;; -*- lexical-binding: t -*-
 (defun +elfeed-search-quit-and-kill-buffers ()
   "Save the database, then kill elfeed buffers, asking the user
 for confirmation when needed."
@@ -5,10 +6,12 @@ for confirmation when needed."
   (elfeed-db-save)
   (when (get-buffer "*elfeed-entry*")
     (kill-buffer "*elfeed-entry*"))
-  (kill-buffer "*elfeed-log*")
-  (kill-buffer (current-buffer)))
+  (when (get-buffer "*elfeed-log*")
+    (kill-buffer "*elfeed-log*"))
+   (kill-buffer (current-buffer)))
 
-(use-package! elfeed
+(use-package elfeed
+  :straight t
   :init
 (setq elfeed-feeds
 '(
@@ -153,12 +156,15 @@ for confirmation when needed."
 "https://chaoxuprime.com/rss.xml"
 "https://jgrulich.cz/feed/"
 ))
-  :config
-  (map! :map elfeed-show-mode-map
-        "o" #'elfeed-show-visit
-        "b" (lambda () (interactive) (switch-to-buffer "*elfeed-search*")))
-  (map! :map elfeed-search-mode-map
-        "o" #'elfeed-search-browse-url
-        "<escape>" #'+elfeed-search-quit-and-kill-buffers)
-  (setq-default elfeed-search-filter "@1-years-ago")
+:config
+(setq-default elfeed-search-filter "@1-years-ago")
+:bind
+(:map elfeed-search-mode-map
+      ("o" . #'elfeed-search-browse-url)
+      ("<escape>" . +elfeed-search-quit-and-kill-buffers)
+ :map elfeed-show-mode-map
+      ("o" . elfeed-show-visit)
+      ("b" . (lambda () (interactive) (switch-to-buffer "*elfeed-search*"))))
+;;(define-key elfeed-show-mode-map (kbd "o") 'elfeed-show-visit)
+;;(define-key  (kbd "o") 'elfeed-search-browse-url)
 )
