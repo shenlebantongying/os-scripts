@@ -64,6 +64,7 @@
 (load-theme 'modus-operandi t)
 
 (tool-bar-mode -1)
+(scroll-bar-mode -1)
 (menu-bar-mode)
 
 (setq initial-frame-alist '((width . 100) (height . 50)))
@@ -93,14 +94,21 @@
 (set-default 'truncate-lines t)
 
 ;; [ Small Packages ]
-
 (use-package corfu
   :straight t
   :init
   (setq corfu-auto t
-      corfu-quit-no-match 'separator)
+	corfu-min-width 40
+	corfu-quit-no-match 'separator)
   (global-corfu-mode))
 
+(use-package cape
+  :straight t
+  :init
+  (add-to-list 'completion-at-point-functions #'cape-file)
+  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
+  (add-to-list 'completion-at-point-functions #'cape-keyword)
+)
 
 (use-package terminal-here
   :straight t
@@ -158,6 +166,17 @@
   :config
   (setq dired-sidebar-theme 'none))
 
+(use-package smartparens
+  :straight t
+  :init
+  (require 'smartparens-config))
+
+(straight-use-package 'esup)
+
+(use-package minions
+  :straight t
+  :init
+   (minions-mode))
 
 ;; [ Hacks for `emacs -nw`]
 (unless (display-graphic-p)
