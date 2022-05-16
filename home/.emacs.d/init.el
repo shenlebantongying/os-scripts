@@ -1,16 +1,18 @@
 ;; -*- lexical-binding: t -*-
 
-;; [Globally critical things]
+;; [ Globally critical things ]
 (defconst IS-MAC     (eq system-type 'darwin))
 (defconst IS-LINUX   (eq system-type 'gnu/linux))
 
 (when IS-MAC
-  (dolist (dir '("/Applications/Racket v8.5/bin/racket"))
+  (dolist (dir '("/Applications/Racket v8.5/bin/racket"
+		 "/opt/homebrew/opt/python@3.10/bin/"
+                 "/opt/homebrew/bin/"))
     (add-to-list 'exec-path dir)))
 
 ;; Setup straight and use-package
 (defvar bootstrap-version)
-(let ((bootstrap-file
+(let ((bootstrap-file			
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
       (bootstrap-version 5))
   (unless (file-exists-p bootstrap-file)
@@ -26,7 +28,7 @@
 
 (mapc 'load (file-expand-wildcards  (concat user-emacs-directory "modules/*.el")))
 
-;; [ Personal Appearance Change]
+;; [ Personal Appearance Change ]
 
 (global-hl-line-mode)
 
@@ -35,9 +37,9 @@
   :ensure
   :init
   (setq modus-themes-hl-line '(accented))
-  (setq modus-themes-mode-line '(3d))
-
-    (custom-set-faces
+  (setq modus-themes-mode-line '())
+  (custom-set-faces
+   ;; All black pls
    '(font-lock-function-name-face ((t (:foreground "black"))))
    '(font-lock-keyword-face ((t (:foreground "black"))))
    '(font-lock-type-face ((t (:foreground "black"))))
@@ -47,9 +49,14 @@
    '(font-lock-string-face ((t (:foreground "black"))))
    '(highlight-numbers-number ((t (:foreground "black"))))
    '(font-lock-negation-char-face ((t (:foreground "black"))))
+
+   ;; Org code blocks
    '(org-block ((t (:background "#f8f8f8" :extend t))))
    '(org-block-begin-line ((t (:background "#f8f8f8" :extend t))))
    '(org-verbatim ((t (:background "#f8f8f8"))))
+
+   ;; Comment
+   '(font-lock-comment-face ((t (:foreground "Firebrick"))))
    )
 )
 
@@ -70,7 +77,7 @@
   (set-face-attribute 'default nil :font "Cascadia Code" :height 110))
 )
 
-;;; [ Personal Functionality chagne]
+;;; [ Personal Functionality chagne ]
 
 (setq make-backup-files nil)
 
@@ -85,7 +92,7 @@
 
 (set-default 'truncate-lines t)
 
-;; [ Small Packages]
+;; [ Small Packages ]
 
 (use-package corfu
   :straight t
@@ -140,6 +147,7 @@
   :bind
   (("s-w" . #'ace-window)))
 
+
 ;; [ Hacks for `emacs -nw`]
 (unless (display-graphic-p)
     (set-display-table-slot standard-display-table
@@ -151,3 +159,4 @@
   (when (get-buffer "*straight-process*")
     (kill-buffer "*straight-process*"))
 
+(executable-find "python3")

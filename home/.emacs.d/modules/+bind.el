@@ -6,3 +6,12 @@
 (global-set-key (kbd "s-r") 'consult-recent-file)
 (global-set-key (kbd "s-b") 'consult-buffer)
 (global-set-key (kbd "s-f") 'consult-line)
+
+
+(global-set-key (kbd "s-c") 'kill-ring-save)
+(global-set-key (kbd "s-v") 'yank)
+(global-set-key (kbd "s-z") 'undo)
+(global-set-key (kbd "s-Z") 'undo-redo)
+
+(global-set-key (kbd "s-[") 'previous-buffer)
+(global-set-key (kbd "s-]") 'next-buffer)
