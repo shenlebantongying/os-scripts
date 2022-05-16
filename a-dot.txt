@@ -13,10 +13,14 @@
 ~/.config/sublime-text/Packages/User/Preferences.sublime-settings
 ~/.config/sublime-text/Packages/User/Package Control.sublime-settings
 ~/.config/sublime-text/Packages/User/Terminus.sublime-settings
+
+## Emacs
 ~/.doom.d/**/*.el
 ~/.doom.d/**/*.org
 ~/.doom.d/templates
 ~/.spacemacs.d/*.el
+# new age!
+~/.emacs.d/init.el
 
 ~/.config/nvim/init.vim
 ~/.config/nvim/colors/dichromatic.vim
