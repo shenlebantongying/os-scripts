@@ -6,12 +6,14 @@
 
 (when IS-MAC
   (dolist (dir '("/Applications/Racket v8.5/bin/racket"
-		 "/opt/homebrew/opt/python@3.10/bin/"
-                 "/opt/homebrew/bin/"
-		 "/Library/TeX/texbin"))
+		 "/opt/homebrew/opt/python@3.10/bin"
+                 "/opt/homebrew/bin"
+		 "/Library/TeX/texbin"
+		 "~/.opam/4.14.0/bin"
+		 "/usr/local/smlnj/bin/"))
     (add-to-list 'exec-path dir)))
 
-;; Setup straight and use-package
+;; [ straight and use-package ]
 (defvar bootstrap-version)
 (let ((bootstrap-file			
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
@@ -31,13 +33,10 @@
 
 ;; [ Personal Appearance Change ]
 
-(global-hl-line-mode)
-
 (use-package modus-themes
   :straight t
   :ensure
   :init
-  (setq modus-themes-hl-line '(accented))
   (setq modus-themes-mode-line '(borderless))
   (custom-set-faces
    ;; All black pls
@@ -68,11 +67,10 @@
 (menu-bar-mode)
 
 (setq initial-frame-alist '((width . 100) (height . 50)))
-(setq-default cursor-type 'bar)
 
 (cond 
  (IS-MAC
-  (set-face-attribute 'default nil :font "Ubuntu Mono" :height 150)
+  (set-face-attribute 'default nil :font "SF Mono" :height 140)
   (setq mac-function-modifier 'hyper))
  (IS-LINUX
   (set-face-attribute 'default nil :font "Cascadia Code" :height 110))
@@ -84,6 +82,15 @@
 
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
+
+(defun display-startup-echo-area-message ()
+  (message
+   "Emacs loaded in %s ."
+   (format
+    "%.2f seconds"
+    (float-time
+     (time-subtract after-init-time before-init-time)))))
+
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (setq vc-follow-symlinks nil)
@@ -92,6 +99,12 @@
 (setq recentf-max-saved-items 100)
 
 (set-default 'truncate-lines t)
+(blink-cursor-mode 0)
+
+;; SpeedBar
+(custom-set-variables
+ '(speedbar-show-unknown-files t)
+)
 
 ;; [ Small Packages ]
 (use-package corfu
@@ -158,25 +171,23 @@
 (straight-use-package 'transpose-frame)
 (straight-use-package 'imenu-list)
 
-(use-package dired-sidebar
-  :straight t
-  :bind (("s-t" . dired-sidebar-toggle-with-current-directory))
-  :commands (dired-sidebar-toggle-sidebar)
-  :init
-  :config
-  (setq dired-sidebar-theme 'none))
-
 (use-package smartparens
   :straight t
   :init
-  (require 'smartparens-config))
+  (require 'smartparens-config)
+  (add-hook 'emacs-lisp-mode-hook #'smartparens-mode))
 
 (straight-use-package 'esup)
 
 (use-package minions
   :straight t
   :init
-   (minions-mode))
+  (minions-mode))
+
+(straight-use-package 'sml-mode)
+
+(use-package markdown-mode
+  :straight t)
 
 ;; [ Hacks for `emacs -nw`]
 (unless (display-graphic-p)

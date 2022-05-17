@@ -3,6 +3,13 @@
 (global-unset-key (kbd "C-<wheel-down>"))
 (global-unset-key (kbd "C-<wheel-up>"))
 
+(global-set-key (kbd "s-t") 'speedbar)
+
+
+(when IS-MAC
+  (setq ns-right-command-modifier 'meta)
+  (setq ns-right-option-modifier 'alt))
+
 (global-set-key (kbd "s-r") 'consult-recent-file)
 (global-set-key (kbd "s-b") 'consult-buffer)
 (global-set-key (kbd "s-f") 'consult-line)
