@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: geiser-impl
+# key: geiser-impl
+# --
+;; -*- geiser-scheme-implementation: `(yas-choose-value '(guile chez))` -*-"

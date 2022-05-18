@@ -35,9 +35,9 @@
 
 (use-package modus-themes
   :straight t
-  :ensure
   :init
   (setq modus-themes-mode-line '(borderless))
+
   (custom-set-faces
    ;; All black pls
    '(font-lock-function-name-face ((t (:foreground "black"))))
@@ -56,11 +56,14 @@
    '(org-verbatim ((t (:background "#f8f8f8"))))
 
    ;; Comment
-   '(font-lock-comment-face ((t (:foreground "BlueViolet"))))
+   '(font-lock-comment-face ((t (:foreground "MediumOrchid"))))
    )
 )
 
 (load-theme 'modus-operandi t)
+
+
+
 
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
@@ -76,7 +79,7 @@
   (set-face-attribute 'default nil :font "Cascadia Code" :height 110))
 )
 
-;;; [ Personal Functionality chagne ]
+;; [ Personal Functionality chagne ]
 
 (setq make-backup-files nil)
 
@@ -101,10 +104,38 @@
 (set-default 'truncate-lines t)
 (blink-cursor-mode 0)
 
+(save-place-mode 1) 			; save curosr position for every file opened
+(delete-selection-mode 1)		; writes while the region is active will overwrite it
+
+
+(line-number-mode)
+(column-number-mode)
+
+(global-display-line-numbers-mode)
+
+(global-auto-revert-mode)
+
+;; isearch
+
+(use-package isearch
+  :ensure nil
+  :bind (:map isearch-mode-map
+         ([remap isearch-delete-char] . isearch-del-char))
+  :custom
+  (isearch-lazy-count t)
+  (lazy-count-prefix-format "%s/%s "))
+
 ;; SpeedBar
 (custom-set-variables
  '(speedbar-show-unknown-files t)
-)
+ )
+
+;; dired
+; 直接在dired里按W (browse-url-of-dired-file), 这会直接用外部程序打开。 当然，它不会阻塞Emacs。
+(setq browse-url-handlers '(("\\`file:" . browse-url-default-browser)))
+
+; RET 后仅保留一个 dired buffer
+(setq dired-kill-when-opening-new-dired-buffer t)
 
 ;; [ Small Packages ]
 (use-package corfu
@@ -177,8 +208,6 @@
   (require 'smartparens-config)
   (add-hook 'emacs-lisp-mode-hook #'smartparens-mode))
 
-(straight-use-package 'esup)
-
 (use-package minions
   :straight t
   :init
@@ -188,6 +217,10 @@
 
 (use-package markdown-mode
   :straight t)
+
+(use-package magit
+  :straight t
+  :defer t)
 
 ;; [ Hacks for `emacs -nw`]
 (unless (display-graphic-p)
