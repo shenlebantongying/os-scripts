@@ -1,12 +1,18 @@
 ;; -*- lexical-binding: t -*-
 (global-unset-key (kbd "C-z"))
-(global-unset-key (kbd "C-<wheel-down>"))
 (global-unset-key (kbd "C-<wheel-up>"))
+(global-unset-key (kbd "C-<mouse-4>"))
+(global-unset-key (kbd "C-<wheel-down>"))
+(global-unset-key (kbd "C-<mouse-5>"))
 
 (global-set-key (kbd "s-t") 'speedbar)
 
-
 (when IS-MAC
+  ;; special for emacs-mac-port
+  (setq mac-option-modifier 'meta)
+  (setq mac-command-modifier 'super)
+  (setq mac-right-command-modifier 'meta)
+  ;; for vallina emacs
   (setq ns-right-command-modifier 'meta)
   (setq ns-right-option-modifier 'alt))
 
@@ -22,3 +28,9 @@
 
 (global-set-key (kbd "s-[") 'previous-buffer)
 (global-set-key (kbd "s-]") 'next-buffer)
+
+(use-package move-text
+  :straight t
+  :defer t
+  :init
+  (move-text-default-bindings))

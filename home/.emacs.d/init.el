@@ -58,7 +58,7 @@
    ;; Comment
    '(font-lock-comment-face ((t (:foreground "MediumOrchid"))))
    )
-)
+  )
 
 (load-theme 'modus-operandi t)
 
@@ -77,7 +77,7 @@
   (setq mac-function-modifier 'hyper))
  (IS-LINUX
   (set-face-attribute 'default nil :font "Cascadia Code" :height 110))
-)
+ )
 
 ;; [ Personal Functionality chagne ]
 
@@ -120,7 +120,7 @@
 (use-package isearch
   :ensure nil
   :bind (:map isearch-mode-map
-         ([remap isearch-delete-char] . isearch-del-char))
+              ([remap isearch-delete-char] . isearch-del-char))
   :custom
   (isearch-lazy-count t)
   (lazy-count-prefix-format "%s/%s "))
@@ -131,10 +131,10 @@
  )
 
 ;; dired
-; 直接在dired里按W (browse-url-of-dired-file), 这会直接用外部程序打开。 当然，它不会阻塞Emacs。
+;; 直接在dired里按W (browse-url-of-dired-file), 这会直接用外部程序打开。 当然，它不会阻塞Emacs。
 (setq browse-url-handlers '(("\\`file:" . browse-url-default-browser)))
 
-; RET 后仅保留一个 dired buffer
+;; RET 后仅保留一个 dired buffer
 (setq dired-kill-when-opening-new-dired-buffer t)
 
 ;; [ Small Packages ]
@@ -152,7 +152,7 @@
   (add-to-list 'completion-at-point-functions #'cape-file)
   (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   (add-to-list 'completion-at-point-functions #'cape-keyword)
-)
+  )
 
 (use-package terminal-here
   :straight t
@@ -224,11 +224,11 @@
 
 ;; [ Hacks for `emacs -nw`]
 (unless (display-graphic-p)
-    (set-display-table-slot standard-display-table
-                        'vertical-border
-                        (make-glyph-code ?│))
-    (xterm-mouse-mode 1))
+  (set-display-table-slot standard-display-table
+                          'vertical-border
+                          (make-glyph-code ?│))
+  (xterm-mouse-mode 1))
 
 ;; [ Clean up ]
-  (when (get-buffer "*straight-process*")
-    (kill-buffer "*straight-process*"))
+(when (get-buffer "*straight-process*")
+  (kill-buffer "*straight-process*"))
