@@ -156,6 +156,7 @@ for confirmation when needed."
 "https://chaoxuprime.com/rss.xml"
 "https://jgrulich.cz/feed/"
 "https://blog.kowalczyk.info/atom.xml"
+"https://meetingcpp.com/feed.xml"
 ))
 :config
 (setq-default elfeed-search-filter "@1-years-ago")

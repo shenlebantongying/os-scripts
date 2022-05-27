@@ -4,23 +4,7 @@ if status is-interactive
 #======================================================
 switch (uname)
     case Linux
-        set PATH \
-            $HOME/.deno/bin \
-            $HOME/npm/bin \
-            $HOME/go/bin \
-            $HOME/.ghcup/bin \
-            $HOME/.local/bin \
-            $HOME/.traco \
-            $HOME/bin \
-            $HOME/s \
-            $HOME/.dotnet \
-            $HOME/.cabal/bin \
-            $HOME/.rbenv/bin \
-            $HOME/.cargo/bin \
-            $HOME/.emacs.d/bin \
-            $HOME/.local/share/coursier/bin \
-            /usr/local/Wolfram/Mathematica/12.3/Executables \
-            $PATH
+    	# path settings are within .bashrc
     case Darwin
 
         # M1 homebrew, we want to override some brew path
@@ -78,6 +62,8 @@ end
     #set -gx PAGER cat
     set -gx SYSTEMD_PAGER cat
     set -gx NO_COLOR
+
+    set -gx DEBUGINFOD_URLS "https://debuginfod.archlinux.org"
 
     # special paths
     if type -q "opam"
