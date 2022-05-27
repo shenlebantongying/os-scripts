@@ -53,6 +53,14 @@ switch (uname)
             set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
         end
 
+    	# special paths
+    	if type -q "opam"
+           eval (opam env --shell=fish)
+   	end
+   	if type -q "rbenv"
+           source (rbenv init -|psub)
+    	end
+
     case '*'
             echo !!!! OS undetectable
 end
@@ -65,13 +73,7 @@ end
 
     set -gx DEBUGINFOD_URLS "https://debuginfod.archlinux.org"
 
-    # special paths
-    if type -q "opam"
-        eval (opam env --shell=fish)
-    end
-    if type -q "rbenv"
-        source (rbenv init -|psub)
-    end
+
     if type -q "zoxide"
         zoxide init fish | source
     end
