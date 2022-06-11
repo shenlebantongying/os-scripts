@@ -62,8 +62,7 @@
 
 (load-theme 'modus-operandi t)
 
-
-
+(setq-default frame-title-format "%f")
 
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
@@ -96,7 +95,7 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-(setq vc-follow-symlinks nil)
+(setq vc-follow-symlinks t)
 
 (recentf-mode 1)
 (setq recentf-max-saved-items 100)
@@ -221,6 +220,11 @@
 (use-package magit
   :straight t
   :defer t)
+
+(use-package diff-hl
+  :straight t
+  :init
+  (global-diff-hl-mode))
 
 ;; [ Hacks for `emacs -nw`]
 (unless (display-graphic-p)
