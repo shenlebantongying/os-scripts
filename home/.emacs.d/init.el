@@ -33,23 +33,16 @@
 
 ;; [ Personal Appearance Change ]
 
+(setq font-lock-maximum-decoration
+      '((c-mode . 3)
+	(t . 1)))
+
 (use-package modus-themes
   :straight t
   :init
   (setq modus-themes-mode-line '(borderless))
 
   (custom-set-faces
-   ;; All black pls
-   '(font-lock-function-name-face ((t (:foreground "black"))))
-   '(font-lock-keyword-face ((t (:foreground "black"))))
-   '(font-lock-type-face ((t (:foreground "black"))))
-   '(font-lock-builtin-face ((t (:foreground "black"))))
-   '(font-lock-variable-name-face ((t (:foreground "black"))))
-   '(font-lock-constant-face ((t (:foreground "black"))))
-   '(font-lock-string-face ((t (:foreground "black"))))
-   '(highlight-numbers-number ((t (:foreground "black"))))
-   '(font-lock-negation-char-face ((t (:foreground "black"))))
-
    ;; Org code blocks
    '(org-block ((t (:background "#f8f8f8" :extend t))))
    '(org-block-begin-line ((t (:background "#f8f8f8" :extend t))))
