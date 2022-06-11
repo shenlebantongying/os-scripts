@@ -73,7 +73,7 @@
 
 (cond 
  (IS-MAC
-  (set-face-attribute 'default nil :font "SF Mono" :height 140)
+  (set-face-attribute 'default nil :font "SF Mono" :height 130)
   (setq mac-function-modifier 'hyper))
  (IS-LINUX
   (set-face-attribute 'default nil :font "Cascadia Code" :height 110))

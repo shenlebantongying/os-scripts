@@ -157,6 +157,7 @@ for confirmation when needed."
 "https://jgrulich.cz/feed/"
 "https://blog.kowalczyk.info/atom.xml"
 "https://meetingcpp.com/feed.xml"
+"https://idiomdrottning.org/blog/programs"
 ))
 :config
 (setq-default elfeed-search-filter "@1-years-ago")

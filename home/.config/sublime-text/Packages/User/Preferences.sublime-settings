@@ -21,7 +21,6 @@
 	],
 	"ignored_packages":
 	[
-		"C++",
 		"Vintage",
 	],
 	"close_windows_when_empty": false,
