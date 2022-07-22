@@ -61,6 +61,10 @@ switch (uname)
            source (rbenv init -|psub)
     	end
 
+   	if type -q "groovy"
+          set -gx GROOVY_HOME /opt/homebrew/opt/groovy/libexec
+    	end
+
     case '*'
             echo !!!! OS undetectable
 end

@@ -12,9 +12,9 @@ function fish_prompt --description 'Informative prompt'
         set -l status_color (set_color $fish_color_status)
         set -l statusb_color (set_color --bold $fish_color_status)
         set -l pipestatus_string (__fish_print_pipestatus "[" "]" "|" "$status_color" "$statusb_color" $last_pipestatus)
-        set -g fish_prompt_pwd_dir_length 0
-        printf '[%s%s%s] %s@%s %s%s%s%s \n> ' (set_color green) (date "+%H:%M") (set_color normal)   \
-            $USER (prompt_hostname)  (set_color brblue) (prompt_pwd) $pipestatus_string \
+
+        printf '%s[%s] %s%s@%s %s%s %s%s%s \n> ' (set_color $fish_color_cwd) (date "+%M:%S") (set_color brblue) \
+            $USER (prompt_hostname) (set_color $fish_color_cwd) (prompt_pwd) $pipestatus_string \
             (set_color normal)
     end
 end

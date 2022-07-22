@@ -17,6 +17,7 @@ PATH=\
 :~/.emacs.d/bin\
 :~/.local/share/coursier/bin\
 :/usr/local/Wolfram/Mathematica/12.3/Executables\
+:/usr/share/perl6/site/bin\
 :$PATH
 
 if command -v opam &> /dev/null
