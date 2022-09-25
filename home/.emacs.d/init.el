@@ -10,7 +10,8 @@
                  "/opt/homebrew/bin"
 		 "/Library/TeX/texbin"
 		 "~/.opam/4.14.0/bin"
-		 "/usr/local/smlnj/bin/"))
+		 "/usr/local/smlnj/bin/"
+		 "/Applications/Racket v8.5.900/bin/"))
     (add-to-list 'exec-path dir)))
 
 ;; [ straight and use-package ]
