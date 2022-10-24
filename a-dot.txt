@@ -21,6 +21,7 @@
 #~/.spacemacs.d/*.el
 # new age!
 ~/.emacs.d/init.el
+~/.emacs.d/early-init.el
 ~/.emacs.d/modules/*.el
 ~/.emacs.d/snippets/**/*
 ~/.emacs.d/spell-personal.txt
