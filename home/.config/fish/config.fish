@@ -28,8 +28,8 @@ switch (uname)
         # Scala
             "$HOME/Library/Application Support/Coursier/bin" \
         # Python
-            $HOME/Library/Python/3.10/bin \
-            /opt/homebrew/opt/python@3.10/bin \
+	    /opt/homebrew/Cellar/python@3.11/3.11.0/libexec/bin \
+            $HOME/Library/Python/3.11/bin \
         # shadowing system built-ins
             /opt/homebrew/opt/llvm/bin \
             # make GNU great again

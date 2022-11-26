@@ -88,7 +88,6 @@ http://lambda-the-ultimate.org/rss.xml PL
 https://slbtty.gitlab.io/feed.xml self
 http://jakob.space/feed.xml PL
 https://www.more-magic.net/feed.atom scheme
-https://tess.oconnor.cx/feed life
 http://modernescpp.com/?format=feed&type=rss c++
 http://neugierig.org/software/blog/atom.xml software
 https://64k.space/feed.xml software
@@ -152,3 +151,4 @@ http://blog.vanillajava.blog/feeds/posts/default
 http://per.bothner.com/blog/index.atom
 https://elly.town/feed.xml
 http://searchivarius.org/blog/11/feed
+https://maskray.me/blog/atom.xml

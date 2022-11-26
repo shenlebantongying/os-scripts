@@ -30,6 +30,8 @@
 
 (straight-use-package 'use-package)
 
+
+;; [ Load personal modules ]
 (mapc 'load (file-expand-wildcards  (concat user-emacs-directory "modules/*.el")))
 
 ;; [ Personal Appearance Change ]
