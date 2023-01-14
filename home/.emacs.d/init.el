@@ -16,20 +16,19 @@
 
 ;; [ straight and use-package ]
 (defvar bootstrap-version)
-(let ((bootstrap-file			
+(let ((bootstrap-file
        (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-      (bootstrap-version 5))
+      (bootstrap-version 6))
   (unless (file-exists-p bootstrap-file)
     (with-current-buffer
         (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
          'silent 'inhibit-cookies)
       (goto-char (point-max))
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
 (straight-use-package 'use-package)
-
 
 ;; [ Load personal modules ]
 (mapc 'load (file-expand-wildcards  (concat user-emacs-directory "modules/*.el")))
@@ -81,14 +80,6 @@
 (setq inhibit-startup-screen t)
 (setq initial-scratch-message nil)
 
-(defun display-startup-echo-area-message ()
-  (message
-   "Emacs loaded in %s ."
-   (format
-    "%.2f seconds"
-    (float-time
-     (time-subtract after-init-time before-init-time)))))
-
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (setq vc-follow-symlinks t)
@@ -101,7 +92,6 @@
 
 (save-place-mode 1) 			; save curosr position for every file opened
 (delete-selection-mode 1)		; writes while the region is active will overwrite it
-
 
 (line-number-mode)
 (column-number-mode)
@@ -221,13 +211,6 @@
   :straight t
   :init
   (global-diff-hl-mode))
-
-;; [ Hacks for `emacs -nw`]
-(unless (display-graphic-p)
-  (set-display-table-slot standard-display-table
-                          'vertical-border
-                          (make-glyph-code ?│))
-  (xterm-mouse-mode 1))
 
 ;; [ Clean up ]
 (when (get-buffer "*straight-process*")

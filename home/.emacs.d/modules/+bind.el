@@ -8,11 +8,6 @@
 (global-set-key (kbd "s-t") 'speedbar)
 
 (when IS-MAC
-  ;; special for emacs-mac-port
-  (setq mac-option-modifier 'meta)
-  (setq mac-command-modifier 'super)
-  (setq mac-right-command-modifier 'meta)
-  ;; for vallina emacs
   (setq ns-right-command-modifier 'meta)
   (setq ns-right-option-modifier 'alt))
 
