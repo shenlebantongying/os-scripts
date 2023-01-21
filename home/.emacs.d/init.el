@@ -42,8 +42,6 @@
 (use-package modus-themes
   :straight t
   :init
-  (setq modus-themes-mode-line '(borderless))
-
   (custom-set-faces
    ;; Org code blocks
    '(org-block ((t (:background "#f8f8f8" :extend t))))
@@ -70,6 +68,7 @@
   (set-face-attribute 'default nil :font "SF Mono" :height 130)
   (setq mac-function-modifier 'hyper))
  (IS-LINUX
+  (add-to-list 'default-frame-alist '(font . "Cascadia Code-12")) ;; for emacs client
   (set-face-attribute 'default nil :font "Cascadia Code" :height 110))
  )
 
@@ -206,11 +205,6 @@
 (use-package magit
   :straight t
   :defer t)
-
-(use-package diff-hl
-  :straight t
-  :init
-  (global-diff-hl-mode))
 
 ;; [ Clean up ]
 (when (get-buffer "*straight-process*")
