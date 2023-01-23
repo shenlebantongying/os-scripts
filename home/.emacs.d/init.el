@@ -28,6 +28,7 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+(setq native-comp-async-report-warnings-errors nil)
 (straight-use-package 'use-package)
 
 ;; [ Load personal modules ]
