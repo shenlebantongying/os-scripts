@@ -2,7 +2,7 @@
 (use-package geiser
   :straight t
   :config
-  (setq geiser-guile-binary "guile3")
+  (setq geiser-guile-binary "guile")
   (setq geiser-chez-binary "chez")
   )
 
