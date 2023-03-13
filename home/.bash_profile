@@ -18,6 +18,7 @@ PATH=\
 :~/.local/share/coursier/bin\
 :/usr/local/Wolfram/Mathematica/12.3/Executables\
 :/usr/share/perl6/site/bin\
+:/usr/lib/jvm/java-19-openjdk/bin/\
 :$PATH
 
 if command -v opam &> /dev/null
