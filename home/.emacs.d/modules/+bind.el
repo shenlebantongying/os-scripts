@@ -4,6 +4,7 @@
 (global-unset-key (kbd "C-<mouse-4>"))
 (global-unset-key (kbd "C-<wheel-down>"))
 (global-unset-key (kbd "C-<mouse-5>"))
+(global-unset-key (kbd "M-z"))
 
 (global-set-key (kbd "s-t") 'speedbar)
 

@@ -160,7 +160,7 @@ bar {
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %I:%M:%S %p'; do sleep 1; done
+    status_command while date +'%Y-%m-%d'; do sleep 60; done
 
     colors {
         statusline #ffffff
@@ -172,6 +172,5 @@ bar {
 include /etc/sway/config.d/*
 
 for_window [class="GoldenDict"] floating enable
-for_window [title=".*GoldenDict"] resize set width 40 ppt
 
 bindsym $mod+p exec grim -g "$(slurp)"

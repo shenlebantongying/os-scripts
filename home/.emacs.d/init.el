@@ -44,11 +44,6 @@
   :straight t
   :init
   (custom-set-faces
-   ;; Org code blocks
-   '(org-block ((t (:background "#f8f8f8" :extend t))))
-   '(org-block-begin-line ((t (:background "#f8f8f8" :extend t))))
-   '(org-verbatim ((t (:background "#f8f8f8"))))
-
    ;; Comment
    '(font-lock-comment-face ((t (:foreground "MediumOrchid"))))
    )
@@ -59,8 +54,8 @@
 (setq-default frame-title-format "%f")
 
 (tool-bar-mode -1)
-(scroll-bar-mode -1)
 (menu-bar-mode)
+(set-scroll-bar-mode 'left) 
 
 (setq initial-frame-alist '((width . 100) (height . 50)))
 
@@ -91,12 +86,10 @@
 (blink-cursor-mode 0)
 
 (save-place-mode 1) 			; save curosr position for every file opened
-(delete-selection-mode 1)		; writes while the region is active will overwrite it
+(delete-selection-mode 1)		; writes while the is active will overwrite it
 
 (line-number-mode)
 (column-number-mode)
-
-(global-display-line-numbers-mode)
 
 (global-auto-revert-mode)
 
@@ -143,6 +136,7 @@
   :straight t
   :init
   (setq terminal-here-mac-terminal-command 'iterm2)
+  (setq terminal-here-linux-terminal-command 'konsole)
   :bind
   (( "C-`" . terminal-here)))
 
