@@ -5,4 +5,3 @@
 (use-package sly
   :straight t
   :defer t)
-

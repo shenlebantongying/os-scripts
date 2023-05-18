@@ -12,10 +12,7 @@
   (setq ns-right-command-modifier 'meta)
   (setq ns-right-option-modifier 'alt))
 
-(global-set-key (kbd "s-r") 'consult-recent-file)
-(global-set-key (kbd "s-b") 'consult-buffer)
-(global-set-key (kbd "s-f") 'consult-line)
-
+(global-set-key (kbd "s-x") 'execute-extended-command)
 
 (global-set-key (kbd "s-c") 'kill-ring-save)
 (global-set-key (kbd "s-v") 'yank)
@@ -24,6 +21,12 @@
 (global-set-key (kbd "s-k") 'kill-this-buffer)
 (global-set-key (kbd "s-n") 'make-frame)
 
+(defun +kill-to-linebegin ()
+  "Kill from point to beginning of line."
+  (interactive)
+  (kill-line 0))
+
+(global-set-key (kbd "C-<backspace>") '+kill-to-linebegin)
 
 (global-set-key (kbd "s-[") 'previous-buffer)
 (global-set-key (kbd "s-]") 'next-buffer)

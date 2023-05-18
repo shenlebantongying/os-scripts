@@ -36,19 +36,6 @@
 
 ;; [ Personal Appearance Change ]
 
-(setq font-lock-maximum-decoration
-      '((c-mode . 3)
-	(t . 1)))
-
-(use-package modus-themes
-  :straight t
-  :init
-  (custom-set-faces
-   ;; Comment
-   '(font-lock-comment-face ((t (:foreground "MediumOrchid"))))
-   )
-  )
-
 (load-theme 'modus-operandi t)
 
 (setq-default frame-title-format "%f")
@@ -61,12 +48,12 @@
 
 (cond 
  (IS-MAC
-  (set-face-attribute 'default nil :font "SF Mono" :height 130)
+  (set-face-attribute 'default nil :font "IntelOne Mono" :height 130)
+  (setq-default line-spacing 0)
   (setq mac-function-modifier 'hyper))
  (IS-LINUX
-  (add-to-list 'default-frame-alist '(font . "Cascadia Code-12")) ;; for emacs client
-  (set-face-attribute 'default nil :font "Cascadia Code" :height 110))
- )
+  (set-face-attribute 'default nil :font "IntelOne Mono" :height 95))
+)
 
 ;; [ Personal Functionality chagne ]
 
@@ -109,7 +96,6 @@
  )
 
 ;; dired
-;; 直接在dired里按W (browse-url-of-dired-file), 这会直接用外部程序打开。 当然，它不会阻塞Emacs。
 (setq browse-url-handlers '(("\\`file:" . browse-url-default-browser)))
 
 ;; RET 后仅保留一个 dired buffer
