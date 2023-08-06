@@ -21,6 +21,8 @@
 (global-set-key (kbd "s-k") 'kill-this-buffer)
 (global-set-key (kbd "s-n") 'make-frame)
 
+(global-set-key (kbd "C-s-l") 'indent-region)
+
 (defun +kill-to-linebegin ()
   "Kill from point to beginning of line."
   (interactive)

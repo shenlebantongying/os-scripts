@@ -54,45 +54,53 @@
 
 
 (defun +reload-file ()
-    "reload file from the disk (not auto-save) without confirm"
-    (interactive)
-    (revert-buffer t t t)
-    (message "%s" "File reloaded."))
-
-
-(defun +xah-open-in-external-app (&optional @fname)
-  "Open the current file or dired marked files in external app.
-When called in emacs lisp, if @fname is given, open that.
-URL `http://xahlee.info/emacs/emacs/emacs_dired_open_file_in_ext_apps.html'
-Version 2019-11-04 2021-02-16"
+  "reload file from the disk (not auto-save) without confirm"
   (interactive)
-  (let* (
-         ($file-list
-          (if @fname
-              (progn (list @fname))
+  (revert-buffer t t t)
+  (message "%s" "File reloaded."))
+
+(defun xah-open-in-external-app (&optional Fname)
+  "Open the current file or dired marked files in external app.
+When called in emacs lisp, if Fname is given, open that.
+
+URL `http://xahlee.info/emacs/emacs/emacs_dired_open_file_in_ext_apps.html'
+Version: 2019-11-04 2023-04-05 2023-06-26"
+  (interactive)
+  (let (xfileList xdoIt)
+    (setq xfileList
+          (if Fname
+              (list Fname)
             (if (string-equal major-mode "dired-mode")
                 (dired-get-marked-files)
-              (list (buffer-file-name)))))
-         ($do-it-p (if (<= (length $file-list) 5)
-                       t
-                     (y-or-n-p "Open more than 5 files? "))))
-    (when $do-it-p
+              (list buffer-file-name))))
+    (setq xdoIt (if (<= (length xfileList) 10) t (y-or-n-p "Open more than 10 files? ")))
+    (when xdoIt
       (cond
        ((string-equal system-type "windows-nt")
-        (mapc
-         (lambda ($fpath)
-           (shell-command (concat "PowerShell -Command \"Invoke-Item -LiteralPath\" " "'" (shell-quote-argument (expand-file-name $fpath )) "'")))
-         $file-list))
+        (let ((xoutBuf (get-buffer-create "*xah open in external app*"))
+              (xcmdlist (list "PowerShell" "-Command" "Invoke-Item" "-LiteralPath")))
+          (mapc
+           (lambda (x)
+             (message "%s" x)
+             (apply 'start-process (append (list "xah open in external app" xoutBuf) xcmdlist (list (format "'%s'" (if (string-match "'" x) (replace-match "`'" t t x) x))) nil)))
+           xfileList)
+          ;; (switch-to-buffer-other-window xoutBuf)
+          )
+        ;; old code. calling shell. also have a bug if filename contain apostrophe
+        ;; (mapc (lambda (xfpath) (shell-command (concat "PowerShell -Command \"Invoke-Item -LiteralPath\" " "'" (shell-quote-argument (expand-file-name xfpath)) "'"))) xfileList)
+        )
        ((string-equal system-type "darwin")
-        (mapc
-         (lambda ($fpath)
-           (shell-command
-            (concat "open " (shell-quote-argument $fpath))))  $file-list))
+        (mapc (lambda (xfpath) (shell-command (concat "open " (shell-quote-argument xfpath)))) xfileList))
        ((string-equal system-type "gnu/linux")
-        (mapc
-         (lambda ($fpath) (let ((process-connection-type nil))
-                            (start-process "" nil "xdg-open" $fpath))) $file-list))))))
-
+        (mapc (lambda (xfpath)
+                (call-process shell-file-name nil 0 nil
+                              shell-command-switch
+                              (format "%s %s"
+                                      "xdg-open"
+                                      (shell-quote-argument xfpath))))
+              xfileList))
+       ((string-equal system-type "berkeley-unix")
+        (mapc (lambda (xfpath) (let ((process-connection-type nil)) (start-process "" nil "xdg-open" xfpath))) xfileList))))))
 
 (defun +kill-process-at-point ()
   (interactive)
@@ -104,17 +112,11 @@ Version 2019-11-04 2021-02-16"
           (t
            (error "no process at point!")))))
 
-(defun +markdown-convert-buffer-to-org ()
-    "Convert the current buffer's content from markdown to orgmode format and save it with the current buffer's file name but with .org extension."
-    (interactive)
-    (shell-command-on-region (point-min) (point-max)
-                             (format "pandoc -f markdown -t org -o %s"
-                                     (concat (file-name-sans-extension (buffer-file-name)) ".org"))))
 (defun +merriam-webster-dict-at-point ()
   "Search the word at point"
   (interactive)
   (+xah-open-in-external-app (concat "https://www.merriam-webster.com/dictionary/" (current-word)))
-)
+  )
 
 (defun +open-dir-in-external-file-manager ()
   "Open file in external program"
@@ -125,8 +127,8 @@ Version 2019-11-04 2021-02-16"
   "Run selected text or use the current line."
   (interactive)
   (shell-command
-    (if (use-region-p)
-        ;; current selection
-        (buffer-substring (region-beginning) (region-end))
-        ;; current line
-        (thing-at-point 'line t))))
+   (if (use-region-p)
+       ;; current selection
+       (buffer-substring (region-beginning) (region-end))
+     ;; current line
+     (thing-at-point 'line t))))
