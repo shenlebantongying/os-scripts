@@ -158,7 +158,8 @@
   :straight t
   :init
   (require 'smartparens-config)
-  (add-hook 'emacs-lisp-mode-hook #'smartparens-mode))
+  (add-hook 'emacs-lisp-mode-hook #'smartparens-mode)
+  (add-hook 'racket-mode-hook #'smartparens-mode))
 
 (use-package minions
   :straight t

@@ -70,7 +70,7 @@ switch (uname)
 end
 
     set -gx CDPATH . .. ~ /
-    set -gx EDITOR micro
+    set -gx EDITOR nano
     #set -gx PAGER cat
     set -gx SYSTEMD_PAGER cat
     set -gx NO_COLOR
