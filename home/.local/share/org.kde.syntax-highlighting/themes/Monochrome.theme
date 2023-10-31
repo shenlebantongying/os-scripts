@@ -31,25 +31,25 @@
         },
         "Scheme": {
             "Brackets1": {
-                "text-color": "#bab9b7"
+                "text-color": "#3e3e3e"
             },
             "Brackets2": {
-                "text-color": "#bab9b7"
+                "text-color": "#3e3e3e"
             },
             "Brackets3": {
-                "text-color": "#bab9b7"
+                "text-color": "#3e3e3e"
             },
             "Brackets4": {
-                "text-color": "#bab9b7"
+                "text-color": "#3e3e3e"
             },
             "Brackets5": {
-                "text-color": "#bab9b7"
+                "text-color": "#3e3e3e"
             },
             "Brackets6": {
-                "text-color": "#bab9b7"
+                "text-color": "#3e3e3e"
             },
             "Other Brackets": {
-                "text-color": "#bab9b7"
+                "text-color": "#3e3e3e"
             }
         }
     },
@@ -67,16 +67,16 @@
         "MarkBreakpointDisabled": "#ff00ff",
         "MarkBreakpointReached": "#ffff00",
         "MarkError": "#ff0000",
-        "MarkExecution": "#a0a0a4",
+        "MarkExecution": "#2c2c2c",
         "MarkWarning": "#00ff00",
         "ModifiedLines": "#fdbc4b",
         "ReplaceHighlight": "#25d970",
         "SavedLines": "#2ecc71",
         "SearchHighlight": "#e0af82",
-        "Separator": "#d5d5d5",
+        "Separator": "#414141",
         "SpellChecking": "#bf0303",
         "TabMarker": "#d2d2d2",
-        "TemplateBackground": "#d6d2d0",
+        "TemplateBackground": "#3e3d3c",
         "TemplateFocusedPlaceholder": "#76da98",
         "TemplatePlaceholder": "#baf8ce",
         "TemplateReadOnlyPlaceholder": "#f6e6e6",

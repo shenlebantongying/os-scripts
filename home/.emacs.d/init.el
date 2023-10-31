@@ -9,7 +9,7 @@
 		 "/opt/homebrew/opt/python@3.10/bin"
                  "/opt/homebrew/bin"
 		 "/Library/TeX/texbin"
-		 "~/.opam/4.14.0/bin"
+		 "/Users/slbtty/.opam/5.1.0/bin/"
 		 "/usr/local/smlnj/bin/"
 		 "/Applications/Racket v8.5.900/bin/"))
     (add-to-list 'exec-path dir)))
@@ -49,7 +49,7 @@
 
 (cond 
  (IS-MAC
-  (set-face-attribute 'default nil :font "IntelOne Mono" :height 130)
+  (set-face-attribute 'default nil :font "Intel One Mono" :height 130)
   (setq mac-function-modifier 'hyper))
  (IS-LINUX
   (set-face-attribute 'default nil :font "IntelOne Mono" :height 100))
@@ -170,6 +170,11 @@
 
 (use-package markdown-mode
   :straight t)
+
+(use-package expand-region
+  :straight t
+   :bind
+   (("C-=" . #'er/expand-region)))
 
 ;; [ Clean up ]
 (when (get-buffer "*straight-process*")
