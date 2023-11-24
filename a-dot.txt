@@ -61,8 +61,5 @@
 ~/Library/Scripts/*
 ~/Library/Script Libraries/*
 
-# No, it might cause problems
-#~/Library/Application Support/Sublime Text/Packages/User/Breakers.sublime-color-scheme
-
 #sway
 ~/.config/sway/*

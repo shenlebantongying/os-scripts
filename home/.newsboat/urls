@@ -4,155 +4,68 @@
 "query:Unread Articles:unread = \"yes\"" .meta
 "query:Recent articles:age between 0:30" .meta
 #academic journals
-https://www.cambridge.org/core/rss/product/id/49AD4731AAB0E94D8EF98BBB4EE56A7F .CS
-http://blog.ezyang.com/feed/ software
-http://feeds.feedburner.com/PythonInsider python
-http://feeds.woboq.com/woboq kde/qt
-http://funcall.blogspot.com/feeds/posts/default?alt=rss lisp
-http://kroah.com/log/index.rss UnixPeople/Linux
-http://p-cos.blogspot.com/feeds/posts/default?alt=rss lisp
 http://research.swtch.com/feed.atom software
-http://wcook.blogspot.com/feeds/posts/default?alt=rss software
 http://www.greghendershott.com/feeds/all.atom.xml friends
-http://www.invece.org/rss eval
-http://www.kroah.com/log/index.rss linux
-https://asaba.sakuragawa.moe/feed/ friends
-https://blog.codingnow.com/atom.xml friends
-https://blog.feabhas.com/feed/ software
-https://blog.jabref.org/feed.xml tool-update
+http://www.invece.org/rss antirez
 https://blog.lilydjwg.me/feed friends
-https://blog.petdance.com/feed.xml software
-https://blog.sgorava.xyz/index.xml friends
 https://ctian.livejournal.com/data/rss software
 https://daniel.haxx.se/blog/feed/ software
-https://devblogs.microsoft.com/oldnewthing/author/oldnewthing/feed software
-https://dot.kde.org/rss.xml kde
 https://dr-knz.net/feeds/all.rss.xml software
-https://drewdevault.com/blog/index.xml software
-https://eliasdaler.github.io/feed.xml software
-https://farseerfc.me/feeds/atom.xml friends
-https://feeds.feedburner.com/2ality javascript
 https://feeds.feedburner.com/abseilio c++
-https://hpjansson.org/blag/feed/ software
 https://iscinumpy.gitlab.io/index.xml c++
 https://isocpp.org/blog/rss c++
-https://linuxreviews.org/feed.rss software
-https://lucumr.pocoo.org/feed.atom software
 https://martinfowler.com/feed.atom software
 https://matklad.github.io/feed.xml software
 https://matt.might.net/articles/feed.rss software
-https://michaelnielsen.org/blog/feed/ software
-https://netcan.github.io/atom.xml software
-https://nullprogram.com/feed/ software
-https://oleksandrkvl.github.io/feed.xml c++
 https://planet.kde.org/global/atom.xml kde
-https://pockies.github.io/feed.xml friends
-https://preshing.com/feed c++
-https://purinchu.net/wp/feed/feed.xml kde
 https://raphlinus.github.io/feed.xml software
 https://ridiculousfish.com/blog/atom.xml friends
 https://rosenzweig.io/feed.xml software
-https://sh.alynx.one/atom.xml friends
-https://utcc.utoronto.ca/~cks/space/blog/?atom software
-https://vermaden.wordpress.com/feed/ UnixPeople/BSD
 https://www.alanshawn.com/atom.xml friends
 https://www.cppstories.com/index.xml c++
 https://www.csslayer.info/wordpress/feed/ friends
-https://www.internalpointers.com/rss software
-https://www.lyx.org/misc/rss/lyx_news_feed.xml tool-update
-https://www.magicsplat.com/blog/rss.xml tcl
 https://www.nayuki.io/rss20.xml friends
-https://dave.cheney.net/feed/atom golang
 https://herbsutter.com/feed/ c++
-https://blog.shaynefletcher.org/feeds/posts/default ocaml
-https://dthompson.us/feed.xml software
-https://blog.nelhage.com/atom.xml sql
 https://weinholt.se/feed.xml scheme
-http://jakob.space/feed.xml lisp
-http://planet.lisp.org/rss20.xml lisp
-https://tymoon.eu/api/reader/atom lisp
-https://neovim.io/news.xml neovim
-https://fare.livejournal.com/data/rss lisp
-http://www.pixelbeat.org/feed/rss2.xml gnu
-https://sfconservancy.org/feeds/blog/ opensource
-https://tenthousandmeters.com/feeds/all.atom.xml python
 https://betterexplained.com/feed/ math
 https://eli.thegreenplace.net/feeds/all.atom.xml software
-https://www.craigfe.io/feed.xml ocaml
-http://www.lispology.com/rss?JHE+3 lisp
 https://www.ocamlpro.com/feed/ ocaml
 https://fsharpforfunandprofit.com/index.xml fsharp
 https://inside.java/feed.xml java
 http://lambda-the-ultimate.org/rss.xml PL
-https://slbtty.gitlab.io/feed.xml self
-http://jakob.space/feed.xml PL
-https://www.more-magic.net/feed.atom scheme
 http://modernescpp.com/?format=feed&type=rss c++
 http://neugierig.org/software/blog/atom.xml software
-https://64k.space/feed.xml software
-https://code.visualstudio.com/feed.xml vscode
-https://www.murilopereira.com/index.xml general
-https://planet.emacslife.com/atom.xml emacs
 https://borretti.me/feed.xml PL
-http://www.weaselhat.com/feed/ PL
 https://blog.sigplan.org/feed/ PL
-https://www.stephendiehl.com/feed.atom haskell
 https://blog.gtk.org/feed/ gtk
 https://crascit.com/feed/ cmake
 https://lemire.me/blog/feed/ general
-https://weekly.nixos.org/feeds/all.atom.xml nix
 https://racket-news.com/feeds/all.atom.xml racket
 https://lexi-lambda.github.io/feeds/all.atom.xml PL
 https://okmij.org/ftp/rss.xml OlegKiselyov
-https://gretzuni.com/atom/
-http://www.turtleware.eu/rss.xml lisp
 https://writings.stephenwolfram.com/feed/
-https://defn.io/index.xml
 https://wadler.blogspot.com/feeds/posts/default
-http://www.randomhacks.net/feed.xml
 http://lambda-the-ultimate.org/rss.xml
 http://xahlee.info/emacs/emacs/blog.xml emacs
-https://alarmingdevelopment.org/?feed=rss2
 https://www.logicmatters.net/feed/
-https://pythonspeed.com/atom.xml
-https://cprss.s3.amazonaws.com/golangweekly.com.xml
-https://developer.ibm.com/technologies/linux/feed/
-https://factorio.com/blog/rss
 https://stackoverflow.com/feeds/user/2625442
-https://blog.shaynefletcher.org/feeds/posts/default
-https://www.haskellforall.com/feeds/posts/default
 https://planet.scheme.org/atom.xml
 https://programmingpraxis.com/feed/
 https://cstheory.stackexchange.com/feeds/user/2185
-http://math.andrej.com/feed.xml
-https://blog.system76.com/rss
-https://jao.io/blog/rss.xml
-https://countvajhula.com/feed/
-https://sachachua.com/blog/feed
-https://semantic-domain.blogspot.com/feeds/posts/default
-https://alan.petitepomme.net/cwn/cwn.rss ocaml
 https://cacm.acm.org/magazine.rss
 https://0pointer.net/blog/index.atom
 https://danlark.org/feed/
-https://justinmeiners.github.io/feed.xml
-https://engineering.fb.com/feed/
-https://spwhitton.name/blog/index.atom
-https://darkcoding.net/index.xml
 https://chaoxuprime.com/rss.xml
-https://jgrulich.cz/feed/
 https://blog.kowalczyk.info/atom.xml
 https://meetingcpp.com/feed.xml
 https://idiomdrottning.org/blog/programs
 https://blog.brownplt.org/feed.xml
-http://bewatermyfriend.org/index.atom
-http://blog.vanillajava.blog/feeds/posts/default
 http://per.bothner.com/blog/index.atom
 https://elly.town/feed.xml
-http://searchivarius.org/blog/11/feed
 https://maskray.me/blog/atom.xml
 https://pointersgonewild.com/feed/
 https://journal.stuffwithstuff.com/atom.xml
 https://www.kdab.com/category/blogs/feed/
 https://randomascii.wordpress.com/rss
-https://brevzin.github.io/feed.xml
+https://brevzin.github.io/feed.xml C++
 https://paulmck.livejournal.com/data/atom

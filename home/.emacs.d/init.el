@@ -28,6 +28,10 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+;; disable straight.el's startup check
+;; uses straight-fetch-all && straight-check-all instead
+;; (setq straight-check-for-modifications nil)
+
 (setq native-comp-async-report-warnings-errors nil)
 
 ;; [ Load personal modules ]
@@ -78,6 +82,7 @@
 (line-number-mode)
 (column-number-mode)
 
+(global-display-line-numbers-mode)
 (global-auto-revert-mode)
 
 ;; isearch
@@ -154,12 +159,11 @@
 (straight-use-package 'transpose-frame)
 (straight-use-package 'imenu-list)
 
-(use-package smartparens
+(use-package paredit
   :straight t
   :init
-  (require 'smartparens-config)
-  (add-hook 'emacs-lisp-mode-hook #'smartparens-mode)
-  (add-hook 'racket-mode-hook #'smartparens-mode))
+  (add-hook 'scheme-mode-hook #'enable-paredit-mode)
+  )
 
 (use-package minions
   :straight t
