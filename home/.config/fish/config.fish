@@ -73,7 +73,7 @@ end
     set -gx EDITOR nano
     #set -gx PAGER cat
     set -gx SYSTEMD_PAGER cat
-    set -gx NO_COLOR
+    #set -gx NO_COLOR
 
     set -gx DEBUGINFOD_URLS "https://debuginfod.archlinux.org"
 

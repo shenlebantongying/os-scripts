@@ -177,9 +177,15 @@
 
 (use-package expand-region
   :straight t
-   :bind
-   (("C-=" . #'er/expand-region)))
+  :bind
+  (("C-=" . #'er/expand-region)))
+
+(use-package evil
+  :straight t
+  :init
+  (evil-mode 1))
 
 ;; [ Clean up ]
 (when (get-buffer "*straight-process*")
   (kill-buffer "*straight-process*"))
+

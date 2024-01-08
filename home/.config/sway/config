@@ -2,7 +2,7 @@
 # Read `man 5 sway` for a complete reference.
 
 # Logo key. Use Mod1 for Alt.
-set $mod Mod4
+set $mod Mod1
 
 # Home row direction keys, like vim
 set $left h
@@ -10,7 +10,7 @@ set $down j
 set $up k
 set $right l
 
-set $term konsole
+set $term wezterm
 set $menu fuzzel | fuzzel | xargs swaymsg exec --
 
 ### Key bindings

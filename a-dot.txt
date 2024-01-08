@@ -26,8 +26,7 @@
 ~/.emacs.d/snippets/**/*
 ~/.emacs.d/spell-personal.txt
 
-~/.config/nvim/init.vim
-~/.config/nvim/colors/dichromatic.vim
+~/.config/nvim/*.lua
 
 ~/.config/kak/kakrc
 ~/.config/helix/config.toml
@@ -36,6 +35,8 @@
 ~/.config/coq/coqiderc
 ~/.config/coq/coqide.keys
 
+#wezterm
+~/.config/wezterm/wezterm.lua
 
 #fish
 ~/.config/fish/**/*.fish
