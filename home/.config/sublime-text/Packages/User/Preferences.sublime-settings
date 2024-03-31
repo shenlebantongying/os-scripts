@@ -21,10 +21,10 @@
 	],
 	"ignored_packages":
 	[
+		"Package Control",
+		"Terminus",
 		"Vintage",
 	],
-	"close_windows_when_empty": false,
 	"color_scheme": "Mariana.sublime-color-scheme",
 	"theme": "auto",
-	"index_files": true,
 }

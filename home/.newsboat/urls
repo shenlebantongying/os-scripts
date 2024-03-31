@@ -1,8 +1,7 @@
 #shortcuts:
 #PL -> Programming languages
 #metaquery all unreaded
-"query:Unread Articles:unread = \"yes\"" .meta
-"query:Recent articles:age between 0:30" .meta
+"query:Recent articles:age between 0:365" .meta
 #academic journals
 http://research.swtch.com/feed.atom software
 http://www.greghendershott.com/feeds/all.atom.xml friends

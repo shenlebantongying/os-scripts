@@ -19,7 +19,7 @@ config.colors = {
 
 config.font = wezterm.font 'Intel One Mono'
 
-if (is_macOS) then
+if (is_macOS()) then
   config.font_size = 14.0
 else 
   config.font_size = 10.0
