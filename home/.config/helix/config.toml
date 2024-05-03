@@ -1,1 +1,10 @@
 theme = "github_light_tritanopia"
+
+[keys.normal]
+
+"j"="move_char_left"
+"k"="move_visual_line_down"
+"l"="move_char_right"
+"i"="move_visual_line_up"
+"h"="insert_mode"
+"H"="insert_at_line_start"

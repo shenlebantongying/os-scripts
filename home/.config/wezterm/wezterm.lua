@@ -28,7 +28,7 @@ end
 config.enable_scroll_bar = true
 
 config.window_frame = {
-  font = wezterm.font { family = 'Intel One Mono', weight = 'Bold' },
+  font = wezterm.font { family = 'Intel One Mono'},
 }
 
 config.window_padding = {

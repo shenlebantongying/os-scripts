@@ -14,19 +14,3 @@ bind-key w up
 bind-key s down
 bind-key d open
 bind-key x open-in-browser-and-mark-read
-
-color background          black   default
-color listnormal          black   default
-color listnormal_unread   black     default
-color listfocus           color236   color12
-color listfocus_unread    color15    color12
-color info                color248   color236
-color article             black   default
-
-# highlights
-highlight article "^(Feed|Link):.*$" color6 default bold
-highlight article "^(Title|Date|Author):.*$" color6 default bold
-highlight article "https?://[^ ]+" blue default underline
-highlight article "\\[[0-9]+\\]" color2 default bold
-highlight article "\\[image\\ [0-9]+\\]" color10 default bold
-highlight feedlist "^─.*$" color6 color236 bold
