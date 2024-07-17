@@ -9,7 +9,7 @@
 		 "/opt/homebrew/opt/python@3.10/bin"
                  "/opt/homebrew/bin"
 		 "/Library/TeX/texbin"
-		 "/Users/slbtty/.opam/5.1.0/bin/"
+		 "/Users/slbtty/.opam/5.2.0/bin/"
 		 "/usr/local/smlnj/bin/"
 		 "/Applications/Racket v8.5.900/bin/"))
     (add-to-list 'exec-path dir)))

@@ -30,6 +30,7 @@
 
 ~/.config/kak/kakrc
 ~/.config/helix/config.toml
+~/.config/helix/themes/*
 
 #coqide
 ~/.config/coq/coqiderc

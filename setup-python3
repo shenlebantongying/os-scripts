@@ -1,7 +1,0 @@
-#!/bin/sh
-
-# Copy paste this script
-
-pip install --upgrade pip
-
-pip3 install jupyterlab ipython scipy numpy matplotlib sympy pandas requests jinja rich --user

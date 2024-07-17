@@ -1,10 +1,13 @@
 if status is-interactive
+
+    set -g CDPATH "~"
+
     switch (uname)
         case Linux
             # path settings are within .bashrc
             set -gx DEBUGINFOD_URLS "https://debuginfod.archlinux.org"
 
-            set -gx EDITOR helix
+            set -gx EDITOR hx
             set -gx SYSTEMD_PAGER cat
         case Darwin
 
@@ -73,5 +76,4 @@ if status is-interactive
     if type -q zoxide
         zoxide init fish | source
     end
-
 end

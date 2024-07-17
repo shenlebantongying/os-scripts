@@ -1,55 +1,29 @@
 {
     "custom-styles": {
-        "Common Lisp": {
-            "Brackets": {
-                "selected-text-color": "#904200",
-                "text-color": "#005f88"
-            }
-        },
-        "Racket": {
-            "Brackets1": {
-                "text-color": "#535353"
-            },
-            "Brackets2": {
-                "text-color": "#535353"
-            },
-            "Brackets3": {
-                "text-color": "#535353"
-            },
-            "Brackets4": {
-                "text-color": "#535353"
-            },
-            "Brackets5": {
-                "text-color": "#535353"
-            },
-            "Brackets6": {
-                "text-color": "#535353"
-            },
-            "Other Brackets": {
-                "text-color": "#4a4a4a"
+        "CMake": {
+            "Builtin Variable": {
+                "selected-text-color": "#000000",
+                "text-color": "#000000"
             }
         },
         "Scheme": {
             "Brackets1": {
-                "text-color": "#3e3e3e"
+                "text-color": "#000000"
             },
             "Brackets2": {
-                "text-color": "#3e3e3e"
+                "text-color": "#000000"
             },
             "Brackets3": {
-                "text-color": "#3e3e3e"
+                "text-color": "#000000"
             },
             "Brackets4": {
-                "text-color": "#3e3e3e"
+                "text-color": "#000000"
             },
             "Brackets5": {
-                "text-color": "#3e3e3e"
+                "text-color": "#000000"
             },
             "Brackets6": {
-                "text-color": "#3e3e3e"
-            },
-            "Other Brackets": {
-                "text-color": "#3e3e3e"
+                "text-color": "#000000"
             }
         }
     },
@@ -116,7 +90,7 @@
         },
         "Comment": {
             "selected-text-color": "#000000",
-            "text-color": "#272727"
+            "text-color": "#21500f"
         },
         "CommentVar": {
             "selected-text-color": "#000000",
@@ -201,7 +175,7 @@
         },
         "String": {
             "selected-text-color": "#000000",
-            "text-color": "#000000"
+            "text-color": "#580e70"
         },
         "Variable": {
             "selected-text-color": "#000000",
