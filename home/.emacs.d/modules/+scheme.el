@@ -1,13 +1,13 @@
 ;; -*- lexical-binding: t -*-
 (use-package geiser
-  :straight t
+  :ensure t
   :config
   (setq geiser-guile-binary "guile")
   (setq geiser-chez-binary "chez")
   )
 
 (use-package geiser-guile
-  :straight t)
+  :ensure t)
 
 (use-package geiser-chez
-  :straight t)
+  :ensure t)

@@ -1,15 +1,15 @@
 ;;; -*- lexical-binding: t; -*-
 
 (use-package tuareg
-  :straight t
+  :ensure t
   :defer t)
 
 (use-package merlin
-  :straight t
+  :ensure t
   :defer t)
 
 (use-package dune
-  :straight t
+  :ensure t
   :defer t)
 
 (add-hook 'tuareg-mode-hook #'merlin-mode)

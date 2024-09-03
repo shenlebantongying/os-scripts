@@ -1,7 +1,4 @@
-(use-package spell-fu
-  :straight t)
+(use-package jinx
+  :ensure t
+  :hook (emacs-startup . global-jinx-mode))
 
-(add-hook 'spell-fu-mode-hook
-  (lambda ()
-    (spell-fu-dictionary-add
-     (spell-fu-get-personal-dictionary "personal" "~/.emacs.d/spell-personal.txt"))))

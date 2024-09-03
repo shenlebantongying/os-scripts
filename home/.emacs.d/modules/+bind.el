@@ -34,7 +34,24 @@
 (global-set-key (kbd "s-]") 'next-buffer)
 
 (use-package move-text
-  :straight t
+  :ensure t
   :defer t
   :init
   (move-text-default-bindings))
+
+(defun +kill-to-linebegin ()
+  "Kill from point to beginning of line."
+  (interactive)
+  (kill-line 0))
+
+(defun +terminal-here ()
+  "open terminal at the path of current file"
+  (interactive)
+  (shell-command
+   (if IS-MAC
+       (concat "/Applications/WezTerm.app/Contents/MacOS/wezterm start --new-tab --cwd "
+	       (file-name-directory buffer-file-name)
+	       "& disown")
+     "undefined")))
+
+(global-set-key (kbd "C-`") '+terminal-here)

@@ -19,6 +19,9 @@ if (Linux) then
 else
   config.font_size = 15.0
   config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+  config.window_frame = {
+    font_size=14.0
+  }
 end
 
 config.color_scheme = 'Builtin Solarized Light'

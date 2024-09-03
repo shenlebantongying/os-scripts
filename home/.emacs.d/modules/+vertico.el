@@ -1,6 +1,6 @@
 ;; -*- lexical-binding: t -*-
 (use-package vertico
-  :straight t
+  :ensure t
   :init
   (vertico-mode)
   (setq vertico-resize nil
@@ -13,7 +13,7 @@
   (savehist-mode))
 
 (use-package orderless
-  :straight t
+  :ensure t
   :init
   ;; Configure a custom style dispatcher (see the Consult wiki)
   ;; (setq orderless-style-dispatchers '(+orderless-dispatch)
@@ -24,13 +24,13 @@
 
 ;; Enable richer annotations using the Marginalia package
 (use-package marginalia
-  :straight t
+  :ensure t
   :init
   (marginalia-mode))
 
 ;; Example configuration for Consult
 (use-package consult
-  :straight t
+  :ensure t
   :bind (
 	 ("s-r" . consult-recent-file)
 	 ("s-f" . consult-line)
@@ -84,7 +84,6 @@
 )
 
 (use-package embark
-  :straight t
   :ensure t
  
   :bind
@@ -104,7 +103,6 @@
 
 ;; Consult users will also want the embark-consult package.
 (use-package embark-consult
-  :straight t
   :ensure t
   :after (embark consult)
   :demand t ; only necessary if you have the hook below

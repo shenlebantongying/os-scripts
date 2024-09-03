@@ -17,7 +17,7 @@ if status is-interactive
             end
 
             set PATH \
-                $HOME/Qt/6.2.0/macos/bin \
+                $HOME/.deno/bin \
                 $HOME/.ghcup/bin \
                 $HOME/.cabal/bin \
                 $HOME/.local/bin \
@@ -31,9 +31,6 @@ if status is-interactive
                 /usr/local/smlnj/bin \
                 # Scala
                 "$HOME/Library/Application Support/Coursier/bin" \
-                # Python
-                /opt/homebrew/Cellar/python@3.11/3.11.0/libexec/bin \
-                $HOME/Library/Python/3.11/bin \
                 # shadowing system built-ins
                 /opt/homebrew/opt/llvm/bin \
                 # make GNU great again
@@ -44,8 +41,6 @@ if status is-interactive
                 /opt/homebrew/opt/grep/libexec/gnubin \
                 # TCL/TK
                 /opt/homebrew/opt/tcl-tk/bin/ \
-                # Fix crazy homebrew
-                /opt/homebrew/opt/gambit-scheme/current/bin \
                 $PATH
 
             # homebrew M1 mac specific completion
