@@ -85,7 +85,7 @@ color.sync.rejected=red
 color.undo.before=yellow
 color.undo.after=green
 
-news.version=2.6.0
+news.version=3.1.0
 uda.url.type=string
 uda.url.label=URL
 

@@ -36,3 +36,4 @@ if [ -f ~/.bashrc ]; then
 fi
 
 if [ -e /home/slbtty/.nix-profile/etc/profile.d/nix.sh ]; then . /home/slbtty/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+. "$HOME/.cargo/env"

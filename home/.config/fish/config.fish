@@ -35,12 +35,16 @@ if status is-interactive
                 /opt/homebrew/opt/llvm/bin \
                 # make GNU great again
                 /opt/homebrew/opt/findutils/libexec/gnubin \
+                /opt/homebrew/opt/coreutils/libexec/gnubin \
                 /opt/homebrew/opt/bison/bin \
                 /opt/homebrew/opt/libxslt/bin \
                 /opt/homebrew/opt/make/libexec/gnubin \
                 /opt/homebrew/opt/grep/libexec/gnubin \
                 # TCL/TK
                 /opt/homebrew/opt/tcl-tk/bin/ \
+                # Ruby
+                /opt/homebrew/lib/ruby/gems/3.3.0/bin \
+                /opt/homebrew/opt/ruby/bin \
                 $PATH
 
             # homebrew M1 mac specific completion
@@ -56,9 +60,6 @@ if status is-interactive
             if type -q opam
                 eval (opam env --shell=fish)
             end
-            if type -q rbenv
-                source (rbenv init -|psub)
-            end
 
             if type -q groovy
                 set -gx GROOVY_HOME /opt/homebrew/opt/groovy/libexec
@@ -71,4 +72,6 @@ if status is-interactive
     if type -q zoxide
         zoxide init fish | source
     end
+
+    abbr -a -- jl 'julia --banner=no'
 end

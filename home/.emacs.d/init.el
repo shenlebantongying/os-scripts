@@ -65,6 +65,9 @@
 
 ;; [ Personal Appearance Change ]
 
+(use-package ef-themes
+  :ensure t)
+
 (load-theme 'modus-operandi t)
 
 (setq-default frame-title-format "%f")
@@ -73,13 +76,11 @@
 (menu-bar-mode)
 (set-scroll-bar-mode 'left) 
 
-(setq initial-frame-alist '((width . 100) (height . 50)))
-
 (setq-default line-spacing 0)
 
 (cond 
  (IS-MAC
-  (set-face-attribute 'default nil :font "Intel One Mono" :height 130)
+  (set-face-attribute 'default nil :font "SF Mono" :height 130)
   (setq mac-function-modifier 'hyper))
  (IS-LINUX
   (set-face-attribute 'default nil :font "IntelOne Mono" :height 100))
@@ -96,8 +97,10 @@
 
 (setq vc-follow-symlinks t)
 
-(recentf-mode 1)
-(setq recentf-max-saved-items 100)
+
+(use-package recentf
+  :ensure nil
+  :hook (after-init . recentf-mode))
 
 (set-default 'truncate-lines t)
 (blink-cursor-mode 0)
@@ -186,7 +189,9 @@
 (use-package sml-mode :ensure t)
 
 (use-package markdown-mode
-  :ensure t)
+  :ensure t
+  :hook
+  (markdown-mode . visual-line-mode))
 
 (use-package expand-region
   :ensure t

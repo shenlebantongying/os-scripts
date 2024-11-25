@@ -39,4 +39,13 @@ config.window_padding = {
   bottom = 0,
 }
 
+-- DISABLE copy on selection
+config.mouse_bindings = {
+  {
+    event = { Up = { streak = 1, button = "Left" } },
+    mods = "NONE",
+    action = wezterm.action.Nop,
+  },
+}
+
 return config

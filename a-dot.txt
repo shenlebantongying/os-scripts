@@ -65,3 +65,6 @@
 
 #sway
 ~/.config/sway/*
+
+#latex
+~/.latexmkrc
