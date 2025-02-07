@@ -14,6 +14,12 @@ local Linux = is_Linux()
 local wezterm = require 'wezterm'
 local config = {}
 
+config.font = wezterm.font_with_fallback {
+  'Intel One Mono',
+  'Cascadia Mono',
+  'Ubuntu Mono',
+}
+
 if (Linux) then
   config.font_size = 12.0
 else

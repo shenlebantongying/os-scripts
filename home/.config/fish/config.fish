@@ -74,4 +74,6 @@ if status is-interactive
     end
 
     abbr -a -- jl 'julia --banner=no'
+    abbr -a -- R 'R -q'
+
 end

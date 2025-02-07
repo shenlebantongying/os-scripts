@@ -54,9 +54,6 @@
 #kitty
 ~/.config/kitty/kitty.conf
 
-#kate
-~/.config/kate/externaltools/*
-
 #ocaml
 ~/.config/utop/init.ml
 
