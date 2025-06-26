@@ -6,8 +6,5 @@
   (setq geiser-chez-binary "chez")
   )
 
-(use-package geiser-guile
-  :ensure t)
-
 (use-package geiser-chez
   :ensure t)

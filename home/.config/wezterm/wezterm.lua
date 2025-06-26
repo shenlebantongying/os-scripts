@@ -54,4 +54,6 @@ config.mouse_bindings = {
   },
 }
 
+config.scrollback_lines=6000
+
 return config

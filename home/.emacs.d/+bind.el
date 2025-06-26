@@ -12,16 +12,21 @@
   (setq ns-right-command-modifier 'meta)
   (setq ns-right-option-modifier 'alt))
 
-(global-set-key (kbd "s-x") 'execute-extended-command)
+(defun +kill-this-buffer-for-real ()
+  "The built in one need menu."
+  (interactive)
+  (kill-buffer (current-buffer)))
 
+(global-set-key (kbd "s-x") 'kill-region)
 (global-set-key (kbd "s-c") 'kill-ring-save)
 (global-set-key (kbd "s-v") 'yank)
 (global-set-key (kbd "s-z") 'undo)
 (global-set-key (kbd "s-Z") 'undo-redo)
-(global-set-key (kbd "s-k") 'kill-this-buffer)
+(global-set-key (kbd "s-k") '+kill-this-buffer-for-real)
 (global-set-key (kbd "s-n") 'make-frame)
 
-(global-set-key (kbd "C-s-l") 'indent-region)
+(global-set-key (kbd "<f1>") 'delete-other-windows)
+(global-set-key (kbd "<f2>") 'split-window-right)
 
 (defun +kill-to-linebegin ()
   "Kill from point to beginning of line."
@@ -39,19 +44,16 @@
   :init
   (move-text-default-bindings))
 
-(defun +kill-to-linebegin ()
-  "Kill from point to beginning of line."
-  (interactive)
-  (kill-line 0))
-
 (defun +terminal-here ()
   "open terminal at the path of current file"
   (interactive)
   (shell-command
-   (if IS-MAC
-       (concat "/Applications/WezTerm.app/Contents/MacOS/wezterm start --new-tab --cwd "
-	       (file-name-directory buffer-file-name)
-	       "& disown")
-     "undefined")))
+   (cond
+    ((boundp 'IS-MAC)
+     (concat "/Applications/WezTerm.app/Contents/MacOS/wezterm start --new-tab --cwd "
+	     (file-name-directory buffer-file-name)
+	     "& disown")
+     (boundp 'IS-LINUX) (concat "/usr/bin/foot -D " (file-name-directory buffer-file-name) )))))
 
 (global-set-key (kbd "C-`") '+terminal-here)
+

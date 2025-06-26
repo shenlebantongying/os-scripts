@@ -3,6 +3,7 @@ vim.opt.expandtab = true
 
 vim.opt.spelllang = 'en_us'
 vim.opt.spell = true
+vim.opt.showtabline = 2 
 
 vim.keymap.set('n','j','<left>')
 vim.keymap.set('n','k','<down>')

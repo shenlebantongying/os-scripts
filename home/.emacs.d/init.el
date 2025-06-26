@@ -5,20 +5,20 @@
 (defconst IS-LINUX   (eq system-type 'gnu/linux))
 
 (when IS-MAC
-  (dolist (dir '("/Applications/Racket v8.14/bin/"
+  (dolist (dir '("/Applications/Racket v8.15/bin/"
                  "/opt/homebrew/bin/"
 		 "/Library/TeX/texbin/"
-		 "/Users/slbtty/.opam/5.2.0/bin/"
+		 "/Users/slbtty/.opam/5.3.0/bin/"
 		 "/usr/local/smlnj/bin/"))
     (add-to-list 'exec-path dir)))
 
 ;; [ elpaca and use-package ]
-(defvar elpaca-installer-version 0.8)
+(defvar elpaca-installer-version 0.11)
 (defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
 (defvar elpaca-builds-directory (expand-file-name "builds/" elpaca-directory))
 (defvar elpaca-repos-directory (expand-file-name "repos/" elpaca-directory))
 (defvar elpaca-order '(elpaca :repo "https://github.com/progfolio/elpaca.git"
-                              :ref nil :depth 1
+                              :ref nil :depth 1 :inherit ignore
                               :files (:defaults "elpaca-test.el" (:exclude "extensions"))
                               :build (:not elpaca--activate-package)))
 (let* ((repo  (expand-file-name "elpaca/" elpaca-repos-directory))
@@ -28,7 +28,7 @@
   (add-to-list 'load-path (if (file-exists-p build) build repo))
   (unless (file-exists-p repo)
     (make-directory repo t)
-    (when (< emacs-major-version 28) (require 'subr-x))
+    (when (<= emacs-major-version 28) (require 'subr-x))
     (condition-case-unless-debug err
         (if-let* ((buffer (pop-to-buffer-same-window "*elpaca-bootstrap*"))
                   ((zerop (apply #'call-process `("git" nil ,buffer t "clone"
@@ -48,7 +48,7 @@
   (unless (require 'elpaca-autoloads nil t)
     (require 'elpaca)
     (elpaca-generate-autoloads "elpaca" repo)
-    (load "./elpaca-autoloads")))
+    (let ((load-source-file-function nil)) (load "./elpaca-autoloads"))))
 (add-hook 'after-init-hook #'elpaca-process-queues)
 (elpaca `(,@elpaca-order))
 
@@ -58,15 +58,10 @@
   ;; Enable use-package :ensure support for Elpaca.
   (elpaca-use-package-mode))
 
-(setq native-comp-async-report-warnings-errors nil)
-
 ;; [ Load personal modules ]
-(mapc 'load (file-expand-wildcards  (concat user-emacs-directory "modules/*.el")))
+(mapc 'load (file-expand-wildcards  (concat user-emacs-directory "+*.el")))
 
 ;; [ Personal Appearance Change ]
-
-(use-package ef-themes
-  :ensure t)
 
 (load-theme 'modus-operandi t)
 
@@ -108,7 +103,6 @@
 (save-place-mode 1) 			; save curosr position for every file opened
 (delete-selection-mode 1)		; writes while the is active will overwrite it
 
-(line-number-mode)
 (column-number-mode)
 
 (global-display-line-numbers-mode)
@@ -169,11 +163,11 @@
   (setq aw-scope 'frame
 	aw-background t)
   :bind
-  (("s-w" . #'ace-window)))
+  (("s-w" . #'ace-window)
+   ("<f3>" . #'ace-window)))
 
 (use-package transpose-frame :ensure t)
 (use-package imenu-list :ensure t)
-
 
 (use-package paredit
   :ensure t
@@ -186,16 +180,8 @@
   :init
   (minions-mode))
 
-(use-package sml-mode :ensure t)
-
 (use-package markdown-mode
   :ensure t
   :hook
   (markdown-mode . visual-line-mode))
-
-(use-package expand-region
-  :ensure t
-  :bind
-  (("C-=" . #'er/expand-region)))
-
 

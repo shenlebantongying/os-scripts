@@ -6,7 +6,7 @@
 ~/.vimrc
 ~/.sbclrc
 ~/.newsboat/config
-~/.newsboat/urls"
+~/.newsboat/urls
 ~/.config/ranger/rc.conf
 ~/.config/ranger/rifle.conf
 ~/.config/ranger/scope.sh
@@ -15,14 +15,9 @@
 ~/.config/sublime-text/Packages/User/Terminus.sublime-settings
 
 ## Emacs
-#~/.doom.d/**/*.el
-#~/.doom.d/**/*.org
-#~/.doom.d/templates
-#~/.spacemacs.d/*.el
-# new age!
 ~/.emacs.d/init.el
 ~/.emacs.d/early-init.el
-~/.emacs.d/modules/*.el
+~/.emacs.d/+*.el
 ~/.emacs.d/snippets/**/*
 ~/.emacs.d/spell-personal.txt
 

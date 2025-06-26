@@ -75,5 +75,6 @@ if status is-interactive
 
     abbr -a -- jl 'julia --banner=no'
     abbr -a -- R 'R -q'
-
+    abbr -a -- jupy-to-py 'jupytext --to py:percent --opt comment_magics=false'
+    abbr -a -- py-to-jupy 'jupytext --to notebook'
 end
