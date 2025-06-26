@@ -3,13 +3,9 @@
 ~/.bash_profile
 ~/.tmux.conf
 ~/.npmrc
-~/.vimrc
 ~/.sbclrc
 ~/.newsboat/config
 ~/.newsboat/urls
-~/.config/ranger/rc.conf
-~/.config/ranger/rifle.conf
-~/.config/ranger/scope.sh
 ~/.config/sublime-text/Packages/User/Preferences.sublime-settings
 ~/.config/sublime-text/Packages/User/Package Control.sublime-settings
 ~/.config/sublime-text/Packages/User/Terminus.sublime-settings
@@ -26,10 +22,6 @@
 ~/.config/kak/kakrc
 ~/.config/helix/config.toml
 ~/.config/helix/themes/*
-
-#coqide
-~/.config/coq/coqiderc
-~/.config/coq/coqide.keys
 
 #wezterm
 ~/.config/wezterm/wezterm.lua
@@ -54,9 +46,6 @@
 
 ~/Library/Scripts/*
 ~/Library/Script Libraries/*
-
-#sway
-~/.config/sway/*
 
 #latex
 ~/.latexmkrc
