@@ -1,6 +1,6 @@
 {
 	"font_size": 12,
-	"font_face": "Hack",
+	"font_face": "Jetbrains Mono",
 
 	// speed
 	"hardware_acceleration": "opengl",
@@ -13,8 +13,10 @@
 	
 	//misc
 	"remember_workspace": false,
-
-
+	"hot_exit" : "only_on_quit",
+	"close_windows_when_empty": true,
+	"always_show_minimap_viewport": true,
+	
 	"added_words":
 	[
 		"python3"

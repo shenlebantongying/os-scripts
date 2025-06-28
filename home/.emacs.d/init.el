@@ -1,187 +1,177 @@
 ;; -*- lexical-binding: t -*-
 
-;; [ Globally critical things ]
-(defconst IS-MAC     (eq system-type 'darwin))
-(defconst IS-LINUX   (eq system-type 'gnu/linux))
+
+;; [ Global ]
+(defconst IS-MAC   (eq system-type 'darwin))
+(defconst IS-LINUX (eq system-type 'gnu/linux))
 
-(when IS-MAC
-  (dolist (dir '("/Applications/Racket v8.15/bin/"
-                 "/opt/homebrew/bin/"
-		 "/Library/TeX/texbin/"
-		 "/Users/slbtty/.opam/5.3.0/bin/"
-		 "/usr/local/smlnj/bin/"))
-    (add-to-list 'exec-path dir)))
+(cond
+ (IS-MAC (setopt ns-right-command-modifier 'control
+                 mac-function-modifier 'hyper)
 
-;; [ elpaca and use-package ]
-(defvar elpaca-installer-version 0.11)
-(defvar elpaca-directory (expand-file-name "elpaca/" user-emacs-directory))
-(defvar elpaca-builds-directory (expand-file-name "builds/" elpaca-directory))
-(defvar elpaca-repos-directory (expand-file-name "repos/" elpaca-directory))
-(defvar elpaca-order '(elpaca :repo "https://github.com/progfolio/elpaca.git"
-                              :ref nil :depth 1 :inherit ignore
-                              :files (:defaults "elpaca-test.el" (:exclude "extensions"))
-                              :build (:not elpaca--activate-package)))
-(let* ((repo  (expand-file-name "elpaca/" elpaca-repos-directory))
-       (build (expand-file-name "elpaca/" elpaca-builds-directory))
-       (order (cdr elpaca-order))
-       (default-directory repo))
-  (add-to-list 'load-path (if (file-exists-p build) build repo))
-  (unless (file-exists-p repo)
-    (make-directory repo t)
-    (when (<= emacs-major-version 28) (require 'subr-x))
-    (condition-case-unless-debug err
-        (if-let* ((buffer (pop-to-buffer-same-window "*elpaca-bootstrap*"))
-                  ((zerop (apply #'call-process `("git" nil ,buffer t "clone"
-                                                  ,@(when-let* ((depth (plist-get order :depth)))
-                                                      (list (format "--depth=%d" depth) "--no-single-branch"))
-                                                  ,(plist-get order :repo) ,repo))))
-                  ((zerop (call-process "git" nil buffer t "checkout"
-                                        (or (plist-get order :ref) "--"))))
-                  (emacs (concat invocation-directory invocation-name))
-                  ((zerop (call-process emacs nil buffer nil "-Q" "-L" "." "--batch"
-                                        "--eval" "(byte-recompile-directory \".\" 0 'force)")))
-                  ((require 'elpaca))
-                  ((elpaca-generate-autoloads "elpaca" repo)))
-            (progn (message "%s" (buffer-string)) (kill-buffer buffer))
-          (error "%s" (with-current-buffer buffer (buffer-string))))
-      ((error) (warn "%s" err) (delete-directory repo 'recursive))))
-  (unless (require 'elpaca-autoloads nil t)
-    (require 'elpaca)
-    (elpaca-generate-autoloads "elpaca" repo)
-    (let ((load-source-file-function nil)) (load "./elpaca-autoloads"))))
-(add-hook 'after-init-hook #'elpaca-process-queues)
-(elpaca `(,@elpaca-order))
+         (set-face-attribute 'default nil :font "SF Mono" :height 125)
 
-;;
-
-(elpaca elpaca-use-package
-  ;; Enable use-package :ensure support for Elpaca.
-  (elpaca-use-package-mode))
-
-;; [ Load personal modules ]
-(mapc 'load (file-expand-wildcards  (concat user-emacs-directory "+*.el")))
-
-;; [ Personal Appearance Change ]
-
-(load-theme 'modus-operandi t)
-
-(setq-default frame-title-format "%f")
-
-(tool-bar-mode -1)
-(menu-bar-mode)
-(set-scroll-bar-mode 'left) 
-
-(setq-default line-spacing 0)
-
-(cond 
- (IS-MAC
-  (set-face-attribute 'default nil :font "SF Mono" :height 130)
-  (setq mac-function-modifier 'hyper))
+         (dolist (dir '("/Applications/Racket v8.15/bin/"
+                        "/opt/homebrew/bin/"
+                        "/Library/TeX/texbin/"
+                        "/Users/slbtty/.opam/5.3.0/bin/"
+                        "/usr/local/smlnj/bin/"))
+           (add-to-list 'exec-path dir)))
  (IS-LINUX
-  (set-face-attribute 'default nil :font "IntelOne Mono" :height 100))
+  (set-face-attribute 'default nil :font "Cascadia Mono" :height 110)))
+
+
+;; [ package manger slop + scripts ]
+
+(mapc (lambda (n) (load (expand-file-name n user-emacs-directory)))
+      '("+pkg-mgr-slop.el"
+        "+progn.el"))
+
+
+;; [ Fix default Emacs ]
+
+(load-theme 'modus-operandi-tritanopia)
+
+(setq-default
+ frame-title-format "%f"
+ line-spacing 0
+ compile-command ""
+ truncate-lines t
+ indent-tabs-mode nil
+ tab-width 4
  )
 
-;; [ Personal Functionality chagne ]
 
-(setq make-backup-files nil)
+(setopt
+ initial-scratch-message nil
+ inhibit-startup-screen t
 
-(setq inhibit-startup-screen t)
-(setq initial-scratch-message nil)
+ make-backup-files nil
+ vc-follow-symlinks t
+ switch-to-buffer-obey-display-actions t
+ )
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-(setq vc-follow-symlinks t)
+
+;; [ Modes ]
 
-
-(use-package recentf
-  :ensure nil
-  :hook (after-init . recentf-mode))
-
-(set-default 'truncate-lines t)
-(blink-cursor-mode 0)
-
-(save-place-mode 1) 			; save curosr position for every file opened
-(delete-selection-mode 1)		; writes while the is active will overwrite it
-
-(column-number-mode)
+;; built-in
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(menu-bar-mode -1)
+(blink-cursor-mode -1)
 
 (global-display-line-numbers-mode)
+
+(save-place-mode)
+(savehist-mode)
+(recentf-mode)
 (global-auto-revert-mode)
+(which-key-mode)
 
-;; isearch
+(delete-selection-mode)
 
-(use-package isearch
-  :ensure nil
-  :bind (:map isearch-mode-map
-              ([remap isearch-delete-char] . isearch-del-char))
+(editorconfig-mode)
+
+(use-package ansi-color :ensure nil :hook (compilation-filter . ansi-color-compilation-filter)) 
+
+;; external
+
+(use-package jinx :init (global-jinx-mode))
+(use-package minions :init (minions-mode))
+(use-package zoom :init (zoom-mode))
+
+(use-package paredit :hook (scheme-mode . enable-paredit-mode))
+(use-package markdown-mode :hook (markdown-mode . visual-line-mode))
+
+(use-package hl-todo
+  :hook (prog-mode . hl-todo-mode)
   :custom
-  (isearch-lazy-count t)
-  (lazy-count-prefix-format "%s/%s "))
+  (hl-todo-keyword-faces
+   `(("TODO" warning bold)
+     ("FIXME" error bold)
+     ("HACK" font-lock-constant-face bold)
+     ("NOTE" success bold)
+     ("BUG" error bold))))
 
-;; SpeedBar
-(custom-set-variables
- '(speedbar-show-unknown-files t)
- )
+
+;; [ Minad ]
 
-;; [ Small Packages ]
-(use-package corfu
-  :ensure t
-  :init
-  (setq corfu-auto t
-	corfu-min-width 40
-	corfu-quit-no-match 'separator)
-  (global-corfu-mode))
+;; icomplete-mode is very similar
+(use-package vertico :init (vertico-mode)) 
+(use-package marginalia :init (marginalia-mode))
+
+(use-package corfu :init (global-corfu-mode)
+  :custom
+  (corfu-auto t)
+  (corfu-quit-no-match 'separator))
 
 (use-package cape
-  :ensure t
-  :init
+  :config
   (add-to-list 'completion-at-point-functions #'cape-file)
-  (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   (add-to-list 'completion-at-point-functions #'cape-keyword)
   )
 
-(use-package hl-todo
-  :ensure t
-  :hook (prog-mode . hl-todo-mode)
-  :config
-  (setq hl-todo-highlight-punctuation ":"
-        hl-todo-keyword-faces
-        `(
-          ("TODO" warning bold)
-          ("FIXME" error bold)
-          ("HACK" font-lock-constant-face bold)
-          ("NOTE" success bold)
-          ("BUG" error bold)
-          ("XXX" font-lock-constant-face bold))))
+(use-package orderless
+  :custom
+  (completion-styles '(orderless basic))
+  (completion-category-overrides '((file (styles partial-completion)))))
 
-(use-package ace-window
-  :ensure t
-  :defer t
-  :init
-  (global-set-key [remap other-window] #'ace-window)
-  :config
-  (setq aw-scope 'frame
-	aw-background t)
-  :bind
-  (("s-w" . #'ace-window)
-   ("<f3>" . #'ace-window)))
 
-(use-package transpose-frame :ensure t)
-(use-package imenu-list :ensure t)
+(use-package consult
+  :bind (("s-r" . consult-recent-file)
+         ("s-f" . consult-line)
+         ("s-b" . consult-buffer)))
 
-(use-package paredit
-  :ensure t
-  :init
-  (add-hook 'scheme-mode-hook #'enable-paredit-mode)
-  )
+
+;; [ Packages ]
 
-(use-package minions
-  :ensure t
-  :init
-  (minions-mode))
+(use-package move-text :init (move-text-default-bindings))
+(use-package transpose-frame)
 
-(use-package markdown-mode
-  :ensure t
-  :hook
-  (markdown-mode . visual-line-mode))
+
+;; [ Key Binds ]
+
+(mapc
+ #'keymap-global-unset
+ '(
+   "C-<mouse-4>"
+   "C-<mouse-5>"
+   "C-<wheel-down>"
+   "C-<wheel-up>"
+   "C-z"
+   "M-z"
+   ))
+
+;; M-x describe-personal-keybindings
+(bind-keys
+ ("C-S-p" . execute-extended-command)
+ ("C-<tab>" . tab-to-tab-stop)
+
+ ("s-x" . kill-region)
+ ("s-c" . kill-ring-save)
+ ("s-v" . yank)
+ ("s-z" . undo)
+ ("s-Z" . undo-redo)
+ ("s-k" . kill-buffer-and-window)
+ ("s-n" . make-frame)
+ ("s-d" . dired)
+ ("s-[" . previous-buffer)
+ ("s-]" . next-buffer)
+
+ ("<f1>" . delete-other-windows)
+ ("<f2>" . execute-extended-command)
+ ("<f3>" . other-window)
+ ("<f4>" . split-window-right)
+ ("<f5>" . compile)
+ ("<f6>" . +invoke-compile-selection)
+
+ ("C-<backspace>" . +kill-to-linebegin)
+ ("C-`" . +terminal-here)
+ )
+
+(bind-keys
+ :map minibuffer-local-map
+ ("M-x" . exit-minibuffer))
 

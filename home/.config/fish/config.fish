@@ -7,8 +7,11 @@ if status is-interactive
             # path settings are within .bashrc
             set -gx DEBUGINFOD_URLS "https://debuginfod.archlinux.org"
 
-            set -gx EDITOR hx
+            set -gx EDITOR subl
             set -gx SYSTEMD_PAGER cat
+
+            set -gx DOTNET_ROOT $HOME/.dotnet
+
         case Darwin
 
             # M1 homebrew, we want to override some brew path
@@ -28,9 +31,8 @@ if status is-interactive
                 $HOME/.cargo/bin \
                 $HOME/.emacs.d/bin \
                 $HOME/npm/bin \
-                /usr/local/smlnj/bin \
-                # Scala
-                "$HOME/Library/Application Support/Coursier/bin" \
+                # dotnet
+                $HOME/.dotnet/tools \
                 # shadowing system built-ins
                 /opt/homebrew/opt/llvm/bin \
                 # make GNU great again
@@ -38,7 +40,6 @@ if status is-interactive
                 /opt/homebrew/opt/coreutils/libexec/gnubin \
                 /opt/homebrew/opt/bison/bin \
                 /opt/homebrew/opt/libxslt/bin \
-                /opt/homebrew/opt/make/libexec/gnubin \
                 /opt/homebrew/opt/grep/libexec/gnubin \
                 # TCL/TK
                 /opt/homebrew/opt/tcl-tk/bin/ \
