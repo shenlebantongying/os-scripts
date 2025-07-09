@@ -20,6 +20,7 @@ if status is-interactive
             end
 
             set PATH \
+                $HOME/opt/bin \
                 $HOME/.deno/bin \
                 $HOME/.ghcup/bin \
                 $HOME/.cabal/bin \
@@ -38,6 +39,7 @@ if status is-interactive
                 # make GNU great again
                 /opt/homebrew/opt/findutils/libexec/gnubin \
                 /opt/homebrew/opt/coreutils/libexec/gnubin \
+                /opt/homebrew/opt/make/libexec/gnubin \
                 /opt/homebrew/opt/bison/bin \
                 /opt/homebrew/opt/libxslt/bin \
                 /opt/homebrew/opt/grep/libexec/gnubin \
@@ -50,11 +52,11 @@ if status is-interactive
 
             # homebrew M1 mac specific completion
             if test -d (brew --prefix)"/share/fish/completions"
-                set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/completions
+                set -p fish_complete_path (brew --prefix)/share/fish/completions
             end
 
             if test -d (brew --prefix)"/share/fish/vendor_completions.d"
-                set -gx fish_complete_path $fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
+                set -p fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
             end
 
             # special paths
@@ -78,4 +80,6 @@ if status is-interactive
     abbr -a -- R 'R -q'
     abbr -a -- jupy-to-py 'jupytext --to py:percent --opt comment_magics=false'
     abbr -a -- py-to-jupy 'jupytext --to notebook'
+
+    abbr -a -- git-del-all-other-branches 'git branch | rg -v (git branch --show-current) | xargs git branch -D'
 end

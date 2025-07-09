@@ -10,7 +10,7 @@
 ~/.config/sublime-text/Packages/User/Package Control.sublime-settings
 ~/.config/sublime-text/Packages/User/Terminus.sublime-settings
 
-## Emacs
+# Emacs
 ~/.emacs.d/init.el
 ~/.emacs.d/early-init.el
 ~/.emacs.d/+*.el
@@ -21,7 +21,7 @@
 ~/.config/helix/config.toml
 ~/.config/helix/themes/*
 
-#wezterm
+# wezterm
 ~/.config/wezterm/wezterm.lua
 
 #fish
@@ -33,17 +33,22 @@
 ~/.guile
 ~/.taskrc
 
-#kate
+# kate
 ~/.local/share/org.kde.syntax-highlighting/themes/*.theme
 
-#kitty
+# kitty
 ~/.config/kitty/kitty.conf
 
-#ocaml
+# ocaml
 ~/.config/utop/init.ml
 
 ~/Library/Scripts/*
 ~/Library/Script Libraries/*
 
-#latex
+# latex
 ~/.latexmkrc
+
+# Wayland
+~/.config/niri/config.kdl
+~/.config/mako/config
+

@@ -30,7 +30,7 @@
 
 ;; [ Fix default Emacs ]
 
-(load-theme 'modus-operandi-tritanopia)
+(load-theme 'modus-operandi-tinted)
 
 (setq-default
  frame-title-format "%f"
@@ -54,12 +54,12 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 
-;; [ Modes ]
+;; [ Universal Modes ]
 
 ;; built-in
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-(menu-bar-mode -1)
+(when IS-LINUX (menu-bar-mode -1))
 (blink-cursor-mode -1)
 
 (global-display-line-numbers-mode)
@@ -82,16 +82,13 @@
 (use-package minions :init (minions-mode))
 (use-package zoom :init (zoom-mode))
 
-(use-package paredit :hook (scheme-mode . enable-paredit-mode))
-(use-package markdown-mode :hook (markdown-mode . visual-line-mode))
-
 (use-package hl-todo
   :hook (prog-mode . hl-todo-mode)
   :custom
   (hl-todo-keyword-faces
-   `(("TODO" warning bold)
+   `(("TODO" font-lock-constant-face bold)
      ("FIXME" error bold)
-     ("HACK" font-lock-constant-face bold)
+     ("HACK" warning bold)
      ("NOTE" success bold)
      ("BUG" error bold))))
 
@@ -125,10 +122,30 @@
          ("s-b" . consult-buffer)))
 
 
-;; [ Packages ]
+;; Packages
 
 (use-package move-text :init (move-text-default-bindings))
 (use-package transpose-frame)
+
+
+;; [ Major/Language Modes ]
+(use-package paredit :hook (scheme-mode . enable-paredit-mode))
+(use-package markdown-mode :hook (markdown-mode . visual-line-mode))
+(use-package lua-mode)
+(use-package transient)
+(use-package magit)
+
+(use-package kdl-mode)
+
+(setopt treesit-language-source-alist
+    '((https://github.com/tree-sitter-grammars/tree-sitter-kdl))
+)
+
+(use-package auctex)
+
+(when IS-MAC
+  (add-to-list 'load-path "/opt/homebrew/share/emacs/site-lisp/asymptote")
+  (require 'asy-mode))
 
 
 ;; [ Key Binds ]
@@ -174,4 +191,5 @@
 (bind-keys
  :map minibuffer-local-map
  ("M-x" . exit-minibuffer))
+
 

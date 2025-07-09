@@ -1,0 +1,173 @@
+// https://github.com/YaLTeR/niri/wiki/Configuration
+
+input {
+    keyboard {
+        xkb {
+            layout "us"
+            variant "altgr-intl"
+            options "compose:rctrl"
+        }
+    }
+}
+
+layout {
+    gaps 0
+    always-center-single-column
+
+    preset-column-widths {
+        proportion 0.3333
+        proportion 0.6667
+    }
+
+    default-column-width {
+        proportion 0.3333
+    }
+
+    preset-window-heights {
+        proportion 0.3333
+        proportion 0.6667
+    }
+
+    focus-ring {
+        off
+    }
+
+    border {
+        width 2
+    }
+
+    tab-indicator {
+        place-within-column
+        position "top"
+        gap 0
+        width 4
+        length total-proportion=1.0
+        urgent-color "red"
+        active-color "white"
+        inactive-color "black"
+    }
+}
+
+window-rule {
+    geometry-corner-radius 2
+    clip-to-geometry true
+}
+
+overview {
+    zoom 0.5
+}
+
+screenshot-path "~/Pictures/Screenshots/%Y-%m-%d %H-%M-%S.png"
+
+animations {
+    off
+}
+
+spawn-at-startup "mako"
+
+binds {
+    // Functions
+
+    Mod+Shift+Slash { show-hotkey-overlay; }
+    
+    Mod+E hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
+    Mod+T hotkey-overlay-title="Get Time" { spawn "bash" "-c" "notify-send \"`date`\"" ; }
+    
+    Mod+O repeat=false { toggle-overview; }
+    Mod+P {screenshot;}
+    Mod+Q { close-window; }
+    Mod+G { toggle-column-tabbed-display;}
+
+    Mod+Space { switch-layout "next"; }
+    Ctrl+Alt+Delete { quit; }
+
+
+    // Focus
+    
+    Mod+Left  { focus-column-left; }
+    Mod+Down  { focus-window-down; }
+    Mod+Up    { focus-window-up; }
+    Mod+Right { focus-column-right; }
+
+    Mod+A { focus-column-left; }
+    Mod+S { focus-window-down; }
+    Mod+W { focus-window-up; }
+    Mod+D { focus-column-right; }
+    
+    Mod+Home { focus-column-first; }
+    Mod+End  { focus-column-last; }
+
+    Mod+WheelScrollDown  cooldown-ms=150 { focus-column-right; }
+    Mod+WheelScrollUp    cooldown-ms=150 { focus-column-left; }
+    Mod+WheelScrollRight cooldown-ms=150 { focus-window-up; }
+    Mod+WheelScrollLeft  cooldown-ms=150 { focus-window-down; }
+
+    // Move & Resize
+
+    Mod+C { center-column; }
+
+    Mod+R { switch-preset-column-width; }
+    Mod+Shift+R { switch-preset-window-height; }
+    Mod+Ctrl+R { reset-window-height; }
+
+    Mod+Ctrl+Left  { move-column-left; }
+    Mod+Ctrl+Down  { move-window-down; }
+    Mod+Ctrl+Up    { move-window-up; }
+    Mod+Ctrl+Right { move-column-right; }
+
+    
+    Mod+Ctrl+A  { move-column-left; }
+    Mod+Ctrl+S  { move-window-down; }
+    Mod+Ctrl+W    { move-window-up; }
+    Mod+Ctrl+D { move-column-right; }
+    
+
+    Mod+Ctrl+WheelScrollDown { move-column-right; }
+    Mod+Ctrl+WheelScrollUp  { move-column-left; }
+
+    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+
+    Mod+Ctrl+Z  { consume-or-expel-window-left; }
+    Mod+Ctrl+X { consume-or-expel-window-right; }
+    
+    Mod+Ctrl+F { maximize-column; }
+    Mod+F { expand-column-to-available-width; }
+    Mod+Shift+F { fullscreen-window; }
+
+    Mod+Minus { set-column-width "-10%"; }
+    Mod+Equal { set-column-width "+10%"; }
+
+    Mod+Shift+Minus { set-window-height "-10%"; }
+    Mod+Shift+Equal { set-window-height "+10%"; }
+
+    Mod+V       { toggle-window-floating; }
+    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+
+    // Workspace
+    Mod+Page_Down      { focus-workspace-down; }
+    Mod+Page_Up        { focus-workspace-up; }
+    Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
+    Mod+Ctrl+Page_Up   { move-column-to-workspace-up; }
+
+    Mod+Shift+Page_Down { move-workspace-down; }
+    Mod+Shift+Page_Up   { move-workspace-up; }
+
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+Ctrl+1 { move-column-to-workspace 1; }
+    Mod+Ctrl+2 { move-column-to-workspace 2; }
+    Mod+Ctrl+3 { move-column-to-workspace 3; }
+    Mod+Ctrl+4 { move-column-to-workspace 4; }
+
+    Mod+Tab { focus-workspace-previous; }
+
+}
+
+environment {
+    ELECTRON_OZONE_PLATFORM_HINT "auto"
+}
+
+prefer-no-csd
