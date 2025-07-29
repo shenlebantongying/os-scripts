@@ -3,6 +3,7 @@
 
 ;; Text Editing
 
+;;;###autoload
 (defun +cut-to-clipboard ()
   "replace C-w that doesn't do more."
   (interactive)
@@ -10,12 +11,14 @@
       (kill-new (delete-and-extract-region (region-beginning) (region-end)))
     (message "no region.")))
 
+;;;###autoload
 (defun +kill-to-linebegin ()
   "kill from point to beginning of line."
   (interactive)
   (kill-line 0))
 
-(defun +goto-match-paren (arg)
+;;;###autoload
+(defun +goto-match-paren ()
   "Go to the matching  if on (){}[], similar to vi style of % "
   (interactive "p")
   ;; first, check for "outside of bracket" positions expected by forward-sexp, etc.
@@ -29,6 +32,7 @@
 
 ;; Act on section / thing at here.
 
+;;;###autoload
 (defun +shell-command-on-region-or-line ()
   "Run selected text or use the current line."
   (interactive)
@@ -37,18 +41,20 @@
        (buffer-substring (region-beginning) (region-end))
      (thing-at-point 'line t))))
 
-
+;;;###autoload
 (defun +invoke-compile-with-selection ()
   "run compile commands"
   (interactive)
   (if (use-region-p) (compile (buffer-substring (region-beginning) (region-end)))
     (message "m: no thing was selected.")))
 
+;;;###autoload
 (defun +consult-word-here ()
   "Use current word as initial term"
   (interactive)
   (consult-line (current-word) nil))
 
+;;;###autoload
 (defun +merriam-webster-dict-at-point ()
   "Search the word at point"
   (interactive)
@@ -57,12 +63,14 @@
 
 ;; Acts on Buffer
 
+;;;###autoload
 (defun +reload-file ()
   "reload file from the disk (not auto-save) without confirm"
   (interactive)
   (revert-buffer t t t)
   (message "%s" "File reloaded."))
 
+;;;###autoload
 (defun +rename-file-and-buffer ()
   "Rename current buffer and if the buffer is visiting a file, rename it too."
   (interactive)
@@ -78,6 +86,7 @@
           (rename-file filename new-name t)
           (set-visited-file-name new-name t t)))))))
 
+;;;###autoload
 (defun +terminal-here ()
   "Open terminal at the path of current file"
   (interactive)
@@ -91,6 +100,7 @@
        (concat "/usr/bin/kitty -1 -d " pwd))))
    nil 0))
 
+;;;###autoload
 (defun +open-here-in-external-file-manager ()
   "Open file in external program"
   (interactive)
@@ -99,6 +109,7 @@
 
 ;; Utility
 
+;;;###autoload
 (defun +xah-open-in-external-app (&optional Fname)
   "Open the current file or dired marked files in external app.
 URL `http://xahlee.info/emacs/emacs/emacs_dired_open_file_in_ext_apps.html'"
@@ -124,6 +135,7 @@ URL `http://xahlee.info/emacs/emacs/emacs_dired_open_file_in_ext_apps.html'"
                                       (shell-quote-argument xfpath))))
               xfileList))))))
 
+;;;###autoload
 (defun +kill-process-at-point ()
   (interactive)
   (let ((process (get-text-property (point) 'tabulated-list-id)))
@@ -133,3 +145,5 @@ URL `http://xahlee.info/emacs/emacs/emacs_dired_open_file_in_ext_apps.html'"
            (revert-buffer))
           (t
            (error "no process at point!")))))
+
+(provide '+progn)

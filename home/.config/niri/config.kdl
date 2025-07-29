@@ -16,6 +16,7 @@ layout {
 
     preset-column-widths {
         proportion 0.3333
+        proportion 0.5
         proportion 0.6667
     }
 
@@ -24,7 +25,7 @@ layout {
     }
 
     preset-window-heights {
-        proportion 0.3333
+        proportion 0.3
         proportion 0.6667
     }
 

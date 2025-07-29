@@ -3,8 +3,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-## Add kdesrc-build to PATH
-export PATH="$HOME/kde/src/kdesrc-build:$PATH"
+. "$HOME/.cargo/env"
 
 if [[ $(uname) != "Darwin" ]]
 then 
@@ -14,4 +13,3 @@ then
 	fi
 fi
 
-. "$HOME/.cargo/env"

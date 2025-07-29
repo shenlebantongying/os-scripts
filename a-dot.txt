@@ -13,7 +13,7 @@
 # Emacs
 ~/.emacs.d/init.el
 ~/.emacs.d/early-init.el
-~/.emacs.d/+*.el
+~/.emacs.d/+/*.el
 
 ~/.config/nvim/*.lua
 

@@ -1,3 +1,37 @@
+switch (uname)
+    case Darwin
+        eval (/opt/homebrew/bin/brew shellenv)
+
+        set PATH \
+            $HOME/opt/bin \
+            $HOME/.deno/bin \
+            $HOME/.ghcup/bin \
+            $HOME/.cabal/bin \
+            $HOME/.local/bin \
+            $HOME/bin \
+            $HOME/scripts \
+            $HOME/.traco \
+            $HOME/.rbenv/bin \
+            $HOME/.cargo/bin \
+            $HOME/.emacs.d/bin \
+            $HOME/npm/bin \
+            # dotnet
+            $HOME/.dotnet/tools \
+            # shadowing system built-ins
+            /opt/homebrew/opt/llvm/bin \
+            # make GNU great again
+            /opt/homebrew/opt/findutils/libexec/gnubin \
+            /opt/homebrew/opt/coreutils/libexec/gnubin \
+            /opt/homebrew/opt/make/libexec/gnubin \
+            /opt/homebrew/opt/bison/bin \
+            /opt/homebrew/opt/libxslt/bin \
+            /opt/homebrew/opt/grep/libexec/gnubin \
+            # Ruby
+            /opt/homebrew/opt/ruby/bin \
+            $PATH
+end
+
+
 if status is-interactive
 
     set -g CDPATH "~"
@@ -12,44 +46,11 @@ if status is-interactive
 
             set -gx DOTNET_ROOT $HOME/.dotnet
 
-        case Darwin
-
-            # M1 homebrew, we want to override some brew path
-            if test arm = (uname -p)
-                eval (/opt/homebrew/bin/brew shellenv)
-            end
-
             set PATH \
-                $HOME/opt/bin \
-                $HOME/.deno/bin \
-                $HOME/.ghcup/bin \
-                $HOME/.cabal/bin \
-                $HOME/.local/bin \
-                $HOME/bin \
-                $HOME/scripts \
-                $HOME/.traco \
-                $HOME/.rbenv/bin \
-                $HOME/.cargo/bin \
-                $HOME/.emacs.d/bin \
-                $HOME/npm/bin \
-                # dotnet
-                $HOME/.dotnet/tools \
-                # shadowing system built-ins
-                /opt/homebrew/opt/llvm/bin \
-                # make GNU great again
-                /opt/homebrew/opt/findutils/libexec/gnubin \
-                /opt/homebrew/opt/coreutils/libexec/gnubin \
-                /opt/homebrew/opt/make/libexec/gnubin \
-                /opt/homebrew/opt/bison/bin \
-                /opt/homebrew/opt/libxslt/bin \
-                /opt/homebrew/opt/grep/libexec/gnubin \
-                # TCL/TK
-                /opt/homebrew/opt/tcl-tk/bin/ \
-                # Ruby
-                /opt/homebrew/lib/ruby/gems/3.3.0/bin \
-                /opt/homebrew/opt/ruby/bin \
+                /usr/local/Wolfram/Wolfram/14.2/Executables \
                 $PATH
 
+        case Darwin
             # homebrew M1 mac specific completion
             if test -d (brew --prefix)"/share/fish/completions"
                 set -p fish_complete_path (brew --prefix)/share/fish/completions
@@ -62,10 +63,6 @@ if status is-interactive
             # special paths
             if type -q opam
                 eval (opam env --shell=fish)
-            end
-
-            if type -q groovy
-                set -gx GROOVY_HOME /opt/homebrew/opt/groovy/libexec
             end
 
         case '*'

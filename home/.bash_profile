@@ -11,11 +11,12 @@ PATH=\
 :~/bin\
 :~/s\
 :~/.dotnet\
-:~/.dotnet/tools\
-:~/.cabal/bin\
+:~/.Dotnet/Tools\
+:~/.Cabal/bin\
 :~/.rbenv/bin\
 :~/.cargo/bin\
 :~/.emacs.d/bin\
+:/usr/local/Wolfram/14.2/Executables/\
 :$PATH
 
 if command -v opam &> /dev/null
@@ -31,6 +32,3 @@ fi
 if [ -f ~/.bashrc ]; then
     source ~/.bashrc
 fi
-
-if [ -e /home/slbtty/.nix-profile/etc/profile.d/nix.sh ]; then . /home/slbtty/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-. "$HOME/.cargo/env"
