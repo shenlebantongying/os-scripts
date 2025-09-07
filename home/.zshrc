@@ -44,4 +44,3 @@ COMPLETION_WAITING_DOTS="true"
 # User configuration
 
 cdpath=($HOME / ..)
-if [ -e /home/slbtty/.nix-profile/etc/profile.d/nix.sh ]; then . /home/slbtty/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

@@ -1,0 +1,35 @@
+// -*- mode: js-json -*-
+{
+    "modules-left": [
+        "niri/workspaces",
+
+    ],
+    "modules-center": [
+        "niri/window"
+    ],
+    "modules-right": [
+        "tray",
+        "pulseaudio",
+        "backlight",
+        "network",
+        "battery",
+        "clock"
+    ],
+    "tray": {
+        "spacing": 10,
+    },
+    "backlight": {
+        "format": "{percent}% "
+    },
+    "pulseaudio": {
+        "format": "{volume}% ",
+        "on-click": "pavucontrol"
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-icons": ["", "", "", "", ""]
+    },
+}

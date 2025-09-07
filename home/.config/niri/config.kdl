@@ -1,4 +1,8 @@
-// https://github.com/YaLTeR/niri/wiki/Configuration
+// https://yalter.github.io/niri/
+
+spawn-at-startup "mako"
+spawn-at-startup "fcitx5"
+spawn-at-startup "waybar"
 
 input {
     keyboard {
@@ -7,6 +11,12 @@ input {
             variant "altgr-intl"
             options "compose:rctrl"
         }
+    }
+
+    touchpad {
+        tap
+        accel-speed 0.6
+        natural-scroll
     }
 }
 
@@ -25,7 +35,7 @@ layout {
     }
 
     preset-window-heights {
-        proportion 0.3
+        proportion 0.3333
         proportion 0.6667
     }
 
@@ -61,19 +71,18 @@ overview {
 screenshot-path "~/Pictures/Screenshots/%Y-%m-%d %H-%M-%S.png"
 
 animations {
-    off
+    slowdown 0.3
 }
-
-spawn-at-startup "mako"
 
 binds {
     // Functions
 
     Mod+Shift+Slash { show-hotkey-overlay; }
-    
+
     Mod+E hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
-    Mod+T hotkey-overlay-title="Get Time" { spawn "bash" "-c" "notify-send \"`date`\"" ; }
-    
+    Mod+T hotkey-overlay-title="Get Time" { spawn-sh "notify-send \"`date`\"" ; }
+    Mod+0 hotkey-overlay-title="Toggle Waybar" { spawn-sh "killall -SIGUSR1 waybar"; }
+
     Mod+O repeat=false { toggle-overview; }
     Mod+P {screenshot;}
     Mod+Q { close-window; }
@@ -82,9 +91,16 @@ binds {
     Mod+Space { switch-layout "next"; }
     Ctrl+Alt+Delete { quit; }
 
+    XF86AudioRaiseVolume {
+        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05+ & notify-send \"`wpctl get-volume @DEFAULT_AUDIO_SINK@`\""
+    }
+
+    XF86AudioLowerVolume {
+        spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.05- & notify-send \"`wpctl get-volume @DEFAULT_AUDIO_SINK@`\""
+    }
 
     // Focus
-    
+
     Mod+Left  { focus-column-left; }
     Mod+Down  { focus-window-down; }
     Mod+Up    { focus-window-up; }
@@ -94,7 +110,7 @@ binds {
     Mod+S { focus-window-down; }
     Mod+W { focus-window-up; }
     Mod+D { focus-column-right; }
-    
+
     Mod+Home { focus-column-first; }
     Mod+End  { focus-column-last; }
 
@@ -106,7 +122,6 @@ binds {
     // Move & Resize
 
     Mod+C { center-column; }
-
     Mod+R { switch-preset-column-width; }
     Mod+Shift+R { switch-preset-window-height; }
     Mod+Ctrl+R { reset-window-height; }
@@ -116,12 +131,10 @@ binds {
     Mod+Ctrl+Up    { move-window-up; }
     Mod+Ctrl+Right { move-column-right; }
 
-    
     Mod+Ctrl+A  { move-column-left; }
     Mod+Ctrl+S  { move-window-down; }
     Mod+Ctrl+W    { move-window-up; }
     Mod+Ctrl+D { move-column-right; }
-    
 
     Mod+Ctrl+WheelScrollDown { move-column-right; }
     Mod+Ctrl+WheelScrollUp  { move-column-left; }
@@ -131,7 +144,7 @@ binds {
 
     Mod+Ctrl+Z  { consume-or-expel-window-left; }
     Mod+Ctrl+X { consume-or-expel-window-right; }
-    
+
     Mod+Ctrl+F { maximize-column; }
     Mod+F { expand-column-to-available-width; }
     Mod+Shift+F { fullscreen-window; }
@@ -170,5 +183,3 @@ binds {
 environment {
     ELECTRON_OZONE_PLATFORM_HINT "auto"
 }
-
-prefer-no-csd

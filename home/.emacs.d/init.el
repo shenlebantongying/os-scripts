@@ -36,7 +36,7 @@
  truncate-lines t
  indent-tabs-mode nil
  tab-width 4
- require-final-newline t 
+ require-final-newline t
  )
 
 (setopt
@@ -79,7 +79,7 @@
 (savehist-mode)
 
 (use-package uniquify :ensure nil :config (setq uniquify-buffer-name-style 'forward))
-(use-package ansi-color :ensure nil :hook (compilation-filter . ansi-color-compilation-filter)) 
+(use-package ansi-color :ensure nil :hook (compilation-filter . ansi-color-compilation-filter))
 
 ;; external
 
@@ -109,7 +109,7 @@
 
 (use-package vertico :init (vertico-mode)
   :custom
-  (vertico-cycle t)) 
+  (vertico-cycle t))
 (use-package marginalia :init (marginalia-mode))
 (use-package corfu :init (global-corfu-mode)
   :custom
@@ -140,9 +140,19 @@
 (use-package markdown-mode :hook (markdown-mode . visual-line-mode))
 (use-package lua-mode)
 (when IS-LINUX (use-package kdl-mode))
-(use-package auctex)
-(use-package asy-mode :defer t
-  :ensure `(asy-mode :repo ,(cond (IS-MAC  "/opt/homebrew/share/emacs/site-lisp/asymptote") (IS-LINUX "/usr/share/asymptote/"))))
+
+(use-package auctex
+  :ensure (auctex :host github :repo "emacsmirror/auctex" :branch "master"))
+
+(let* ((asy-path
+        (cond
+         (IS-MAC  "/opt/homebrew/share/emacs/site-lisp/asymptote")
+         (IS-LINUX "/usr/share/asymptote/")))
+       (asy-exists (file-directory-p asy-path)))
+  (when asy-exists
+    (use-package asy-mode :defer t
+      :ensure (asy-mode :repo asypath))))
+
 (use-package racket-mode)
 (use-package typst-ts-mode :ensure (:type git :host codeberg :repo "meow_king/typst-ts-mode")
   :config (setq typst-ts-indent-offset 2))
@@ -190,11 +200,10 @@
 
  ("M-z" . zap-up-to-char)
  ("C-x C-b" . ibuffer)
- 
+
  :map minibuffer-local-map
  ("M-x" . exit-minibuffer)
  )
 
 ;;
 (recentf-open-files)
-

@@ -13,6 +13,7 @@
 # Emacs
 ~/.emacs.d/init.el
 ~/.emacs.d/early-init.el
+~/.emacs.d/+pkg-mgr-slop.el
 ~/.emacs.d/+/*.el
 
 ~/.config/nvim/*.lua
@@ -51,4 +52,4 @@
 # Wayland
 ~/.config/niri/config.kdl
 ~/.config/mako/config
-
+~/.config/waybar/config.jsonc
