@@ -15,6 +15,7 @@ switch (uname)
             $HOME/.cargo/bin \
             $HOME/.emacs.d/bin \
             $HOME/npm/bin \
+            $HOME/.julia/bin \
             # dotnet
             $HOME/.dotnet/tools \
             # shadowing system built-ins
