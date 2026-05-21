@@ -28,7 +28,19 @@ git config --global core.pager cat
 
 git config --list
 
-if [[ "$OSTYPE" == "darwin"* ]]; then
-    echo .DS_Store >> ~/.gitignore_global
-    git config --global core.excludesfile ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore_global
+
+
+# signing 
+
+git config --global gpg.format ssh
+git config --global user.signingkey ~/.ssh/id_ed25519.pub
+git config --global gpg.ssh.allowedSignersFile 
+
+fsigners=~/.ssh/allowed_signers
+if ! [ -e "$fsigners" ] ; then
+    touch "$fsigners"
+    echo "$(git config --get user.email) namespaces=\"git\" $(cat ~/.ssh/id_ed25519.pub)" >> $fsigners
 fi
+
+

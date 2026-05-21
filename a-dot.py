@@ -15,7 +15,7 @@ import os
 def get_store_path() -> pathlib.Path:
     match sys.platform:
         case "darwin":
-            return pathlib.Path(os.path.expanduser("~/scripts/home"))
+            return pathlib.Path(os.path.expanduser("~/os-scripts/home"))
         case "linux":
             return pathlib.Path(os.path.expanduser("~/s/home"))
 

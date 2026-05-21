@@ -12,17 +12,11 @@ case `uname` in
             $HOME/.local/bin
             $path
         )
-
-        plugins+=(archlinux)
-
     ;;
     *)
-    echo Path not set, cuz no idea about sys
+    echo No idea about sys
   ;;
 esac
-
-export PATH
-
 
 # zsh itself
 HISTSIZE=10000

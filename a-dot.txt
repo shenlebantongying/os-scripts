@@ -1,16 +1,36 @@
+~/.config/sublime-text/Packages/User/Package Control.sublime-settings
+~/.config/sublime-text/Packages/User/Preferences.sublime-settings
+~/.config/sublime-text/Packages/User/Terminus.sublime-settings
+~/.gitignore_global 
+~/.newsboat/config
+~/.newsboat/urls
+~/.taskrc
+
+
+# Linguistics
+
+~/.config/utop/init.ml
+
+~/.latexmkrc
+
+~/.guile
+
+~/.sbclrc
+
+~/.npmrc
+
+# Shells
+# .zprofile are generally useless and could be empty
 ~/.zshrc
 ~/.bashrc
 ~/.bash_profile
 ~/.tmux.conf
-~/.npmrc
-~/.sbclrc
-~/.newsboat/config
-~/.newsboat/urls
-~/.config/sublime-text/Packages/User/Preferences.sublime-settings
-~/.config/sublime-text/Packages/User/Package Control.sublime-settings
-~/.config/sublime-text/Packages/User/Terminus.sublime-settings
+~/.config/fish/**/*.fish
+~/.config/fish/functions/*.fish
+# TODO: bug -> ** wildcard may not work?
 
-# Emacs
+# Editors
+
 ~/.emacs.d/init.el
 ~/.emacs.d/early-init.el
 ~/.emacs.d/+pkg-mgr-slop.el
@@ -18,36 +38,17 @@
 
 ~/.config/nvim/*.lua
 
-~/.config/kak/kakrc
 ~/.config/helix/config.toml
 ~/.config/helix/themes/*
 
-# wezterm
+# Terminals
 ~/.config/wezterm/wezterm.lua
-
-#fish
-~/.config/fish/**/*.fish
-
-# hammerspoon
-~/.hammerspoon/**/*.lua
-
-~/.guile
-~/.taskrc
-
-# kate
-~/.local/share/org.kde.syntax-highlighting/themes/*.theme
-
-# kitty
 ~/.config/kitty/kitty.conf
 
-# ocaml
-~/.config/utop/init.ml
-
+# macOS
 ~/Library/Scripts/*
 ~/Library/Script Libraries/*
-
-# latex
-~/.latexmkrc
+~/.hammerspoon/**/*.lua
 
 # Wayland
 ~/.config/niri/config.kdl

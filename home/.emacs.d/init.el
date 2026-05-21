@@ -27,6 +27,11 @@
 (mapc (lambda (n) (load (expand-file-name n user-emacs-directory)))
       '("+pkg-mgr-slop.el"))
 
+(elpaca elpaca-use-package (elpaca-use-package-mode))
+(setq use-package-always-ensure t)
+
+(use-package compat) ;; corfu dep
+
 
 ;; [ Fix default Emacs ]
 

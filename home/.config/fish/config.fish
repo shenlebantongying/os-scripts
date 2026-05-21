@@ -10,7 +10,6 @@ switch (uname)
             $HOME/.local/bin \
             $HOME/bin \
             $HOME/scripts \
-            $HOME/.traco \
             $HOME/.rbenv/bin \
             $HOME/.cargo/bin \
             $HOME/.emacs.d/bin \
@@ -30,12 +29,11 @@ switch (uname)
             # Ruby
             /opt/homebrew/opt/ruby/bin \
             $PATH
+    # NOTE: for Linux, the path settings are in bash_profile.
 end
 
 
 if status is-interactive
-
-    set -g CDPATH "~"
 
     switch (uname)
         case Linux
@@ -69,6 +67,8 @@ if status is-interactive
         case '*'
             echo !!!! OS undetectable
     end
+
+    set -g CDPATH "~"
 
     if type -q zoxide
         zoxide init fish | source
