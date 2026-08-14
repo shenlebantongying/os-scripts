@@ -7,15 +7,19 @@
 
 (cond
  (IS-MAC (setopt ns-right-command-modifier 'control
-                 ns-right-option-modifier 'none
+                 ns-right-option-modifier 'none ;; for AltGr
                  mac-function-modifier 'hyper)
+
+         (setenv "ESHELL" "/opt/homebrew/bin/fish")
+
+         (server-start)
 
          (set-face-attribute 'default nil :font "SF Mono" :height 130)
          ;; Note: compile command execute an non-interactive shell. Path here is unrelated.
-         (dolist (dir '("/Applications/Racket v8.15/bin/"
+         (dolist (dir '("/Applications/Racket v9.2/bin/"
                         "/opt/homebrew/bin/"
                         "/Library/TeX/texbin/"
-                        "/Users/slbtty/.opam/5.3.0/bin/"
+                        "/Users/slbtty/.opam/5.5.0/bin/"
                         "/usr/local/smlnj/bin/"))
            (add-to-list 'exec-path dir)))
  (IS-LINUX
@@ -55,7 +59,6 @@
  load-prefer-newer t
  make-backup-files nil
  vc-follow-symlinks t
- visible-bell t
  text-mode-ispell-word-completion nil
  ;; ignore cases
  read-file-name-completion-ignore-case t
@@ -70,7 +73,7 @@
 
 ;; built-in
 (tool-bar-mode -1)
-(scroll-bar-mode -1)
+;(scroll-bar-mode -1)
 (when IS-LINUX (menu-bar-mode -1))
 (blink-cursor-mode -1)
 
@@ -87,6 +90,8 @@
 (use-package ansi-color :ensure nil :hook (compilation-filter . ansi-color-compilation-filter))
 
 ;; external
+
+(use-package mode-line-bell :init (mode-line-bell-mode))
 
 (use-package jinx :init (global-jinx-mode)
   :config
@@ -108,6 +113,7 @@
 (use-package zoom :init (zoom-mode))
 (use-package move-text :init (move-text-default-bindings))
 (use-package transpose-frame)
+(use-package golden-ratio-scroll-screen)
 
 
 ;; [ Minad ]
@@ -151,22 +157,26 @@
 
 (let* ((asy-path
         (cond
-         (IS-MAC  "/opt/homebrew/share/emacs/site-lisp/asymptote")
-         (IS-LINUX "/usr/share/asymptote/")))
-       (asy-exists (file-directory-p asy-path)))
+         (IS-MAC  "/opt/homebrew/share/emacs/site-lisp/asymptote/asy-mode.el")
+         (IS-LINUX "/usr/share/asymptote/asy-mode.el")))
+       (wtf (message asy-path))
+       (asy-exists (file-exists-p asy-path)))
   (when asy-exists
-    (use-package asy-mode :defer t
-      :ensure (asy-mode :repo asypath))))
+    (eval `(use-package asy-mode :defer t
+             :ensure (asy-mode :type file :main ,asy-path)))))
 
+;; Racket
 (use-package racket-mode)
 (use-package typst-ts-mode :ensure (:type git :host codeberg :repo "meow_king/typst-ts-mode")
   :config (setq typst-ts-indent-offset 2))
 
+;; OCaml
+(use-package tuareg :defer t)
+
 
 ;; [ Key Binds ]
 
-(use-package +progn :defer t
-  :ensure (+progn :repo "~/.emacs.d/+/"))
+(use-package mprogn :ensure (mprogn :type file :main "~/.emacs.d/+/mprogn.el" :autoloads t))
 
 (mapc
  #'keymap-global-unset
@@ -193,6 +203,11 @@
  ("s-[" . previous-buffer)
  ("s-]" . next-buffer)
 
+ ("s-1" . +set-frame-size-to-120)
+
+ ("s-<down>" . golden-ratio-scroll-screen-up)
+ ("s-<up>" . golden-ratio-scroll-screen-down)
+
  ("<f1>" . delete-other-windows)
  ("<f2>" . execute-extended-command)
  ("<f3>" . other-window)
@@ -212,3 +227,5 @@
 
 ;;
 (recentf-open-files)
+
+

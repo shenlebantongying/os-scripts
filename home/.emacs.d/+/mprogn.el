@@ -146,4 +146,9 @@ URL `http://xahlee.info/emacs/emacs/emacs_dired_open_file_in_ext_apps.html'"
           (t
            (error "no process at point!")))))
 
-(provide '+progn)
+;;;###autoload
+(defun +set-frame-size-to-120 ()
+  (interactive)
+  (set-frame-width (selected-frame) 120))
+
+(provide 'mprogn)

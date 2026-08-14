@@ -18,6 +18,8 @@ case `uname` in
   ;;
 esac
 
+export PROMPT="%F{magenta}[%~] %F{reset}"
+
 # zsh itself
 HISTSIZE=10000
 SAVEHIST=10000

@@ -3,31 +3,20 @@ switch (uname)
         eval (/opt/homebrew/bin/brew shellenv)
 
         set PATH \
-            $HOME/opt/bin \
-            $HOME/.deno/bin \
-            $HOME/.ghcup/bin \
-            $HOME/.cabal/bin \
-            $HOME/.local/bin \
             $HOME/bin \
-            $HOME/scripts \
-            $HOME/.rbenv/bin \
-            $HOME/.cargo/bin \
-            $HOME/.emacs.d/bin \
-            $HOME/npm/bin \
+            $HOME/opt/bin \
+            $HOME/.local/bin \
+            $HOME/os-scripts \
+            $HOME/.ghcup/bin \
             $HOME/.julia/bin \
+            $HOME/.cargo/bin \
+            /opt/homebrew/opt/rustup/bin \
             # dotnet
             $HOME/.dotnet/tools \
-            # shadowing system built-ins
-            /opt/homebrew/opt/llvm/bin \
             # make GNU great again
             /opt/homebrew/opt/findutils/libexec/gnubin \
             /opt/homebrew/opt/coreutils/libexec/gnubin \
             /opt/homebrew/opt/make/libexec/gnubin \
-            /opt/homebrew/opt/bison/bin \
-            /opt/homebrew/opt/libxslt/bin \
-            /opt/homebrew/opt/grep/libexec/gnubin \
-            # Ruby
-            /opt/homebrew/opt/ruby/bin \
             $PATH
     # NOTE: for Linux, the path settings are in bash_profile.
 end
@@ -50,14 +39,8 @@ if status is-interactive
                 $PATH
 
         case Darwin
-            # homebrew M1 mac specific completion
-            if test -d (brew --prefix)"/share/fish/completions"
-                set -p fish_complete_path (brew --prefix)/share/fish/completions
-            end
 
-            if test -d (brew --prefix)"/share/fish/vendor_completions.d"
-                set -p fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
-            end
+            set -gx HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS 1
 
             # special paths
             if type -q opam
@@ -76,6 +59,8 @@ if status is-interactive
 
     abbr -a -- jl 'julia --banner=no'
     abbr -a -- R 'R -q'
+    abbr -a -- em 'emacsclient --no-wait'
+
     abbr -a -- jupy-to-py 'jupytext --to py:percent --opt comment_magics=false'
     abbr -a -- py-to-jupy 'jupytext --to notebook'
 
