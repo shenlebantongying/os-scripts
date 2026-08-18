@@ -1,20 +1,16 @@
-local is_Linux = function()
-  local handle = io.popen('uname')
-  if (handle ~= nil) then
-    local result = handle:read('*a') == "Linux\n"
-    handle:close()
-    return result
-  else
-    os.exit(1)
-  end
+local wezterm = require 'wezterm'
+
+local is_MacOS = function()
+    return wezterm.target_triple=="aarch64-apple-darwin"
 end
 
-local Linux = is_Linux()
+local MacOS = is_MacOS()
+local Linux = not MacOS
 
-local wezterm = require 'wezterm'
 local config = {}
 
 config.font = wezterm.font_with_fallback {
+  'Annotation Mono',
   'Intel One Mono',
   'Cascadia Mono',
   'Ubuntu Mono',
@@ -23,11 +19,13 @@ config.font = wezterm.font_with_fallback {
 if (Linux) then
   config.font_size = 12.0
 else
-  config.font_size = 15.0
+  config.font_size = 12.0
   config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
   config.window_frame = {
-    font_size=14.0
+    font_size=12.0
   }
+
+  config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
 end
 
 config.color_scheme = 'Builtin Solarized Light'
@@ -35,14 +33,16 @@ config.colors = {
   cursor_fg = 'white'
 }
 
+-- config.text_min_contrast_ratio = 4.5 nightly
+
 config.enable_scroll_bar = true
 
 
 config.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0,
+  left = '0.2cell',
+  right = '1cell',
+  top = '0.1cell',
+  bottom = '0.2cell',
 }
 
 -- DISABLE copy on selection

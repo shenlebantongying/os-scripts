@@ -16,12 +16,15 @@
 
          (set-face-attribute 'default nil :font "SF Mono" :height 130)
          ;; Note: compile command execute an non-interactive shell. Path here is unrelated.
-         (dolist (dir '("/Applications/Racket v9.2/bin/"
-                        "/opt/homebrew/bin/"
-                        "/Library/TeX/texbin/"
-                        "/Users/slbtty/.opam/5.5.0/bin/"
-                        "/usr/local/smlnj/bin/"))
-           (add-to-list 'exec-path dir)))
+         (dolist (dir
+                  '("/Applications/Racket v9.2/bin/"
+                    "/Library/Developer/CommandLineTools/usr/bin/"
+                    "/opt/homebrew/bin/"
+                    "/Library/TeX/texbin/"
+                    "/Users/slbtty/.opam/5.5.0/bin/"))
+           (add-to-list 'exec-path dir))
+         (setenv "PATH" (string-join exec-path ":")))
+
  (IS-LINUX
   (set-face-attribute 'default nil :font "Jetbrains Mono" :height 110)))
 
@@ -190,7 +193,7 @@
 
 ;; M-x describe-personal-keybindings
 (bind-keys
- ("C-S-p" . execute-extended-command)
+ ("C-P" . execute-extended-command)
  ("C-<tab>" . tab-to-tab-stop)
 
  ("s-x" . kill-region)
