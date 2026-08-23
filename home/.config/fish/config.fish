@@ -23,23 +23,23 @@ end
 
 
 if status is-interactive
-
     switch (uname)
         case Linux
-            # path settings are within .bashrc
-            set -gx DEBUGINFOD_URLS "https://debuginfod.archlinux.org"
 
-            set -gx EDITOR subl
+            set -gx EDITOR kate
             set -gx SYSTEMD_PAGER cat
-
             set -gx DOTNET_ROOT $HOME/.dotnet
 
-            set PATH \
-                /usr/local/Wolfram/Wolfram/14.2/Executables \
-                $PATH
+            switch (lsb-release -is)
+                case Fedora
+                    eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)
+                case '*'
+                    # path settings are within .bashrc
+                    set -gx DEBUGINFOD_URLS "https://debuginfod.archlinux.org"
+
+            end
 
         case Darwin
-
             set -gx HOMEBREW_NO_UPGRADE_AUTO_UPDATES_CASKS 1
 
             # special paths

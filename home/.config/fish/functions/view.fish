@@ -1,9 +1,9 @@
 function view
     switch (uname)
         case Linux
-            kate (eval $argv | psub) &
+            $argv | kate -i &> /dev/null &; disown
         case Darwin
-            eval $argv | col -b | open -tf 
+            $argv | col -b | open -tf
         case '*'
             echo !!!! editor not set.
     end

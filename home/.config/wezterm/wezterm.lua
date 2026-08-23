@@ -28,15 +28,10 @@ else
   config.default_prog = { '/opt/homebrew/bin/fish', '-l' }
 end
 
-config.color_scheme = 'Builtin Solarized Light'
-config.colors = {
-  cursor_fg = 'white'
-}
-
+config.color_scheme = 'Bamboo Light'
 -- config.text_min_contrast_ratio = 4.5 nightly
 
 config.enable_scroll_bar = true
-
 
 config.window_padding = {
   left = '0.2cell',

@@ -3,12 +3,15 @@
 import sys
 import pathlib
 import os
+import platform
 
 """
     Try automatically discover files on both side home <-> store
 
     if home missing file -> link file
     if home have more file -> move file to store + link file
+
+    - TODO: force relink
 """
 
 
@@ -17,8 +20,11 @@ def get_store_path() -> pathlib.Path:
         case "darwin":
             return pathlib.Path(os.path.expanduser("~/os-scripts/home"))
         case "linux":
-            return pathlib.Path(os.path.expanduser("~/s/home"))
-
+            match platform.freedesktop_os_release()["ID"]:
+                case "fedora-asahi-remix":
+                    return pathlib.Path(os.path.expanduser("~/os-scripts/home"))
+                case _:
+                    return pathlib.Path(os.path.expanduser("~/s/home"))
 
 home_path = pathlib.Path("~").expanduser()
 store_path = get_store_path()

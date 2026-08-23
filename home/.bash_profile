@@ -1,43 +1,36 @@
 # For Linux Only
+[[ $(uname) != "Linux" ]] && return
 
-if [[ $(uname) != "Darwin" ]]
-then
+# Overcome bug of Fedora, where they could source this file twice.
+[[ -n "$DISTRO" ]] && return
+DISTRO=$(lsb_release -is)
+export DISTRO
 
-PATH=\
-~/.deno/bin\
-:~/npm/bin\
-:~/go/bin\
-:~/.ghcup/bin\
-:~/.local/bin\
-:~/.traco\
-:~/bin\
-:~/s\
-:~/.dotnet\
-:~/.Dotnet/Tools\
-:~/.Cabal/bin\
-:~/.rbenv/bin\
-:~/.cargo/bin\
-:~/.emacs.d/bin\
-:~/.juliaup/bin\
-:/usr/local/Wolfram/14.2/Executables/\
-:$PATH
+if [[ $DISTRO = "Fedora" ]]; then
+    . /etc/bashrc
+fi
+
+export PATH="$HOME/os-scripts\
+:$HOME/s\
+:$HOME/bin\
+:$HOME/.local/bin\
+:/var/lib/flatpak/exports/bin\
+:$HOME/.deno/bin\
+:$HOME/npm/bin\
+:$HOME/go/bin\
+:$HOME/.juliaup/bin\
+:${PATH}"
 
 if command -v opam &> /dev/null
 then
-   eval "$(opam env)"
+    eval "$(opam env)"
 fi
 
 if command -v rbenv &> /dev/null
 then
-   eval "$(rbenv init - bash)"
+    eval "$(rbenv init - bash)"
 fi
 
 if [[ -f "$HOME/.cargo/env" ]]; then
-   . "$HOME/.cargo/env"
-fi
-
-if [ -f ~/.bashrc ]; then
-    source ~/.bashrc
-fi
-
+    . "$HOME/.cargo/env"
 fi

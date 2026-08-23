@@ -1,3 +1,3 @@
-function run
-     nohup $argv &>/dev/null &
+function run-gui
+        $argv &> /dev/null &; disown
 end
