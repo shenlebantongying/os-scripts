@@ -17,7 +17,7 @@ input {
         xkb {
             layout "us"
             variant "altgr-intl"
-            options "compose:rctrl"
+            options "compose:rctrl,compose:ralt"
         }
     }
 
@@ -146,8 +146,8 @@ binds {
     Mod+Shift+Minus { set-window-height "-20%"; }
     Mod+Shift+Equal { set-window-height "+20%"; }
 
-    Mod+V      { toggle-window-floating; }
-    Mod+Ctrl+V { switch-focus-between-floating-and-tiling; }
+    Mod+N      { toggle-window-floating; }
+    Mod+Ctrl+N { switch-focus-between-floating-and-tiling; }
 
     // Workspace
 

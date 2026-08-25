@@ -4,6 +4,7 @@
 ;; [ Global ]
 (defconst IS-MAC   (eq system-type 'darwin))
 (defconst IS-LINUX (eq system-type 'gnu/linux))
+(defconst IS-FEDORA (and IS-LINUX (string-equal (getenv "DISTRO") "Fedora"))) ;; M1 mac
 
 (cond
  (IS-MAC (setopt ns-right-command-modifier 'control
@@ -91,6 +92,7 @@
 
 (use-package uniquify :ensure nil :config (setq uniquify-buffer-name-style 'forward))
 (use-package ansi-color :ensure nil :hook (compilation-filter . ansi-color-compilation-filter))
+(use-package which-key :ensure nil :init (which-key-mode))
 
 ;; external
 
@@ -117,6 +119,7 @@
 (use-package move-text :init (move-text-default-bindings))
 (use-package transpose-frame)
 (use-package golden-ratio-scroll-screen)
+(use-package magit)
 
 
 ;; [ Minad ]
@@ -138,10 +141,7 @@
   :custom
   (completion-styles '(orderless basic))
   (completion-category-overrides '((file (styles partial-completion)))))
-(use-package consult
-  :bind (("s-r" . consult-recent-file)
-         ("s-f" . consult-line)
-         ("s-b" . consult-buffer)))
+(use-package consult)
 
 
 
@@ -193,26 +193,22 @@
 
 ;; M-x describe-personal-keybindings
 (bind-keys
- ("C-P" . execute-extended-command)
  ("C-<tab>" . tab-to-tab-stop)
-
- ("s-x" . kill-region)
- ("s-c" . kill-ring-save)
- ("s-v" . yank)
- ("s-z" . undo)
- ("s-Z" . undo-redo)
- ("s-k" . kill-buffer-and-window)
- ("s-n" . make-frame)
+ 
+ ("M-s-k" . kill-buffer-and-window)
+ ("M-s-n" . make-frame)
+ ("M-s-1" . +set-frame-size-to-120)
+ ("M-s-r" . consult-recent-file)
+ ("M-s-f" . consult-line)
+ ("M-s-b" . consult-buffer)
+ 
  ("s-[" . previous-buffer)
  ("s-]" . next-buffer)
-
- ("s-1" . +set-frame-size-to-120)
-
  ("s-<down>" . golden-ratio-scroll-screen-up)
  ("s-<up>" . golden-ratio-scroll-screen-down)
 
  ("<f1>" . delete-other-windows)
- ("<f2>" . execute-extended-command)
+
  ("<f3>" . other-window)
  ("<f4>" . split-window-right)
  ("<f5>" . compile)
@@ -228,7 +224,15 @@
  ("M-x" . exit-minibuffer)
  )
 
+(let ((extra-prefix
+       (cond
+        (IS-FEDORA "<0x100811d0>"))))
+  (bind-keys
+   :prefix-map my-global-map
+   :prefix extra-prefix
+   :prefix "<f12>"
+   ("t" . window-layout-transpose)))
+
 ;;
 (recentf-open-files)
-
-
+(add-hook 'emacs-startup-hook 'delete-other-windows)

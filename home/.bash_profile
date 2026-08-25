@@ -1,3 +1,4 @@
+# shellcheck disable=SC2148
 # For Linux Only
 [[ $(uname) != "Linux" ]] && return
 
@@ -10,7 +11,7 @@ if [[ $DISTRO = "Fedora" ]]; then
     . /etc/bashrc
 fi
 
-export PATH="$HOME/os-scripts\
+PATH="$HOME/os-scripts\
 :$HOME/s\
 :$HOME/bin\
 :$HOME/.local/bin\
@@ -34,3 +35,7 @@ fi
 if [[ -f "$HOME/.cargo/env" ]]; then
     . "$HOME/.cargo/env"
 fi
+
+[[ -f "$HOME/.bash_local.bash" ]] && source "$HOME/.bash_local.bash"
+
+export PATH
