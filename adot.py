@@ -1,9 +1,8 @@
-#!/usr/bin/env python3
-
-import sys
-import pathlib
 import os
+import pathlib
 import platform
+import sys
+from pathlib import Path
 
 """
     Try automatically discover files on both side home <-> store
@@ -14,8 +13,11 @@ import platform
     - TODO: force relink
 """
 
+class MyException(Exception):
+    """make ruff happy"""
 
-def get_store_path() -> pathlib.Path:
+
+def get_store_path() -> Path:
     match sys.platform:
         case "darwin":
             return pathlib.Path(os.path.expanduser("~/os-scripts/home"))
@@ -25,6 +27,8 @@ def get_store_path() -> pathlib.Path:
                     return pathlib.Path(os.path.expanduser("~/os-scripts/home"))
                 case _:
                     return pathlib.Path(os.path.expanduser("~/s/home"))
+    raise MyException("Cannot resolve OS.")
+
 
 home_path = pathlib.Path("~").expanduser()
 store_path = get_store_path()
@@ -46,13 +50,9 @@ def file_discover(p: str):
         glob_path_home = pathlib.Path(*fixed_path_parts)
         glob_path_store = pathlib.Path(store_path).joinpath(*glob_path_home.parts[3:])
 
-        found_in_home = map(
-            lambda x: x.parts[3:], list(glob_path_home.glob(glob_expression))
-        )
+        found_in_home = (x.parts[3:] for x in list(glob_path_home.glob(glob_expression)))
 
-        found_in_store = map(
-            lambda x: x.parts[5:], list(glob_path_store.glob(glob_expression))
-        )
+        found_in_store = (x.parts[5:] for x in list(glob_path_store.glob(glob_expression)))
 
         for x in set(list(found_in_home) + list(found_in_store)):
             yield [home_path.joinpath(*x), store_path.joinpath(*x)]
@@ -77,12 +77,6 @@ def operate(home_path: pathlib.Path, store_path: pathlib.Path):
         os.makedirs(store_path.parent, exist_ok=True)
         home_path.symlink_to(store_path)
 
-
-if __name__ == "__main__":
-    path_file = pathlib.Path(__file__).resolve().parent / "a-dot.txt"
-    with open(path_file) as pfile:
-        for line in pfile:
-            if len(line) < 2 or line[0].startswith("#"):
-                continue
-            for x in file_discover(line.strip()):
-                operate(x[0], x[1])
+def sync(path_desc:str):
+    for x in file_discover(path_desc):
+        operate(x[0], x[1])

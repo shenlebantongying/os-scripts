@@ -1,57 +1,64 @@
-~/.config/sublime-text/Packages/User/Package Control.sublime-settings
-~/.config/sublime-text/Packages/User/Preferences.sublime-settings
-~/.config/sublime-text/Packages/User/Terminus.sublime-settings
-~/.gitignore_global 
-~/.newsboat/config
-~/.newsboat/urls
-~/.taskrc
+#!/usr/bin/env python3
+import platform
+
+from adot import sync
+
+sync("~/.config/sublime-text/Packages/User/Package Control.sublime-settings")
+sync("~/.config/sublime-text/Packages/User/Preferences.sublime-settings")
+sync("~/.config/sublime-text/Packages/User/Terminus.sublime-settings")
+sync("~/.gitignore_global")
+sync("~/.newsboat/config")
+sync("~/.newsboat/urls")
+sync("~/.taskrc")
 
 
 # Linguistics
 
-~/.config/utop/init.ml
+sync("~/.config/utop/init.ml")
 
-~/.latexmkrc
+sync("~/.latexmkrc")
 
-~/.guile
+sync("~/.guile")
 
-~/.sbclrc
+sync("~/.sbclrc")
 
-~/.npmrc
+sync("~/.npmrc")
 
 # Shells
 # .zprofile are generally useless and could be empty
-~/.zshrc
-~/.bashrc
-~/.bash_profile
-~/.tmux.conf
-~/.config/fish/**/*.fish
-~/.config/fish/functions/*.fish
+sync("~/.zshrc")
+sync("~/.bashrc")
+sync("~/.bash_profile")
+sync("~/.tmux.conf")
+sync("~/.config/fish/**/*.fish")
+sync("~/.config/fish/functions/*.fish")
 # TODO: bug -> ** wildcard may not work?
 
 # Editors
 
-~/.emacs.d/init.el
-~/.emacs.d/early-init.el
-~/.emacs.d/+pkg-mgr-slop.el
-~/.emacs.d/+/*.el
+sync("~/.emacs.d/init.el")
+sync("~/.emacs.d/early-init.el")
+sync("~/.emacs.d/user-lisp/*.el")
 
-~/.config/nvim/*.lua
+sync("~/.config/nvim/*.lua")
 
-~/.config/helix/config.toml
-~/.config/helix/themes/*
+sync("~/.config/helix/config.toml")
+sync("~/.config/helix/themes/*")
 
 # Terminals
-~/.config/wezterm/wezterm.lua
-~/.config/kitty/kitty.conf
-~/.config/foot/foot.ini
+sync("~/.config/wezterm/wezterm.lua")
+sync("~/.config/kitty/kitty.conf")
 
 # macOS
-~/Library/Scripts/*
-~/Library/Script Libraries/*
-~/.hammerspoon/**/*.lua
+if platform.system() == "Darwin":
+    sync("~/Library/Scripts/*")
+    sync("~/Library/Script Libraries/*")
+    sync("~/.hammerspoon/**/*.lua")
 
 # Wayland
-~/.config/niri/config.kdl
-~/.config/mako/config
-~/.config/waybar/config.jsonc
+if platform.system() == "Linux":
+    sync("~/.config/niri/config.kdl")
+    sync("~/.config/mako/config")
+    sync("~/.config/waybar/config.jsonc")
+    sync("~/.config/foot/foot.ini")
+
