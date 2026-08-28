@@ -30,7 +30,7 @@ if status is-interactive
             set -gx SYSTEMD_PAGER cat
             set -gx DOTNET_ROOT $HOME/.dotnet
 
-            switch (lsb-release -is)
+            switch (lsb_release -is)
                 case Fedora
                     eval (/home/linuxbrew/.linuxbrew/bin/brew shellenv fish)
                     if test -d (brew --prefix)"/share/fish/completions"
@@ -40,9 +40,11 @@ if status is-interactive
                         set -p fish_complete_path (brew --prefix)/share/fish/vendor_completions.d
                     end
 
-                case '*'
+                case Arch
                     # path settings are within .bashrc
                     set -gx DEBUGINFOD_URLS "https://debuginfod.archlinux.org"
+                case '*'
+                    echo "lsb_release error!"   
 
             end
 

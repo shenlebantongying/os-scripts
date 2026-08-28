@@ -32,7 +32,7 @@
 
 ;; [ package manger slop + scripts ]
 
-(mapc (lambda (n) (load (expand-file-name n user-emacs-directory)))
+(mapc (lambda (n) (load (expand-file-name n user-lisp-directory)))
       '("+pkg-mgr-slop.el"))
 
 (elpaca elpaca-use-package (elpaca-use-package-mode))
@@ -178,8 +178,6 @@
 
 
 ;; [ Key Binds ]
-
-(use-package mprogn :ensure (mprogn :type file :main "~/.emacs.d/+/mprogn.el" :autoloads t))
 
 (mapc
  #'keymap-global-unset
