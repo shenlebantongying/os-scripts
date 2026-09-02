@@ -16,22 +16,31 @@ from pathlib import Path
 class MyException(Exception):
     """make ruff happy"""
 
+__STORE_PATH__: Path | None = None
+home_path: Path
+store_path: Path
 
 def get_store_path() -> Path:
+    if __STORE_PATH__ is not None:
+        return __STORE_PATH__
     match sys.platform:
         case "darwin":
             return pathlib.Path(os.path.expanduser("~/os-scripts/home"))
         case "linux":
             match platform.freedesktop_os_release()["ID"]:
-                case "fedora-asahi-remix":
-                    return pathlib.Path(os.path.expanduser("~/os-scripts/home"))
                 case _:
                     return pathlib.Path(os.path.expanduser("~/s/home"))
+
     raise MyException("Cannot resolve OS.")
 
-
-home_path = pathlib.Path("~").expanduser()
-store_path = get_store_path()
+def init(p:str|None = None):
+    global home_path
+    global store_path
+    if p is not None:
+        global __STORE_PATH__
+        __STORE_PATH__ = pathlib.Path(os.path.expanduser(p))
+    home_path = pathlib.Path("~").expanduser()
+    store_path = get_store_path()
 
 
 def file_discover(p: str):
@@ -62,19 +71,25 @@ def file_discover(p: str):
         f_path_store = get_store_path().joinpath(*f_path_home.parts[3:])
         yield [f_path_home, f_path_store]
 
+def check_symlink_exists(p:pathlib.Path):
+    if not p.is_symlink():
+        raise MyException("symlink err")
+    return p.resolve().exists()
 
 def operate(home_path: pathlib.Path, store_path: pathlib.Path):
     print(home_path, store_path)
-    if home_path.is_symlink() or home_path.is_dir():
+    # TODO: this check need to be better.
+    if (home_path.is_symlink() and home_path.resolve().exists()) or home_path.is_dir():
         return
     elif home_path.is_file():
-        os.renames(home_path, store_path)
-        os.makedirs(home_path.parent, exist_ok=True)
         os.makedirs(store_path.parent, exist_ok=True)
+        home_path.rename(store_path)
         home_path.symlink_to(store_path)
     else:
         os.makedirs(home_path.parent, exist_ok=True)
         os.makedirs(store_path.parent, exist_ok=True)
+        if home_path.exists():
+            home_path.unlink()
         home_path.symlink_to(store_path)
 
 def sync(path_desc:str):

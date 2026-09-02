@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 import platform
 
-from adot import sync
+from adot import init, sync
+
+init()
 
 sync("~/.config/sublime-text/Packages/User/Package Control.sublime-settings")
 sync("~/.config/sublime-text/Packages/User/Preferences.sublime-settings")
@@ -61,4 +63,3 @@ if platform.system() == "Linux":
     sync("~/.config/mako/config")
     sync("~/.config/waybar/config.jsonc")
     sync("~/.config/foot/foot.ini")
-

@@ -97,7 +97,8 @@
       (IS-MAC
        (concat "/Applications/WezTerm.app/Contents/MacOS/wezterm start --new-tab --cwd " pwd))
       (IS-LINUX
-       (concat "/usr/bin/kitty -1 -d " pwd))))
+       (concat "/usr/bin/kitty -1 -d " pwd))
+      (IS-WINDOWS "wt.exe -d .")))
    nil 0))
 
 ;;;###autoload

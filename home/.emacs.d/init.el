@@ -4,6 +4,7 @@
 ;; [ Global ]
 (defconst IS-MAC   (eq system-type 'darwin))
 (defconst IS-LINUX (eq system-type 'gnu/linux))
+(defconst IS-WINDOWS (eq system-type 'windows-nt))
 (defconst IS-FEDORA (and IS-LINUX (string-equal (getenv "DISTRO") "Fedora"))) ;; M1 mac
 
 (cond
@@ -27,7 +28,13 @@
          (setenv "PATH" (string-join exec-path ":")))
 
  (IS-LINUX
-  (set-face-attribute 'default nil :font "Jetbrains Mono" :height 110)))
+  (set-face-attribute 'default nil :font "Jetbrains Mono" :height 110))
+ (IS-WINDOWS
+  (set-face-attribute 'default nil :font "Ubuntu Mono" :height 110)
+  ;; Note: this won't override lots of Win- hotkeys
+  (setopt w32-pass-lwindow-to-system nil
+          w32-lwindow-modifier 'super))
+ )
 
 
 ;; [ package manger slop + scripts ]
@@ -98,10 +105,12 @@
 
 (use-package mode-line-bell :init (mode-line-bell-mode))
 
-(use-package jinx :init (global-jinx-mode)
-  :config
-  (setopt jinx-languages "en_CA fr") ;; by default jinx->enchant->aspell->dicts
-  )
+(when (not IS-WINDOWS)
+  (use-package jinx :init (global-jinx-mode)
+    :config
+    ;; by default jinx->enchant->aspell->dicts
+    (setopt jinx-languages "en_CA fr")))
+
 (use-package hl-todo
   :hook ((prog-mode text-mode) . hl-todo-mode)
   :custom
@@ -162,8 +171,7 @@
         (cond
          (IS-MAC  "/opt/homebrew/share/emacs/site-lisp/asymptote/asy-mode.el")
          (IS-LINUX "/usr/share/asymptote/asy-mode.el")))
-       (wtf (message asy-path))
-       (asy-exists (file-exists-p asy-path)))
+       (asy-exists (and asy-path (file-exists-p asy-path))))
   (when asy-exists
     (eval `(use-package asy-mode :defer t
              :ensure (asy-mode :type file :main ,asy-path)))))
@@ -192,14 +200,15 @@
 ;; M-x describe-personal-keybindings
 (bind-keys
  ("C-<tab>" . tab-to-tab-stop)
- 
+
  ("M-s-k" . kill-buffer-and-window)
  ("M-s-n" . make-frame)
  ("M-s-1" . +set-frame-size-to-120)
- ("M-s-r" . consult-recent-file)
- ("M-s-f" . consult-line)
+ ("M-s-r" . consult-recent-file) ("C-c C-r" . consult-recent-file)
+ ("M-s-f" . consult-line) ("M-s-s" . consult-line)
+
  ("M-s-b" . consult-buffer)
- 
+
  ("s-[" . previous-buffer)
  ("s-]" . next-buffer)
  ("s-<down>" . golden-ratio-scroll-screen-up)
