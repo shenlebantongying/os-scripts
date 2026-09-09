@@ -25,4 +25,3 @@ cd '/usr' ; /usr/bin/mysqld_safe --datadir='/var/lib/mysql'
 
 You can test the MariaDB daemon with mysql-test-run.pl
 cd '/usr/mysql-test' ; perl mysql-test-run.pl
-

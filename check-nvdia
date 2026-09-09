@@ -2,7 +2,7 @@
 
 set -x
 
-lspci -nnk | grep -iA2 vga 
+lspci -nnk | grep -iA2 vga
 
 # lspci
 # -nn             Show both textual and numeric ID's (names & numbers)

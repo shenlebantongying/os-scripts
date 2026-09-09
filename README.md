@@ -7,6 +7,6 @@ IMO:
 4. Simple coding tools/practices -> easier for new players to manipulate source code
 5. Also, Clean architecture is a huge bonus
 6. Having design philosophy > Not have > Just merging everything into a bloated zombie that no one can fully understand
-7. Having overall guidelines can make sure new comers can confidently submit new functionality that meets the philosophy 
+7. Having overall guidelines can make sure new comers can confidently submit new functionality that meets the philosophy
 8. Having good document > CRAP document
 9. GPL > BSD

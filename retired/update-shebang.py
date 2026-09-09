@@ -14,4 +14,3 @@ for f in filenames:
                 os.remove(filepath)
                 os.rename(filepath+".new",filepath)
     print(filepath,data)
-

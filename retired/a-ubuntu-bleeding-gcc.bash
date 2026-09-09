@@ -31,7 +31,7 @@ if [ "${curgcc}" == "${gccname}" ] || [ "${curgcc}" == "x86_64-linux-gnu-gcc-${g
 else
 
 # make sure a "pure" config
-sudo update-alternatives --remove-all gcc 
+sudo update-alternatives --remove-all gcc
 sudo update-alternatives --remove-all g++
 
 sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/${oldgcc} 10  --slave /usr/bin/g++ g++ /usr/bin/${oldgpp}
@@ -48,5 +48,3 @@ echo "=> sudo update-alternatives --config gcc"
 #echo "=> sudo sudo update-alternatives --config g++"
 
 fi
-
-

@@ -44,7 +44,7 @@ if status is-interactive
                     # path settings are within .bashrc
                     set -gx DEBUGINFOD_URLS "https://debuginfod.archlinux.org"
                 case '*'
-                    echo "lsb_release error!"   
+                    echo "lsb_release error!"
 
             end
 

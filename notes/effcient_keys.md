@@ -24,7 +24,7 @@ K W -> close all tabs
 (custom ) K K -> close all other tabs
 
 func
-` -> toggle terminal 
+` -> toggle terminal
 B -> toggle sidebar
 
 ## Ctrl-Shift+

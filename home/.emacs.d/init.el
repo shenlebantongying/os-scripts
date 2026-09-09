@@ -5,7 +5,8 @@
 (defconst IS-MAC   (eq system-type 'darwin))
 (defconst IS-LINUX (eq system-type 'gnu/linux))
 (defconst IS-WINDOWS (eq system-type 'windows-nt))
-(defconst IS-FEDORA (and IS-LINUX (string-equal (getenv "DISTRO") "Fedora"))) ;; M1 mac
+
+(load-theme 'newcomers-presets)
 
 (cond
  (IS-MAC (setopt ns-right-command-modifier 'control
@@ -30,7 +31,7 @@
  (IS-LINUX
   (set-face-attribute 'default nil :font "Jetbrains Mono" :height 110))
  (IS-WINDOWS
-  (set-face-attribute 'default nil :font "Ubuntu Mono" :height 110)
+  (set-face-attribute 'default nil :font "Ubuntu Sans Mono" :height 110)
   ;; Note: this won't override lots of Win- hotkeys
   (setopt w32-pass-lwindow-to-system nil
           w32-lwindow-modifier 'super))
@@ -49,12 +50,10 @@
 
 
 ;; [ Fix default Emacs ]
-
 (use-package doric-themes :config (doric-themes-select 'doric-light))
 
 (setq-default
  truncate-lines t
- indent-tabs-mode nil
  tab-width 4
  require-final-newline t
  )
@@ -69,7 +68,6 @@
  initial-scratch-message nil
  load-prefer-newer t
  make-backup-files nil
- vc-follow-symlinks t
  text-mode-ispell-word-completion nil
  ;; ignore cases
  read-file-name-completion-ignore-case t
@@ -88,18 +86,11 @@
 (when IS-LINUX (menu-bar-mode -1))
 (blink-cursor-mode -1)
 
-(context-menu-mode)
-(delete-selection-mode)
-(editorconfig-mode)
 (global-auto-revert-mode)
 (global-display-line-numbers-mode)
-(recentf-mode)
-(save-place-mode)
-(savehist-mode)
 
 (use-package uniquify :ensure nil :config (setq uniquify-buffer-name-style 'forward))
 (use-package ansi-color :ensure nil :hook (compilation-filter . ansi-color-compilation-filter))
-(use-package which-key :ensure nil :init (which-key-mode))
 
 ;; external
 
@@ -198,16 +189,26 @@
    ))
 
 ;; M-x describe-personal-keybindings
+
+(let ((extra-prefix
+       (cond
+        (IS-WINDOWS ""))))
+  (bind-keys
+   :prefix-map my-global-map
+   :prefix extra-prefix
+   :prefix "C-c"
+   ("k" . kill-buffer-and-window)
+   ("n" . make-frame)
+   ("1" . +set-frame-size-to-120)
+   ("r" . consult-recent-file)
+   ("l" . consult-line)
+   ("b" . consult-buffer)
+
+   ("," . window-layout-transpose)
+   ))
+
 (bind-keys
  ("C-<tab>" . tab-to-tab-stop)
-
- ("M-s-k" . kill-buffer-and-window)
- ("M-s-n" . make-frame)
- ("M-s-1" . +set-frame-size-to-120)
- ("M-s-r" . consult-recent-file) ("C-c C-r" . consult-recent-file)
- ("M-s-f" . consult-line) ("M-s-s" . consult-line)
-
- ("M-s-b" . consult-buffer)
 
  ("s-[" . previous-buffer)
  ("s-]" . next-buffer)
@@ -230,15 +231,6 @@
  :map minibuffer-local-map
  ("M-x" . exit-minibuffer)
  )
-
-(let ((extra-prefix
-       (cond
-        (IS-FEDORA "<0x100811d0>"))))
-  (bind-keys
-   :prefix-map my-global-map
-   :prefix extra-prefix
-   :prefix "<f12>"
-   ("t" . window-layout-transpose)))
 
 ;;
 (recentf-open-files)

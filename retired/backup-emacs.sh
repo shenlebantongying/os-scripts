@@ -6,7 +6,7 @@ source slb.bash
 
 usage() {
   cat <<EOF
-Usage: 
+Usage:
 -b backup .spacemacs
 -r restore .spacemacs
 EOF
@@ -19,7 +19,7 @@ cp-spacemacs(){
     if [ -f "$SCRIPTPATH/home/.spacemacs" ]
         then
             green-msg "Backed up"
-        else 
+        else
             red-msg "Failed to Backup"
     fi
 }
@@ -30,7 +30,7 @@ restore-spacemacs(){
     if [ -f "$SCRIPTPATH/home/.spacemacs" ]
         then
             green-msg "Restored"
-        else 
+        else
             red-msg "Failed to restore"
     fi
 }

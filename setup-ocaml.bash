@@ -2,4 +2,4 @@
 
 set -e # aborb when fail
 
-opam install merlin utop ocp-indent ocamlformat ocaml-lsp-server 
+opam install merlin utop ocp-indent ocamlformat ocaml-lsp-server

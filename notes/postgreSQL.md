@@ -39,4 +39,3 @@ brew services restart postgres
 ```
 
 default database name is `postgres`
-

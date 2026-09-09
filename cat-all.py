@@ -15,7 +15,7 @@ for  (dirpath, dirnames, filenames) in os.walk(pwd):
             relative_path=full_path[len(pwd)+1:]
 
             mimetype=subprocess.check_output(["file","--dereference","--brief", "--mime-type", full_path]).decode()
-            
+
             if(mimetype.startswith("text")):
                 try:
                     with open(full_path,"r") as f:
@@ -23,4 +23,4 @@ for  (dirpath, dirnames, filenames) in os.walk(pwd):
                             if not line.isspace():
                                 print(relative_path,"|",ln,"|",line.strip())
                 except:
-                    print("[FAILED] ",full_path, file=sys.stderr) 
+                    print("[FAILED] ",full_path, file=sys.stderr)

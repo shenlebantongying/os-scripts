@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Hack to print raw string 
+# Hack to print raw string
 
 echo -e ${PATH//:/\\n}
 

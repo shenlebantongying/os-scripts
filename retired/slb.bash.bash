@@ -14,24 +14,24 @@ function _color_echo()
   echo -e "\e[0;$1m [slb] $2\e[0m"
 }
 
-function green-msg2(){ 
+function green-msg2(){
     echo -e "\e[0;32m[slb] $1\e[0m"
 }
 
-function red-msg2(){ 
+function red-msg2(){
     echo -e "\e[0;31m[slb] $1\e[0m"
 }
 
 # Note: - maybe invlid for some shell env
-function red-msg(){ 
+function red-msg(){
     _color_echo "31" "$1";
 }
 
-function green-msg(){ 
+function green-msg(){
 _color_echo "32" "$1";
 }
 
-function blue-msg(){ 
+function blue-msg(){
 _color_echo "34" "$1";
 }
 

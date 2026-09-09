@@ -8,4 +8,3 @@ with os.scandir() as it:
             upper_name=old_name.upper()
             if(upper_name!=old_name):
                 os.rename(old_name,upper_name)
-        

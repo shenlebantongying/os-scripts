@@ -66,4 +66,3 @@ https://specifications.freedesktop.org/desktop-entry-spec/desktop-entry-spec-1.0
 
 # fzf open
 alias fzfopen='kde-open5 $(fzf) &> /dev/null'
-

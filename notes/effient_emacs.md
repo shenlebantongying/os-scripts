@@ -5,7 +5,7 @@ https://github.com/hlissner/doom-emacs/tree/develop/modules/completion/ivy
 binds https://oremacs.com/swiper/#getting-started
 
 
-# Copy-Paste 
+# Copy-Paste
 Don't waste time to figure out "best" options which are roughly same for most of people.
 https://huadeyu.tech/tools/emacs-setup-notes.html ;; optimal for some packages
 https://tecosaur.github.io/emacs-config/ ;; => doom specific

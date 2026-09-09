@@ -13,4 +13,3 @@ elif command -v firefox-developer-edition &> /dev/null
 then
     firefox-developer-edition "$@" &
 fi
-

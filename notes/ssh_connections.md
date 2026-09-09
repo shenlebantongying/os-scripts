@@ -7,5 +7,3 @@ Check Log if cannot log:
 
 When you can log via password
 `ssh-copy-id`
-
-
