@@ -63,3 +63,4 @@ if platform.system() == "Linux":
     sync("~/.config/mako/config")
     sync("~/.config/waybar/config.jsonc")
     sync("~/.config/foot/foot.ini")
+    sync("~/.config/nushell/config.nu")
