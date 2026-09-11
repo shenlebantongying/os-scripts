@@ -1,7 +1,3 @@
-import os
-import pathlib
-import platform
-import sys
 from pathlib import Path
 
 """
@@ -20,78 +16,80 @@ __STORE_PATH__: Path | None = None
 home_path: Path
 store_path: Path
 
-def get_store_path() -> Path:
+def _get_store_path() -> Path:
     if __STORE_PATH__ is not None:
         return __STORE_PATH__
-    match sys.platform:
-        case "darwin":
-            return pathlib.Path(os.path.expanduser("~/os-scripts/home"))
-        case "linux":
-            match platform.freedesktop_os_release()["ID"]:
-                case _:
-                    return pathlib.Path(os.path.expanduser("~/s/home"))
-
-    raise MyException("Cannot resolve OS.")
+    return Path("~/os-scripts/home").expanduser()
 
 def init(p:str|None = None):
     global home_path
     global store_path
     if p is not None:
         global __STORE_PATH__
-        __STORE_PATH__ = pathlib.Path(os.path.expanduser(p))
-    home_path = pathlib.Path("~").expanduser()
-    store_path = get_store_path()
+        __STORE_PATH__ = Path(p).expanduser()
+    home_path = Path("~").expanduser()
+    store_path = _get_store_path()
 
+def _find_in_store_path(p: Path):
+    return _get_store_path().joinpath(*p.expanduser().parts[3:])
 
-def file_discover(p: str):
-    if "*" in p:
-        original_path = pathlib.Path(p).expanduser()
-
-        globbingStarts = 0
-        for i, part in enumerate(original_path.parts):
+def _file_discover(p: Path):
+    if "*" in str(p):
+        globbing_starts = 0
+        for i, part in enumerate(p.parts):
             if "*" in part:
-                globbingStarts = i
+                globbing_starts = i
                 break
 
-        fixed_path_parts = original_path.parts[:globbingStarts]
-        glob_expression = "".join(original_path.parts[globbingStarts:])
+        glob_path_home = Path(*p.parts[:globbing_starts])
+        glob_expression = "".join(p.parts[globbing_starts:])
 
-        glob_path_home = pathlib.Path(*fixed_path_parts)
-        glob_path_store = pathlib.Path(store_path).joinpath(*glob_path_home.parts[3:])
+        glob_path_store =store_path.joinpath(*glob_path_home.parts[3:])
 
         found_in_home = (x.parts[3:] for x in list(glob_path_home.glob(glob_expression)))
-
         found_in_store = (x.parts[5:] for x in list(glob_path_store.glob(glob_expression)))
 
         for x in set(list(found_in_home) + list(found_in_store)):
-            yield [home_path.joinpath(*x), store_path.joinpath(*x)]
+            yield [store_path.joinpath(*x),home_path.joinpath(*x)]
 
     else:
-        f_path_home = pathlib.Path(p).expanduser()
-        f_path_store = get_store_path().joinpath(*f_path_home.parts[3:])
-        yield [f_path_home, f_path_store]
+        yield [_find_in_store_path(p),p]
 
-def check_symlink_exists(p:pathlib.Path):
+def _check_symlink_exists(p:Path):
     if not p.is_symlink():
         raise MyException("symlink err")
     return p.resolve().exists()
 
-def operate(home_path: pathlib.Path, store_path: pathlib.Path):
-    print(home_path, store_path)
-    # TODO: this check need to be better.
-    if (home_path.is_symlink() and home_path.resolve().exists()) or home_path.is_dir():
-        return
-    elif home_path.is_file():
-        os.makedirs(store_path.parent, exist_ok=True)
-        home_path.rename(store_path)
-        home_path.symlink_to(store_path)
-    else:
-        os.makedirs(home_path.parent, exist_ok=True)
-        os.makedirs(store_path.parent, exist_ok=True)
-        if home_path.exists():
-            home_path.unlink()
-        home_path.symlink_to(store_path)
 
-def sync(path_desc:str):
-    for x in file_discover(path_desc):
-        operate(x[0], x[1])
+def _sync_file_to(source_path: Path, target_path: Path):
+    """
+    replace the target_path with a symlink pointing to source_path
+    """
+    print(source_path, "<-" ,target_path)
+    # TODO: this check need to be better.
+    if (target_path.is_symlink() and target_path.resolve().exists()) or target_path.is_dir():
+        return
+    # move existing file to source_path then link back
+    elif target_path.is_file():
+        source_path.parent.mkdir(parents=True, exist_ok=True)
+        target_path.rename(source_path)
+        target_path.symlink_to(source_path)
+    # we have source_path, let the target_path link back
+    else:
+        target_path.parent.mkdir(parents=True, exist_ok=True)
+        source_path.parent.mkdir(parents=True, exist_ok=True)
+        target_path.unlink(missing_ok=True)
+        target_path.symlink_to(source_path)
+
+def _sync(path_desc:Path):
+    for x in _file_discover(path_desc):
+        _sync_file_to(x[0], x[1])
+
+def sync(path_desc: str):
+    _sync(Path(path_desc).expanduser())
+
+def sync_file_to(source_path: str, target_path: str):
+    """
+    link single file
+    """
+    _sync_file_to(_find_in_store_path(Path(source_path).expanduser()), Path(target_path).expanduser())

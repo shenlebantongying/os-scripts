@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import platform
 
-from adot import init, sync
+from adot import *
 
 init()
 

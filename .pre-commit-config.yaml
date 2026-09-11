@@ -5,3 +5,5 @@ repos:
     -   id: trailing-whitespace
         args: [--chars,"    "]
     -   id: end-of-file-fixer
+    -   id: mixed-line-ending
+        args: [--fix, lf]
