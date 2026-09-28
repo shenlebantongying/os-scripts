@@ -10,7 +10,7 @@ end
 
 
 hs.hotkey.bind(
-  hyper, "up", "Tall",
+  hyper, "f", "Tall",
   function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
@@ -22,7 +22,7 @@ hs.hotkey.bind(
 )
 
 hs.hotkey.bind(
-  hyper, "down", "Half",
+  hyper, "g", "Half",
   function()
     local win = hs.window.focusedWindow()
     local f = win:frame()
