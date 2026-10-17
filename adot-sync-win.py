@@ -12,4 +12,4 @@ sync("~/.emacs.d/early-init.el")
 sync("~/.emacs.d/user-lisp/mprogn.el")
 sync("~/.emacs.d/user-lisp/+pkg-mgr-slop.el")
 
-sync_file_to("~/.config/nushell/config.nu","~/AppData/Roaming/nushell/config.nu")
+sync_file_to("~/.config/nushell/config.nu", "~/AppData/Roaming/nushell/config.nu")

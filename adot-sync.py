@@ -3,6 +3,9 @@ import platform
 
 from adot import *
 
+MACOS: bool = platform.system() == "Darwin"
+LINUX: bool = platform.system() == "Linux"
+
 init()
 
 sync("~/.config/sublime-text/Packages/User/Package Control.sublime-settings")
@@ -12,7 +15,6 @@ sync("~/.gitignore_global")
 sync("~/.newsboat/config")
 sync("~/.newsboat/urls")
 sync("~/.taskrc")
-
 
 # Linguistics
 
@@ -51,14 +53,26 @@ sync("~/.config/helix/themes/*")
 sync("~/.config/wezterm/wezterm.lua")
 sync("~/.config/kitty/kitty.conf")
 
+# Spell Checkers
+# enchant + aspell
+sync("~/.config/enchant/*.dic")
+
+if MACOS:
+    sync_file_to(
+        "~/.config/harper-ls/dictionary.txt",
+        "~/Library/Application Support/harper-ls/dictionary.txt",
+    )
+elif LINUX:
+    sync("~/.config/harper-ls/dictionary.txt")
+
 # macOS
-if platform.system() == "Darwin":
+if MACOS:
     sync("~/Library/Scripts/*")
     sync("~/Library/Script Libraries/*")
     sync("~/.hammerspoon/**/*.lua")
 
 # Wayland
-if platform.system() == "Linux":
+if LINUX:
     sync("~/.config/niri/config.kdl")
     sync("~/.config/mako/config")
     sync("~/.config/waybar/config.jsonc")

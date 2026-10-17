@@ -1,6 +1,6 @@
 ;; -*- lexical-binding: t -*-
 
-
+
 ;; [ Global ]
 (defconst IS-MAC   (eq system-type 'darwin))
 (defconst IS-LINUX (eq system-type 'gnu/linux))
@@ -14,6 +14,13 @@
                  mac-function-modifier 'hyper)
 
          (setenv "ESHELL" "/opt/homebrew/bin/fish")
+
+         ;; treesit cc command
+         (setenv "LIBRARY_PATH"
+                 (concat
+                  "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/lib" path-separator
+                  (getenv "LIBRARY_PATH")))
+         (setenv "CPATH" "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include")
 
          (server-start)
 
@@ -37,7 +44,7 @@
           w32-lwindow-modifier 'super))
  )
 
-
+
 ;; [ package manger slop + scripts ]
 
 (mapc (lambda (n) (load (expand-file-name n user-lisp-directory)))
@@ -48,7 +55,7 @@
 
 (use-package compat) ;; corfu dep
 
-
+
 ;; [ Fix default Emacs ]
 (use-package doric-themes :config (doric-themes-select 'doric-light))
 
@@ -77,7 +84,7 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-
+
 ;; [ Universal Modes ]
 
 ;; built-in
@@ -121,7 +128,7 @@
 (use-package golden-ratio-scroll-screen)
 (use-package magit)
 
-
+
 ;; [ Minad ]
 
 (use-package vertico :init (vertico-mode)
@@ -143,7 +150,7 @@
   (completion-category-overrides '((file (styles partial-completion)))))
 (use-package consult)
 
-
+
 
 ;; [ Major/Language Modes ]
 
@@ -151,7 +158,10 @@
         `(,(when IS-LINUX '(kdl "https://github.com/tree-sitter-grammars/tree-sitter-kdl"))
           (typst "https://github.com/uben0/tree-sitter-typst")))
 
-(use-package markdown-mode :hook (markdown-mode . visual-line-mode))
+(use-package markdown-ts-mode :ensure nil
+  :mode ("\\.md\\'" "\\.mdx\\'" "\\.markdown\\'")
+  :config (require 'markdown-ts-mode-x))
+
 (use-package lua-mode)
 (when IS-LINUX (use-package kdl-mode))
 
@@ -175,7 +185,7 @@
 ;; OCaml
 (use-package tuareg :defer t)
 
-
+
 ;; [ Key Binds ]
 
 (mapc
