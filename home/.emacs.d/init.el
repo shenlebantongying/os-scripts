@@ -213,6 +213,7 @@
    ("r" . consult-recent-file)
    ("l" . consult-line)
    ("b" . consult-buffer)
+   ("d" . duplicate-line)
 
    ("," . window-layout-transpose)
    ))

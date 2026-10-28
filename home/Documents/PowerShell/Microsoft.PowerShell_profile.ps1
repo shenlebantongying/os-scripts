@@ -8,4 +8,6 @@ function prompt {
 "[$(Get-Date -Format "HH:mm:ss")] $($executionContext.SessionState.Path.CurrentLocation)`n$('>' * ($nestedPromptLevel + 1)) ";
 }
 
+just --completions powershell | Out-String | Invoke-Expression
+
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
