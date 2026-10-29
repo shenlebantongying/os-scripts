@@ -89,8 +89,6 @@
 
 ;; built-in
 (tool-bar-mode -1)
-;(scroll-bar-mode -1)
-(when IS-LINUX (menu-bar-mode -1))
 (blink-cursor-mode -1)
 
 (global-auto-revert-mode)
@@ -185,6 +183,14 @@
 ;; OCaml
 (use-package tuareg :defer t)
 
+;; eglot
+(use-package eglot
+  :ensure nil
+  :config
+  (add-to-list 'eglot-server-programs
+               '(asy-mode . ("asy" "-lsp")))
+  
+  )
 
 ;; [ Key Binds ]
 
