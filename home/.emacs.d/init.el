@@ -44,17 +44,14 @@
           w32-lwindow-modifier 'super))
  )
 
-
 ;; [ package manger slop + scripts ]
-
-(mapc (lambda (n) (load (expand-file-name n user-lisp-directory)))
-      '("+pkg-mgr-slop.el"))
-
-(elpaca elpaca-use-package (elpaca-use-package-mode))
+(require 'package)
+(require 'use-package-ensure)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (setq use-package-always-ensure t)
+(package-initialize)
 
 (use-package compat) ;; corfu dep
-
 
 ;; [ Fix default Emacs ]
 (use-package doric-themes :config (doric-themes-select 'doric-light))
@@ -162,9 +159,7 @@
 
 (use-package lua-mode)
 (when IS-LINUX (use-package kdl-mode))
-
-(use-package auctex
-  :ensure (auctex :host github :repo "emacsmirror/auctex" :branch "master"))
+(use-package auctex)
 
 (let* ((asy-path
         (cond
@@ -173,11 +168,11 @@
        (asy-exists (and asy-path (file-exists-p asy-path))))
   (when asy-exists
     (eval `(use-package asy-mode :defer t
-             :ensure (asy-mode :type file :main ,asy-path)))))
+             :vc (:main-file asy-path)))))
 
 ;; Racket
 (use-package racket-mode)
-(use-package typst-ts-mode :ensure (:type git :host codeberg :repo "meow_king/typst-ts-mode")
+(use-package typst-ts-mode :vc (:url "https://codeberg.org/meow_king/typst-ts-mode.git")
   :config (setq typst-ts-indent-offset 2))
 
 ;; OCaml
@@ -189,7 +184,7 @@
   :config
   (add-to-list 'eglot-server-programs
                '(asy-mode . ("asy" "-lsp")))
-  
+
   )
 
 ;; [ Key Binds ]
