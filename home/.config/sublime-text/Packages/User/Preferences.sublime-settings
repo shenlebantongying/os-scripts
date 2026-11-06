@@ -10,13 +10,13 @@
 	// tab bar
 	"hide_tab_scrolling_buttons": true,
 	"highlight_modified_tabs": true,
-	
+
 	//misc
 	"remember_workspace": false,
 	"hot_exit" : "only_on_quit",
 	"close_windows_when_empty": true,
 	"always_show_minimap_viewport": true,
-	
+
 	"added_words":
 	[
 		"python3"

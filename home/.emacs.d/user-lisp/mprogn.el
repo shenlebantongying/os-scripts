@@ -1,6 +1,6 @@
 ;; -*- lexical-binding: t -*-
 
-
+
 ;; Text Editing
 
 ;;;###autoload
@@ -29,7 +29,7 @@
         ((looking-back "[\[\(\{]" 1) (backward-char) (forward-sexp))
         (t nil)))
 
-
+
 ;; Act on section / thing at here.
 
 ;;;###autoload
@@ -60,7 +60,7 @@
   (interactive)
   (+xah-open-in-external-app (concat "https://www.merriam-webster.com/dictionary/" (current-word))))
 
-
+
 ;; Acts on Buffer
 
 ;;;###autoload
@@ -107,7 +107,7 @@
   (interactive)
   (+xah-open-in-external-app (file-name-directory (buffer-file-name))))
 
-
+
 ;; Utility
 
 ;;;###autoload

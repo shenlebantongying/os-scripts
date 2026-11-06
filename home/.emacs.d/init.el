@@ -163,12 +163,12 @@
 
 (let* ((asy-path
         (cond
-         (IS-MAC  "/opt/homebrew/share/emacs/site-lisp/asymptote/asy-mode.el")
-         (IS-LINUX "/usr/share/asymptote/asy-mode.el")))
-       (asy-exists (and asy-path (file-exists-p asy-path))))
+         (IS-MAC  "/opt/homebrew/share/emacs/site-lisp/asymptote/")
+         (IS-LINUX "/usr/share/asymptote/")))
+       (asy-exists (and asy-path (file-directory-p asy-path))))
   (when asy-exists
-    (eval `(use-package asy-mode :defer t
-             :vc (:main-file asy-path)))))
+    (eval `(use-package asy-mode :ensure nil :defer t
+             :load-path ,asy-path))))
 
 ;; Racket
 (use-package racket-mode)
